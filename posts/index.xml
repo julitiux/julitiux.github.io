@@ -443,7 +443,8 @@ if age &gt;= 18:
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">any_dictionary</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>   <span class="c1">#Get a keys of a dictionary</span>
 <span class="n">any_dictionary</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>  <span class="c1">#Get a values of a dictionary</span>
 <span class="n">any_dictionary</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>   <span class="c1">#Get a items of a dictionary</span>
-</code></pre></div>]]></content>
+</code></pre></div><p>Add new line</p>
+]]></content>
 		</item>
 		
 		<item>
