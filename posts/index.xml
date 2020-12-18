@@ -443,8 +443,31 @@ if age &gt;= 18:
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">any_dictionary</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>   <span class="c1">#Get a keys of a dictionary</span>
 <span class="n">any_dictionary</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>  <span class="c1">#Get a values of a dictionary</span>
 <span class="n">any_dictionary</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>   <span class="c1">#Get a items of a dictionary</span>
-</code></pre></div><p>Add new line</p>
-]]></content>
+</code></pre></div><h1 id="user-input-and-while-loops">User Input and While Loops</h1>
+<h3 id="how-the-input-function-works">How the input Function Works</h3>
+<p>The input() funtion pauses your program and waits for the user to enter some text. Obe Python receives the use&rsquo;s input, it store it in a variable to make convenient for you to work with.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">message</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Tell me something, and I will repeat it back to you: &#34;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+</code></pre></div><h3 id="using-int-to-accept-numerical-input">Using int() to Accept numerical input</h3>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">age</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;How old are u? &#34;</span><span class="p">)</span>
+<span class="n">How</span> <span class="n">old</span> <span class="n">are</span> <span class="n">u</span><span class="err">?</span> <span class="mi">21</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">are</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">are</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">are</span> <span class="o">&gt;=</span> <span class="mi">18</span>
+<span class="bp">True</span>
+</code></pre></div><h2 id="the-modulo-operator">The modulo operator</h2>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="mi">4</span> <span class="o">%</span> <span class="mi">3</span>
+<span class="mi">1</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">5</span> <span class="o">%</span> <span class="mi">3</span>
+<span class="mi">2</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">6</span> <span class="o">%</span> <span class="mi">3</span>
+<span class="mi">0</span>
+</code></pre></div><h2 id="the-while-loop">The while Loop</h2>
+<p>You can use a while loop to count up through a series number.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">current_number</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="n">current_number</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">:</span>
+  <span class="k">print</span><span class="p">(</span><span class="n">current_number</span><span class="p">)</span>
+  <span class="n">current_number</span> <span class="o">+=</span> <span class="mi">1</span>
+</code></pre></div>]]></content>
 		</item>
 		
 		<item>
