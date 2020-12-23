@@ -14,7 +14,7 @@ How to know the version that you has, type something like this:
 ~ » python WARNING: Python 2.">
 <meta itemprop="datePublished" content="2020-09-01T22:05:10-05:00" />
 <meta itemprop="dateModified" content="2020-09-01T22:05:10-05:00" />
-<meta itemprop="wordCount" content="1953">
+<meta itemprop="wordCount" content="2737">
 
 
 
@@ -528,6 +528,145 @@ if age &gt;= 18:
 <span class="k">while</span> <span class="n">current_number</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">:</span>
   <span class="k">print</span><span class="p">(</span><span class="n">current_number</span><span class="p">)</span>
   <span class="n">current_number</span> <span class="o">+=</span> <span class="mi">1</span>
+</code></pre></div><h1 id="functions">FUNCTIONS<a href="#functions" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h1>
+<h3 id="defining-a-function">Defining a Function<a href="#defining-a-function" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<p>Here is a example function named greet_user()</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">greet_user</span><span class="p">():</span>
+  <span class="s2">&#34;&#34;&#34;Display a simple greeting&#34;&#34;&#34;</span>
+  <span class="k">print</span><span class="p">(</span><span class="s2">&#34;hello&#34;</span><span class="p">)</span>
+
+<span class="n">greet_user</span><span class="p">()</span>
+</code></pre></div><h3 id="passing-information-to-a-function">Passing Information to a function<a href="#passing-information-to-a-function" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">greet_user</span><span class="p">(</span><span class="n">username</span><span class="p">):</span>
+  <span class="s2">&#34;&#34;&#34;Display a simple greeting&#34;&#34;&#34;</span>
+  <span class="k">print</span><span class="p">(</span><span class="s2">&#34;hello &#34;</span> <span class="o">+</span> <span class="n">username</span><span class="p">)</span>
+
+<span class="n">greet_user</span><span class="p">()</span>
+</code></pre></div><h3 id="arguments-and-parameters">Arguments and Parameters.<a href="#arguments-and-parameters" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<p>People sometimes speak of arguments and parameters interchangeably. Do not be surprised if you see the variable in a funtion definition refered to as arguments or the variables in a function calla referred to as parameters.</p>
+<h3 id="positional-arguments">Positional Arguments<a href="#positional-arguments" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<p>When you call a function. Python must match each argument in the function call with a parameter in the function definition.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">describe_pet</span><span class="p">(</span><span class="n">animal_type</span><span class="p">,</span><span class="n">pet_name</span><span class="p">):</span>
+  <span class="o">--</span><span class="n">snip</span><span class="o">--</span>
+
+<span class="n">describe_pet</span><span class="p">(</span><span class="s1">&#39;hamster&#39;</span><span class="p">,</span><span class="s1">&#39;harry&#39;</span><span class="p">)</span>
+</code></pre></div><h3 id="keyword-arguments">Keyword arguments<a href="#keyword-arguments" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<p>A keyword argument is a name-value pair that you pass to a function. You directly associate the name and the value within the argument, so when you pass the argument to the function, there is no confusion, like this:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1">#after</span>
+<span class="n">describe_pet</span><span class="p">(</span><span class="s1">&#39;hamster&#39;</span><span class="p">,</span><span class="s1">&#39;harry&#39;</span><span class="p">)</span>
+<span class="c1">#before</span>
+<span class="n">describe_pet</span><span class="p">(</span><span class="n">animal_type</span><span class="o">=</span><span class="s1">&#39;hamster&#39;</span><span class="p">,</span><span class="n">pet_name</span><span class="o">=</span><span class="s1">&#39;harry&#39;</span><span class="p">)</span>
+</code></pre></div><h3 id="default-value">Default value<a href="#default-value" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<p>You can define a default value for each parameter</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">describe_pet</span><span class="p">(</span><span class="n">pet_name</span><span class="p">,</span> <span class="n">animal_type</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span>
+<span class="o">--</span><span class="n">snip</span><span class="o">--</span>
+<span class="k">def</span> <span class="nf">describe_pet</span><span class="p">(</span><span class="n">pet_name</span><span class="p">,</span> <span class="n">animal_type</span><span class="o">=</span><span class="s1">&#39;dog&#39;</span><span class="p">):</span>
+<span class="o">--</span><span class="n">snip</span><span class="o">--</span>
+</code></pre></div><h3 id="returning-a-simple-value">Returning a simple value<a href="#returning-a-simple-value" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<p>A function does not always have to desplay its output directly. Instead, it can process some data and then return a value or set of value, like this example:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">get_formatted_name</span><span class="p">(</span><span class="n">first_name</span><span class="p">,</span><span class="n">last_name</span><span class="p">):</span>
+  <span class="s2">&#34;&#34;&#34;Resturn a full name, neatly formatted&#34;&#34;&#34;</span>
+  <span class="n">full_name</span> <span class="o">=</span> <span class="n">first_name</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="n">last_name</span>
+  <span class="k">return</span> <span class="n">full_name</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
+
+<span class="n">musican</span> <span class="o">=</span> <span class="n">get_formatted_name</span><span class="p">(</span><span class="s1">&#39;Hanna&#39;</span><span class="p">,</span> <span class="s1">&#39;Montana&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">musican</span><span class="p">)</span>
+</code></pre></div><h3 id="returning-a-dictionary">Returning a Dictionary<a href="#returning-a-dictionary" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<p>A function can return any kind of value you need it to.including more complicated data structures like list and dictionaries.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">build_person</span><span class="p">(</span><span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span><span class="p">):</span>
+  <span class="s2">&#34;&#34;&#34;REturn a dictionary of information about a person&#34;&#34;&#34;</span>
+  <span class="n">person</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;first&#39;</span><span class="p">:</span><span class="n">first_name</span><span class="p">,</span><span class="s1">&#39;last&#39;</span><span class="p">:</span><span class="n">last_name</span><span class="p">}</span>
+  <span class="k">return</span> <span class="n">person</span>
+
+<span class="n">musican</span> <span class="o">=</span> <span class="n">build_person</span><span class="p">(</span><span class="s1">&#39;kimi&#39;</span><span class="p">,</span><span class="s1">&#39;hendrix&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">musican</span><span class="p">)</span>
+</code></pre></div><h3 id="passing-a-list">Passing a list<a href="#passing-a-list" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<p>You will often find it useful to pass a list to a function, whether it&rsquo;s a list of names, numbers, or more complex objects, such a dictionary.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">greet_users</span><span class="p">(</span><span class="n">names</span><span class="p">):</span>
+  <span class="s2">&#34;&#34;&#34;Print a simple greeting to each user in the list.&#34;&#34;&#34;</span>
+  <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
+    <span class="n">msg</span> <span class="o">=</span> <span class="s2">&#34;hello &#34;</span> <span class="o">+</span> <span class="n">name</span><span class="o">.</span><span class="n">title</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&#34;!&#34;</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+<span class="n">username</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;sabas&#39;</span><span class="p">,</span><span class="s1">&#39;ty&#39;</span><span class="p">,</span><span class="s1">&#39;margot&#39;</span><span class="p">]</span>
+<span class="n">greet_users</span><span class="p">(</span><span class="n">username</span><span class="p">)</span>
+</code></pre></div><h3 id="passing-an-arbitrary-number-of-arguments">Passing an arbitrary number of arguments<a href="#passing-an-arbitrary-number-of-arguments" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<p>Sometimes you wont know ahead of time how many arguments a function needs to accept. Fortunately, Python allows a function to collect an arbitrary number of arguments form the calling statement.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">make_pizza</span><span class="p">(</span><span class="o">*</span><span class="n">toppings</span><span class="p">):</span>
+  <span class="s2">&#34;&#34;&#34;Print the list of toppings that have been requested&#34;&#34;&#34;</span>
+  <span class="k">print</span><span class="p">(</span><span class="n">toppings</span><span class="p">)</span>
+
+<span class="n">make_pizza</span><span class="p">(</span><span class="s1">&#39;pepperoni&#39;</span><span class="p">)</span>
+<span class="n">make_pizza</span><span class="p">(</span><span class="s1">&#39;pepperoni&#39;</span><span class="p">,</span><span class="s1">&#39;green peppers&#39;</span><span class="p">,</span><span class="s1">&#39;extra cheese&#39;</span><span class="p">)</span>
+</code></pre></div><h3 id="mixing-positional-and-arbitrary-arguments">Mixing positional and arbitrary arguments<a href="#mixing-positional-and-arbitrary-arguments" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<p>If you want a function to accept several different kind of argument, the parameter that accepts an arbitrary number of arguments must be placed last in the function definition, like this way:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">make_pizza</span><span class="p">(</span><span class="n">size</span><span class="p">,</span><span class="o">*</span><span class="n">toppings</span><span class="p">):</span>
+  <span class="s2">&#34;&#34;&#34;Print the list of toppings that have been requested&#34;&#34;&#34;</span>
+  <span class="k">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Making a &#34;</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">size</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&#34;-inch pizza with the following toppings!:&#34;</span><span class="p">)</span>
+  <span class="k">for</span> <span class="n">topping</span> <span class="ow">in</span> <span class="n">toppings</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;- &#34;</span> <span class="o">+</span> <span class="n">topping</span><span class="p">)</span>
+
+<span class="n">make_pizza</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="s1">&#39;pepperoni&#39;</span><span class="p">)</span>
+<span class="n">make_pizza</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="s1">&#39;pepperoni&#39;</span><span class="p">,</span><span class="s1">&#39;green peppers&#39;</span><span class="p">,</span><span class="s1">&#39;extra cheese&#39;</span><span class="p">)</span>
+</code></pre></div><h2 id="storing-your-functions-in-modules">Storing your functions in modules<a href="#storing-your-functions-in-modules" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+<p>One advantage of functions is the way they separate blocks of code from your main program.</p>
+<h3 id="importing-an-entire-module">Importing an entire module<a href="#importing-an-entire-module" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<p>To start importing functions, we first need to create a module. A <em>module</em> is a file ending in <em>.py</em> that contains the code you want to impor into your program:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1">#pizza.py</span>
+
+<span class="k">def</span> <span class="nf">make_pizza</span><span class="p">(</span><span class="n">size</span><span class="p">,</span><span class="o">*</span><span class="n">toppings</span><span class="p">):</span>
+  <span class="s2">&#34;&#34;&#34;Print the list of toppings that have been requested&#34;&#34;&#34;</span>
+  <span class="k">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Making a &#34;</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">size</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&#34;-inch pizza with the following toppings!:&#34;</span><span class="p">)</span>
+  <span class="k">for</span> <span class="n">topping</span> <span class="ow">in</span> <span class="n">toppings</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;- &#34;</span> <span class="o">+</span> <span class="n">topping</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1">#making_pizza.py</span>
+
+<span class="kn">import</span> <span class="nn">pizza</span>
+
+<span class="n">pizza</span><span class="o">.</span><span class="n">make_pizza</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="s1">&#39;pepperoni&#39;</span><span class="p">)</span>
+<span class="n">pizza</span><span class="o">.</span><span class="n">make_pizza</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="s1">&#39;pepperoni&#39;</span><span class="p">,</span><span class="s1">&#39;green peppers&#39;</span><span class="p">,</span><span class="s1">&#39;extra cheese&#39;</span><span class="p">)</span>
+</code></pre></div><h3 id="import-specific-functions">Import specific functions<a href="#import-specific-functions" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<p>You can also import a specific function from a module. Here is genera sintaxis for this approach:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">module_name</span> <span class="kn">import</span> <span class="n">function_name</span>
+</code></pre></div><p>You can import as many functions as you want from a module by separating each function&rsquo;s name with a comma:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">module_name</span> <span class="kn">import</span> <span class="n">function_0</span><span class="p">,</span> <span class="n">function_1</span><span class="p">,</span> <span class="n">function_2</span>
+</code></pre></div><p>like this:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1">#making_pizza.py and pizza.py</span>
+
+<span class="kn">from</span> <span class="nn">pizza</span> <span class="kn">import</span> <span class="n">make_pizza</span>
+
+<span class="n">make_pizza</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="s1">&#39;pepperoni&#39;</span><span class="p">)</span>
+<span class="n">make_pizza</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="s1">&#39;pepperoni&#39;</span><span class="p">,</span><span class="s1">&#39;green peppers&#39;</span><span class="p">,</span><span class="s1">&#39;extra cheese&#39;</span><span class="p">)</span>
+</code></pre></div><h3 id="using-_as_-to-give-a-function-an-alias">Using <em>as</em> to give a function an alias<a href="#using-_as_-to-give-a-function-an-alias" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<p>If the name a function you are importing might conflict with an existing name in your program of if the function name is long, you can use a short, unique <em>alias</em></p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1">#making_pizza.py and pizza.py</span>
+
+<span class="kn">from</span> <span class="nn">pizza</span> <span class="kn">import</span> <span class="n">make_pizza</span> <span class="n">mp</span>
+
+<span class="n">mp</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="s1">&#39;pepperoni&#39;</span><span class="p">)</span>
+<span class="n">mp</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="s1">&#39;pepperoni&#39;</span><span class="p">,</span><span class="s1">&#39;green peppers&#39;</span><span class="p">,</span><span class="s1">&#39;extra cheese&#39;</span><span class="p">)</span>
+</code></pre></div><p>The general sintanxis for providing an alias is:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">module_name</span> <span class="kn">import</span> <span class="n">function_name</span> <span class="k">as</span> <span class="n">fn</span>
+</code></pre></div><h3 id="using-as-to-give-a-module-an-alias">Using as to give a module an alias<a href="#using-as-to-give-a-module-an-alias" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<p>You can also provide an alias for a module name.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1">#making_pizza.py and pizza.py</span>
+
+<span class="kn">import</span> <span class="nn">pizza</span> <span class="nn">p</span>
+
+<span class="n">p</span><span class="o">.</span><span class="n">make_pizza</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="s1">&#39;pepperoni&#39;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">make_pizza</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="s1">&#39;pepperoni&#39;</span><span class="p">,</span><span class="s1">&#39;green peppers&#39;</span><span class="p">,</span><span class="s1">&#39;extra cheese&#39;</span><span class="p">)</span>
+</code></pre></div><p>The general sintaxis fot this approach is:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">module_name</span> <span class="kn">as</span> <span class="nn">mn</span>
+</code></pre></div><h2 id="importing-all-functions-in-a-module">Importing all functions in a module<a href="#importing-all-functions-in-a-module" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+<p>You can tell Python to import every function a module by using the asterisk ( * ) operator:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1">#making_pizza.py and pizza.py</span>
+
+<span class="kn">from</span> <span class="nn">pizza</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">make_pizza</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="s1">&#39;pepperoni&#39;</span><span class="p">)</span>
+<span class="n">make_pizza</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="s1">&#39;pepperoni&#39;</span><span class="p">,</span><span class="s1">&#39;green peppers&#39;</span><span class="p">,</span><span class="s1">&#39;extra cheese&#39;</span><span class="p">)</span>
+</code></pre></div><p>The best approach is to import the function or functions you want, or import the entire module and use the dot notation. This lead to clear code that is easy to read and understand, like this:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">module_name</span> <span class="kn">import</span> <span class="o">*</span>
 </code></pre></div>
 			</div>
 			<hr class="post-end">
@@ -535,7 +674,7 @@ if age &gt;= 18:
 				<p>
 					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://julitiux.github.io/tags/untagged">untagged</a></span>
 				</p>
-				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>1953 Words</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>2737 Words</p>
 				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2020-09-01 22:05 -0500</p>
 			</footer>
 		</article>
