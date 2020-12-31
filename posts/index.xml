@@ -606,6 +606,47 @@ if age &gt;= 18:
 <span class="n">make_pizza</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="s1">&#39;pepperoni&#39;</span><span class="p">,</span><span class="s1">&#39;green peppers&#39;</span><span class="p">,</span><span class="s1">&#39;extra cheese&#39;</span><span class="p">)</span>
 </code></pre></div><p>The best approach is to import the function or functions you want, or import the entire module and use the dot notation. This lead to clear code that is easy to read and understand, like this:</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">module_name</span> <span class="kn">import</span> <span class="o">*</span>
+</code></pre></div><h1 id="classes-9">Classes 9</h1>
+<p><em>Object-oriented programming</em> is one of the most effective approaches to writting software.</p>
+<h3 id="creating-ans-using-a-class">Creating ans Using a Class</h3>
+<p>You can model almost anything using classes. Let&rsquo;s start by writing a simple class <em>Dog</em>.</p>
+<h2 id="creating-a-class-dog-class">Creating a class Dog Class</h2>
+<p>Each instance created from the Dog class will store a name and an age, and  we will give each dog the ability to sit() and roll()</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Dog</span><span class="p">():</span>
+  <span class="s2">&#34;&#34;&#34;A simple attempt to model a dog.&#34;&#34;&#34;</span>
+
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+  <span class="s2">&#34;&#34;&#34;Initialize name and age attributes.&#34;&#34;&#34;</span>
+  <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span> <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
+
+  <span class="k">def</span> <span class="nf">sit</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+  <span class="s2">&#34;&#34;&#34;Simulate a dog sitting in response to a command.&#34;&#34;&#34;</span>
+  <span class="k">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">title</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&#34; is now sitting.&#34;</span><span class="p">)</span>
+
+  <span class="k">def</span> <span class="nf">roll_over</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="s2">&#34;&#34;&#34;Simulate rolling over in response to a command.&#34;&#34;&#34;</span>
+    <span class="k">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">title</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&#34; rolled over!&#34;</span><span class="p">)</span>
+</code></pre></div><h2 id="the-__init__-method">The <strong>init</strong>() Method</h2>
+<p>The <strong>init</strong>() method is a special method Python runs automatically whenever we create a new instance based on the Dog Class. This method has two leading underscores and two trailing underscores, a convention that helps prevent Python&rsquo;s default methods name fro conflicting with your method name.</p>
+<h2 id="making-an-instance-from-a-class">Making an Instance from a Class</h2>
+<p>Think of a class as a set of instruction fro how to make an instance</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Dog</span><span class="p">():</span>
+<span class="o">--</span><span class="n">snip</span><span class="o">--</span>
+
+<span class="n">my_dog</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s1">&#39;willie&#39;</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&#34;My dog&#39;s name is &#34;</span> <span class="o">+</span> <span class="n">my_dog</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">title</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&#34;.&#34;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&#34;My dog is &#34;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">my_dog</span><span class="o">.</span><span class="n">age</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&#34; years old.&#34;</span><span class="p">)</span>
+</code></pre></div><h2 id="accessing-attributes">Accessing Attributes</h2>
+<p>To access the attributes of an instance, you use dot notation like this:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">my_dog</span><span class="o">.</span><span class="n">name</span>
+</code></pre></div><h2 id="calling-methods">Calling Methods</h2>
+<p>After created an instance from the class Dog, we can use dot notation to call any method defined in Dog. Let&rsquo;s make our dog sit and roll over:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Dog</span><span class="p">():</span>
+<span class="o">--</span><span class="n">snip</span><span class="o">--</span>
+
+<span class="n">my_dog</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s1">&#39;willie&#39;</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="n">my_dog</span><span class="o">.</span><span class="n">sit</span><span class="p">()</span>
+<span class="n">my_dog</span><span class="o">.</span><span class="n">roll_over</span><span class="p">()</span>
 </code></pre></div>]]></content>
 		</item>
 		
