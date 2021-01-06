@@ -647,7 +647,110 @@ if age &gt;= 18:
 <span class="n">my_dog</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s1">&#39;willie&#39;</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
 <span class="n">my_dog</span><span class="o">.</span><span class="n">sit</span><span class="p">()</span>
 <span class="n">my_dog</span><span class="o">.</span><span class="n">roll_over</span><span class="p">()</span>
-</code></pre></div>]]></content>
+</code></pre></div><h2 id="creating-multiple-instances">Creating Multiple Instances</h2>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Dog</span><span class="p">():</span>
+<span class="o">--</span><span class="n">snip</span><span class="o">--</span>
+
+<span class="n">my_dog</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s1">&#39;Baby Drogon&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">your_dog</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s1">&#39;other dog&#39;</span><span class="p">,</span> <span class="err">?</span><span class="p">)</span>
+</code></pre></div><h3 id="working-with-classes-and-instances">Working with classes and instances</h3>
+<p>You can use classes to represent many real-world stitations. Once write a class, you will spend most of your time working with instances created for that class.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Car</span><span class="p">():</span>
+  <span class="s2">&#34;&#34;&#34;A simple attempt to represent a car.&#34;&#34;&#34;</span>
+
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">make</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">):</span>
+    <span class="s2">&#34;&#34;&#34;Initialize attributes to describe a car.&#34;&#34;&#34;</span> <span class="bp">self</span><span class="o">.</span><span class="n">make</span> <span class="o">=</span> <span class="n">make</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="n">year</span>
+
+  <span class="k">def</span> <span class="nf">get_descriptive_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="s2">&#34;&#34;&#34;Return a neatly formatted descriptive name.&#34;&#34;&#34;</span>
+    <span class="n">long_name</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">year</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">make</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span>
+    <span class="k">return</span> <span class="n">long_name</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
+
+<span class="n">my_new_car</span> <span class="o">=</span> <span class="n">Car</span><span class="p">(</span><span class="s1">&#39;audi&#39;</span><span class="p">,</span> <span class="s1">&#39;a4&#39;</span><span class="p">,</span> <span class="mi">2016</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">my_new_car</span><span class="o">.</span><span class="n">get_descriptive_name</span><span class="p">())</span>
+</code></pre></div><h2 id="setting-a-default-value-for-an-attribute">Setting a default value for an attribute</h2>
+<p>Every attribute in a class needs an initial value, even if a 0 or a empty string.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Car</span><span class="p">():</span>
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">make</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">):</span>
+    <span class="s2">&#34;&#34;&#34;Initialize attributes to describe a car.&#34;&#34;&#34;</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">make</span> <span class="o">=</span> <span class="n">make</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="n">year</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">odometer_reading</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">def</span>
+
+  <span class="nf">get_descriptive_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="o">--</span><span class="n">snip</span><span class="o">--</span>
+
+  <span class="k">def</span> <span class="nf">read_odometer</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="s2">&#34;&#34;&#34;Print a statement showing the car&#39;s mileage.&#34;&#34;&#34;</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;This car has &#34;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">odometer_reading</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&#34; miles on it.&#34;</span><span class="p">)</span>
+
+<span class="n">my_new_car</span> <span class="o">=</span> <span class="n">Car</span><span class="p">(</span><span class="s1">&#39;audi&#39;</span><span class="p">,</span> <span class="s1">&#39;a4&#39;</span><span class="p">,</span> <span class="mi">2016</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">my_new_car</span><span class="o">.</span><span class="n">get_descriptive_name</span><span class="p">())</span>
+<span class="n">my_new_car</span><span class="o">.</span><span class="n">read_odometer</span><span class="p">()</span>
+</code></pre></div><h2 id="modifying-attribute-value">Modifying Attribute Value</h2>
+<h3 id="modifying-an-attributes-value-directly">Modifying an attribute&rsquo;s value directly</h3>
+<p>The simple way to modify the value of an attribute is to access the attribute directly through an instance. We use the <em>dot</em> anotatuon to access the car&rsquo;s odometer_reading attribute and set this value directly.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Car</span><span class="p">():</span>
+  <span class="o">--</span><span class="n">snip</span><span class="o">--</span>
+
+<span class="n">my_new_car</span> <span class="o">=</span> <span class="n">Car</span><span class="p">(</span><span class="s1">&#39;audi&#39;</span><span class="p">,</span> <span class="s1">&#39;a4&#39;</span><span class="p">,</span> <span class="mi">2016</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">my_new_car</span><span class="o">.</span><span class="n">get_descriptive_name</span><span class="p">())</span>
+
+<span class="n">umy_new_car</span><span class="o">.</span><span class="n">odometer_reading</span> <span class="o">=</span> <span class="mi">23</span> <span class="n">my_new_car</span><span class="o">.</span><span class="n">read_odometer</span><span class="p">()</span>
+</code></pre></div><h3 id="modifying-and-attributes-value-through-a-method">Modifying and Attribute&rsquo;s value through a Method</h3>
+<p>It can be helpful to have method that update certain attributes for you. Instead of accesing the attribute directly , you pass the new value to a method that handly the updating internally.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Car</span><span class="p">():</span>
+  <span class="o">--</span><span class="n">snip</span><span class="o">--</span>
+
+  <span class="k">def</span> <span class="nf">update_odometer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mileage</span><span class="p">):</span>
+    <span class="s2">&#34;&#34;&#34;Set the odometer reading to the given value.&#34;&#34;&#34;</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">odometer_reading</span> <span class="o">=</span> <span class="n">mileage</span>
+
+<span class="n">my_new_car</span> <span class="o">=</span> <span class="n">Car</span><span class="p">(</span><span class="s1">&#39;audi&#39;</span><span class="p">,</span> <span class="s1">&#39;a4&#39;</span><span class="p">,</span> <span class="mi">2016</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">my_new_car</span><span class="o">.</span><span class="n">get_descriptive_name</span><span class="p">())</span>
+<span class="n">my_new_car</span><span class="o">.</span><span class="n">update_odometer</span><span class="p">(</span><span class="mi">23</span><span class="p">)</span> <span class="n">my_new_car</span><span class="o">.</span><span class="n">read_odometer</span><span class="p">()</span>
+</code></pre></div><h2 id="inheritance">Inheritance</h2>
+<p>You don&rsquo;t always have to start from scratch when writing a class. If the class  you are writing is specialized version of another class you wrote, you can us inheritance. When one class inherits from another, it automatically takes on all of attributes and methods of the first class. The original class is called <em>parent class</em>, and the new class is the <em>child class</em>. The child class inherits every attribute and method from its parent class but is also free to define new attibutes and methods of its own.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Car</span><span class="p">():</span>
+  <span class="s2">&#34;&#34;&#34;A simple attempt to represent a car.&#34;&#34;&#34;</span>
+
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">make</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">):</span>
+     <span class="bp">self</span><span class="o">.</span><span class="n">make</span> <span class="o">=</span> <span class="n">make</span>
+     <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
+     <span class="bp">self</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="n">year</span>
+     <span class="bp">self</span><span class="o">.</span><span class="n">odometer_reading</span> <span class="o">=</span> <span class="mi">0</span>
+
+  <span class="k">def</span> <span class="nf">get_descriptive_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+     <span class="n">long_name</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">year</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">make</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span>
+     <span class="k">return</span> <span class="n">long_name</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
+
+  <span class="k">def</span> <span class="nf">read_odometer</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+     <span class="k">print</span><span class="p">(</span><span class="s2">&#34;This car has &#34;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">odometer_reading</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&#34; miles on it.&#34;</span><span class="p">)</span>
+
+  <span class="k">def</span> <span class="nf">update_odometer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mileage</span><span class="p">):</span>
+     <span class="k">if</span> <span class="n">mileage</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">odometer_reading</span><span class="p">:</span>
+       <span class="bp">self</span><span class="o">.</span><span class="n">odometer_reading</span> <span class="o">=</span> <span class="n">mileage</span>
+     <span class="k">else</span><span class="p">:</span>
+       <span class="k">print</span><span class="p">(</span><span class="s2">&#34;You can&#39;t roll back an odometer!&#34;</span><span class="p">)</span>
+
+  <span class="k">def</span> <span class="nf">increment_odometer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">miles</span><span class="p">):</span>
+     <span class="bp">self</span><span class="o">.</span><span class="n">odometer_reading</span> <span class="o">+=</span> <span class="n">miles</span>
+
+
+<span class="k">class</span> <span class="nc">ElectricCar</span><span class="p">(</span><span class="n">Car</span><span class="p">):</span>
+  <span class="s2">&#34;&#34;&#34;Represent aspects of a car, specific to electric vehicles.&#34;&#34;&#34;</span>
+
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">make</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">):</span>
+    <span class="s2">&#34;&#34;&#34;Initialize attributes of the parent class.&#34;&#34;&#34;</span>
+     <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">make</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">)</span>
+
+<span class="n">my_tesla</span> <span class="o">=</span> <span class="n">ElectricCar</span><span class="p">(</span><span class="s1">&#39;tesla&#39;</span><span class="p">,</span> <span class="s1">&#39;model s&#39;</span><span class="p">,</span> <span class="mi">2016</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">my_tesla</span><span class="o">.</span><span class="n">get_descriptive_name</span><span class="p">())</span>
+</code></pre></div><h1 id="files-and-exceptions">Files and Exceptions</h1>
+]]></content>
 		</item>
 		
 		<item>
