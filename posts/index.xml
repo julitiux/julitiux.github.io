@@ -750,6 +750,41 @@ if age &gt;= 18:
 <span class="n">my_tesla</span> <span class="o">=</span> <span class="n">ElectricCar</span><span class="p">(</span><span class="s1">&#39;tesla&#39;</span><span class="p">,</span> <span class="s1">&#39;model s&#39;</span><span class="p">,</span> <span class="mi">2016</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">my_tesla</span><span class="o">.</span><span class="n">get_descriptive_name</span><span class="p">())</span>
 </code></pre></div><h1 id="files-and-exceptions">Files and Exceptions</h1>
+<h2 id="reading-from-a-file">Reading from a file</h2>
+<p>To begin, we need a file with a few text in it. Lets start with a file that contains <em>pi</em> to 30 decimals places per line, like the next file:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">pi_digits</span><span class="o">.</span><span class="n">py</span>
+
+<span class="mf">3.1415926535</span>
+  <span class="mi">8979323846</span>
+  <span class="mi">264338327</span>
+</code></pre></div><p>Here&rsquo;s a program that opens this file, reads it, and prints the contents of file to the screen:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;pi_digits.txt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_object</span><span class="p">:</span>
+    <span class="n">contents</span> <span class="o">=</span> <span class="n">file_object</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">contents</span><span class="p">)</span>
+</code></pre></div><h2 id="file-path">File Path</h2>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python">
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;text_files/filename.txt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_object</span><span class="p">:</span>
+
+<span class="n">file_path</span> <span class="o">=</span> <span class="s1">&#39;home/ehmatters/other_files/filename.txt&#39;</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_object</span><span class="p">:</span>
+</code></pre></div><h2 id="reading-line-by-line">Reading Line by Line</h2>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python">
+<span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;pi_digits.txt&#39;</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="k">as</span> <span class="n">object_file</span><span class="p">:</span>
+  <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">object_file</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+</code></pre></div><h2 id="making-a-list-of-lines-from-a-file">Making a List of Lines from a File</h2>
+<p>The following example store the lines of po_digits_txt in a list inside the with block and then prints thelines outside the with block:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python">
+<span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;pi_digits.txt&#39;</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_object</span><span class="p">:</span>
+  <span class="n">lines</span> <span class="o">=</span> <span class="n">file_object</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+  <span class="k">print</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">rstrip</span><span class="p">())</span>
+</code></pre></div><h2 id="working-with-a-files-contents">Working with a File&rsquo;s contents</h2>
 ]]></content>
 		</item>
 		
