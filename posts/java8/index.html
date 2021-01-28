@@ -12,7 +12,7 @@
 Imperative and declarative programming Imperative programming:  Logic programming Functional programming  Declarative programming:  Structured programming Procedural programming Modular programming  Java 8 and Lambdas. Java 8 use Lambda expressions. This Lambda expressions are anonymous functions, that is, functions that do not need a class. Its basic syntax is detailed below:">
 <meta itemprop="datePublished" content="2021-01-27T23:55:55-06:00" />
 <meta itemprop="dateModified" content="2021-01-27T23:55:55-06:00" />
-<meta itemprop="wordCount" content="226">
+<meta itemprop="wordCount" content="546">
 
 
 
@@ -134,8 +134,92 @@ Imperative and declarative programming Imperative programming:  Logic programmin
 
 <span class="o">}</span>
 </code></pre></div><h1 id="lambda-sintaxis">Lambda Sintaxis<a href="#lambda-sintaxis" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h1>
-<h1 id="lambda-scopes">Lambda Scopes<a href="#lambda-scopes" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h1>
-<h1 id="interface-default-methods">Interface Default Methods<a href="#interface-default-methods" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h1>
+<p>Given a interface:</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">LambdaSintaxisService</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="n">Double</span> <span class="nf">calculateAverage</span><span class="o">(</span><span class="n">Double</span> <span class="n">num1</span><span class="o">,</span> <span class="n">Double</span> <span class="n">num2</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div><p>Diferent type of Lambda sintaxis.</p>
+<p>Sintaxis 1:</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java">  <span class="kd">public</span> <span class="n">Double</span> <span class="nf">sintaxis1</span><span class="o">(</span><span class="n">Double</span> <span class="n">number1</span><span class="o">,</span> <span class="n">Double</span> <span class="n">number2</span><span class="o">){</span>
+    <span class="n">LambdaSintaxisService</span> <span class="n">instance</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LambdaSintaxisService</span><span class="o">(){</span>
+      <span class="nd">@Override</span>
+      <span class="kd">public</span> <span class="n">Double</span> <span class="nf">calculateAverage</span><span class="o">(</span><span class="n">Double</span> <span class="n">num1</span><span class="o">,</span> <span class="n">Double</span> <span class="n">num2</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="o">(</span><span class="n">num1</span> <span class="o">+</span> <span class="n">num2</span><span class="o">)</span> <span class="o">/</span> <span class="n">2</span><span class="o">;</span>
+      <span class="o">}</span>
+    <span class="o">};</span>
+    <span class="k">return</span> <span class="n">instance</span><span class="o">.</span><span class="na">calculateAverage</span><span class="o">(</span><span class="n">number1</span><span class="o">,</span><span class="n">number2</span><span class="o">);</span>
+  <span class="o">}</span>
+</code></pre></div><p>Sintaxis 2:</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java">  <span class="kd">public</span> <span class="n">Double</span> <span class="nf">sintaxis2</span><span class="o">(</span><span class="n">Double</span> <span class="n">number1</span><span class="o">,</span> <span class="n">Double</span> <span class="n">number2</span><span class="o">){</span>
+    <span class="n">LambdaSintaxisService</span> <span class="n">instance</span> <span class="o">=</span> <span class="o">(</span><span class="n">Double</span> <span class="n">num1</span><span class="o">,</span> <span class="n">Double</span> <span class="n">num2</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="o">(</span><span class="n">num1</span> <span class="o">+</span> <span class="n">num2</span><span class="o">)</span> <span class="o">/</span> <span class="n">2</span><span class="o">;</span>
+    <span class="k">return</span> <span class="n">instance</span><span class="o">.</span><span class="na">calculateAverage</span><span class="o">(</span><span class="n">number1</span><span class="o">,</span><span class="n">number2</span><span class="o">);</span>
+  <span class="o">}</span>
+</code></pre></div><p>Sintaxis 3:</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java">  <span class="kd">public</span> <span class="n">Double</span> <span class="nf">sintaxis3</span><span class="o">(</span><span class="n">Double</span> <span class="n">number1</span><span class="o">,</span> <span class="n">Double</span> <span class="n">number2</span><span class="o">){</span>
+    <span class="n">LambdaSintaxisService</span> <span class="n">instance</span> <span class="o">=</span> <span class="o">(</span><span class="n">Double</span> <span class="n">num1</span><span class="o">,</span> <span class="n">Double</span> <span class="n">num2</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="o">{</span> <span class="k">return</span> <span class="o">(</span><span class="n">num1</span> <span class="o">+</span> <span class="n">num2</span><span class="o">)</span> <span class="o">/</span> <span class="n">2</span><span class="o">;};</span>
+    <span class="k">return</span> <span class="n">instance</span><span class="o">.</span><span class="na">calculateAverage</span><span class="o">(</span><span class="n">number1</span><span class="o">,</span><span class="n">number2</span><span class="o">);</span>
+  <span class="o">}</span>
+</code></pre></div><p>Sintaxis 4:</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java">  <span class="kd">public</span> <span class="n">Double</span> <span class="nf">sintaxis4</span><span class="o">(</span><span class="n">Double</span> <span class="n">number1</span><span class="o">,</span> <span class="n">Double</span> <span class="n">number2</span><span class="o">){</span>
+    <span class="n">LambdaSintaxisService</span> <span class="n">instance</span> <span class="o">=</span> <span class="o">(</span><span class="n">Double</span> <span class="n">num1</span><span class="o">,</span> <span class="n">Double</span> <span class="n">num2</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="o">{</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">num1</span><span class="o">);</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">num2</span><span class="o">);</span>
+      <span class="k">return</span> <span class="o">(</span><span class="n">num1</span> <span class="o">+</span> <span class="n">num2</span><span class="o">)</span> <span class="o">/</span> <span class="n">2</span><span class="o">;</span>
+    <span class="o">};</span>
+    <span class="k">return</span> <span class="n">instance</span><span class="o">.</span><span class="na">calculateAverage</span><span class="o">(</span><span class="n">number1</span><span class="o">,</span><span class="n">number2</span><span class="o">);</span>
+  <span class="o">}</span>
+</code></pre></div><p>Sintaxis 5:</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java">  <span class="kd">public</span> <span class="n">Double</span> <span class="nf">sintaxis5</span><span class="o">(</span><span class="n">Double</span> <span class="n">number1</span><span class="o">,</span> <span class="n">Double</span> <span class="n">number2</span><span class="o">){</span>
+    <span class="n">LambdaSintaxisService</span> <span class="n">instance</span> <span class="o">=</span> <span class="o">(</span><span class="n">num1</span><span class="o">,</span> <span class="n">num2</span><span class="o">)</span> <span class="o">-&gt;</span>  <span class="o">(</span><span class="n">num1</span> <span class="o">+</span> <span class="n">num2</span><span class="o">)</span> <span class="o">/</span> <span class="n">2</span><span class="o">;</span>
+    <span class="k">return</span> <span class="n">instance</span><span class="o">.</span><span class="na">calculateAverage</span><span class="o">(</span><span class="n">number1</span><span class="o">,</span><span class="n">number2</span><span class="o">);</span>
+  <span class="o">}</span>
+</code></pre></div><h1 id="lambda-scopes">Lambda Scopes<a href="#lambda-scopes" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h1>
+<p>Given a interface</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">ScopeService</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="n">Double</span> <span class="nf">calculateAverage</span><span class="o">(</span><span class="n">Double</span> <span class="n">number1</span><span class="o">,</span> <span class="n">Double</span> <span class="n">number2</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div><p>Diferent types of scopes inside of the method:</p>
+<p>By local variable:</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="n">Double</span> <span class="nf">localVariable1</span><span class="o">(</span><span class="n">Double</span> <span class="n">number1</span><span class="o">,</span> <span class="n">Double</span> <span class="n">number2</span><span class="o">){</span>
+
+  <span class="kd">final</span> <span class="kt">double</span> <span class="n">number3</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span>
+
+  <span class="n">ScopeService</span> <span class="n">instance</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ScopeService</span><span class="o">(){</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">Double</span> <span class="nf">calculateAverage</span><span class="o">(</span><span class="n">Double</span> <span class="n">n1</span><span class="o">,</span> <span class="n">Double</span> <span class="n">n2</span><span class="o">)</span> <span class="o">{</span>
+      <span class="c1">//number3 = (n1 + n2) / 2; YOU USE IT BUT YOU CANT CHANGE HIS VALUE
+</span><span class="c1"></span>      <span class="k">return</span> <span class="o">(</span><span class="n">n1</span> <span class="o">+</span> <span class="n">n2</span><span class="o">)</span> <span class="o">/</span> <span class="n">2</span><span class="o">;</span>
+    <span class="o">}</span>
+  <span class="o">};</span>
+
+  <span class="k">return</span> <span class="n">instance</span><span class="o">.</span><span class="na">calculateAverage</span><span class="o">(</span><span class="n">number1</span><span class="o">,</span> <span class="n">number2</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div><p>By local variable but with lambdas:</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="n">Double</span> <span class="nf">localVariable2</span><span class="o">(</span><span class="n">Double</span> <span class="n">number1</span><span class="o">,</span> <span class="n">Double</span> <span class="n">number2</span><span class="o">){</span>
+
+  <span class="kd">final</span> <span class="kt">double</span> <span class="n">number3</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span>
+
+  <span class="n">ScopeService</span> <span class="n">instance</span> <span class="o">=</span> <span class="o">(</span><span class="n">n1</span><span class="o">,</span><span class="n">n2</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="o">{</span>
+    <span class="c1">//number3 = (n1 + n2) / 2; YOU USE IT BUT YOU CANT CHANGE HIS VALUE
+</span><span class="c1"></span>    <span class="k">return</span> <span class="o">(</span><span class="n">n1</span> <span class="o">+</span> <span class="n">n2</span><span class="o">)</span> <span class="o">/</span> <span class="n">2</span><span class="o">;</span>
+  <span class="o">};</span>
+
+  <span class="k">return</span> <span class="n">instance</span><span class="o">.</span><span class="na">calculateAverage</span><span class="o">(</span><span class="n">number1</span><span class="o">,</span> <span class="n">number2</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div><p>By attributes statics and privates:</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">private</span> <span class="kd">static</span> <span class="kt">double</span> <span class="n">attribute1</span><span class="o">;</span>
+<span class="kd">private</span> <span class="kt">double</span> <span class="n">attribute2</span><span class="o">;</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="n">Double</span> <span class="nf">attributesStaticVariables</span><span class="o">(</span><span class="n">Double</span> <span class="n">number1</span><span class="o">,</span> <span class="n">Double</span> <span class="n">number2</span><span class="o">){</span>
+
+  <span class="n">ScopeService</span> <span class="n">instance</span> <span class="o">=</span> <span class="o">(</span><span class="n">n1</span><span class="o">,</span><span class="n">n2</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="o">{</span>
+    <span class="n">attribute1</span> <span class="o">=</span> <span class="o">(</span><span class="n">n1</span> <span class="o">+</span> <span class="n">n2</span><span class="o">)</span> <span class="o">/</span> <span class="n">2</span><span class="o">;</span>
+    <span class="n">attribute2</span> <span class="o">=</span> <span class="n">attribute1</span><span class="o">;</span>
+    <span class="k">return</span> <span class="n">attribute2</span><span class="o">;</span>
+  <span class="o">};</span>
+
+  <span class="k">return</span> <span class="n">instance</span><span class="o">.</span><span class="na">calculateAverage</span><span class="o">(</span><span class="n">number1</span><span class="o">,</span> <span class="n">number2</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div><h1 id="interface-default-methods">Interface Default Methods<a href="#interface-default-methods" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h1>
 <h1 id="functional-interfaces">Functional Interfaces<a href="#functional-interfaces" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h1>
 <h1 id="method-references">Method References<a href="#method-references" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h1>
 <h1 id="colections---foreach-removeif-sort">Colections -&gt; forEach, removeIf, sort<a href="#colections---foreach-removeif-sort" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h1>
@@ -154,7 +238,7 @@ Imperative and declarative programming Imperative programming:  Logic programmin
 				<p>
 					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://julitiux.github.io/tags/untagged">untagged</a></span>
 				</p>
-				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>226 Words</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>546 Words</p>
 				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2021-01-27 23:55 -0600</p>
 			</footer>
 		</article>
