@@ -3,27 +3,32 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://julitiux.github.io/posts/java8/</loc>
+    <lastmod>2021-01-27T23:55:55-06:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://julitiux.github.io/</loc>
-    <lastmod>2020-09-01T22:05:10-05:00</lastmod>
+    <lastmod>2021-01-27T23:55:55-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://julitiux.github.io/posts/</loc>
-    <lastmod>2020-09-01T22:05:10-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://julitiux.github.io/posts/python/</loc>
-    <lastmod>2020-09-01T22:05:10-05:00</lastmod>
+    <lastmod>2021-01-27T23:55:55-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://julitiux.github.io/tags/</loc>
-    <lastmod>2020-09-01T22:05:10-05:00</lastmod>
+    <lastmod>2021-01-27T23:55:55-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://julitiux.github.io/tags/untagged/</loc>
+    <lastmod>2021-01-27T23:55:55-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://julitiux.github.io/posts/python/</loc>
     <lastmod>2020-09-01T22:05:10-05:00</lastmod>
   </url>
   

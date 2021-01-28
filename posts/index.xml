@@ -6,8 +6,52 @@
 		<generator>Hugo -- gohugo.io</generator>
 		<language>en-us</language>
 		<copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-		<lastBuildDate>Tue, 01 Sep 2020 22:05:10 -0500</lastBuildDate>
+		<lastBuildDate>Wed, 27 Jan 2021 23:55:55 -0600</lastBuildDate>
 		<atom:link href="https://julitiux.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+		
+		<item>
+			<title>Java8</title>
+			<link>https://julitiux.github.io/posts/java8/</link>
+			<pubDate>Wed, 27 Jan 2021 23:55:55 -0600</pubDate>
+			
+			<guid>https://julitiux.github.io/posts/java8/</guid>
+			<description>Functional programming Functional Programming is a programming paradigm where the programs are constructed by applying and composing functions.
+Imperative and declarative programming Imperative programming:  Logic programming Functional programming  Declarative programming:  Structured programming Procedural programming Modular programming  Java 8 and Lambdas. Java 8 use Lambda expressions. This Lambda expressions are anonymous functions, that is, functions that do not need a class. Its basic syntax is detailed below:</description>
+			<content type="html"><![CDATA[<h1 id="functional-programming">Functional programming</h1>
+<p>Functional Programming is a programming paradigm where the programs are constructed by applying and composing functions.</p>
+<h2 id="imperative-and-declarative-programming">Imperative and declarative programming</h2>
+<h3 id="imperative-programming">Imperative programming:</h3>
+<ul>
+<li>Logic programming</li>
+<li>Functional programming</li>
+</ul>
+<h3 id="declarative-programming">Declarative programming:</h3>
+<ul>
+<li>Structured programming</li>
+<li>Procedural programming</li>
+<li>Modular programming</li>
+</ul>
+<h1 id="java-8-and-lambdas">Java 8 and Lambdas.</h1>
+<p>Java 8 use Lambda expressions. This Lambda expressions are anonymous functions, that is, functions that do not need a class. Its basic syntax is detailed below:</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="o">(</span><span class="n">parameters</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="o">(</span><span class="n">expresion</span><span class="o">)</span>
+</code></pre></div><h1 id="functional-paradigm">Functional Paradigm</h1>
+<h1 id="lambda">Lambda</h1>
+<h1 id="lambda-sintaxis">Lambda Sintaxis</h1>
+<h1 id="lambda-scopes">Lambda Scopes</h1>
+<h1 id="interface-default-methods">Interface Default Methods</h1>
+<h1 id="functional-interfaces">Functional Interfaces</h1>
+<h1 id="method-references">Method References</h1>
+<h1 id="colections---foreach-removeif-sort">Colections -&gt; forEach, removeIf, sort</h1>
+<h1 id="streams">Streams</h1>
+<h1 id="streamparallels">StreamParallels</h1>
+<h1 id="map">Map</h1>
+<h1 id="annotations">Annotations</h1>
+<h1 id="date-api">Date API</h1>
+<h1 id="high-order-functions">High Order Functions</h1>
+<h1 id="rxjava">RXJava</h1>
+<h1 id="nashom">Nashom</h1>
+]]></content>
+		</item>
 		
 		<item>
 			<title>Python</title>
