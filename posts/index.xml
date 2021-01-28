@@ -33,10 +33,50 @@ Imperative and declarative programming Imperative programming:  Logic programmin
 </ul>
 <h1 id="java-8-and-lambdas">Java 8 and Lambdas.</h1>
 <p>Java 8 use Lambda expressions. This Lambda expressions are anonymous functions, that is, functions that do not need a class. Its basic syntax is detailed below:</p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="o">(</span><span class="n">parameters</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="o">(</span><span class="n">expresion</span><span class="o">)</span>
-</code></pre></div><h1 id="functional-paradigm">Functional Paradigm</h1>
-<h1 id="lambda">Lambda</h1>
-<h1 id="lambda-sintaxis">Lambda Sintaxis</h1>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="o">(</span><span class="n">parameters</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">expresion</span>
+</code></pre></div><h1 id="lambda">Lambda</h1>
+<p>Given a List of String for sort:</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;();</span>
+<span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&#34;one&#34;</span><span class="o">);</span>
+<span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&#34;two&#34;</span><span class="o">);</span>
+<span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&#34;three&#34;</span><span class="o">);</span>
+</code></pre></div><p>Sort with Imperative programming</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Collections</span><span class="o">.</span><span class="na">sort</span><span class="o">(</span><span class="n">list</span><span class="o">,</span> <span class="k">new</span> <span class="n">Comparator</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;()</span> <span class="o">{</span>
+  <span class="nd">@Override</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">compare</span><span class="o">(</span><span class="n">String</span> <span class="n">o1</span><span class="o">,</span> <span class="n">String</span> <span class="n">o2</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">o1</span><span class="o">.</span><span class="na">compareTo</span><span class="o">(</span><span class="n">o2</span><span class="o">);</span>
+  <span class="o">}</span>
+<span class="o">});</span>
+</code></pre></div><p>Sort with Declarative programming</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Collections</span><span class="o">.</span><span class="na">sort</span><span class="o">(</span><span class="n">list</span><span class="o">,</span> <span class="o">(</span><span class="n">String</span> <span class="n">o1</span><span class="o">,</span> <span class="n">String</span> <span class="n">o2</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">o1</span><span class="o">.</span><span class="na">compareTo</span><span class="o">(</span><span class="n">o2</span><span class="o">));</span>
+</code></pre></div><p>Using a interface</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">LambdaService</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="n">Double</span> <span class="nf">calculateAverage</span><span class="o">(</span><span class="n">Double</span> <span class="n">num1</span><span class="o">,</span> <span class="n">Double</span> <span class="n">num2</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div><p>with a class:</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">LambdaServiceImpl</span> <span class="o">{</span>
+
+<span class="c1">//  Imperative programming
+</span><span class="c1"></span>  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">calculateImperative</span><span class="o">(</span><span class="n">Double</span> <span class="n">num1</span><span class="o">,</span> <span class="n">Double</span> <span class="n">num2</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">LambdaService</span> <span class="n">lambdaService</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LambdaService</span><span class="o">()</span> <span class="o">{</span>
+      <span class="nd">@Override</span>
+      <span class="kd">public</span> <span class="n">Double</span> <span class="nf">calculateAverage</span><span class="o">(</span><span class="n">Double</span> <span class="n">num1</span><span class="o">,</span> <span class="n">Double</span> <span class="n">num2</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="o">(</span><span class="n">num1</span> <span class="o">+</span> <span class="n">num2</span><span class="o">)</span> <span class="o">/</span> <span class="n">2</span><span class="o">;</span>
+      <span class="o">}</span>
+    <span class="o">};</span>
+
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">lambdaService</span><span class="o">.</span><span class="na">calculateAverage</span><span class="o">(</span><span class="n">num1</span><span class="o">,</span> <span class="n">num2</span><span class="o">));</span>
+
+  <span class="o">}</span>
+
+<span class="c1">//  Declarative programming
+</span><span class="c1"></span>  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">calculateDeclarative</span><span class="o">(</span><span class="n">Double</span> <span class="n">num1</span><span class="o">,</span> <span class="n">Double</span> <span class="n">num2</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">LambdaService</span> <span class="n">lambdaService</span> <span class="o">=</span> <span class="o">(</span><span class="n">Double</span> <span class="n">n1</span><span class="o">,</span> <span class="n">Double</span> <span class="n">n2</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="o">(</span><span class="n">n1</span> <span class="o">+</span> <span class="n">n2</span><span class="o">)</span> <span class="o">/</span> <span class="n">2</span><span class="o">;</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">lambdaService</span><span class="o">.</span><span class="na">calculateAverage</span><span class="o">(</span><span class="n">num1</span><span class="o">,</span> <span class="n">num2</span><span class="o">));</span>
+  <span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre></div><h1 id="lambda-sintaxis">Lambda Sintaxis</h1>
 <h1 id="lambda-scopes">Lambda Scopes</h1>
 <h1 id="interface-default-methods">Interface Default Methods</h1>
 <h1 id="functional-interfaces">Functional Interfaces</h1>
