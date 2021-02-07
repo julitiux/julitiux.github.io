@@ -538,7 +538,75 @@ Before Java 8, we had to create anonymous inner class objects or implement these
 <span class="o">}</span>
 </code></pre></div><h1 id="annotations">Annotations</h1>
 <h1 id="date-api">Date API</h1>
-<h1 id="high-order-functions">High Order Functions</h1>
+<p>The new Date and Time APIs/classes (JSR-310), also called as ThreeTen, which have simply change the way you have been handling dates in java applications.</p>
+<p>Date class has even become obsolete. The new classes intended to replace Date class are LocalDate, LocalTime and LocalDateTime.</p>
+<ol>
+<li>The LocalDate class represents a date. There is no representation of a time or time-zone.</li>
+<li>The LocalTime class represents a time. There is no representation of a date or time-zone.</li>
+<li>The LocalDateTime class represents a date-time. There is no representation of a time-zone.</li>
+</ol>
+<p>Now, given a interface</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">java.text.ParseException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.time.LocalDate</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.time.LocalDateTime</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.time.LocalTime</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.time.Period</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Calendar</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Date</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">DateService</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">dateJava7</span><span class="o">();</span>
+  <span class="kd">public</span> <span class="n">Boolean</span> <span class="nf">comparteTwoDatesInJava8</span><span class="o">(</span><span class="n">LocalDate</span> <span class="n">startDate</span><span class="o">,</span> <span class="n">LocalDate</span> <span class="n">endDate</span><span class="o">);</span>
+  <span class="kd">public</span> <span class="n">Boolean</span> <span class="nf">comparteTwoTimesInJava8</span><span class="o">(</span><span class="n">LocalTime</span> <span class="n">startTime</span><span class="o">,</span> <span class="n">LocalTime</span> <span class="n">endTime</span><span class="o">);</span>
+  <span class="kd">public</span> <span class="n">Boolean</span> <span class="nf">comparteTwoDateTimesInJava8</span><span class="o">(</span><span class="n">LocalDateTime</span> <span class="n">startDateTime</span><span class="o">,</span> <span class="n">LocalDateTime</span> <span class="n">endDateTime</span><span class="o">);</span>
+
+  <span class="kd">public</span> <span class="n">Integer</span> <span class="nf">countYearsJava7</span><span class="o">(</span><span class="n">Calendar</span> <span class="n">starCalendar</span><span class="o">,</span> <span class="n">Calendar</span> <span class="n">endCalendar</span><span class="o">);</span>
+  <span class="kd">public</span> <span class="n">Period</span> <span class="nf">countYearsJava8</span><span class="o">(</span><span class="n">LocalDate</span> <span class="n">dateStart</span><span class="o">,</span> <span class="n">LocalDate</span> <span class="n">dateEnd</span><span class="o">);</span>
+
+  <span class="kd">public</span> <span class="n">Date</span> <span class="nf">convertStringToDateJava7</span><span class="o">(</span><span class="n">String</span> <span class="n">dateString</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">ParseException</span><span class="o">;</span>
+  <span class="kd">public</span> <span class="n">String</span> <span class="nf">formatDateJava7</span><span class="o">(</span><span class="n">Date</span> <span class="n">date</span><span class="o">);</span>
+
+  <span class="kd">public</span> <span class="n">LocalDate</span> <span class="nf">convertStringToDateJava8</span><span class="o">(</span><span class="n">String</span> <span class="n">dateString</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">ParseException</span><span class="o">;</span>
+  <span class="kd">public</span> <span class="n">String</span> <span class="nf">formatDateJava8</span><span class="o">(</span><span class="n">String</span> <span class="n">dateString</span><span class="o">,</span> <span class="n">String</span> <span class="n">patterDate</span><span class="o">,</span> <span class="n">String</span> <span class="n">formatter</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div><h2 id="compare-two-dates">Compare two Dates</h2>
+<p>Java7</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">dateJava7</span><span class="o">()</span> <span class="o">{</span>
+  <span class="n">Calendar</span> <span class="n">fecha1</span> <span class="o">=</span> <span class="n">Calendar</span><span class="o">.</span><span class="na">getInstance</span><span class="o">();</span>
+  <span class="n">Calendar</span> <span class="n">fecha2</span> <span class="o">=</span> <span class="n">Calendar</span><span class="o">.</span><span class="na">getInstance</span><span class="o">();</span>
+  <span class="n">fecha1</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="n">1990</span><span class="o">,</span> <span class="n">5</span><span class="o">,</span> <span class="n">19</span><span class="o">);</span>
+  <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">fecha1</span><span class="o">.</span><span class="na">after</span><span class="o">(</span><span class="n">fecha2</span><span class="o">));</span>
+<span class="o">}</span>
+</code></pre></div><p>Java8, Compare two LocalDates</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Override</span>
+<span class="kd">public</span> <span class="n">Boolean</span> <span class="nf">comparteTwoDatesInJava8</span><span class="o">(</span><span class="n">LocalDate</span> <span class="n">startDate</span><span class="o">,</span> <span class="n">LocalDate</span> <span class="n">endDate</span><span class="o">)</span> <span class="o">{</span>
+  <span class="k">return</span> <span class="n">startDate</span><span class="o">.</span><span class="na">isBefore</span><span class="o">(</span><span class="n">endDate</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div><p>Java8, Compare two LocalTimes</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Override</span>
+<span class="kd">public</span> <span class="n">Boolean</span> <span class="nf">comparteTwoTimesInJava8</span><span class="o">(</span><span class="n">LocalTime</span> <span class="n">startTime</span><span class="o">,</span> <span class="n">LocalTime</span> <span class="n">endTime</span><span class="o">)</span> <span class="o">{</span>
+  <span class="k">return</span> <span class="n">startTime</span><span class="o">.</span><span class="na">isBefore</span><span class="o">(</span><span class="n">endTime</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div><h2 id="count-years">Count years</h2>
+<p>Java7</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Override</span>
+<span class="kd">public</span> <span class="n">Integer</span> <span class="nf">countYearsJava7</span><span class="o">(</span><span class="n">Calendar</span> <span class="n">starCalendar</span><span class="o">,</span> <span class="n">Calendar</span> <span class="n">endCalendar</span><span class="o">)</span> <span class="o">{</span>
+  <span class="n">Integer</span> <span class="n">anios</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span>
+  <span class="k">while</span> <span class="o">(</span><span class="n">starCalendar</span><span class="o">.</span><span class="na">before</span><span class="o">(</span><span class="n">endCalendar</span><span class="o">))</span> <span class="o">{</span>
+    <span class="n">starCalendar</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">Calendar</span><span class="o">.</span><span class="na">YEAR</span><span class="o">,</span> <span class="n">1</span><span class="o">);</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">starCalendar</span><span class="o">.</span><span class="na">before</span><span class="o">(</span><span class="n">endCalendar</span><span class="o">))</span> <span class="o">{</span>
+      <span class="n">anios</span><span class="o">++;</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+  <span class="k">return</span> <span class="n">anios</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div><p>Java8</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Override</span>
+<span class="kd">public</span> <span class="n">Period</span> <span class="nf">countYearsJava8</span><span class="o">(</span><span class="n">LocalDate</span> <span class="n">dateStart</span><span class="o">,</span> <span class="n">LocalDate</span> <span class="n">dateEnd</span><span class="o">)</span> <span class="o">{</span>
+  <span class="k">return</span> <span class="n">Period</span><span class="o">.</span><span class="na">between</span><span class="o">(</span><span class="n">dateStart</span><span class="o">,</span> <span class="n">dateEnd</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div><h1 id="high-order-functions">High Order Functions</h1>
 <h1 id="rxjava">RXJava</h1>
 <h1 id="nashom">Nashom</h1>
 ]]></content>
