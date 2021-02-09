@@ -643,16 +643,85 @@ public Date convertStringToDateJava7(String dateString) throws ParseException {
   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">print</span><span class="o">(</span><span class="n">Function</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">function</span><span class="o">,</span> <span class="n">String</span> <span class="n">string</span><span class="o">);</span>
 <span class="o">}</span>
 </code></pre></div><p>Implementing a Function.</p>
-<p>The first parameter is a IN String and return a</p>
+<p>The first parameter is a IN String and return a OUT String</p>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="n">Function</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">convertToUpperCase</span> <span class="o">=</span> <span class="n">String</span><span class="o">::</span><span class="n">toUpperCase</span><span class="o">;</span>
 <span class="kd">public</span> <span class="n">Function</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">convertToLowerCase</span> <span class="o">=</span> <span class="n">String</span><span class="o">::</span><span class="n">toLowerCase</span><span class="o">;</span>
-</code></pre></div><p>This method want a paramter Function like the previous Function:</p>
+</code></pre></div><p>This method want a parameter Function like the previous Function:</p>
 <div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Override</span>
 <span class="kd">public</span> <span class="kt">void</span> <span class="nf">print</span><span class="o">(</span><span class="n">Function</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">function</span><span class="o">,</span> <span class="n">String</span> <span class="n">string</span><span class="o">)</span> <span class="o">{</span>
   <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">function</span><span class="o">.</span><span class="na">apply</span><span class="o">(</span><span class="n">string</span><span class="o">));</span>
 <span class="o">}</span>
+</code></pre></div><p>A method that return a <em>Function</em>, ask for a String and return a String. This method you can apply the &lsquo;apply&rsquo;  and send another String like a parameter.</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Override</span>
+<span class="kd">public</span> <span class="n">Function</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="nf">printWithFunction</span><span class="o">(</span><span class="n">String</span> <span class="n">string</span><span class="o">)</span> <span class="o">{</span>
+  <span class="k">return</span> <span class="o">(</span><span class="n">String</span> <span class="n">it</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">string</span> <span class="o">+</span> <span class="s">&#34; &#34;</span> <span class="o">+</span> <span class="n">it</span><span class="o">;</span>
+<span class="o">}</span>
+<span class="c1">//service.printWithFunction(string).apply(otherString)
+</span></code></pre></div><p>The principal function of <em>High Order Functions</em> is send method like parameters. In this example, I send Consumers with type String values. For this example for <em>Groovy</em> a <em>Consumer</em> it could be considered like a <em>Closure</em>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Override</span>
+<span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="nf">filter</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">list</span><span class="o">,</span> <span class="n">String</span> <span class="n">string</span><span class="o">,</span> <span class="n">Consumer</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">consumer</span><span class="o">)</span> <span class="o">{</span>
+  <span class="n">list</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">filter</span><span class="o">(</span><span class="n">filterString</span><span class="o">(</span><span class="n">string</span><span class="o">)).</span><span class="na">forEach</span><span class="o">(</span><span class="n">consumer</span><span class="o">);</span>
+  <span class="k">return</span> <span class="n">list</span><span class="o">;</span>
+<span class="o">}</span>
+
+<span class="kd">private</span> <span class="n">Predicate</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="nf">filterString</span><span class="o">(</span><span class="n">String</span> <span class="n">string</span><span class="o">){</span>
+  <span class="k">return</span> <span class="n">it</span> <span class="o">-&gt;</span> <span class="n">it</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="n">string</span><span class="o">);</span>
+<span class="o">}</span>
 </code></pre></div><h1 id="rxjava">RXJava</h1>
-<h1 id="nashom">Nashom</h1>
+<p>RxJava is a Java VM implementation of Reactive Extensions: a library for composing asynchronous and event-based programs by using observable sequences.</p>
+<p>It extends the observer pattern to support sequences of data/events and adds operators that allow you to compose sequences together declaratively while abstracting away concerns about things like low-level threading, synchronization, thread-safety and concurrent data structures.</p>
+<p>The ReactiveX Observable model allows you to treat streams of asynchronous events with the same sort of simple, composable operations that you use for collections of data items like arrays. It frees you from tangled webs of callbacks, and thereby makes your code more readable and less prone to bugs.</p>
+<p>Given a interface.</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">JavaRxService</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">observableRx</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">list</span><span class="o">);</span>
+  <span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="nf">observableRx</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">firstList</span><span class="o">,</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">secondList</span><span class="o">,</span> <span class="n">String</span> <span class="n">string</span><span class="o">);</span>
+  <span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="nf">observableRxWithLambdas</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">firstList</span><span class="o">,</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">secondList</span><span class="o">,</span> <span class="n">String</span> <span class="n">string</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div><p>Now the implementation:</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">observableRx</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">list</span><span class="o">)</span> <span class="o">{</span>
+  <span class="n">Observable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">observable</span> <span class="o">=</span> <span class="n">Observable</span><span class="o">.</span><span class="na">fromIterable</span><span class="o">(</span><span class="n">list</span><span class="o">);</span>
+
+  <span class="n">observable</span><span class="o">.</span><span class="na">subscribe</span><span class="o">(</span><span class="k">new</span> <span class="n">Consumer</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;()</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">accept</span><span class="o">(</span><span class="n">String</span> <span class="n">s</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">s</span><span class="o">);</span>
+    <span class="o">}</span>
+  <span class="o">});</span>
+
+<span class="o">}</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Override</span>
+<span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="nf">observableRx</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">firstList</span><span class="o">,</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">secondList</span><span class="o">,</span> <span class="n">String</span> <span class="n">string</span><span class="o">)</span> <span class="o">{</span>
+  <span class="n">Observable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">observable1</span> <span class="o">=</span> <span class="n">Observable</span><span class="o">.</span><span class="na">fromIterable</span><span class="o">(</span><span class="n">firstList</span><span class="o">);</span>
+  <span class="n">Observable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">observable2</span> <span class="o">=</span> <span class="n">Observable</span><span class="o">.</span><span class="na">fromIterable</span><span class="o">(</span><span class="n">secondList</span><span class="o">);</span>
+
+  <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">returnList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+
+  <span class="n">Observable</span><span class="o">.</span><span class="na">merge</span><span class="o">(</span><span class="n">observable1</span><span class="o">,</span> <span class="n">observable2</span><span class="o">).</span><span class="na">subscribe</span><span class="o">(</span><span class="k">new</span> <span class="n">Consumer</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;()</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">accept</span><span class="o">(</span><span class="n">String</span> <span class="n">s</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+      <span class="k">if</span><span class="o">(</span><span class="n">s</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="n">string</span><span class="o">))</span>
+        <span class="n">returnList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">s</span><span class="o">);</span>
+    <span class="o">}</span>
+  <span class="o">});</span>
+
+  <span class="k">return</span> <span class="n">returnList</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Override</span>
+<span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="nf">observableRxWithLambdas</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">firstList</span><span class="o">,</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">secondList</span><span class="o">,</span> <span class="n">String</span> <span class="n">string</span><span class="o">)</span> <span class="o">{</span>
+  <span class="n">Observable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">observable1</span> <span class="o">=</span> <span class="n">Observable</span><span class="o">.</span><span class="na">fromIterable</span><span class="o">(</span><span class="n">firstList</span><span class="o">);</span>
+  <span class="n">Observable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">observable2</span> <span class="o">=</span> <span class="n">Observable</span><span class="o">.</span><span class="na">fromIterable</span><span class="o">(</span><span class="n">secondList</span><span class="o">);</span>
+
+  <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">returnList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+
+  <span class="n">Observable</span><span class="o">.</span><span class="na">merge</span><span class="o">(</span><span class="n">observable1</span><span class="o">,</span> <span class="n">observable2</span><span class="o">).</span><span class="na">subscribe</span><span class="o">(</span><span class="n">it</span> <span class="o">-&gt;</span> <span class="o">{</span>
+    <span class="k">if</span><span class="o">(</span><span class="n">it</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="n">string</span><span class="o">))</span>
+      <span class="n">returnList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">it</span><span class="o">);</span>
+  <span class="o">});</span>
+
+  <span class="k">return</span> <span class="n">returnList</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div><h1 id="nashom">Nashom</h1>
 ]]></content>
 		</item>
 		
