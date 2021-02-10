@@ -12,7 +12,7 @@
 Imperative and declarative programming Imperative programming:  Logic programming Functional programming  Declarative programming:  Structured programming Procedural programming Modular programming  Java 8 and Lambdas. Java 8 use Lambda expressions. This Lambda expressions are anonymous functions, that is, functions that do not need a class. Its basic syntax is detailed below:">
 <meta itemprop="datePublished" content="2021-01-27T23:55:55-06:00" />
 <meta itemprop="dateModified" content="2021-01-27T23:55:55-06:00" />
-<meta itemprop="wordCount" content="2823">
+<meta itemprop="wordCount" content="3110">
 
 
 
@@ -778,7 +778,46 @@ public Date convertStringToDateJava7(String dateString) throws ParseException {
 
   <span class="k">return</span> <span class="n">returnList</span><span class="o">;</span>
 <span class="o">}</span>
-</code></pre></div><h1 id="nashom">Nashom<a href="#nashom" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h1>
+</code></pre></div><h1 id="nashorn">Nashorn<a href="#nashorn" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h1>
+<p>The Nashorn engine is an implementation of the ECMAScript Edition 5.1 Language Specification. It also implements many new features introduced in ECMAScript 6 including template strings; let, const, and block scope; iterators and for..of loops; Map, Set, WeakMap, and WeakSet data types; symbols; and binary and octal literals.</p>
+<p>It was fully developed in the Java language as part of the Nashorn Project. The code is based on the new features of the Da Vinci Machine, which is the reference implementation of Java Specification Request (JSR) 292: Supporting Dynamically Typed Languages on the Java Platform.</p>
+<p>The Nashorn engine is included in the Java SE Development Kit (JDK). You can invoke Nashorn from a Java application using the Java Scripting API to interpret embedded scripts, or you can pass the script to the jjs or jrunscript tool.</p>
+<p>For this example, we have to declare a Interface like:</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">NashornService</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">callFunctions</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span><span class="o">;</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">implementInterface</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div><p>Declare our variables ScriptEngineManager and ScriptEngine in Constructor class and privates.</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">private</span> <span class="n">ScriptEngineManager</span> <span class="n">scriptEngineManager</span><span class="o">;</span>
+<span class="kd">private</span> <span class="n">ScriptEngine</span> <span class="n">scriptEngine</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="nf">NashornServiceImpl</span><span class="o">()</span> <span class="o">{</span>
+  <span class="n">scriptEngineManager</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ScriptEngineManager</span><span class="o">();</span>
+  <span class="n">scriptEngine</span> <span class="o">=</span> <span class="n">scriptEngineManager</span><span class="o">.</span><span class="na">getEngineByName</span><span class="o">(</span><span class="s">&#34;nashorn&#34;</span><span class="o">);</span>
+  <span class="o">}</span>
+</code></pre></div><p>Implementing a method, that make a call to JS.</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">callFunctions</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+  <span class="n">scriptEngine</span><span class="o">.</span><span class="na">eval</span><span class="o">(</span><span class="s">&#34;print(&#39;JS desde Java&#39;)&#34;</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div><p>Implemening a method, that make a call to File JS.</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">callFunctionsWithFileJs</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+  <span class="n">scriptEngine</span><span class="o">.</span><span class="na">eval</span><span class="o">(</span><span class="k">new</span> <span class="n">FileReader</span><span class="o">(</span><span class="s">&#34;src/main/resources/js/exampleJS.js&#34;</span><span class="o">));</span>
+<span class="o">}</span>
+</code></pre></div><p>This is the content of File exampleJS.js</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">print</span><span class="p">(</span><span class="s1">&#39;Hola desde archivo JS&#39;</span><span class="p">);</span>
+</code></pre></div><p>Now, we can get a function of Js like this.</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Override</span>
+<span class="kd">public</span> <span class="n">Double</span> <span class="nf">callFunctionsWithFile</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+  <span class="n">scriptEngine</span><span class="o">.</span><span class="na">eval</span><span class="o">(</span><span class="k">new</span> <span class="n">FileReader</span><span class="o">(</span><span class="s">&#34;src/main/resources/js/exampleJS.js&#34;</span><span class="o">));</span>
+  <span class="k">return</span> <span class="o">(</span><span class="n">Double</span><span class="o">)</span> <span class="n">invocable</span><span class="o">.</span><span class="na">invokeFunction</span><span class="o">(</span><span class="s">&#34;calcular&#34;</span><span class="o">,</span> <span class="n">10</span><span class="o">,</span> <span class="n">30</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div><p>and inside of file exampleJS.js we have to implement a function calcular.</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">calcular</span><span class="p">(</span><span class="nx">firstNumber</span><span class="p">,</span> <span class="nx">secondNumber</span><span class="p">){</span>
+  <span class="k">return</span> <span class="nx">firstNumber</span> <span class="o">+</span> <span class="nx">secondNumber</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><p>It Works !!!</p>
 
 			</div>
 			<hr class="post-end">
@@ -786,7 +825,7 @@ public Date convertStringToDateJava7(String dateString) throws ParseException {
 				<p>
 					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://julitiux.github.io/tags/untagged">untagged</a></span>
 				</p>
-				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>2823 Words</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>3110 Words</p>
 				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2021-01-27 23:55 -0600</p>
 			</footer>
 		</article>

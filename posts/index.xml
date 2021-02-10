@@ -721,7 +721,46 @@ public Date convertStringToDateJava7(String dateString) throws ParseException {
 
   <span class="k">return</span> <span class="n">returnList</span><span class="o">;</span>
 <span class="o">}</span>
-</code></pre></div><h1 id="nashom">Nashom</h1>
+</code></pre></div><h1 id="nashorn">Nashorn</h1>
+<p>The Nashorn engine is an implementation of the ECMAScript Edition 5.1 Language Specification. It also implements many new features introduced in ECMAScript 6 including template strings; let, const, and block scope; iterators and for..of loops; Map, Set, WeakMap, and WeakSet data types; symbols; and binary and octal literals.</p>
+<p>It was fully developed in the Java language as part of the Nashorn Project. The code is based on the new features of the Da Vinci Machine, which is the reference implementation of Java Specification Request (JSR) 292: Supporting Dynamically Typed Languages on the Java Platform.</p>
+<p>The Nashorn engine is included in the Java SE Development Kit (JDK). You can invoke Nashorn from a Java application using the Java Scripting API to interpret embedded scripts, or you can pass the script to the jjs or jrunscript tool.</p>
+<p>For this example, we have to declare a Interface like:</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">NashornService</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">callFunctions</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span><span class="o">;</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">implementInterface</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div><p>Declare our variables ScriptEngineManager and ScriptEngine in Constructor class and privates.</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">private</span> <span class="n">ScriptEngineManager</span> <span class="n">scriptEngineManager</span><span class="o">;</span>
+<span class="kd">private</span> <span class="n">ScriptEngine</span> <span class="n">scriptEngine</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="nf">NashornServiceImpl</span><span class="o">()</span> <span class="o">{</span>
+  <span class="n">scriptEngineManager</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ScriptEngineManager</span><span class="o">();</span>
+  <span class="n">scriptEngine</span> <span class="o">=</span> <span class="n">scriptEngineManager</span><span class="o">.</span><span class="na">getEngineByName</span><span class="o">(</span><span class="s">&#34;nashorn&#34;</span><span class="o">);</span>
+  <span class="o">}</span>
+</code></pre></div><p>Implementing a method, that make a call to JS.</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">callFunctions</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+  <span class="n">scriptEngine</span><span class="o">.</span><span class="na">eval</span><span class="o">(</span><span class="s">&#34;print(&#39;JS desde Java&#39;)&#34;</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div><p>Implemening a method, that make a call to File JS.</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">callFunctionsWithFileJs</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+  <span class="n">scriptEngine</span><span class="o">.</span><span class="na">eval</span><span class="o">(</span><span class="k">new</span> <span class="n">FileReader</span><span class="o">(</span><span class="s">&#34;src/main/resources/js/exampleJS.js&#34;</span><span class="o">));</span>
+<span class="o">}</span>
+</code></pre></div><p>This is the content of File exampleJS.js</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">print</span><span class="p">(</span><span class="s1">&#39;Hola desde archivo JS&#39;</span><span class="p">);</span>
+</code></pre></div><p>Now, we can get a function of Js like this.</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Override</span>
+<span class="kd">public</span> <span class="n">Double</span> <span class="nf">callFunctionsWithFile</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+  <span class="n">scriptEngine</span><span class="o">.</span><span class="na">eval</span><span class="o">(</span><span class="k">new</span> <span class="n">FileReader</span><span class="o">(</span><span class="s">&#34;src/main/resources/js/exampleJS.js&#34;</span><span class="o">));</span>
+  <span class="k">return</span> <span class="o">(</span><span class="n">Double</span><span class="o">)</span> <span class="n">invocable</span><span class="o">.</span><span class="na">invokeFunction</span><span class="o">(</span><span class="s">&#34;calcular&#34;</span><span class="o">,</span> <span class="n">10</span><span class="o">,</span> <span class="n">30</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div><p>and inside of file exampleJS.js we have to implement a function calcular.</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">calcular</span><span class="p">(</span><span class="nx">firstNumber</span><span class="p">,</span> <span class="nx">secondNumber</span><span class="p">){</span>
+  <span class="k">return</span> <span class="nx">firstNumber</span> <span class="o">+</span> <span class="nx">secondNumber</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><p>It Works !!!</p>
 ]]></content>
 		</item>
 		
