@@ -770,11 +770,122 @@ public Date convertStringToDateJava7(String dateString) throws ParseException {
 			<pubDate>Tue, 01 Sep 2020 22:05:10 -0500</pubDate>
 			
 			<guid>https://julitiux.github.io/posts/python/</guid>
-			<description>GETTING STARTED How To Install There are two versions of Python available: Python 2 and the newer Python 3. By default in Mac OS has Python 2.
-How to know the version that you has, type something like this:
-~ » python --version Python 2.7.16 Python comes with an interpreter that runs a terminal. For launch the interpreter, open a terminal and write something like this:
-~ » python WARNING: Python 2.</description>
-			<content type="html"><![CDATA[<h1 id="getting-started">GETTING STARTED</h1>
+			<description>INDEX GETTING STARTED How To Install How To Install PyEnv Build Build Dependencies Using the pyenv-installer Using pyenv. List all pythons availables. Install a version of python. Installation Location. Uninstall a version of python. Running Python Programs from a terminal VARIABLES AND SIMPLE DATA TYPES Naming and Using Variables Strings Changing Case in a String with Methods Combining or Concatenating Strings Adding Whitespace to String with Tabs or Newlines Stripping Whitespace Numbers Integers Floats Avoid Type Errors with the str() Function Comments Introducing List Accessing Elements in a List Changing, Adding, and Removing Elements Modifying Elements in a List.</description>
+			<content type="html"><![CDATA[<h1 id="index"><strong>INDEX</strong></h1>
+<h1 id="getting-startedgetting-started"><a href="#getting-started">GETTING STARTED</a></h1>
+<h2 id="how-to-installhow-to-install"><a href="#how-to-install">How To Install</a></h2>
+<h2 id="how-to-install-pyenvhow-to-install-pyenv"><a href="#how-to-install-pyenv">How To Install PyEnv</a></h2>
+<h3 id="build-build-dependenciesbuild-build-dependencies"><a href="#build-build-dependencies">Build Build Dependencies</a></h3>
+<h3 id="using-the-pyenv-installerusing-the-pyenv-installer"><a href="#using-the-pyenv-installer">Using the pyenv-installer</a></h3>
+<h2 id="using-pyenvusing-pyenv"><a href="#using-pyenv.">Using pyenv.</a></h2>
+<h3 id="list-all-pythons-availableslist-all-pythons-availables"><a href="#list-all-pythons-availables.">List all pythons availables.</a></h3>
+<h3 id="install-a-version-of-pythoninstall-a-version-of-python"><a href="#install-a-version-of-python.">Install a version of python.</a></h3>
+<h3 id="installation-locationinstallation-location"><a href="#installation-location.">Installation Location.</a></h3>
+<h3 id="uninstall-a-version-of-pythonuninstall-a-version-of-python"><a href="#uninstall-a-version-of-python.">Uninstall a version of python.</a></h3>
+<h2 id="running-python-programs-from-a-terminalrunning-python-programs-from-a-terminal"><a href="#running-python-programs-from-a-terminal">Running Python Programs from a terminal</a></h2>
+<h1 id="variables-and-simple-data-typesvariables-and-simple-data-types"><a href="#variables-and-simple-data-types">VARIABLES AND SIMPLE DATA TYPES</a></h1>
+<h2 id="naming-and-using-variablesnaming-and-using-variables"><a href="#naming-and-using-variables">Naming and Using Variables</a></h2>
+<h2 id="stringsstrings"><a href="#strings">Strings</a></h2>
+<h3 id="changing-case-in-a-string-with-methodschanging-case-in-a-string-with-methods"><a href="#changing-case-in-a-string-with-methods">Changing Case in a String with Methods</a></h3>
+<h3 id="combining-or-concatenating-stringscombining-or-concatenating-strings"><a href="#combining-or-concatenating-strings">Combining or Concatenating Strings</a></h3>
+<h3 id="adding-whitespace-to-string-with-tabs-or-newlinesadding-whitespace-to-string-with-tabs-or-newlines"><a href="#adding-whitespace-to-string-with-tabs-or-newlines">Adding Whitespace to String with Tabs or Newlines</a></h3>
+<h3 id="stripping-whitespacestripping-whitespace"><a href="#stripping-whitespace">Stripping Whitespace</a></h3>
+<h2 id="numbersnumbers"><a href="#numbers">Numbers</a></h2>
+<h3 id="integersintegers"><a href="#integers">Integers</a></h3>
+<h3 id="floatsfloats"><a href="#floats">Floats</a></h3>
+<h3 id="avoid-type-errors-with-the-str-functionavoid-type-errors-with-the-str-function"><a href="#avoid-type-errors-with-the-str-function">Avoid Type Errors with the str() Function</a></h3>
+<h3 id="commentscomments"><a href="#comments">Comments</a></h3>
+<h1 id="introducing-listintroducing-list"><a href="#introducing-list">Introducing List</a></h1>
+<h3 id="accessing-elements-in-a-listaccessing-elements-in-a-list"><a href="#accessing-elements-in-a-list">Accessing Elements in a List</a></h3>
+<h2 id="changing-adding-and-removing-elementschanging-adding-and-removing-elements"><a href="#changing-adding-and-removing-elements">Changing, Adding, and Removing Elements</a></h2>
+<h3 id="modifying-elements-in-a-listmodifying-elements-in-a-list"><a href="#modifying-elements-in-a-list">Modifying Elements in a List.</a></h3>
+<h3 id="adding-elements-to-a-listadding-elements-to-a-list"><a href="#adding-elements-to-a-list">Adding Elements to a List</a></h3>
+<h3 id="inserting-elements-into-a-listinserting-elements-into-a-list"><a href="#inserting-elements-into-a-list">Inserting Elements into a List</a></h3>
+<h3 id="removing-elements-from-a-list-using-the-_del_-statementremoving-elements-from-a-list-using-the-_del_-statement"><a href="#removing-elements-from-a-list-using-the-_del_-statement">Removing Elements from a List using the <em>del</em> Statement</a></h3>
+<h3 id="removing-elements-from-a-list-using-the-_pop_-methodremoving-elements-from-a-list-using-the-_pop_-method"><a href="#removing-elements-from-a-list-using-the-_pop_-method">Removing Elements from a List using the <em>pop()</em> method</a></h3>
+<h3 id="popping-items-from-any-position-in-a-listpopping-items-from-any-position-in-a-list"><a href="#popping-items-from-any-position-in-a-list">Popping items from any Position in a list</a></h3>
+<h3 id="removing-items-by-valueremoving-items-by-value"><a href="#removing-items-by-value">Removing Items by Value</a></h3>
+<h2 id="organizing-a-listorganizing-a-list"><a href="#organizing-a-list">Organizing a List</a></h2>
+<h3 id="sorting-a-list-permanently-with-the-sort-methodsorting-a-list-permanently-with-the-sort-method"><a href="#sorting-a-list-permanently-with-the-sort-method">Sorting a List permanently with the sort() method</a></h3>
+<h3 id="sorting-a-list-temporarily-with-the-sorted-functionsorting-a-list-temporarily-with-the-sorted-function"><a href="#sorting-a-list-temporarily-with-the-sorted-function">Sorting a List temporarily with the sorted() function</a></h3>
+<h3 id="printing-a-list-in-reverse-orderprinting-a-list-in-reverse-order"><a href="#printing-a-list-in-reverse-order">Printing a List in reverse order</a></h3>
+<h3 id="finding-the-length-of-a-listfinding-the-length-of-a-list"><a href="#finding-the-length-of-a-list">Finding the length of a List</a></h3>
+<h1 id="working-with-listsworking-with-lists"><a href="#working-with-lists">Working with Lists</a></h1>
+<h2 id="looping-an-entire-listlooping-an-entire-list"><a href="#looping-an-entire-list">Looping an entire List</a></h2>
+<h3 id="do-something-after-a-for-loopdo-something-after-a-for-loop"><a href="#do-something-after-a-for-loop">Do something after a for loop</a></h3>
+<h3 id="forgetting-to-ident-additional-linesforgetting-to-ident-additional-lines"><a href="#forgetting-to-ident-additional-lines">Forgetting to ident additional lines</a></h3>
+<h3 id="identing-unnecessarilyidenting-unnecessarily"><a href="#identing-unnecessarily">Identing unnecessarily</a></h3>
+<h3 id="identing-unnecessarily-after-the-loopidenting-unnecessarily-after-the-loop"><a href="#identing-unnecessarily-after-the-loop">Identing unnecessarily after the loop</a></h3>
+<h3 id="forgetting-the-colonforgetting-the-colon"><a href="#forgetting-the-colon">Forgetting the colon</a></h3>
+<h1 id="making-numerical-listsmaking-numerical-lists"><a href="#making-numerical-lists">Making numerical lists</a></h1>
+<h2 id="using-the-range-functionusing-the-range-function"><a href="#using-the-range-function">Using the range() function</a></h2>
+<h2 id="using-range-to-make-a-list-of-numbersusing-range-to-make-a-list-of-numbers"><a href="#using-range-to-make-a-list-of-numbers">Using range() to make a list of numbers</a></h2>
+<h3 id="simple-statistics-with-a-list-of-numbersimple-statistics-with-a-list-of-number"><a href="#simple-statistics-with-a-list-of-number">Simple statistics with a list of number</a></h3>
+<h1 id="working-with-part-of-a-listworking-with-part-of-a-list"><a href="#working-with-part-of-a-list">Working with part of a list</a></h1>
+<h3 id="looping-through-a-slicelooping-through-a-slice"><a href="#looping-through-a-slice">Looping through a slice</a></h3>
+<h3 id="copyiing-a-listcopyiing-a-list"><a href="#copyiing-a-list">Copyiing a list</a></h3>
+<h1 id="tuplestuples"><a href="#tuples">Tuples</a></h1>
+<h3 id="defining-a-tupledefining-a-tuple"><a href="#defining-a-tuple">Defining a Tuple</a></h3>
+<h3 id="looping-through-all-values-in-a-tuplalooping-through-all-values-in-a-tupla"><a href="#looping-through-all-values-in-a-tupla">Looping through all values in a tupla</a></h3>
+<h1 id="if-statementsif-statements"><a href="#if-statements">if statements</a></h1>
+<h3 id="a-simple-examplea-simple-example"><a href="#a-simple-example">A simple example</a></h3>
+<h2 id="checking-for-equalitychecking-for-equality"><a href="#checking-for-equality">Checking for Equality</a></h2>
+<h3 id="ignoring-case-when-checking-for-equalityignoring-case-when-checking-for-equality"><a href="#ignoring-case-when-checking-for-equality">Ignoring case when checking for equality</a></h3>
+<h2 id="checking-for-inequalitychecking-for-inequality"><a href="#checking-for-inequality">Checking for Inequality</a></h2>
+<h2 id="numerical-comparisonsnumerical-comparisons"><a href="#numerical-comparisons">Numerical Comparisons</a></h2>
+<h2 id="checking-mmultiple-conditionschecking-mmultiple-conditions"><a href="#checking-mmultiple-conditions">Checking mmultiple conditions</a></h2>
+<h2 id="checking-whether-a-value-is-in-a-listchecking-whether-a-value-is-in-a-list"><a href="#checking-whether-a-value-is-in-a-list">Checking whether a value is in a list</a></h2>
+<h2 id="if-statementif-statement"><a href="#if-statement">If Statement</a></h2>
+<h2 id="if-else-statementsif-else-statements"><a href="#if-else-statements">if-else statements</a></h2>
+<h2 id="the-if-elif-else-chainthe-if-elif-else-chain"><a href="#the-if-elif-else-chain">The if-elif-else chain</a></h2>
+<h1 id="dictionariesdictionaries"><a href="#dictionaries">Dictionaries</a></h1>
+<h3 id="add-new-key-value-pairsadd-new-key-value-pairs"><a href="#add-new-key-value-pairs">Add new key-value pairs</a></h3>
+<h3 id="removing-a-key-value-pairsremoving-a-key-value-pairs"><a href="#removing-a-key-value-pairs">Removing a key-value pairs</a></h3>
+<h3 id="a-dictionary-of-similar-objectsa-dictionary-of-similar-objects"><a href="#a-dictionary-of-similar-objects">A Dictionary of similar Objects</a></h3>
+<h1 id="user-input-and-while-loopsuser-input-and-while-loops"><a href="#user-input-and-while-loops">User Input and While Loops</a></h1>
+<h3 id="how-the-input-function-workshow-the-input-function-works"><a href="#how-the-input-function-works">How the input Function Works</a></h3>
+<h3 id="using-int-to-accept-numerical-inputusing-int-to-accept-numerical-input"><a href="#using-int-to-accept-numerical-input">Using int() to Accept numerical input</a></h3>
+<h2 id="the-modulo-operatorthe-modulo-operator"><a href="#the-modulo-operator">The modulo operator</a></h2>
+<h2 id="the-while-loopthe-while-loop"><a href="#the-while-loop">The while Loop</a></h2>
+<h1 id="functionsfunctions"><a href="#functions">FUNCTIONS</a></h1>
+<h3 id="defining-a-functiondefining-a-function"><a href="#defining-a-function">Defining a Function</a></h3>
+<h3 id="passing-information-to-a-functionpassing-information-to-a-function"><a href="#passing-information-to-a-function">Passing Information to a function</a></h3>
+<h3 id="arguments-and-parametersarguments-and-parameters"><a href="#arguments-and-parameters">Arguments and Parameters.</a></h3>
+<h3 id="positional-argumentspositional-arguments"><a href="#positional-arguments">Positional Arguments</a></h3>
+<h3 id="keyword-argumentskeyword-arguments"><a href="#keyword-arguments">Keyword arguments</a></h3>
+<h3 id="default-valuedefault-value"><a href="#default-value">Default value</a></h3>
+<h3 id="returning-a-simple-valuereturning-a-simple-value"><a href="#returning-a-simple-value">Returning a simple value</a></h3>
+<h3 id="returning-a-dictionaryreturning-a-dictionary"><a href="#returning-a-dictionary">Returning a Dictionary</a></h3>
+<h3 id="passing-a-listpassing-a-list"><a href="#passing-a-list">Passing a list</a></h3>
+<h3 id="passing-an-arbitrary-number-of-argumentspassing-an-arbitrary-number-of-arguments"><a href="#passing-an-arbitrary-number-of-arguments">Passing an arbitrary number of arguments</a></h3>
+<h3 id="mixing-positional-and-arbitrary-argumentsmixing-positional-and-arbitrary-arguments"><a href="#mixing-positional-and-arbitrary-arguments">Mixing positional and arbitrary arguments</a></h3>
+<h2 id="storing-your-functions-in-modulesstoring-your-functions-in-modules"><a href="#storing-your-functions-in-modules">Storing your functions in modules</a></h2>
+<h3 id="importing-an-entire-moduleimporting-an-entire-module"><a href="#importing-an-entire-module">Importing an entire module</a></h3>
+<h3 id="import-specific-functionsimport-specific-functions"><a href="#import-specific-functions">Import specific functions</a></h3>
+<h3 id="using-_as_-to-give-a-function-an-aliasusing-_as_-to-give-a-function-an-alias"><a href="#using-_as_-to-give-a-function-an-alias">Using <em>as</em> to give a function an alias</a></h3>
+<h3 id="using-as-to-give-a-module-an-aliasusing-as-to-give-a-module-an-alias"><a href="#using-as-to-give-a-module-an-alias">Using as to give a module an alias</a></h3>
+<h2 id="importing-all-functions-in-a-moduleimporting-all-functions-in-a-module"><a href="#importing-all-functions-in-a-module">Importing all functions in a module</a></h2>
+<h1 id="classes-9classes-9"><a href="#classes-9">Classes 9</a></h1>
+<h3 id="creating-ans-using-a-classcreating-ans-using-a-class"><a href="#creating-ans-using-a-class">Creating ans Using a Class</a></h3>
+<h2 id="creating-a-class-dog-classcreating-a-class-dog-class"><a href="#creating-a-class-dog-class">Creating a class Dog Class</a></h2>
+<h2 id="the-__init__-methodthe-__init__-method"><a href="#the-__init__-method">The <strong>init</strong>() Method</a></h2>
+<h2 id="making-an-instance-from-a-classmaking-an-instance-from-a-class"><a href="#making-an-instance-from-a-class">Making an Instance from a Class</a></h2>
+<h2 id="accessing-attributesaccessing-attributes"><a href="#accessing-attributes">Accessing Attributes</a></h2>
+<h2 id="calling-methodscalling-methods"><a href="#calling-methods">Calling Methods</a></h2>
+<h2 id="creating-multiple-instancescreating-multiple-instances"><a href="#creating-multiple-instances">Creating Multiple Instances</a></h2>
+<h3 id="working-with-classes-and-instancesworking-with-classes-and-instances"><a href="#working-with-classes-and-instances">Working with classes and instances</a></h3>
+<h2 id="setting-a-default-value-for-an-attributesetting-a-default-value-for-an-attribute"><a href="#setting-a-default-value-for-an-attribute">Setting a default value for an attribute</a></h2>
+<h2 id="modifying-attribute-valuemodifying-attribute-value"><a href="#modifying-attribute-value">Modifying Attribute Value</a></h2>
+<h3 id="modifying-an-attributes-value-directlymodifying-an-attributes-value-directly"><a href="#modifying-an-attributes-value-directly">Modifying an attribute&rsquo;s value directly</a></h3>
+<h3 id="modifying-and-attributes-value-through-a-methodmodifying-and-attributes-value-through-a-method"><a href="#modifying-and-attributes-value-through-a-method">Modifying and Attribute&rsquo;s value through a Method</a></h3>
+<h2 id="inheritanceinheritance"><a href="#inheritance">Inheritance</a></h2>
+<h1 id="files-and-exceptionsfiles-and-exceptions"><a href="#files-and-exceptions">Files and Exceptions</a></h1>
+<h2 id="reading-from-a-filereading-from-a-file"><a href="#reading-from-a-file">Reading from a file</a></h2>
+<h2 id="file-pathfile-path"><a href="#file-path">File Path</a></h2>
+<h2 id="reading-line-by-linereading-line-by-line"><a href="#reading-line-by-line">Reading Line by Line</a></h2>
+<h2 id="making-a-list-of-lines-from-a-filemaking-a-list-of-lines-from-a-file"><a href="#making-a-list-of-lines-from-a-file">Making a List of Lines from a File</a></h2>
+<h2 id="working-with-a-files-contentsworking-with-a-files-contents"><a href="#working-with-a-files-contents">Working with a File&rsquo;s contents</a></h2>
+<h1 id="getting-started">GETTING STARTED</h1>
 <h2 id="how-to-install">How To Install</h2>
 <p>There are two versions of Python available: Python 2 and the newer Python 3. By default in Mac OS has Python 2.</p>
 <p>How to know the version that you has, type something like this:</p>

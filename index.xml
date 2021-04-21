@@ -28,10 +28,7 @@ Imperative and declarative programming Imperative programming:  Logic programmin
       <pubDate>Tue, 01 Sep 2020 22:05:10 -0500</pubDate>
       
       <guid>https://julitiux.github.io/posts/python/</guid>
-      <description>GETTING STARTED How To Install There are two versions of Python available: Python 2 and the newer Python 3. By default in Mac OS has Python 2.
-How to know the version that you has, type something like this:
-~ » python --version Python 2.7.16 Python comes with an interpreter that runs a terminal. For launch the interpreter, open a terminal and write something like this:
-~ » python WARNING: Python 2.</description>
+      <description>INDEX GETTING STARTED How To Install How To Install PyEnv Build Build Dependencies Using the pyenv-installer Using pyenv. List all pythons availables. Install a version of python. Installation Location. Uninstall a version of python. Running Python Programs from a terminal VARIABLES AND SIMPLE DATA TYPES Naming and Using Variables Strings Changing Case in a String with Methods Combining or Concatenating Strings Adding Whitespace to String with Tabs or Newlines Stripping Whitespace Numbers Integers Floats Avoid Type Errors with the str() Function Comments Introducing List Accessing Elements in a List Changing, Adding, and Removing Elements Modifying Elements in a List.</description>
     </item>
     
     <item>
