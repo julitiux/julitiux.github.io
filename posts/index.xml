@@ -15,9 +15,49 @@
 			<pubDate>Wed, 27 Jan 2021 23:55:55 -0600</pubDate>
 			
 			<guid>https://julitiux.github.io/posts/java8/</guid>
-			<description>Functional programming Functional Programming is a programming paradigm where the programs are constructed by applying and composing functions.
-Imperative and declarative programming Imperative programming:  Logic programming Functional programming  Declarative programming:  Structured programming Procedural programming Modular programming  Java 8 and Lambdas. Java 8 use Lambda expressions. This Lambda expressions are anonymous functions, that is, functions that do not need a class. Its basic syntax is detailed below:</description>
-			<content type="html"><![CDATA[<h1 id="functional-programming">Functional programming</h1>
+			<description>INDEX Functional programming Imperative and declarative programming Imperative programming: Declarative programming: Java 8 and Lambdas. Lambda Lambda Sintaxis Lambda Scopes Interface Default Methods Functional Interfaces Method References Reference to a static method. With a expresion lambda: With a method reference and deleting the expression lambda Reference to an instance method. Anonymous Function Expresion lambda With method reference Instance Object Reference to a constructor. Anonymous Function Expresion lambda With a method reference Colections -&amp;gt; forEach, removeIf, sort Implementation forEach Implementation removeIf Implementation sort Streams Optional StreamParallels Map Annotations Date API Compare two Dates Count years Convert String to Date Format a Date High Order Functions RXJava Nashorn Functional programming Functional Programming is a programming paradigm where the programs are constructed by applying and composing functions.</description>
+			<content type="html"><![CDATA[<h1 id="index"><strong>INDEX</strong></h1>
+<h1 id="functional-programmingfunctional-programming"><a href="#functional-programming">Functional programming</a></h1>
+<h2 id="imperative-and-declarative-programmingimperative-and-declarative-programming"><a href="#imperative-and-declarative-programming">Imperative and declarative programming</a></h2>
+<h3 id="imperative-programmingimperative-programming"><a href="#imperative-programming">Imperative programming:</a></h3>
+<h3 id="declarative-programmingdeclarative-programming"><a href="#declarative-programming">Declarative programming:</a></h3>
+<h1 id="java-8-and-lambdasjava-8-and-lambdas"><a href="#java-8-and-lambdas">Java 8 and Lambdas.</a></h1>
+<h1 id="lambdalambda"><a href="#lambda">Lambda</a></h1>
+<h1 id="lambda-sintaxislambda-sintaxis"><a href="#lambda-sintaxis">Lambda Sintaxis</a></h1>
+<h1 id="lambda-scopeslambda-scopes"><a href="#lambda-scopes">Lambda Scopes</a></h1>
+<h1 id="interface-default-methodsinterface-default-methods"><a href="#interface-default-methods">Interface Default Methods</a></h1>
+<h1 id="functional-interfacesfunctional-interfaces"><a href="#functional-interfaces">Functional Interfaces</a></h1>
+<h1 id="method-referencesmethod-references"><a href="#method-references">Method References</a></h1>
+<h2 id="reference-to-a-static-methodreference-to-a-static-method"><a href="#reference-to-a-static-method">Reference to a static method.</a></h2>
+<h3 id="with-a-expresion-lambdawith-a-expresion-lambda"><a href="#with-a-expresion-lambda">With a expresion lambda:</a></h3>
+<h3 id="with-a-method-reference-and-deleting-the-expression-lambdawith-a-method-reference-and-deleting-the-expression-lambda"><a href="#with-a-method-reference-and-deleting-the-expression-lambda">With a method reference and deleting the expression lambda</a></h3>
+<h2 id="reference-to-an-instance-methodreference-to-an-instance-method"><a href="#reference-to-an-instance-method">Reference to an instance method.</a></h2>
+<h3 id="anonymous-functionanonymous-function"><a href="#anonymous-function">Anonymous Function</a></h3>
+<h3 id="expresion-lambdaexpresion-lambda"><a href="#expresion-lambda">Expresion lambda</a></h3>
+<h3 id="with-method-referencewith-method-reference"><a href="#with-method-reference">With method reference</a></h3>
+<h3 id="instance-objectinstance-object"><a href="#instance-object">Instance Object</a></h3>
+<h2 id="reference-to-a-constructorreference-to-a-constructor"><a href="#reference-to-a-constructor">Reference to a constructor.</a></h2>
+<h2 id="anonymous-functionanonymous-function-1"><a href="#anonymous-function">Anonymous Function</a></h2>
+<h2 id="expresion-lambdaexpresion-lambda-1"><a href="#expresion-lambda">Expresion lambda</a></h2>
+<h2 id="with-a-method-referencewith-a-method-reference"><a href="#with-a-method-reference">With a method reference</a></h2>
+<h1 id="colections---foreach-removeif-sortcolections---foreach-removeif-sort"><a href="#colections---foreach-removeif-sort">Colections -&gt; forEach, removeIf, sort</a></h1>
+<h2 id="implementation-foreachimplementation-foreach"><a href="#implementation-foreach">Implementation forEach</a></h2>
+<h2 id="implementation-removeifimplementation-removeif"><a href="#implementation-removeif">Implementation removeIf</a></h2>
+<h2 id="implementation-sortimplementation-sort"><a href="#implementation-sort">Implementation sort</a></h2>
+<h1 id="streamsstreams"><a href="#streams">Streams</a></h1>
+<h1 id="optionaloptional"><a href="#optional">Optional</a></h1>
+<h1 id="streamparallelsstreamparallels"><a href="#streamparallels">StreamParallels</a></h1>
+<h1 id="mapmap"><a href="#map">Map</a></h1>
+<h1 id="annotationsannotations"><a href="#annotations">Annotations</a></h1>
+<h1 id="date-apidate-api"><a href="#date-api">Date API</a></h1>
+<h2 id="compare-two-datescompare-two-dates"><a href="#compare-two-dates">Compare two Dates</a></h2>
+<h2 id="count-yearscount-years"><a href="#count-years">Count years</a></h2>
+<h2 id="convert-string-to-dateconvert-string-to-date"><a href="#convert-string-to-date">Convert String to Date</a></h2>
+<h2 id="format-a-dateformat-a-date"><a href="#format-a-date">Format a Date</a></h2>
+<h1 id="high-order-functionshigh-order-functions"><a href="#high-order-functions">High Order Functions</a></h1>
+<h1 id="rxjavarxjava"><a href="#rxjava">RXJava</a></h1>
+<h1 id="nashornnashorn"><a href="#nashorn">Nashorn</a></h1>
+<h1 id="functional-programming">Functional programming</h1>
 <p>Functional Programming is a programming paradigm where the programs are constructed by applying and composing functions.</p>
 <h2 id="imperative-and-declarative-programming">Imperative and declarative programming</h2>
 <h3 id="imperative-programming">Imperative programming:</h3>
@@ -1660,9 +1700,17 @@ if age &gt;= 18:
 			<pubDate>Tue, 01 Sep 2020 21:55:55 -0500</pubDate>
 			
 			<guid>https://julitiux.github.io/posts/swift/</guid>
-			<description>Getting Started First, download and install Xcode, its available on the App Store. Make sure to download Xcode 8 or higher.
-Get started with a playground and Create a new Xcode Project. Playsground were released in Xcode6. They provide an interactive enviroment for rapidly developing and evaluating Swift code. A playground does not require that you compile and run a complete project. Instead, playgrouunds evaluate your Swift code on the fly, so its udeal for testing and experimenting with the Swift languaje in a lightweght enviroment.</description>
-			<content type="html"><![CDATA[<h1 id="getting-started">Getting Started</h1>
+			<description>INDEX Getting Started Types, Constants, and Variables Types, Strings Numerical Type Constants String interpolation Conditional Getting Started First, download and install Xcode, its available on the App Store. Make sure to download Xcode 8 or higher.
+Get started with a playground and Create a new Xcode Project. Playsground were released in Xcode6. They provide an interactive enviroment for rapidly developing and evaluating Swift code. A playground does not require that you compile and run a complete project.</description>
+			<content type="html"><![CDATA[<h1 id="index"><strong>INDEX</strong></h1>
+<h1 id="getting-startedgetting-started"><a href="#getting-started">Getting Started</a></h1>
+<h1 id="types-constants-and-variablestypes-constants-and-variables"><a href="#types-constants-and-variables">Types, Constants, and Variables</a></h1>
+<h2 id="types-stringstypes-strings"><a href="#types-strings">Types, Strings</a></h2>
+<h2 id="numerical-typenumerical-type"><a href="#numerical-type">Numerical Type</a></h2>
+<h2 id="constantsconstants"><a href="#constants">Constants</a></h2>
+<h2 id="string-interpolationstring-interpolation"><a href="#string-interpolation">String interpolation</a></h2>
+<h1 id="conditionalconditional"><a href="#conditional">Conditional</a></h1>
+<h1 id="getting-started">Getting Started</h1>
 <p>First, download and install Xcode, its available on the App Store. Make sure to download Xcode 8 or higher.</p>
 <p>Get started with a playground and Create a new Xcode Project. Playsground were released in Xcode6. They provide an interactive enviroment for rapidly developing and evaluating Swift code. A playground does not require that you compile and run a complete project. Instead, playgrouunds evaluate your Swift code on the fly, so its udeal for testing and experimenting with the Swift languaje in a lightweght enviroment.</p>
 <p>From the welcomescreen, select Get started with a playground, next, name your playground <em>MyPlayground</em>. For the plataform (iOS, macOS, or tvOS), select macOS. Finally, you are prompted to save your playground</p>

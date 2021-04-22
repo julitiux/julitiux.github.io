@@ -18,8 +18,7 @@
       <pubDate>Wed, 27 Jan 2021 23:55:55 -0600</pubDate>
       
       <guid>https://julitiux.github.io/posts/java8/</guid>
-      <description>Functional programming Functional Programming is a programming paradigm where the programs are constructed by applying and composing functions.
-Imperative and declarative programming Imperative programming:  Logic programming Functional programming  Declarative programming:  Structured programming Procedural programming Modular programming  Java 8 and Lambdas. Java 8 use Lambda expressions. This Lambda expressions are anonymous functions, that is, functions that do not need a class. Its basic syntax is detailed below:</description>
+      <description>INDEX Functional programming Imperative and declarative programming Imperative programming: Declarative programming: Java 8 and Lambdas. Lambda Lambda Sintaxis Lambda Scopes Interface Default Methods Functional Interfaces Method References Reference to a static method. With a expresion lambda: With a method reference and deleting the expression lambda Reference to an instance method. Anonymous Function Expresion lambda With method reference Instance Object Reference to a constructor. Anonymous Function Expresion lambda With a method reference Colections -&amp;gt; forEach, removeIf, sort Implementation forEach Implementation removeIf Implementation sort Streams Optional StreamParallels Map Annotations Date API Compare two Dates Count years Convert String to Date Format a Date High Order Functions RXJava Nashorn Functional programming Functional Programming is a programming paradigm where the programs are constructed by applying and composing functions.</description>
     </item>
     
     <item>
@@ -37,8 +36,8 @@ Imperative and declarative programming Imperative programming:  Logic programmin
       <pubDate>Tue, 01 Sep 2020 21:55:55 -0500</pubDate>
       
       <guid>https://julitiux.github.io/posts/swift/</guid>
-      <description>Getting Started First, download and install Xcode, its available on the App Store. Make sure to download Xcode 8 or higher.
-Get started with a playground and Create a new Xcode Project. Playsground were released in Xcode6. They provide an interactive enviroment for rapidly developing and evaluating Swift code. A playground does not require that you compile and run a complete project. Instead, playgrouunds evaluate your Swift code on the fly, so its udeal for testing and experimenting with the Swift languaje in a lightweght enviroment.</description>
+      <description>INDEX Getting Started Types, Constants, and Variables Types, Strings Numerical Type Constants String interpolation Conditional Getting Started First, download and install Xcode, its available on the App Store. Make sure to download Xcode 8 or higher.
+Get started with a playground and Create a new Xcode Project. Playsground were released in Xcode6. They provide an interactive enviroment for rapidly developing and evaluating Swift code. A playground does not require that you compile and run a complete project.</description>
     </item>
     
   </channel>
