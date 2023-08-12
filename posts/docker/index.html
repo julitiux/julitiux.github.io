@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #fbfbfb"
+  lang="en-us"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Docker - Blogs</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  <meta name="description" content="INDEX Chapter 1 Hello Docker Chapter 2 Installing Linux Chapter 3 Using Oracle Database Chapter 4 Using MySQL Database Chapter 5 Using MongoDB Chapter 1 Hello Docker Setting the Environment Installing Docker on Red Hat 7 Uninstalling Docker Installing a Specific Docker Version Installing Docker on Ubuntu Starting the Docker Service sudo service docker start Docker gets started via systemctl as indecated by the OK message.
+Finding the Docker Service Status." />
+  <meta name="author" content="Julitiux" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="https://julitiux.github.io/main.min.css" />
+
+  
+
+  
+     
+  <link rel="preload" as="image" href="https://julitiux.github.io/theme.svg" />
+
+  
+  
+  
+  <link rel="preload" as="image" href="https://cdn.v2ex.com/gravatar/6fd8df4abe41f17fd8e2dd7d97b5cc8c?s=160&amp;d=identicon" />
+  
+  
+
+  
+  <link rel="preload" as="image" href="https://julitiux.github.io/twitter.svg" />
+  
+  <link rel="preload" as="image" href="https://julitiux.github.io/github.svg" />
+  
+  <link rel="preload" as="image" href="https://julitiux.github.io/instagram.svg" />
+  
+  
+
+  
+  
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css"
+  integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI"
+  crossorigin="anonymous"
+/>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js"
+  integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t"
+  crossorigin="anonymous"
+></script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js"
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"
+></script>
+
+  
+  
+  
+
+  
+  <link rel="icon" href="https://julitiux.github.io/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://julitiux.github.io/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.107.0">
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:title" content="Docker" />
+<meta property="og:description" content="INDEX Chapter 1 Hello Docker Chapter 2 Installing Linux Chapter 3 Using Oracle Database Chapter 4 Using MySQL Database Chapter 5 Using MongoDB Chapter 1 Hello Docker Setting the Environment Installing Docker on Red Hat 7 Uninstalling Docker Installing a Specific Docker Version Installing Docker on Ubuntu Starting the Docker Service sudo service docker start Docker gets started via systemctl as indecated by the OK message.
+Finding the Docker Service Status." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://julitiux.github.io/posts/docker/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-02-13T18:22:08-06:00" />
+<meta property="article:modified_time" content="2023-02-13T18:22:08-06:00" />
+
+
+  
+  <meta itemprop="name" content="Docker">
+<meta itemprop="description" content="INDEX Chapter 1 Hello Docker Chapter 2 Installing Linux Chapter 3 Using Oracle Database Chapter 4 Using MySQL Database Chapter 5 Using MongoDB Chapter 1 Hello Docker Setting the Environment Installing Docker on Red Hat 7 Uninstalling Docker Installing a Specific Docker Version Installing Docker on Ubuntu Starting the Docker Service sudo service docker start Docker gets started via systemctl as indecated by the OK message.
+Finding the Docker Service Status."><meta itemprop="datePublished" content="2023-02-13T18:22:08-06:00" />
+<meta itemprop="dateModified" content="2023-02-13T18:22:08-06:00" />
+<meta itemprop="wordCount" content="3908">
+<meta itemprop="keywords" content="" />
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Docker"/>
+<meta name="twitter:description" content="INDEX Chapter 1 Hello Docker Chapter 2 Installing Linux Chapter 3 Using Oracle Database Chapter 4 Using MySQL Database Chapter 5 Using MongoDB Chapter 1 Hello Docker Setting the Environment Installing Docker on Red Hat 7 Uninstalling Docker Installing a Specific Docker Version Installing Docker on Ubuntu Starting the Docker Service sudo service docker start Docker gets started via systemctl as indecated by the OK message.
+Finding the Docker Service Status."/>
+
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-3xl px-8 lg:justify-center">
+  <div class="relative z-50 mr-auto flex items-center">
+    <a
+      class="-translate-x-[1px] -translate-y-[1px] text-2xl font-semibold"
+      href="https://julitiux.github.io/"
+      >Blogs</a
+    >
+    <div
+      class="btn-dark text-[0] ml-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 -mr-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#fbfbfb'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+
+    
+    <nav
+      class="mt-12 flex justify-center space-x-10 dark:invert lg:ml-12 lg:mt-0 lg:items-center lg:space-x-6"
+    >
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./twitter.svg)"
+        href="https://twitter.com/julitiux"
+        target="_blank"
+        rel="me"
+      >
+        twitter
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href="https://github.com/julitiux"
+        target="_blank"
+        rel="me"
+      >
+        github
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./instagram.svg)"
+        href="https://instagram.com/julitiux"
+        target="_blank"
+        rel="me"
+      >
+        instagram
+      </a>
+      
+    </nav>
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    <h1 class="!my-0 pb-2.5">Docker</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Feb 13, 2023</time>
+      
+      
+      
+      
+    </div>
+    
+  </header>
+
+  <section><h1 id="index"><strong>INDEX</strong></h1>
+<h1 id="chapter-1-hello-dockerchapter-1-hello-docker"><a href="#chapter-1-hello-docker">Chapter 1 Hello Docker</a></h1>
+<h1 id="chapter-2-installing-linuxchapter-2-installing-linux"><a href="#chapter-2-installing-linux">Chapter 2 Installing Linux</a></h1>
+<h1 id="chapter-3-using-oracle-databasechapter-3-using-oracle-database"><a href="#chapter-3-using-oracle-database">Chapter 3 Using Oracle Database</a></h1>
+<h1 id="chapter-4-using-mysql-databasechapter-4-using-mysql-database"><a href="#chapter-4-using-mysql-database">Chapter 4 Using MySQL Database</a></h1>
+<h1 id="chapter-5-using-mongodbchapter-5-using-mongodb"><a href="#chapter-5-using-mongodb">Chapter 5 Using MongoDB</a></h1>
+<h1 id="chapter-1-hello-docker">Chapter 1 Hello Docker</h1>
+<h2 id="setting-the-environment">Setting the Environment</h2>
+<h2 id="installing-docker-on-red-hat-7">Installing Docker on Red Hat 7</h2>
+<h2 id="uninstalling-docker">Uninstalling Docker</h2>
+<h2 id="installing-a-specific-docker-version">Installing a Specific Docker Version</h2>
+<h2 id="installing-docker-on-ubuntu">Installing Docker on Ubuntu</h2>
+<h2 id="starting-the-docker-service">Starting the Docker Service</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo service docker start<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>Docker gets started via systemctl as indecated by the OK message.</p>
+<h2 id="finding-the-docker-service-status">Finding the Docker Service Status.</h2>
+<p>To verify the status of the Docker service run the following command.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo service docker status<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><h2 id="running-a-docker-hello-world-application">Running a Docker Hello World Application</h2>
+<p>To test Docker, run the Hello World application with th following docker <strong>run</strong> command.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo docker run hello-world<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>The &ldquo;Hello from Docker&rdquo; message gets output</p>
+<h2 id="downloading-a-docker-image">Downloading a Docker Image</h2>
+<p>When we ran the hello-world application using the docker run command, the Docker image hello-world got downloaded and a Docker container for the HelloWorld application started. A Docker image may be downloaded automatically when a Docker container for the Docker image is started, or the Docker image may be downloaded separately.</p>
+<p>The docker pull command is used to download a Docker image:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo docker pull tutum/hello-world<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>List the downloaded Docker images using the following command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo docker images<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><h2 id="running-an-application-in-a-docker-container">Running an Application in a Docker Container.</h2>
+<p>The Docker run command is used to run a process , which is another term for an application, in a separate container. The syntax for the docker  run command is as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>docker run <span style="color:#f92672">[</span>OPTIONS<span style="color:#f92672">]</span> IMAGE<span style="color:#f92672">[</span>:TAG|@DIGEST<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>COMMAND<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>ARG...<span style="color:#f92672">]</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>** The only required command paramter is a Docker image.</p>
+<p>A Docker container may be started in a detached mode (or background) or foreground mode. In detached mode the process&rsquo;s <em>stdin</em>, <em>stdout</em>, and <em>stderr</em> streams are detached from the command line from which the docker command is run.</p>
+<p>To start a container in detached mode set <code>-d=true</code> or just <code>-d</code></p>
+<p>The default mode is the foreground mode in which the container starts in the foreground, and <code>stdin</code>, <code>stdout</code> and <code>stderr</code> streams are attached to the host command line console.</p>
+<p>The <code>-name</code> option may be used to specify a name for the Docker container.</p>
+<p>The <code>-p</code> option used to specify a port the process running in the container.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo docker run -d -p <span style="color:#ae81ff">80</span> --name helloapp tutum/hello-world<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>In this example, start a Docker container for the <code>tutum/hello-world</code> image in detached mode using the <code>-d</code> parameter, with container name as helloapp and port on which the application runs as 80 using the <code>-p</code> parameter.</p>
+<h2 id="listing-running-docker-containers">Listing Running Docker Containers.</h2>
+<p>To list Docker container run the following command.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo docker ps<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>The external port may also be listed using the docker port command.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo docker port <span style="color:#f92672">[</span>CONTAINER ID | CONTAINER NAME<span style="color:#f92672">]</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>by example</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo docker port 5c97f1633fb3<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>To list all Docker containers, running or exited, run the following command.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo docker ps -a<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><h2 id="accessing-the-application-output-on-command-line">Accessing the Application Output on Command Line.</h2>
+<p>The <code>curl</code> tool may be used to connect to the host and port on which the helloapp is running.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>curl http://localhost:50733<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><h2 id="accessing-the-application-output-in-a-browser">Accessing the Application Output in a Browser</h2>
+<p>Put the next url in the browser</p>
+<pre tabindex="0"><code class="language-url" data-lang="url">http://localhost:50733
+</code></pre><h2 id="stopping-a-docker-container">Stopping a Docker Container</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo docker stop <span style="color:#f92672">[</span>CONTAINER ID | CONTAINER NAME<span style="color:#f92672">]</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>by example</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo docker stop helloapp<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><h2 id="removing-a-docker-container">Removing a Docker Container</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo docker rm <span style="color:#f92672">[</span>CONTAINER ID | CONTAINER NAME<span style="color:#f92672">]</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>by example</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo docker rm helloapp<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><h2 id="removing-a-docker-image">Removing a Docker Image</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo docker rmi <span style="color:#f92672">[</span>IMAGE NAME<span style="color:#f92672">]</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>by example</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo docker rmi tutum/hello-world<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>All containers accessing a Docker image must be stopped and removed before a Docker image can be removed. Sometimes some incompletely downloaded Docker imahes could get listed with the docker images command. Such Docker images do not have a name assigned to them and instead are listed as &lt;&gt;.</p>
+<p>All such dangling images may be removed with the following command</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo docker rmi <span style="color:#66d9ef">$(</span>sudo docker images -f <span style="color:#e6db74">&#34;dangling=true&#34;</span> -p<span style="color:#66d9ef">)</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><h2 id="stopping-the-docker-service">Stopping the Docker Service</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo service docker stop<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>The Docker service may be started again with the following command.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo service docker start<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>Alternatively, a running Docker service may be restarted with the following command</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo service docker restart<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><h1 id="chapter-2-installing-linux">Chapter 2 Installing Linux</h1>
+<h2 id="setting-the-enviroment">Setting the Enviroment</h2>
+<h2 id="downloading-the-docker-image">Downloading the Docker Image</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo docker pull oraclelinux<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># doesn&#39;t work</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>To download the oraclelinux 7 version:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo docker pull oraclelinux:7<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><h2 id="listing-docker-images">Listing Docker Images</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo docker images<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><h2 id="running-a-container-in-detached-mode">Running a Container in Detached Mode</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo docker run -d --name &lt;container-name&gt; &lt;image-name&gt;<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>by example</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo docker run -d --name oraclelinux6 oraclelinux:6<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>The <code>-i</code> <code>-t</code> options if specified with the <code>-d</code> option do not start an interactive terminal or shell. Even though the -i and -t options are apecified, the container runs in deteached mode.</p>
+<p>In deteachd mode, the Docker container is detached from the STDIN, STDOUT and STDERR streams. the <code>-rm</code> option cannot be used in the detached mode.</p>
+<h2 id="running-a-container-in-foreground">Running a Container in Foreground</h2>
+<p>To run a Docker container in attached mode, omit the -d option</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo docker run &lt;image-run&gt;<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>by example</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo docker run -i -t --rm --name oraclelinux7 oraclelinux:7<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>In attached mode, a container process is started and attached to all standard streams (STDIN, STDOUT and STDERR). The <code>-name</code> option may also be used in attached mode to specufy a container name. To start an interative terminal, use the <code>-i</code> and <code>-t</code> options, which allocates a tty to the container process.</p>
+<p>The <code>--rm</code> option if specified cleans up the container resources including the filesystem allocated the container after the conteiner has exited.</p>
+<h2 id="listing-docker-containers">Listing Docker Containers</h2>
+<p>Docker container can be running or not running. Run the following command to list Docker containers that are running:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo doker ps<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>To list all containers running or exitedm run the following command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo docker ps -a<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><h2 id="finding-oracle-linux-container-information">Finding Oracle Linux Container Information</h2>
+<p>Information about a container can be listed with the docker inspect command.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo docker inspect oraclelinux<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>The container detail gets listed in JSON format as follow:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>[
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;Id&#34;</span>: <span style="color:#e6db74">&#34;sha256:48b64326b7043de97d375308dc36b346ef0d4b2491eef0ffb5a3ec9b3b3d0faf&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;RepoTags&#34;</span>: [
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;oraclelinux:7&#34;</span>
+</span></span><span style="display:flex;"><span>        ],
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;RepoDigests&#34;</span>: [
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;oraclelinux@sha256:871e5763f5d28e8adecb37e05d0b9034cf4c1f4d2be72d4e5388256e06717107&#34;</span>
+</span></span><span style="display:flex;"><span>        ],
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;Parent&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;Comment&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;Created&#34;</span>: <span style="color:#e6db74">&#34;2023-01-27T22:41:18.00110776Z&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;Container&#34;</span>: <span style="color:#e6db74">&#34;1a7a310b518805886737a2921877c1ad73320ff744dea0c7ef2272c314a254fc&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;ContainerConfig&#34;</span>: {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Hostname&#34;</span>: <span style="color:#e6db74">&#34;1a7a310b5188&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Domainname&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;User&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;AttachStdin&#34;</span>: <span style="color:#66d9ef">false</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;AttachStdout&#34;</span>: <span style="color:#66d9ef">false</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;AttachStderr&#34;</span>: <span style="color:#66d9ef">false</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Tty&#34;</span>: <span style="color:#66d9ef">false</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;OpenStdin&#34;</span>: <span style="color:#66d9ef">false</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;StdinOnce&#34;</span>: <span style="color:#66d9ef">false</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Env&#34;</span>: [
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&#34;</span>
+</span></span><span style="display:flex;"><span>            ],
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Cmd&#34;</span>: [
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;/bin/sh&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;-c&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;#(nop) &#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;CMD [\&#34;/bin/bash\&#34;]&#34;</span>
+</span></span><span style="display:flex;"><span>            ],
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Image&#34;</span>: <span style="color:#e6db74">&#34;sha256:94f81eafe18aa033f89cd1c804efd1d99ce8e672307764e61d1b8417b6b88b5e&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Volumes&#34;</span>: <span style="color:#66d9ef">null</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;WorkingDir&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Entrypoint&#34;</span>: <span style="color:#66d9ef">null</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;OnBuild&#34;</span>: <span style="color:#66d9ef">null</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Labels&#34;</span>: {}
+</span></span><span style="display:flex;"><span>        },
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;DockerVersion&#34;</span>: <span style="color:#e6db74">&#34;20.10.17&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;Author&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;Config&#34;</span>: {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Hostname&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Domainname&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;User&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;AttachStdin&#34;</span>: <span style="color:#66d9ef">false</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;AttachStdout&#34;</span>: <span style="color:#66d9ef">false</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;AttachStderr&#34;</span>: <span style="color:#66d9ef">false</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Tty&#34;</span>: <span style="color:#66d9ef">false</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;OpenStdin&#34;</span>: <span style="color:#66d9ef">false</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;StdinOnce&#34;</span>: <span style="color:#66d9ef">false</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Env&#34;</span>: [
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&#34;</span>
+</span></span><span style="display:flex;"><span>            ],
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Cmd&#34;</span>: [
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;/bin/bash&#34;</span>
+</span></span><span style="display:flex;"><span>            ],
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Image&#34;</span>: <span style="color:#e6db74">&#34;sha256:94f81eafe18aa033f89cd1c804efd1d99ce8e672307764e61d1b8417b6b88b5e&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Volumes&#34;</span>: <span style="color:#66d9ef">null</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;WorkingDir&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Entrypoint&#34;</span>: <span style="color:#66d9ef">null</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;OnBuild&#34;</span>: <span style="color:#66d9ef">null</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Labels&#34;</span>: <span style="color:#66d9ef">null</span>
+</span></span><span style="display:flex;"><span>        },
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;Architecture&#34;</span>: <span style="color:#e6db74">&#34;arm64&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;Variant&#34;</span>: <span style="color:#e6db74">&#34;v8&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;Os&#34;</span>: <span style="color:#e6db74">&#34;linux&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;Size&#34;</span>: <span style="color:#ae81ff">313518060</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;VirtualSize&#34;</span>: <span style="color:#ae81ff">313518060</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;GraphDriver&#34;</span>: {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Data&#34;</span>: {
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;MergedDir&#34;</span>: <span style="color:#e6db74">&#34;/var/lib/docker/overlay2/642b6f2d6b80ecc112b38ddff652f31387e6c60ebf424ccff1b8fbc0d30ba606/merged&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;UpperDir&#34;</span>: <span style="color:#e6db74">&#34;/var/lib/docker/overlay2/642b6f2d6b80ecc112b38ddff652f31387e6c60ebf424ccff1b8fbc0d30ba606/diff&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;WorkDir&#34;</span>: <span style="color:#e6db74">&#34;/var/lib/docker/overlay2/642b6f2d6b80ecc112b38ddff652f31387e6c60ebf424ccff1b8fbc0d30ba606/work&#34;</span>
+</span></span><span style="display:flex;"><span>            },
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Name&#34;</span>: <span style="color:#e6db74">&#34;overlay2&#34;</span>
+</span></span><span style="display:flex;"><span>        },
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;RootFS&#34;</span>: {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Type&#34;</span>: <span style="color:#e6db74">&#34;layers&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Layers&#34;</span>: [
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;sha256:82c78198c1ef3deba67e2901362d56562286f8df676809862fdbb74fddfa22c6&#34;</span>
+</span></span><span style="display:flex;"><span>            ]
+</span></span><span style="display:flex;"><span>        },
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;Metadata&#34;</span>: {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;LastTagTime&#34;</span>: <span style="color:#e6db74">&#34;0001-01-01T00:00:00Z&#34;</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>]
+</span></span></code></pre></div><h2 id="listing-the-container-processes">Listing the Container Processes</h2>
+<p>List the processes that a container is running with the docker top command.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo docker top oraclelinux:7<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><h2 id="starting-an-interactive-shell">Starting an Interactive Shell</h2>
+<p>The interactive shell or tty may be started when the container process is started with the docker run command using the attached mode and the <code>-i</code> <code>-t</code> options to indeicate an indicate an interactive terminal.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo docker run -i -t --rm &lt;docker-image&gt;<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>by example</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo docker run -i -t --rm --name oraclelinux8.7 oraclelinux:8.7<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>If a container process has already been started in detached mode using the <code>-d</code> option, the interactive terminal may be started with the following command syntax</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>docker exec -i -t &lt;container&gt; bash<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>The <code>-i</code> and <code>-t</code> options could be combined into <code>-it</code>. Run the following command to start a tty for the oraclelinux:8.7 container.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo docker exec -it oraclelinux8.7 bash<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><h2 id="create-a-container">Create a Container</h2>
+<p>The <code>docker create</code> command is used to create a container.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>docker create --name &lt;CONTAINER-NAME&gt; &lt;IMAGE:TAG&gt; &lt;SHELL&gt;<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>by example</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>docker create --name orcl7 oraclelinux:7 /bin/bash<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>To start the Docker container <code>orcl7</code> and an interactive shell for the <code>orcl7</code> container, run the <code>docker start</code> command. The <code>-a</code> and <code>-i</code> options attach the current shell&rsquo;s standard input, standard output and standard error streams to those of the container.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo docker start -a -i orcl7<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><h2 id="stop-a-container">Stop a Container</h2>
+<pre tabindex="0"><code class="language-socker" data-lang="socker">sudo docker stop &lt;CONTAINER-NAME&gt;
+</code></pre><p>by example</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo docker stop orcl7<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><h2 id="removing-a-container">Removing a Container</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo docker rm orcl7<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><h2 id="remove-all-stopped-container">Remove all stopped container</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>docker rm <span style="color:#66d9ef">$(</span>docker ps --filter status<span style="color:#f92672">=</span>exited -q<span style="color:#66d9ef">)</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><h1 id="chapter-3-using-oracle-database">Chapter 3 Using Oracle Database</h1>
+<h2 id="setting-the-environment-1">Setting the Environment</h2>
+<p>Download the oracleinanutshell/oracle-xe-11g Docker image</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo docker pull oracleinanutshell/oracle-xe-11g<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>List the Docker images.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo docker images<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><h2 id="starting-oracle-database">Starting Oracle Database</h2>
+<p>Start a Oracle Database instance in a Docker container with the docker <code>docker run</code> commmand. Specify the 8080 port for the Oracle Application Express admin console and the 1521 port for the Oracle Database listener.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>docker run --name orcldb -d -p 8080:8080 -p 1521:1521 oracleinanutshell/oracle-xe-11g<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>reponse</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>WARNING: The requested image<span style="color:#960050;background-color:#1e0010">&#39;</span>s platform <span style="color:#f92672">(</span>linux/amd64<span style="color:#f92672">)</span> does not match the detected host platform <span style="color:#f92672">(</span>linux/arm64/v8<span style="color:#f92672">)</span> and no specific platform was requested<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>6b865c22a80b8fb8a2f18d53e504252074edd8e02f7ad836eaa3cd628c13c9d1<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>List the Docker containers with the following command.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo docker ps<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>The Oracle Database hostname, port, SID, user name and password are as follow.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-properties" data-lang="properties"><span style="display:flex;"><span><span style="color:#a6e22e">hostname</span><span style="color:#f92672">:</span> <span style="color:#e6db74">localhost</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">port</span><span style="color:#f92672">:</span> <span style="color:#e6db74">1521</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">sid</span><span style="color:#f92672">:</span> <span style="color:#e6db74">xe</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">password</span><span style="color:#f92672">:</span> <span style="color:#e6db74">oracle</span>
+</span></span></code></pre></div><h2 id="listing-container-logs">Listing Container Logs</h2>
+<p>To list the container logs, run the <code>docker logs</code> command</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo docker logs -f &lt;CONTAINER-ID&gt;<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>by example</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo docker logs -g 0a14ce7e70bf<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><h2 id="starting-sql-plus">Starting SQL* Plus</h2>
+<p>Start an interactive shell using the following command. The container ID would most likely be different</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo docker exec -it &lt;CONTAINER-ID&gt; &lt;TERMINAL&gt;<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>or<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>sudo docker exec -it &lt;CONTAINER-NAME&gt; &lt;TERMINAL&gt;<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>by example</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo docker exec -it 0a14ce7e70bf bash<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>OR<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>sudo docker exec -it orcldb bash<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><h2 id="creating-a-user">Creating a User</h2>
+<p>To create a user called OE with unlimited quota on SYSTEM tablespace and password as &ldquo;OE&rdquo;, run the following command</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">USER</span> OE QUOTA UNLIMITED <span style="color:#66d9ef">ON</span> <span style="color:#66d9ef">SYSTEM</span> IDENTIFIED <span style="color:#66d9ef">BY</span> OE;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">Grant</span> the <span style="color:#66d9ef">CONNECT</span> <span style="color:#66d9ef">and</span> RESOURCE roles <span style="color:#66d9ef">to</span> the OE <span style="color:#66d9ef">user</span>.
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">GRANT</span> <span style="color:#66d9ef">CONNECT</span>, RESOURCE <span style="color:#66d9ef">TO</span> OE;
+</span></span></code></pre></div><h2 id="creating-a-database-table">Creating a Database Table</h2>
+<p>Create a database called &ldquo;Catalog&rdquo; in the &ldquo;OE&rdquo; schema with the following SQL statement</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> OE.<span style="color:#66d9ef">Catalog</span>(CatalogId INTEGER <span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span>,Journal VARCHAR2(<span style="color:#ae81ff">25</span>),Publisher
+</span></span><span style="display:flex;"><span>VARCHAR2(<span style="color:#ae81ff">25</span>),Edition VARCHAR2(<span style="color:#ae81ff">25</span>),Title VARCHAR2(<span style="color:#ae81ff">45</span>),Author VARCHAR2(<span style="color:#ae81ff">25</span>));
+</span></span></code></pre></div><p>adding data</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> OE.<span style="color:#66d9ef">Catalog</span> <span style="color:#66d9ef">VALUES</span>(<span style="color:#e6db74">&#39;1&#39;</span>,<span style="color:#e6db74">&#39;Oracle Magazine&#39;</span>,<span style="color:#e6db74">&#39;Oracle Publishing&#39;</span>,<span style="color:#e6db74">&#39;November December 2013&#39;</span>,<span style="color:#e6db74">&#39;Engineering as a Service&#39;</span>,<span style="color:#e6db74">&#39;David A. Kelly&#39;</span>);
+</span></span></code></pre></div><h2 id="removing-oracle-database">Removing Oracle Database</h2>
+<p>To remove the container running the Oracle Database instance, run the following <code>docker rm</code> command</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo docker rm 0a14ce7e70bf<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>To remove the Docker image oracleinanutshell/oracle-xe-11g, run the following command</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo docker rmi oracleinanutshell/oracle-xe-11g<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><h1 id="chapter-4-using-mysql-database">Chapter 4 Using MySQL Database</h1>
+<h2 id="setting-the-enviroment-1">Setting the Enviroment</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo docker pull mysql<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>List the Docker images with the following command.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo docker images<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><h2 id="starting-mysql-server">Starting MySQL Server</h2>
+<p>In this section we shall run MySQL database in a Docker container, MySQL uses the <code>/var/lib/mysql</code> directory by default for storing data, but another directory may also be used. We shall use the <code>/mysql/data</code> directory for storing MySQL data. Create the <code>/mysql/data</code> directory and set its permissions to global (777).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo mkdir -p /mysql/data
+</span></span><span style="display:flex;"><span>sudo chmod -R <span style="color:#ae81ff">777</span> /mysql/data
+</span></span></code></pre></div><p>When the Docker <code>run</code> command is run to start MySQL in a Docker container, certain enviroment variables may be specified as discussed in the following table.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Env Variable</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Required</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MYSQL_ROOT_PASSWORD</td>
+<td>Password for the &ldquo;root&rdquo; user</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>MYSQL_DATABASE</td>
+<td>Ceates a database</td>
+<td>No</td>
+</tr>
+<tr>
+<td>MYSQL_USER, MYSQL_PASSWORD</td>
+<td>Specify the username and password to create a new user. The user is granted superuser privileges on the database specified in the MYSQL_DATABASE variable. Both the user name and password must be set if either is set.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>MYSQL_ALLOW_EMPTY_PASSWORD</td>
+<td>Specifies whether the &ldquo;root&rdquo; user is permitted to have an empty password.</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p>Other than the MYSQL_ROOT_PASSWORD enviroment variable, all the other variables are optional, but whe shall run a MySQL instance container using all the enviroment variables. We shall run the docker run command using the following parameters.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Command Parameter</strong></th>
+<th><strong>Value</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MYSQL_ROOT_PASSWORD</td>
+<td>''</td>
+</tr>
+<tr>
+<td>MYSQL_DATABASE</td>
+<td>mysqldb</td>
+</tr>
+<tr>
+<td>MYSQL_USER, MYSQL_PASSWORD</td>
+<td>mysql, mysql</td>
+</tr>
+<tr>
+<td>MYSQL_ALLOW_EMPTY_PASSWORD</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>-v</td>
+<td>/mysql/data:/var/lib/mysql</td>
+</tr>
+<tr>
+<td>&ndash;name</td>
+<td>mysqldb</td>
+</tr>
+<tr>
+<td>-d</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>The enviroment variables are specified with <code>-e</code>. Run the following docker run command to start a MySQL instance in a Docker container.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo docker run -v /mysql/data:/var/lib/mysql --name mysqldb -e MYSQL_DATABASE<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;mysqldb&#39;</span> -e MYSQL_USER<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;mysql&#39;</span> -e MYSQL_PASSWORD<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;mysql&#39;</span> -e MYSQL_ALLOW_EMPTY_PASSWORD<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;yes&#39;</span> -e MYSQL_ROOT_PASSWORD<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span> -d mysql<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>Run the following command to list the Docker containers that are running.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo docker ps<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><h2 id="starting-mysql-cli-shell">Starting MySQL CLI Shell</h2>
+<p>Next, we shall log into the MySQL CLI shell. But the first we need to start an interactive terminal to run the mysql command to start the MYSQL CLI.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo docker exec -it &lt;CONTAINER-ID&gt; &lt;TERMINAL&gt;<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>or<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>sudo docker exec -it &lt;CONTAINER-NAME&gt; &lt;TERMINAL&gt;<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>by example</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo docker exec -it mysqldb bash<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><h2 id="setting-the-database-tu-use">Setting the Database tu Use</h2>
+<p>Set the database with the <code>use</code> command. The <code>test</code> database is not provided by the MySQL database started in a Docker container by default</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mysql&gt; use test
+</span></span><span style="display:flex;"><span>ERROR <span style="color:#ae81ff">1049</span> <span style="color:#f92672">(</span>42000<span style="color:#f92672">)</span>: Unknow database <span style="color:#e6db74">&#39;test&#39;</span>
+</span></span></code></pre></div><h2 id="creating-a-database-table-1">Creating a Database Table</h2>
+<p>Create a database table called <code>Catalog</code> with columns CatalogId, Journal, Publisher, Edition, Ttile and Author.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#66d9ef">Catalog</span>(CatalogId INTEGER <span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span>,Journal VARCHAR(<span style="color:#ae81ff">25</span>),Publisher VARCHAR(<span style="color:#ae81ff">25</span>),Edition VARCHAR(<span style="color:#ae81ff">25</span>),Title VARCHAR(<span style="color:#ae81ff">45</span>),Author VARCHAR(<span style="color:#ae81ff">25</span>));
+</span></span></code></pre></div><h2 id="adding-table-data">Adding Table Data</h2>
+<p>Add data to the Catalog tanle with the folloeing INSERT statement</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#66d9ef">Catalog</span> <span style="color:#66d9ef">VALUES</span>(<span style="color:#e6db74">&#39;1&#39;</span>,<span style="color:#e6db74">&#39;Oracle Magazine&#39;</span>,<span style="color:#e6db74">&#39;Oracle Publishing&#39;</span>,<span style="color:#e6db74">&#39;November December 2013&#39;</span>,<span style="color:#e6db74">&#39;Engineering as a Service&#39;</span>,<span style="color:#e6db74">&#39;David A. Kelly&#39;</span>);
+</span></span></code></pre></div><h2 id="querying-a-table">Querying A Table</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> <span style="color:#66d9ef">Catalog</span>;
+</span></span></code></pre></div><h2 id="listing-databases-and-tables">Listing Databases and Tables</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">show</span> databases;
+</span></span></code></pre></div><h2 id="existing-tty-terminal">Existing TTY Terminal</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mysql&gt; exit
+</span></span><span style="display:flex;"><span>Bye
+</span></span></code></pre></div><p>Exit with the interactive shell ot tty with the <code>exit</code> command.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>root@969088c84a4f:/# exit
+</span></span><span style="display:flex;"><span>exit
+</span></span></code></pre></div><h2 id="stopping-a-docker-container-1">Stopping a Docker Container</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo docker stop &lt;CONTAINER-ID&gt;<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>or<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>sudo docker stop &lt;CONTAINER-NAME&gt;<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>by example</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo docker stop 6a9205d835fe<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>By this task remove the prevous container because the book prefers do a new following task.</p>
+<h2 id="starting-another-mysql-server-instance">Starting Another MySQL Server Instance</h2>
+<p>Having removed the <code>mysqldb</code> container, create the container again with the docker run command. We shall create the new <code>mysqldb</code> container differently. Specify different enviroment variables for the second run of the docker run command. Specify only the required enviroment variable MYSQL_ROOT_PASSWORDand set its value to mysql.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo docker run --name mysqldb -r MYSQL_ROOT_PASSWORD<span style="color:#f92672">=</span>mysql -d mysql<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>Then, start the interactive shell with the following command.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo docker exec -it 113458c31ce5 bash<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>Login to the MySQL CLI with the following command in the interactive shell</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mysql -u root -p mysql
+</span></span></code></pre></div><p>Then, specify the password for the <code>root</code> user, which is mysql.</p>
+<p>The mysql command may also be issued as follows.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mysql -u root -p
+</span></span></code></pre></div><p>Specify the password for the <code>mysql</code> user.</p>
+<p>The following mysql command does not start a MySQL CLI</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>root@113458c31ce5:/# mysql -u root
+</span></span></code></pre></div><p>The following error ir generated</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ERROR <span style="color:#ae81ff">1045</span> <span style="color:#f92672">(</span>28000<span style="color:#f92672">)</span>: Access denied <span style="color:#66d9ef">for</span> user <span style="color:#e6db74">&#39;root&#39;</span>@<span style="color:#e6db74">&#39;localhost&#39;</span> <span style="color:#f92672">(</span>using password: NO<span style="color:#f92672">)</span>
+</span></span></code></pre></div><h2 id="listing-docker-container-log">Listing Docker Container Log</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo doeker logs -f mysqldb<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><h1 id="chapter-5-using-mongodb">Chapter 5 Using MongoDB</h1>
+<h2 id="setting-the-enviroment-2">Setting the Enviroment</h2>
+<p>Download the official Docker image for MongoDB datanase</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo docker pull mongo:lastest<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>List docker images</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo docker images<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><h2 id="starting-mongodb">Starting MongoDB</h2>
+<p>MongoDB stores data in the /data/db directory in the Docker container by default. A directory could be mounted from the underlying host system to the container running the MongoDB database. Create a directory <code>/data</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo mkdir -p /data
+</span></span></code></pre></div><p>In my case, I make the directory from /Users/user/dockerRegisters/mongoDB/data and complement the command like this way.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>docker run -it -v /Users/user/dockerRegisters/mongoDB/data/:/data --name mongodb -d mongo<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>List the running Docker container</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo docker ps<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>The MongoDB port could also be specified explicity using the -p port</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>docker run -it -v /Users/user/dockerRegisters/mongoDB/data/:/data -p 27017:27017 --name mongodb -d mongo<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>Verify the logs.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo docker logs -f mongodb<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><h2 id="starting-an-interactive-terminal">Starting an Interactive Terminal</h2>
+<p>Start an interactive terminal(tty) using the following command</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo docker exec -it mongodb bash<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><h2 id="starting-a-mongo-shell">Starting a Mongo Shell</h2>
+<p>To start the MongoDB shell, run the following command.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mongo
+</span></span></code></pre></div><p>The MongoDB shell may also be started on a specific host and port as follows.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>mongo -host localhost -port <span style="color:#ae81ff">27017</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>Alternatively. only one of the host or the port may be specified to start the MongoDBC shell</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>mongo -port <span style="color:#ae81ff">27017</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>Another form of specifying the host and port is host:port. For example, start the MongoDB shell and connect localhost:27017 with the following command.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>mongo localhost:27017<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><h2 id="creating-a-database">Creating a Database</h2>
+<p>List the databases from the MongoDB shell with the following command help method (also called command helper)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>show dbs
+</span></span></code></pre></div><p>A new database is created implicity when the database name is set to the database to be created. Set the database to <code>mongodb</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>use mongodb
+</span></span></code></pre></div><p>the show gbs command help method does not list the mongodb database till the database is used. Use the <code>db.createCollection()</code> method to create a collection called <code>catalog</code>. Subsequently run the show dbs coammand again.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>show dbs
+</span></span><span style="display:flex;"><span>db.createCollection<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;catalog&#39;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>show dbs
+</span></span></code></pre></div><p>The show dbs command does not list the <code>mongodb</code> database before the <code>catalog</code> collection is created, but lists the <code>mongodb</code> database after the collection has been created.</p>
+<p>List the collections in the mongodb database with the following command.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>show collections
+</span></span><span style="display:flex;"><span>&gt; catalogo
+</span></span></code></pre></div><h2 id="creating-a-collection">Creating a Collection</h2>
+<p>Create a capped collection <code>catalog_capped</code> by setting the capped option field to true. A capped collection is a fixed size collection that keeps track of the insertion order while adding and getting a document, and as a result provides high throughput.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>db.createCollection<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;catalog_capped&#34;</span>, <span style="color:#f92672">{</span>capped: true, autoIndexId: true, size: <span style="color:#ae81ff">64</span> * 1024, max: 1000<span style="color:#f92672">}</span> <span style="color:#f92672">)</span>
+</span></span></code></pre></div><p>A capped collection may also be created using the <code>db.runCommand</code> command. Create another capped collection called <code>catalog_capped_2</code> using the <code>db.runCommand</code> command.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>db.runCommand<span style="color:#f92672">(</span> <span style="color:#f92672">{</span> create: <span style="color:#e6db74">&#34;catalog_capped_2&#34;</span>, capped: true, size: <span style="color:#ae81ff">64</span> * 1024, max: <span style="color:#ae81ff">1000</span> <span style="color:#f92672">}</span> <span style="color:#f92672">)</span>
+</span></span></code></pre></div><h2 id="creating-a-document">Creating a Document</h2>
+<p>We shall add documents to a MongoDB collection. Initially collection es empty. We run the mongo shell method <code>db.&lt;collection&gt;.count()</code> to count the documents in the catalog collection. Substitute <!-- raw HTML omitted --> with the collection name <code>catalog</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>db.catalog.count<span style="color:#f92672">()</span>
+</span></span></code></pre></div><p>We shall add a document to the catalog collection. Create a JSON document structure with field catalogId, journal, published, edition, title and author.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>doc1 <span style="color:#f92672">=</span> <span style="color:#f92672">{</span><span style="color:#e6db74">&#34;catalogId&#34;</span> : <span style="color:#e6db74">&#34;catalog1&#34;</span>, <span style="color:#e6db74">&#34;journal&#34;</span> : <span style="color:#e6db74">&#39;Oracle Magazine&#39;</span>, <span style="color:#e6db74">&#34;publisher&#34;</span> : <span style="color:#e6db74">&#39;Oracle Publishing&#39;</span>, <span style="color:#e6db74">&#34;edition&#34;</span> : <span style="color:#e6db74">&#39;November December 2013&#39;</span>,<span style="color:#e6db74">&#34;title&#34;</span> : <span style="color:#e6db74">&#39;Engineering as a Service&#39;</span>,<span style="color:#e6db74">&#34;author&#34;</span> : <span style="color:#e6db74">&#39;David A. Kelly&#39;</span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>Add the document to the catalog collection using <code>db.&lt;xollection&gt;.insert()</code> method.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>db.catalog.insert<span style="color:#f92672">(</span>doc1<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>&gt; WriteResult<span style="color:#f92672">({</span> <span style="color:#e6db74">&#34;nInserted&#34;</span> : <span style="color:#ae81ff">1</span> <span style="color:#f92672">})</span>
+</span></span></code></pre></div><p>Output the document count again.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>db.catalog.count<span style="color:#f92672">()</span>
+</span></span></code></pre></div><h2 id="finding-documents">Finding Documents</h2>
+<p>The db.collection.find(query, projection) method is used to find document/s. The query parameter of type document specifies selection criteria using query operators. The projecttion parameter also of type document specifies selection the field to return. Both the parameters are optional. To select all documents do not specify any args or specify an empty document {}.</p>
+<p>By example, find all documents in the catalog collections</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>db.catalog.find<span style="color:#f92672">()</span>
+</span></span></code></pre></div><h2 id="adding-another-document">Adding Another Document</h2>
+<p>Similarly, create a the JSON structure for another document. The same document may be added again if the _id is unique. In the JSON include the _id field as an explicit field/attribute. The _id field value must be an object of type ObjectId and not a string literal.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>doc2 <span style="color:#f92672">=</span> <span style="color:#f92672">{</span><span style="color:#e6db74">&#34;_id&#34;</span>: ObjectId<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;507f191e810c19729de860ea&#34;</span><span style="color:#f92672">)</span>, <span style="color:#e6db74">&#34;catalogId&#34;</span> : <span style="color:#e6db74">&#34;catalog1&#34;</span>, <span style="color:#e6db74">&#34;journal&#34;</span> : <span style="color:#e6db74">&#39;Oracle Magazine&#39;</span>, <span style="color:#e6db74">&#34;publisher&#34;</span> : <span style="color:#e6db74">&#39;Oracle Publishing&#39;</span>, <span style="color:#e6db74">&#34;edition&#34;</span> : <span style="color:#e6db74">&#39;November December 2013&#39;</span>,<span style="color:#e6db74">&#34;title&#34;</span> : <span style="color:#e6db74">&#39;Engineering as a Service&#39;</span>,<span style="color:#e6db74">&#34;author&#34;</span> : <span style="color:#e6db74">&#39;David A. Kelly&#39;</span><span style="color:#f92672">}</span>;
+</span></span></code></pre></div><p>Add the document using the db.<!-- raw HTML omitted -->.insert() method.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>db.catalog.insert<span style="color:#f92672">(</span>doc2<span style="color:#f92672">)</span>
+</span></span></code></pre></div><h2 id="querying-a-single-document">Querying a Single Document</h2>
+<p>The db.<!-- raw HTML omitted -->.findOne() method is used to find a single document.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>db.catalog.findOne<span style="color:#f92672">()</span>
+</span></span></code></pre></div><p>The db.collection.findOne(query, projection) method also takes two args both of type document and both optional. The query parameter specifies the query selection criteria and the projection parameter specifies the fields to select.</p>
+<p>Bye example select the editionm title and author fileds and specify the query document as {}</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>db.catalog.findOne<span style="color:#f92672">(</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">{}</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">{</span>edition: 1, title: 1, author: <span style="color:#ae81ff">1</span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">)</span>
+</span></span></code></pre></div><h2 id="dropping-a-collection">Dropping a Collection</h2>
+<p>The <code>db.collection.drop()</code> method drops or removes a collection</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>db.catalog.drop<span style="color:#f92672">()</span>
+</span></span></code></pre></div><h2 id="adding-a-batch-of-documents">Adding a Batch of Documents</h2>
+<p>Previously, we added a single document at a time. Next we shall add a batch a documents.</p>
+<p>Add an array of documents using the db.catalog.insert() method invocation with the doc1 and doc2 being the same as earlier . the writeConcern option specifies the guarantee MongoDB provides and a value of &ldquo;majority&rdquo; implies that the <code>insert()</code> method does not return till the write has been propagated to the majority of the nodes. Setting the ordered option to true adds the documents in the order specifies.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>db.catalog.insert<span style="color:#f92672">([</span>doc1, doc2<span style="color:#f92672">]</span>,  <span style="color:#f92672">{</span> writeConcern: <span style="color:#f92672">{</span> w: <span style="color:#e6db74">&#34;majority&#34;</span>, wtimeout: <span style="color:#ae81ff">5000</span> <span style="color:#f92672">}</span>, ordered:true <span style="color:#f92672">})</span>
+</span></span></code></pre></div><p>The full syntaxis of the insert method is made use of in the proceding methos invocation and is as follows.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>db.collection.insert<span style="color:#f92672">(</span>
+</span></span><span style="display:flex;"><span>   &lt;document or array of documents&gt;,
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>     writeConcern: &lt;document&gt;,
+</span></span><span style="display:flex;"><span>     ordered: &lt;boolean&gt;
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">)</span>
+</span></span></code></pre></div><p>The first parameter is a single document or an array of documents. The second parameter is a document with fields writeConcern and ordered. The writeConcern specifies the write concern or the guarantee that MongoDB provides on the success of an insert. The ordered parameter is set to true, which implies that the documents are added in the order specified and if an error occurs with one of the documents none of the documents are added.</p>
+<h2 id="updating-a-document">Updating a Document</h2>
+<p>The <code>db.collection.save()</code> method has the following syntax and updates a document if the document already exists, and ads a new document if the document does not exist.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>db.collection.save<span style="color:#f92672">(</span>
+</span></span><span style="display:flex;"><span>    &lt;document&gt;,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        writeConcern: &lt;document&gt;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">)</span>
+</span></span></code></pre></div><p>A document is identify by the unique _id of type ObjectId. Next, we shall update document with _id as ObjectId(&ldquo;6407cbb97d24c12d2d6f0b8a&rdquo;). Create an update JSON document with some of the field values modifies.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>doc1 <span style="color:#f92672">=</span> <span style="color:#f92672">{</span><span style="color:#e6db74">&#34;_id&#34;</span>: ObjectId<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;507f191e810c19729de860ea&#34;</span><span style="color:#f92672">)</span>, <span style="color:#e6db74">&#34;catalogId&#34;</span> : <span style="color:#e6db74">&#39;catalog1&#39;</span>, <span style="color:#e6db74">&#34;journal&#34;</span> : <span style="color:#e6db74">&#39;Oracle Magazine&#39;</span>, <span style="color:#e6db74">&#34;publisher&#34;</span> : <span style="color:#e6db74">&#39;Oracle Publishing&#39;</span>, <span style="color:#e6db74">&#34;edition&#34;</span> : <span style="color:#e6db74">&#39;11-12-2013&#39;</span>,<span style="color:#e6db74">&#34;title&#34;</span> : <span style="color:#e6db74">&#39;Engineering as a Service&#39;</span>,<span style="color:#e6db74">&#34;author&#34;</span> : <span style="color:#e6db74">&#39;Kelly, David A.&#39;</span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>Saving the document using the <code>db.collection.save()</code> method in the catalog collection.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>db.catalog.save<span style="color:#f92672">(</span>doc1,<span style="color:#f92672">{</span> writeConcern: <span style="color:#f92672">{</span> w: <span style="color:#e6db74">&#34;majority&#34;</span>, wtimeout: <span style="color:#ae81ff">5000</span> <span style="color:#f92672">}</span> <span style="color:#f92672">})</span>
+</span></span></code></pre></div><p>The document gets saved by updating an existing document. The nMatched is 1 and nUpserted is 0, and nModified is 1 in the WriteResult object returned. The nUpserted filed refers to the number of new documents added in contrast to modifying an existing document.</p>
+<h2 id="outputting-documents-as-json">Outputting Documents as JSON</h2>
+<p>The db.collections.find(query, projection) method returns a cursor over the documents that are selected by the query. Invoke the <code>forEach(printjson)</code> method on the cursor to output teh document as formatted JSON</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>db.catalog,find<span style="color:#f92672">()</span>.forEach<span style="color:#f92672">(</span>printjson<span style="color:#f92672">)</span>
+</span></span></code></pre></div><h2 id="making-a-backup-of-the-data">Making a Backup of the Data</h2>
+<p>The mongodump utility is used for creating a binary export of the data in a database, The mongorestore utility is used in conjuntion with mongodump to restore a database from backup. The mongorestore utility either creates a new database instance or adds to an existing database.</p>
+<p>Run the following <code>mongodump</code> command to export the test database ot the /data/ backup directory</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mongodump --db test --out /data/backup
+</span></span></code></pre></div><p>Run the following <code>mongorestore</code> command to restore the exported data from /data/backup/test to the <code>testrestore</code> database.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mongorestore --db testrestore /data/backup/test
+</span></span></code></pre></div><p>Connect to the MongoDB shell with the following command</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mongo localhost:27017/testrestore
+</span></span></code></pre></div><p>List the database with the following command</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>show dbs
+</span></span></code></pre></div><p>Set the database name as mongodb</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>show collections
+</span></span></code></pre></div><p>Query the documents in the catalog collections.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>db.catalog.find<span style="color:#f92672">()</span>
+</span></span></code></pre></div><h2 id="removing-documents">Removing Documents</h2>
+<p>The <code>db.collection.remove</code> method is used to remove document/s and has the following syntax</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>db.collection.remove<span style="color:#f92672">(</span>
+</span></span><span style="display:flex;"><span>    &lt;query&gt;,
+</span></span><span style="display:flex;"><span>    &lt;justOne&gt;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">)</span>
+</span></span></code></pre></div><p>by example</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>db.catalog.remove<span style="color:#f92672">({</span> _id: ObjectId<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;6407cbb97d24c12d2d6f0b8a&#34;</span><span style="color:#f92672">)</span> <span style="color:#f92672">})</span>
+</span></span></code></pre></div><p>The nRemoved in the WriteResult is 1 indicating that one document got removed. Run the <code>db.catalog.find()</code> method before and after the <code>db.catalog.remove()</code> method invocation. Before the <code>db.catalog.remove()</code> method is invoked, two documents get listed, and afterward only one document gets listed</p>
+<p>To remove all documents, provide an empty document {} to the <code>db.catalog.remove()</code> method invocation.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>db.catalog.remove<span style="color:#f92672">({})</span>
+</span></span></code></pre></div><h2 id="stopping-and-restarting-the-mongodb-database">Stopping and Restarting the MongoDB Database</h2>
+<p>The Docker container running the MongoDB instance may be atopped with the <code>docker stop</code> command</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo docker stop<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>List the running Docker containers with the following command</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo docker ps<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>Start the Docker container again with the <code>docker start</code> command</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo docker start mongo<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>Run the following command again to list the running containers</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo docker ps<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>Start de interactive terminal with the following command in which the container ID is used instead if the container name</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>sudo docker exec -it 0fd1254f07db bash<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>Start the MongoDB shell with the mongo command in the interactive shell</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mongo
+</span></span></code></pre></div><p>Set the database to local and list the collections with the show collections command. subsequently set the database to mongodb and list the collections.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>use mongodb
+</span></span><span style="display:flex;"><span>show collections
+</span></span><span style="display:flex;"><span>db.catalog.find<span style="color:#f92672">()</span>
+</span></span></code></pre></div><h2 id="exiting-the-mongo-shell">Exiting the Mongo Shell</h2>
+<p>The exit the interactive terminal use the <code>exit</code> command and exit the MongoDB shell with the <code>exit</code> command</p>
+</section>
+
+  
+  
+
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="https://julitiux.github.io/posts/vim/"
+      ><span class="mr-1.5">←</span><span>Vim</span></a
+    >
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="https://julitiux.github.io/posts/kotlin/"
+      ><span>Kotlin</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+
+  
+  
+
+  
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+  <div class="mr-auto">
+    &copy; 2023
+    <a class="link" href="https://julitiux.github.io/">Blogs</a>
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >Powered by Hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >✎ Paper</a
+  >
+</footer>
+
+  </body>
+</html>

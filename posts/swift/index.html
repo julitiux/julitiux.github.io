@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #fbfbfb"
+  lang="en-us"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Swift - Blogs</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  <meta name="description" content="INDEX Getting Started Types, Constants, and Variables Types, Strings Numerical Type Constants String interpolation Conditional Getting Started First, download and install Xcode, its available on the App Store. Make sure to download Xcode 8 or higher.
+Get started with a playground and Create a new Xcode Project. Playsground were released in Xcode6. They provide an interactive enviroment for rapidly developing and evaluating Swift code. A playground does not require that you compile and run a complete project." />
+  <meta name="author" content="Julitiux" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="https://julitiux.github.io/main.min.css" />
+
+  
+
+  
+     
+  <link rel="preload" as="image" href="https://julitiux.github.io/theme.svg" />
+
+  
+  
+  
+  <link rel="preload" as="image" href="https://cdn.v2ex.com/gravatar/6fd8df4abe41f17fd8e2dd7d97b5cc8c?s=160&amp;d=identicon" />
+  
+  
+
+  
+  <link rel="preload" as="image" href="https://julitiux.github.io/twitter.svg" />
+  
+  <link rel="preload" as="image" href="https://julitiux.github.io/github.svg" />
+  
+  <link rel="preload" as="image" href="https://julitiux.github.io/instagram.svg" />
+  
+  
+
+  
+  
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css"
+  integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI"
+  crossorigin="anonymous"
+/>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js"
+  integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t"
+  crossorigin="anonymous"
+></script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js"
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"
+></script>
+
+  
+  
+  
+
+  
+  <link rel="icon" href="https://julitiux.github.io/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://julitiux.github.io/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.107.0">
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:title" content="Swift" />
+<meta property="og:description" content="INDEX Getting Started Types, Constants, and Variables Types, Strings Numerical Type Constants String interpolation Conditional Getting Started First, download and install Xcode, its available on the App Store. Make sure to download Xcode 8 or higher.
+Get started with a playground and Create a new Xcode Project. Playsground were released in Xcode6. They provide an interactive enviroment for rapidly developing and evaluating Swift code. A playground does not require that you compile and run a complete project." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://julitiux.github.io/posts/swift/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-09-01T21:55:55-05:00" />
+<meta property="article:modified_time" content="2020-09-01T21:55:55-05:00" />
+
+
+  
+  <meta itemprop="name" content="Swift">
+<meta itemprop="description" content="INDEX Getting Started Types, Constants, and Variables Types, Strings Numerical Type Constants String interpolation Conditional Getting Started First, download and install Xcode, its available on the App Store. Make sure to download Xcode 8 or higher.
+Get started with a playground and Create a new Xcode Project. Playsground were released in Xcode6. They provide an interactive enviroment for rapidly developing and evaluating Swift code. A playground does not require that you compile and run a complete project."><meta itemprop="datePublished" content="2020-09-01T21:55:55-05:00" />
+<meta itemprop="dateModified" content="2020-09-01T21:55:55-05:00" />
+<meta itemprop="wordCount" content="345">
+<meta itemprop="keywords" content="" />
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Swift"/>
+<meta name="twitter:description" content="INDEX Getting Started Types, Constants, and Variables Types, Strings Numerical Type Constants String interpolation Conditional Getting Started First, download and install Xcode, its available on the App Store. Make sure to download Xcode 8 or higher.
+Get started with a playground and Create a new Xcode Project. Playsground were released in Xcode6. They provide an interactive enviroment for rapidly developing and evaluating Swift code. A playground does not require that you compile and run a complete project."/>
+
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-3xl px-8 lg:justify-center">
+  <div class="relative z-50 mr-auto flex items-center">
+    <a
+      class="-translate-x-[1px] -translate-y-[1px] text-2xl font-semibold"
+      href="https://julitiux.github.io/"
+      >Blogs</a
+    >
+    <div
+      class="btn-dark text-[0] ml-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 -mr-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#fbfbfb'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+
+    
+    <nav
+      class="mt-12 flex justify-center space-x-10 dark:invert lg:ml-12 lg:mt-0 lg:items-center lg:space-x-6"
+    >
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./twitter.svg)"
+        href="https://twitter.com/julitiux"
+        target="_blank"
+        rel="me"
+      >
+        twitter
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href="https://github.com/julitiux"
+        target="_blank"
+        rel="me"
+      >
+        github
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./instagram.svg)"
+        href="https://instagram.com/julitiux"
+        target="_blank"
+        rel="me"
+      >
+        instagram
+      </a>
+      
+    </nav>
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    <h1 class="!my-0 pb-2.5">Swift</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Sep 1, 2020</time>
+      
+      
+      
+      
+    </div>
+    
+  </header>
+
+  <section><h1 id="index"><strong>INDEX</strong></h1>
+<h1 id="getting-startedgetting-started"><a href="#getting-started">Getting Started</a></h1>
+<h1 id="types-constants-and-variablestypes-constants-and-variables"><a href="#types-constants-and-variables">Types, Constants, and Variables</a></h1>
+<h2 id="types-stringstypes-strings"><a href="#types-strings">Types, Strings</a></h2>
+<h2 id="numerical-typenumerical-type"><a href="#numerical-type">Numerical Type</a></h2>
+<h2 id="constantsconstants"><a href="#constants">Constants</a></h2>
+<h2 id="string-interpolationstring-interpolation"><a href="#string-interpolation">String interpolation</a></h2>
+<h1 id="conditionalconditional"><a href="#conditional">Conditional</a></h1>
+<h1 id="getting-started">Getting Started</h1>
+<p>First, download and install Xcode, its available on the App Store. Make sure to download Xcode 8 or higher.</p>
+<p>Get started with a playground and Create a new Xcode Project. Playsground were released in Xcode6. They provide an interactive enviroment for rapidly developing and evaluating Swift code. A playground does not require that you compile and run a complete project. Instead, playgrouunds evaluate your Swift code on the fly, so its udeal for testing and experimenting with the Swift languaje in a lightweght enviroment.</p>
+<p>From the welcomescreen, select Get started with a playground, next, name your playground <em>MyPlayground</em>. For the plataform (iOS, macOS, or tvOS), select macOS. Finally, you are prompted to save your playground</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#75715e">//: Playground - noun: a place where people can play</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Cocoa</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> str = <span style="color:#e6db74">&#34;Hello, playground&#34;</span>
+</span></span><span style="display:flex;"><span>str <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;!&#34;</span>
+</span></span></code></pre></div><h1 id="types-constants-and-variables">Types, Constants, and Variables</h1>
+<h2 id="types-strings">Types, Strings</h2>
+<p>Variables and constants hava a data type. Here, you have assigned an instance of the <em>String</em> type. The type assignment operator (=) assigns the value on its right side to whatever is on its left side.
+Swift uses type inference to determine the data type of your variable; the quotation marks indicate that it is a <em>String</em> literal.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> variableString: String
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> otherVariableString = <span style="color:#e6db74">&#34;Four&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>otherVariableString <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34; add another thing&#34;</span>
+</span></span><span style="display:flex;"><span>print(otherVariableString)
+</span></span></code></pre></div><h2 id="numerical-type">Numerical Type</h2>
+<p>Now, we are explicitly declaring the variable to be th Int type using Swift&rsquo;s type annotation syntax. The colon on tje code above represents the phrase <em>&ldquo;of type&rdquo;</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> variableInteger: Int
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> otherVariableInteger: Int = <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>otherVariableInteger <span style="color:#f92672">+=</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>print(otherVariableInteger)
+</span></span></code></pre></div><h2 id="constants">Constants</h2>
+<p>We will want to create instances with values that do not change.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> constantInteger: Int = <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> constantString: String = <span style="color:#e6db74">&#34;This a String&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>constantInteger <span style="color:#f92672">+=</span> <span style="color:#ae81ff">4</span> <span style="color:#75715e">//Error</span>
+</span></span></code></pre></div><h2 id="string-interpolation">String interpolation</h2>
+<p>String interpolation lets you combine constant and variables into a new string.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> variableInteger: Int = <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> variableString: String = <span style="color:#e6db74">&#34;String&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> constant: String = <span style="color:#e6db74">&#34;You can use the interpolation in all variables and constants, like </span><span style="color:#e6db74">\(</span>variableInteger<span style="color:#e6db74">)</span><span style="color:#e6db74"> and </span><span style="color:#e6db74">\(</span>variableString<span style="color:#e6db74">)</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>print(constant)
+</span></span></code></pre></div><h1 id="conditional">Conditional</h1>
+</section>
+
+  
+  
+
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="https://julitiux.github.io/posts/python/"
+      ><span class="mr-1.5">←</span><span>Python</span></a
+    >
+    
+    
+  </nav>
+  
+
+  
+  
+
+  
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+  <div class="mr-auto">
+    &copy; 2023
+    <a class="link" href="https://julitiux.github.io/">Blogs</a>
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >Powered by Hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >✎ Paper</a
+  >
+</footer>
+
+  </body>
+</html>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Blogs</title>
+    <link>https://julitiux.github.io/posts/</link>
+    <description>Recent content in Posts on Blogs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 01 Aug 2023 23:24:43 -0600</lastBuildDate><atom:link href="https://julitiux.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Rust Programming Language (2018)</title>
+      <link>https://julitiux.github.io/posts/the_rust_programming_language/</link>
+      <pubDate>Tue, 01 Aug 2023 23:24:43 -0600</pubDate>
+      
+      <guid>https://julitiux.github.io/posts/the_rust_programming_language/</guid>
+      <description>INDEX Chapter 1 Getting Started Chapter 1 Getting Started Installing rustup on macOS curl https://sh.rustup.rs -sSf | sh Add on your .zshrc
+. &amp;#34;$HOME/.cargo/env&amp;#34; Updating and Unistalling rustc update rustup self unistall Creating a Project Directory mkdir ~/projects cd ~/projects mkdir hello_world cd hello_world Writing and Running a Rust Program fn main(){ println!(&amp;#34;hello wolf&amp;#34;); } Go to the terminal and enter the following commands to compule and run the file</description>
+    </item>
+    
+    <item>
+      <title>Functional Programming in Java</title>
+      <link>https://julitiux.github.io/posts/functional_programming_in_java/</link>
+      <pubDate>Thu, 06 Jul 2023 20:39:27 -0600</pubDate>
+      
+      <guid>https://julitiux.github.io/posts/functional_programming_in_java/</guid>
+      <description>INDEX Chapter 1 Hello Lambda Expressions! Chapter 2 Using Collections Chapter 3 Strings, Comparators, and Filters Chapter 4 Designing with Lambda Expressions Chapter 5 Working with Resources Chapter 6 Being Lazy Chapter 7 Optimizing Recursions Chapter 1 Hello Lambda Expression! Change the Way You Think // Cities.java boolean found = false; for(String city : cities) { if(city.equals(&amp;#34;Chicago&amp;#34;)) { found = true; break; } } A Better Way // Cities.java System.out.println(&amp;#34;Found chicago?</description>
+    </item>
+    
+    <item>
+      <title>Spock Framework</title>
+      <link>https://julitiux.github.io/posts/spock_framework/</link>
+      <pubDate>Thu, 06 Jul 2023 01:24:09 -0600</pubDate>
+      
+      <guid>https://julitiux.github.io/posts/spock_framework/</guid>
+      <description>INDEX Spock Primer Data Driven Testing Interaction Based Testing Spock Primer Imports import spock.lang.* Specification class MyFirstSpecification extends Specification { // fields // fixture methods // feature methods // helper methods } Fields Its a good practice to initialice them right at the point of declaration.
+def obj = new ClassUnderSpecification() def coll = new Collaborator() Somethimes you need to share an object between methods; declare @Shared field. This es equivalent to initializing the field at the very beginning of the setupSpec() method.</description>
+    </item>
+    
+    <item>
+      <title>Vim</title>
+      <link>https://julitiux.github.io/posts/vim/</link>
+      <pubDate>Fri, 05 May 2023 14:10:47 -0600</pubDate>
+      
+      <guid>https://julitiux.github.io/posts/vim/</guid>
+      <description>INDEX Introduction to Vim Edit the vim style Normal mode Insert mode Visual mode Command mode Edit multiple files Panels and tabs How to move quickly through files 1 How to move quickly through files 2 Registers Three power of macros Patterns Substitutions Global commands Autocomplete Introduction to Vim Diferent mode of vim Normal Vim start in normal mode, this is the central mode. You can change to another modes beginning in normal mode.</description>
+    </item>
+    
+    <item>
+      <title>Docker</title>
+      <link>https://julitiux.github.io/posts/docker/</link>
+      <pubDate>Mon, 13 Feb 2023 18:22:08 -0600</pubDate>
+      
+      <guid>https://julitiux.github.io/posts/docker/</guid>
+      <description>INDEX Chapter 1 Hello Docker Chapter 2 Installing Linux Chapter 3 Using Oracle Database Chapter 4 Using MySQL Database Chapter 5 Using MongoDB Chapter 1 Hello Docker Setting the Environment Installing Docker on Red Hat 7 Uninstalling Docker Installing a Specific Docker Version Installing Docker on Ubuntu Starting the Docker Service sudo service docker start Docker gets started via systemctl as indecated by the OK message.
+Finding the Docker Service Status.</description>
+    </item>
+    
+    <item>
+      <title>Kotlin</title>
+      <link>https://julitiux.github.io/posts/kotlin/</link>
+      <pubDate>Mon, 07 Mar 2022 14:46:09 -0600</pubDate>
+      
+      <guid>https://julitiux.github.io/posts/kotlin/</guid>
+      <description>INDEX 1. Your first kotlin application 2. Variables, Constants, and Types 3. Conditionals 4. Functions 5. anonymous Functions and the Function Type 6. Null safety and exceptions 7. Strings 8. Numbers 9. Starndard Functions 10. List and Sets 11. Maps 12. Defining Classes 13. Initialization. 14. Inhertance 15. Objects 16. Interfaces and Abstract Classes 17. Generics 18. Extensions 19. Functional Programming Basics 20. Java Interoperability 1. Your first kotlin application 2.</description>
+    </item>
+    
+    <item>
+      <title>Elixir</title>
+      <link>https://julitiux.github.io/posts/elixir/</link>
+      <pubDate>Tue, 20 Jul 2021 08:23:40 -0500</pubDate>
+      
+      <guid>https://julitiux.github.io/posts/elixir/</guid>
+      <description>INDEX Install macOS Using Homebrew brew install elixir Using Macports (I dont use it) sudo port install elixir Docker docker run -it --rm elixir Enter bash within container with installed elixir
+docker run -it --rm elixir bash To install and manage multiple Erlang and Elixir version asdf - install and manage different Elixir and Erlang versions, exenv - install and manage different Elixir versions. kiex - install and manage different Elixir versions.</description>
+    </item>
+    
+    <item>
+      <title>Java8</title>
+      <link>https://julitiux.github.io/posts/java8/</link>
+      <pubDate>Wed, 27 Jan 2021 23:55:55 -0600</pubDate>
+      
+      <guid>https://julitiux.github.io/posts/java8/</guid>
+      <description>INDEX Functional programming Imperative and declarative programming Imperative programming: Declarative programming: Java 8 and Lambdas. Lambda Lambda Sintaxis Lambda Scopes Interface Default Methods Functional Interfaces Method References Reference to a static method. With a expresion lambda: With a method reference and deleting the expression lambda Reference to an instance method. Anonymous Function Expresion lambda With method reference Instance Object Reference to a constructor. Anonymous Function Expresion lambda With a method reference Colections -&amp;gt; forEach, removeIf, sort Implementation forEach Implementation removeIf Implementation sort Streams Optional StreamParallels Map Annotations Date API Compare two Dates Count years Convert String to Date Format a Date High Order Functions RXJava Nashorn Functional programming Functional Programming is a programming paradigm where the programs are constructed by applying and composing functions.</description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://julitiux.github.io/posts/python/</link>
+      <pubDate>Tue, 01 Sep 2020 22:05:10 -0500</pubDate>
+      
+      <guid>https://julitiux.github.io/posts/python/</guid>
+      <description>INDEX GETTING STARTED How To Install How To Install PyEnv Build Build Dependencies Using the pyenv-installer Using pyenv. List all pythons availables. Install a version of python. Installation Location. Uninstall a version of python. Running Python Programs from a terminal VARIABLES AND SIMPLE DATA TYPES Naming and Using Variables Strings Changing Case in a String with Methods Combining or Concatenating Strings Adding Whitespace to String with Tabs or Newlines Stripping Whitespace Numbers Integers Floats Avoid Type Errors with the str() Function Comments Introducing List Accessing Elements in a List Changing, Adding, and Removing Elements Modifying Elements in a List.</description>
+    </item>
+    
+    <item>
+      <title>Swift</title>
+      <link>https://julitiux.github.io/posts/swift/</link>
+      <pubDate>Tue, 01 Sep 2020 21:55:55 -0500</pubDate>
+      
+      <guid>https://julitiux.github.io/posts/swift/</guid>
+      <description>INDEX Getting Started Types, Constants, and Variables Types, Strings Numerical Type Constants String interpolation Conditional Getting Started First, download and install Xcode, its available on the App Store. Make sure to download Xcode 8 or higher.
+Get started with a playground and Create a new Xcode Project. Playsground were released in Xcode6. They provide an interactive enviroment for rapidly developing and evaluating Swift code. A playground does not require that you compile and run a complete project.</description>
+    </item>
+    
+  </channel>
+</rss>

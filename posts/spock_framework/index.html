@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #fbfbfb"
+  lang="en-us"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Spock Framework - Blogs</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  <meta name="description" content="INDEX Spock Primer Data Driven Testing Interaction Based Testing Spock Primer Imports import spock.lang.* Specification class MyFirstSpecification extends Specification { // fields // fixture methods // feature methods // helper methods } Fields Its a good practice to initialice them right at the point of declaration.
+def obj = new ClassUnderSpecification() def coll = new Collaborator() Somethimes you need to share an object between methods; declare @Shared field. This es equivalent to initializing the field at the very beginning of the setupSpec() method." />
+  <meta name="author" content="Julitiux" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="https://julitiux.github.io/main.min.css" />
+
+  
+
+  
+     
+  <link rel="preload" as="image" href="https://julitiux.github.io/theme.svg" />
+
+  
+  
+  
+  <link rel="preload" as="image" href="https://cdn.v2ex.com/gravatar/6fd8df4abe41f17fd8e2dd7d97b5cc8c?s=160&amp;d=identicon" />
+  
+  
+
+  
+  <link rel="preload" as="image" href="https://julitiux.github.io/twitter.svg" />
+  
+  <link rel="preload" as="image" href="https://julitiux.github.io/github.svg" />
+  
+  <link rel="preload" as="image" href="https://julitiux.github.io/instagram.svg" />
+  
+  
+
+  
+  
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css"
+  integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI"
+  crossorigin="anonymous"
+/>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js"
+  integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t"
+  crossorigin="anonymous"
+></script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js"
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"
+></script>
+
+  
+  
+  
+
+  
+  <link rel="icon" href="https://julitiux.github.io/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://julitiux.github.io/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.107.0">
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:title" content="Spock Framework" />
+<meta property="og:description" content="INDEX Spock Primer Data Driven Testing Interaction Based Testing Spock Primer Imports import spock.lang.* Specification class MyFirstSpecification extends Specification { // fields // fixture methods // feature methods // helper methods } Fields Its a good practice to initialice them right at the point of declaration.
+def obj = new ClassUnderSpecification() def coll = new Collaborator() Somethimes you need to share an object between methods; declare @Shared field. This es equivalent to initializing the field at the very beginning of the setupSpec() method." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://julitiux.github.io/posts/spock_framework/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-07-06T01:24:09-06:00" />
+<meta property="article:modified_time" content="2023-07-06T01:24:09-06:00" />
+
+
+  
+  <meta itemprop="name" content="Spock Framework">
+<meta itemprop="description" content="INDEX Spock Primer Data Driven Testing Interaction Based Testing Spock Primer Imports import spock.lang.* Specification class MyFirstSpecification extends Specification { // fields // fixture methods // feature methods // helper methods } Fields Its a good practice to initialice them right at the point of declaration.
+def obj = new ClassUnderSpecification() def coll = new Collaborator() Somethimes you need to share an object between methods; declare @Shared field. This es equivalent to initializing the field at the very beginning of the setupSpec() method."><meta itemprop="datePublished" content="2023-07-06T01:24:09-06:00" />
+<meta itemprop="dateModified" content="2023-07-06T01:24:09-06:00" />
+<meta itemprop="wordCount" content="4683">
+<meta itemprop="keywords" content="" />
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Spock Framework"/>
+<meta name="twitter:description" content="INDEX Spock Primer Data Driven Testing Interaction Based Testing Spock Primer Imports import spock.lang.* Specification class MyFirstSpecification extends Specification { // fields // fixture methods // feature methods // helper methods } Fields Its a good practice to initialice them right at the point of declaration.
+def obj = new ClassUnderSpecification() def coll = new Collaborator() Somethimes you need to share an object between methods; declare @Shared field. This es equivalent to initializing the field at the very beginning of the setupSpec() method."/>
+
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-3xl px-8 lg:justify-center">
+  <div class="relative z-50 mr-auto flex items-center">
+    <a
+      class="-translate-x-[1px] -translate-y-[1px] text-2xl font-semibold"
+      href="https://julitiux.github.io/"
+      >Blogs</a
+    >
+    <div
+      class="btn-dark text-[0] ml-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 -mr-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#fbfbfb'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+
+    
+    <nav
+      class="mt-12 flex justify-center space-x-10 dark:invert lg:ml-12 lg:mt-0 lg:items-center lg:space-x-6"
+    >
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./twitter.svg)"
+        href="https://twitter.com/julitiux"
+        target="_blank"
+        rel="me"
+      >
+        twitter
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href="https://github.com/julitiux"
+        target="_blank"
+        rel="me"
+      >
+        github
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./instagram.svg)"
+        href="https://instagram.com/julitiux"
+        target="_blank"
+        rel="me"
+      >
+        instagram
+      </a>
+      
+    </nav>
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    <h1 class="!my-0 pb-2.5">Spock Framework</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Jul 6, 2023</time>
+      
+      
+      
+      
+    </div>
+    
+  </header>
+
+  <section><h1 id="index"><strong>INDEX</strong></h1>
+<h1 id="spock-primerspock-primer"><a href="#spock-primer">Spock Primer</a></h1>
+<h1 id="data-driven-testingdata-driven-testing"><a href="#data-driven-testing">Data Driven Testing</a></h1>
+<h1 id="interaction-based-testinginteraction-based-testing"><a href="#interaction-based-testing">Interaction Based Testing</a></h1>
+<h1 id="spock-primer">Spock Primer</h1>
+<h2 id="imports">Imports</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#f92672">import</span> spock.lang.*
+</span></span></code></pre></div><h2 id="specification">Specification</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyFirstSpecification</span> <span style="color:#66d9ef">extends</span> Specification <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// fields
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// fixture methods
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// feature methods
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// helper methods
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h2 id="fields">Fields</h2>
+<p>Its a good practice to initialice them right at the point of declaration.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> obj <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ClassUnderSpecification<span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> coll <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Collaborator<span style="color:#f92672">()</span>
+</span></span></code></pre></div><p>Somethimes you need to share an object between methods; declare <code>@Shared</code> field. This es equivalent to initializing the field at the very beginning of the <code>setupSpec()</code> method.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#a6e22e">@Shared</span> res <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> VeryExpensiveResource<span style="color:#f92672">()</span>
+</span></span></code></pre></div><p>Static field should only for constants.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> PI <span style="color:#f92672">=</span> <span style="color:#ae81ff">3.141592654</span>
+</span></span></code></pre></div><h2 id="fixture-methods">Fixture Methods</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">setupSpec</span><span style="color:#f92672">()</span> <span style="color:#f92672">{}</span>    <span style="color:#75715e">// runs once - before the first feature method
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">setup</span><span style="color:#f92672">()</span> <span style="color:#f92672">{}</span>        <span style="color:#75715e">// runs before every feature method
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">cleanup</span><span style="color:#f92672">()</span> <span style="color:#f92672">{}</span>      <span style="color:#75715e">// runs after every feature method
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">cleanupSpec</span><span style="color:#f92672">()</span> <span style="color:#f92672">{}</span>  <span style="color:#75715e">// runs once - after the last feature method
+</span></span></span></code></pre></div><blockquote>
+<p><strong><em>NOTE:</em></strong>  They may only one fixture method of each type per specification class</p>
+</blockquote>
+<h3 id="invocation-order">Invocation order</h3>
+<ol>
+<li>super.stupSpec</li>
+<li>sub.setupSpec</li>
+<li>super.setup</li>
+<li>sub.setup</li>
+<li>feature.method</li>
+<li>sub.cleanup</li>
+<li>super.cleanup</li>
+<li>sub.cleanupSpec</li>
+<li>super.cleanupSpec</li>
+</ol>
+<h2 id="feature-methods">Feature Methods</h2>
+<p>Conceptually, a feature method consists of four phases:</p>
+<ol>
+<li>Set up the feature&rsquo;s fixture</li>
+<li>Provide a <em>stimulus</em> to the system under specification</li>
+<li>Describe the <em>response</em> expected from the system</li>
+<li>Clean up the feature&rsquo;s fixture</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#e6db74">&#34;pushing an element on the stack&#34;</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// blocks go here
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h3 id="blocks">Blocks</h3>
+<ol>
+<li>given</li>
+<li>when</li>
+<li>then</li>
+<li>expect</li>
+<li>cleanup</li>
+<li>where</li>
+</ol>
+<h3 id="given-blocks">Given blocks</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span>given:
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> stack <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Stack<span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> elem <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;push me&#34;</span>
+</span></span></code></pre></div><h3 id="when-and-then-blocks">When and Then Blocks</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span>when:       <span style="color:#75715e">// stimulus
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>then:       <span style="color:#75715e">// response
+</span></span></span></code></pre></div><h4 id="conditions">Conditions</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span>when:
+</span></span><span style="display:flex;"><span>  stack<span style="color:#f92672">.</span><span style="color:#a6e22e">push</span><span style="color:#f92672">(</span>elem<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>then:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">!</span>stack<span style="color:#f92672">.</span><span style="color:#a6e22e">empty</span>
+</span></span><span style="display:flex;"><span>  stack<span style="color:#f92672">.</span><span style="color:#a6e22e">size</span><span style="color:#f92672">()</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>  stack<span style="color:#f92672">.</span><span style="color:#a6e22e">peek</span><span style="color:#f92672">()</span> <span style="color:#f92672">==</span> elem<span style="color:#f92672">)</span>
+</span></span></code></pre></div><blockquote>
+<p><strong><em>TIP:</em></strong> Try to keep the number of conditions per feature method small.</p>
+</blockquote>
+<h4 id="implicit-and-explicit-conditions">Implicit and explicit conditions</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">setup</span><span style="color:#f92672">(){</span>
+</span></span><span style="display:flex;"><span>  stack <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Stack<span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">assert</span> stack<span style="color:#f92672">.</span><span style="color:#a6e22e">empty</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h4 id="excepion-conditions">Excepion Conditions</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span>when:
+</span></span><span style="display:flex;"><span>  stack<span style="color:#f92672">.</span><span style="color:#a6e22e">pop</span><span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>then:
+</span></span><span style="display:flex;"><span>  thrown<span style="color:#f92672">(</span>EmptyStackException<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  stack<span style="color:#f92672">.</span><span style="color:#a6e22e">empty</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span>when:
+</span></span><span style="display:flex;"><span>  stack<span style="color:#f92672">.</span><span style="color:#a6e22e">pop</span><span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>then:
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> e <span style="color:#f92672">=</span> thrown<span style="color:#f92672">(</span>EmptyStackException<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  e<span style="color:#f92672">.</span><span style="color:#a6e22e">cause</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span>when:
+</span></span><span style="display:flex;"><span>  stack<span style="color:#f92672">.</span><span style="color:#a6e22e">pop</span><span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>then:
+</span></span><span style="display:flex;"><span>  EmptyStackException e <span style="color:#f92672">=</span> thrown<span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>  e<span style="color:#f92672">.</span><span style="color:#a6e22e">cause</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#e6db74">&#34;HashMap accepts null key&#34;</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  given:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> map <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashMap<span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  when:
+</span></span><span style="display:flex;"><span>    map<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#66d9ef">null</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;elem&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  then:
+</span></span><span style="display:flex;"><span>    notThrown<span style="color:#f92672">(</span>NullPointerException<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h3 id="interactions">Interactions</h3>
+<p>Whereas conditions decribe an object&rsquo;s state, interactions describe how objects communicate with each other.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#e6db74">&#34;events are published to all subscribers&#34;</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  given:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> subscriber1 <span style="color:#f92672">=</span> Mock<span style="color:#f92672">(</span>Subscriber<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> subscriber2 <span style="color:#f92672">=</span> Mock<span style="color:#f92672">(</span>Subscriber<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> publisher <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Publisher<span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>    publisher<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>subscriber1<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    publisher<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>subscriber2<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  when:
+</span></span><span style="display:flex;"><span>    publisher<span style="color:#f92672">.</span><span style="color:#a6e22e">fire</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;event&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  then:
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">1</span> <span style="color:#f92672">*</span> subscriber1<span style="color:#f92672">.</span><span style="color:#a6e22e">receive</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;event&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">1</span> <span style="color:#f92672">*</span> subscriber2<span style="color:#f92672">.</span><span style="color:#a6e22e">receive</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;event&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h3 id="expect-block">Expect Block</h3>
+<p>An expect block is more limited than a <code>then</code> block in that may only contain conditions and variable definitions.
+Compare the following two attempts to describe the Math.max() method:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span>when:
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> x <span style="color:#f92672">=</span> Math<span style="color:#f92672">.</span><span style="color:#a6e22e">max</span><span style="color:#f92672">(</span><span style="color:#ae81ff">1</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>then:
+</span></span><span style="display:flex;"><span>  x <span style="color:#f92672">==</span> <span style="color:#ae81ff">2</span>
+</span></span></code></pre></div><p>by this one:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span>expecto:
+</span></span><span style="display:flex;"><span>  Math<span style="color:#f92672">.</span><span style="color:#a6e22e">max</span><span style="color:#f92672">(</span><span style="color:#ae81ff">1</span><span style="color:#f92672">,</span><span style="color:#ae81ff">2</span><span style="color:#f92672">)</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">2</span>
+</span></span></code></pre></div><p>Although both snippets are semantically equivalent, the secont one is crearly preferable. As a guidelan, use <code>when-then</code> to describe methods with side effects, and <code>expect</code> to describe purely dunctional methods.</p>
+<h3 id="clean-blocks">Clean Blocks</h3>
+<p>A cleanup block may only be followed by a <code>where</code> block, and may not be repeated. Like a cleanup method, is is used to free many resources used by a feature method, and is run even if teh feature has producedan exception.</p>
+<pre tabindex="0"><code class="language-grooovy" data-lang="grooovy">given:
+  def file = new File(&#34;/some/path&#34;)
+  file.createNewFile()
+
+  // ...
+
+cleanup:
+  file.delete()
+</code></pre><h3 id="where-blocks">Where blocks</h3>
+<p>A <code>where</code> block always come last in a method, and may not be repeated. It is used to write data-driven feature methods.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#e6db74">&#34;computing the maximum of two numbers&#34;</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  expect:
+</span></span><span style="display:flex;"><span>    Math<span style="color:#f92672">.</span><span style="color:#a6e22e">max</span><span style="color:#f92672">(</span>a<span style="color:#f92672">,</span> b<span style="color:#f92672">)</span> <span style="color:#f92672">==</span> c
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  where:
+</span></span><span style="display:flex;"><span>    a <span style="color:#f92672">&lt;&lt;</span> <span style="color:#f92672">[</span><span style="color:#ae81ff">5</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">3</span><span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>    b <span style="color:#f92672">&lt;&lt;</span> <span style="color:#f92672">[</span><span style="color:#ae81ff">1</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">9</span><span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>    c <span style="color:#f92672">&lt;&lt;</span> <span style="color:#f92672">[</span><span style="color:#ae81ff">5</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">9</span><span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h2 id="helper-methods">Helper Methods</h2>
+<p>Sometimes feature methods grow large and/or contains lots of duplicate code. In such case it can make sense to introduce one o more helper methods. Two good candidates for helper methods are setup/cleanup logic and complex condition</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#e6db74">&#34;offered PC matches preferred configuration&#34;</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  when:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> pc <span style="color:#f92672">=</span> shop<span style="color:#f92672">.</span><span style="color:#a6e22e">buyPc</span><span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  then:
+</span></span><span style="display:flex;"><span>    pc<span style="color:#f92672">.</span><span style="color:#a6e22e">vendor</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Sunny&#34;</span>
+</span></span><span style="display:flex;"><span>    pc<span style="color:#f92672">.</span><span style="color:#a6e22e">clockRate</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">2333</span>
+</span></span><span style="display:flex;"><span>    pc<span style="color:#f92672">.</span><span style="color:#a6e22e">ram</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">4096</span>
+</span></span><span style="display:flex;"><span>    pc<span style="color:#f92672">.</span><span style="color:#a6e22e">os</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Linux&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>If you happend to be a computer geek, you preferred PC configuration mught be very detailed, ou you might want to compare offers from many different shops</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#e6db74">&#34;offered PC matches preferred configuration&#34;</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  when:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> pc <span style="color:#f92672">=</span> shop<span style="color:#f92672">.</span><span style="color:#a6e22e">buyPc</span><span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  then:
+</span></span><span style="display:flex;"><span>    matchesPreferredConfiguration<span style="color:#f92672">(</span>pc<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">matchesPreferredConfiguration</span><span style="color:#f92672">(</span>pc<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  pc<span style="color:#f92672">.</span><span style="color:#a6e22e">vendor</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Sunny&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&amp;&amp;</span> pc<span style="color:#f92672">.</span><span style="color:#a6e22e">clockRate</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">2333</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&amp;&amp;</span> pc<span style="color:#f92672">.</span><span style="color:#a6e22e">ram</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">4096</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&amp;&amp;</span> pc<span style="color:#f92672">.</span><span style="color:#a6e22e">os</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Linux&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">```</span><span style="color:#f92672">.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>The helper method <span style="color:#a6e22e">matchesPreferredConfiguration</span><span style="color:#f92672">()</span> consists of a single <span style="color:#66d9ef">boolean</span> expression whose result is returned:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">```</span>groovy
+</span></span><span style="display:flex;"><span>Condition not satisfied:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>matchesPreferredConfiguration<span style="color:#f92672">(</span>pc<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span>                             <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">false</span>                         <span style="color:#f92672">...</span>
+</span></span></code></pre></div><p>No very helpful. Fortunately, we can do better:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">matchesPreferredConfiguration</span><span style="color:#f92672">(</span>pc<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">assert</span> pc<span style="color:#f92672">.</span><span style="color:#a6e22e">vendor</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Sunny&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">assert</span> pc<span style="color:#f92672">.</span><span style="color:#a6e22e">clockRate</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">2333</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">assert</span> pc<span style="color:#f92672">.</span><span style="color:#a6e22e">ram</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">4096</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">assert</span> pc<span style="color:#f92672">.</span><span style="color:#a6e22e">os</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Linux&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h2 id="using-with-for-expectations">Using <code>with</code> for expectations</h2>
+<p>As an alternative to the above helper methods, you can use with(target, closure) method to interact on the object being verified.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#e6db74">&#34;offered PC matches preferred configuration&#34;</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  when:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> pc <span style="color:#f92672">=</span> shop<span style="color:#f92672">.</span><span style="color:#a6e22e">buyPc</span><span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  then:
+</span></span><span style="display:flex;"><span>    with<span style="color:#f92672">(</span>pc<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>      vendor <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Sunny&#34;</span>
+</span></span><span style="display:flex;"><span>      clockRate <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">2333</span>
+</span></span><span style="display:flex;"><span>      ram <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">406</span>
+</span></span><span style="display:flex;"><span>      os <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Linux&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>Unlike when you helper methods, there is no need for explicit assert statements for proper error reporting
+When verifying mocks, a <code>with</code> statement can also cut out verbose verification statements</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> service <span style="color:#f92672">=</span> Mock<span style="color:#f92672">(</span>Service<span style="color:#f92672">)</span> <span style="color:#75715e">// has start(), stop(), and doWork() methods
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">def</span> app <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Application<span style="color:#f92672">(</span>service<span style="color:#f92672">)</span> <span style="color:#75715e">// controls the lifecycle of the service
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>when:
+</span></span><span style="display:flex;"><span>  app<span style="color:#f92672">.</span><span style="color:#a6e22e">run</span><span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>then:
+</span></span><span style="display:flex;"><span>  with<span style="color:#f92672">(</span>service<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">1</span> <span style="color:#f92672">*</span> start<span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">1</span> <span style="color:#f92672">*</span> doWork<span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">1</span> <span style="color:#f92672">*</span> stop<span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span></code></pre></div><h2 id="using-verifyall-to-assert-multiple-expecations-together">Using <code>verifyAll</code> to assert multiple expecations together</h2>
+<p>Normal exprectations fail the test on the first failed assertions. Sometimes it is helpful to collect these failures before failling the test more information, this behavior is also know as soft assertions</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#e6db74">&#34;offered PC matches preferred configuration&#34;</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  when:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> pc <span style="color:#f92672">=</span> shop<span style="color:#f92672">.</span><span style="color:#a6e22e">buyPc</span><span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  then:
+</span></span><span style="display:flex;"><span>    verifyAll<span style="color:#f92672">(</span>pc<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>      vendor <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Sunny&#34;</span>
+</span></span><span style="display:flex;"><span>      clockRate <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">2333</span>
+</span></span><span style="display:flex;"><span>      ram <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">406</span>
+</span></span><span style="display:flex;"><span>      os <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Linux&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>or can be used without a target</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span>expect:
+</span></span><span style="display:flex;"><span>  verifyAll <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">2</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">4</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span></code></pre></div><h2 id="specifications-as-documentations">Specifications as Documentations</h2>
+<p>Well-written specifications are a valuable source of information. Especially for higher-level specifications targeting a wider audience than just developers, it makes sense to provide more information in natural languaje than just the names specifications and features. Therefore, Spock provides a way to attach textual descriptions to blocks.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span>given: <span style="color:#e6db74">&#34;open a database connection&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// code goes here
+</span></span></span></code></pre></div><p>Use the <code>and:</code> label to describe logically different parts of a block</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span>given: <span style="color:#e6db74">&#34;open a database connection&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// code goes here
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>and: <span style="color:#e6db74">&#34;seed the customer table&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// code goes here
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>and: <span style="color:#e6db74">&#34;seed the product table&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// code goes here
+</span></span></span></code></pre></div><p>An and: label followed by a description can be inserted at any (top-level) position of a feature method, without altering the method’s semantics.</p>
+<p>In Behavior Driven Development, customer-facing features (called stories) are described in a given-when-then format. Spock directly supports this style of specification with the given: label:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span>given: <span style="color:#e6db74">&#34;an empty bank account&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// ...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>when: <span style="color:#e6db74">&#34;the account is credited \$10&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// ...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>then: <span style="color:#e6db74">&#34;the account&#39;s balance is \$10&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// ...
+</span></span></span></code></pre></div><h2 id="extensions">Extensions</h2>
+<p>As we have seen, Spock offers lots of functionality for writing specifications. However, there always comes a time when something else is needed. Therefore, Spock provides an interception-based extension mechanism. Extensions are activated by annotations called directives. Currently, Spock ships with the following directives:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>@Timeout</td>
+<td>Sets a timeout for execution of a feature of fixture method</td>
+</tr>
+<tr>
+<td>@Ignore</td>
+<td>Ignores any feature method carrying this annotation</td>
+</tr>
+<tr>
+<td>@IgnoreRest</td>
+<td>Any feature method carrying this annotations will be executed, all others will be ignored. Useful for quickly running just a single method</td>
+</tr>
+<tr>
+<td>@FailsWith</td>
+<td>Expects a feature method to complete abruptly. @FailsWith has two use cases: First, to document known bugs that cannot be resolved immediately. Second, to replace exception conditions in certain corner cases where the latter cannot be used (like specifying the behavior of exception conditions). In all other cases, exception conditions are preferable</td>
+</tr>
+</tbody>
+</table>
+<h1 id="data-driven-testing">Data Driven Testing</h1>
+<h2 id="introduction">Introduction</h2>
+<p>Suppose we want to specify the bahavior of the MAth.max</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MathSpec</span> <span style="color:#66d9ef">extends</span> Specification <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#e6db74">&#34;maximum of two numbers&#34;</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    expect:
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// exercise math method for a few different inputs
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    Math<span style="color:#f92672">.</span><span style="color:#a6e22e">max</span><span style="color:#f92672">(</span><span style="color:#ae81ff">1</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">3</span><span style="color:#f92672">)</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>    Math<span style="color:#f92672">.</span><span style="color:#a6e22e">max</span><span style="color:#f92672">(</span><span style="color:#ae81ff">7</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">4</span><span style="color:#f92672">)</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">7</span>
+</span></span><span style="display:flex;"><span>    Math<span style="color:#f92672">.</span><span style="color:#a6e22e">max</span><span style="color:#f92672">(</span><span style="color:#ae81ff">0</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">)</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><ul>
+<li>Code and data are mixed and cannot easily be changed indenpendently</li>
+<li>Data cannot easily be auto-generated or fetched from external sources</li>
+<li>In order to exercise the same code multiple times, it either has to be duplicated or extracted into a separated method</li>
+<li>In case of a failure, it may not be immediatly clear which input caused the failure</li>
+<li>Exercising teh same code multiple times does not ebenfit from the same isolation as executing separate method does</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MathSpec</span> <span style="color:#66d9ef">extends</span> Specification <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#e6db74">&#34;maximum of two numbers&#34;</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> a<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> b<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> c<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    expect:
+</span></span><span style="display:flex;"><span>    Math<span style="color:#f92672">.</span><span style="color:#a6e22e">max</span><span style="color:#f92672">(</span>a<span style="color:#f92672">,</span> b<span style="color:#f92672">)</span> <span style="color:#f92672">==</span> c
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>In this code we have finished the test logic, but still need to supply the data values to be used. This is done in a <code>where</code>: block, which always comes at the end of the method. In the simplest (and most common) case, the <code>where</code>: block holds a <em>data table</em></p>
+<h2 id="data-tables">Data Tables</h2>
+<p>Data tables are a convenient way to exercise a feature method with a fixed set of data values</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MathSpec</span> <span style="color:#66d9ef">extends</span> Specification <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#e6db74">&#34;maximum of two numbers&#34;</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> a<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> b<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> c<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    expect:
+</span></span><span style="display:flex;"><span>    Math<span style="color:#f92672">.</span><span style="color:#a6e22e">max</span><span style="color:#f92672">(</span>a<span style="color:#f92672">,</span> b<span style="color:#f92672">)</span> <span style="color:#f92672">==</span> c
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    where:
+</span></span><span style="display:flex;"><span>    a <span style="color:#f92672">|</span> b <span style="color:#f92672">|</span> c
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">1</span> <span style="color:#f92672">|</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">|</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">7</span> <span style="color:#f92672">|</span> <span style="color:#ae81ff">4</span> <span style="color:#f92672">|</span> <span style="color:#ae81ff">7</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">0</span> <span style="color:#f92672">|</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">|</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>The data table must have at least two columns. A single-columns table can be written as:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span>where:
+</span></span><span style="display:flex;"><span>a <span style="color:#f92672">|</span> _
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1</span> <span style="color:#f92672">|</span> _
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">7</span> <span style="color:#f92672">|</span> _
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">0</span> <span style="color:#f92672">|</span> _
+</span></span></code></pre></div><p>A sequence of two or more unsdescore can be used to split one wide data table into multiple narrower ones.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span>where:
+</span></span><span style="display:flex;"><span>a <span style="color:#f92672">|</span> _
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1</span> <span style="color:#f92672">|</span> _
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">7</span> <span style="color:#f92672">|</span> _
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">0</span> <span style="color:#f92672">|</span> _
+</span></span><span style="display:flex;"><span>__
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>b <span style="color:#f92672">|</span> c
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1</span> <span style="color:#f92672">|</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">3</span> <span style="color:#f92672">|</span> <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">5</span> <span style="color:#f92672">|</span> <span style="color:#ae81ff">6</span>
+</span></span></code></pre></div><p>This is semantically exactly the same, just as one wider combined data table</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span>where:
+</span></span><span style="display:flex;"><span>a <span style="color:#f92672">|</span> b <span style="color:#f92672">|</span> c
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1</span> <span style="color:#f92672">|</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">|</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">7</span> <span style="color:#f92672">|</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">|</span> <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">0</span> <span style="color:#f92672">|</span> <span style="color:#ae81ff">5</span> <span style="color:#f92672">|</span> <span style="color:#ae81ff">6</span>
+</span></span></code></pre></div><p>The sequence of two or more underscores can be used anywhere in the where block. It will be ignored everywhere, except for in between two data tables, where it is used to separate the two data tables. This means that the separator can also be used as styling element in different ways. It can be used as separator line like shown in the next example</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span>where:
+</span></span><span style="display:flex;"><span>_____
+</span></span><span style="display:flex;"><span>a <span style="color:#f92672">|</span> _
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1</span> <span style="color:#f92672">|</span> _
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">7</span> <span style="color:#f92672">|</span> _
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">0</span> <span style="color:#f92672">|</span> _
+</span></span><span style="display:flex;"><span>_____
+</span></span><span style="display:flex;"><span>b <span style="color:#f92672">|</span> c
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1</span> <span style="color:#f92672">|</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">3</span> <span style="color:#f92672">|</span> <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">5</span> <span style="color:#f92672">|</span> <span style="color:#ae81ff">6</span>
+</span></span></code></pre></div><h2 id="isolate-execution-of-iterations">Isolate Execution of Iterations</h2>
+<p>Iteration are isolated from each other in the same wey as separate feature methods. Each iteartion get its own instance of the specification class, and the <code>setup</code> and <code>cleanup</code> methods will be before and after each iteration respectively.</p>
+<h2 id="sharing-objects-between-iterations">Sharing Objects between Iterations</h2>
+<p>I order to share an Object between iterationsm it has to be keep in @Shared or static filed.</p>
+<blockquote>
+<p>Only @Shared and static variables can be accessed from with a <code>where</code> block</p>
+</blockquote>
+<h2 id="syntactic-variations">Syntactic Variations</h2>
+<p>The previous code can be tweaked in a few ways</p>
+<p>First, since the where block already declares all data variable, the method parameters can be omitted
+Second, inputs and matched by outputs can be separated with  a double pipe simbol <code>||</code> to visually set them apart</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MathSpec</span> <span style="color:#66d9ef">extends</span> Specification <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#e6db74">&#34;maximum of two numbers&#34;</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    expect:
+</span></span><span style="display:flex;"><span>    Math<span style="color:#f92672">.</span><span style="color:#a6e22e">max</span><span style="color:#f92672">(</span>a<span style="color:#f92672">,</span> b<span style="color:#f92672">)</span> <span style="color:#f92672">==</span> c
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    where:
+</span></span><span style="display:flex;"><span>    a <span style="color:#f92672">|</span> b <span style="color:#f92672">||</span> c
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">1</span> <span style="color:#f92672">|</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">||</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">7</span> <span style="color:#f92672">|</span> <span style="color:#ae81ff">4</span> <span style="color:#f92672">||</span> <span style="color:#ae81ff">7</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">0</span> <span style="color:#f92672">|</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>Even you can use double pipes</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MathSpec</span> <span style="color:#66d9ef">extends</span> Specification <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#e6db74">&#34;maximum of two numbers&#34;</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    expect:
+</span></span><span style="display:flex;"><span>    Math<span style="color:#f92672">.</span><span style="color:#a6e22e">max</span><span style="color:#f92672">(</span>a<span style="color:#f92672">,</span> b<span style="color:#f92672">)</span> <span style="color:#f92672">==</span> c
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    where:
+</span></span><span style="display:flex;"><span>    a <span style="color:#f92672">;</span> b <span style="color:#f92672">;;</span> c
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">1</span> <span style="color:#f92672">;</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">;;</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">7</span> <span style="color:#f92672">;</span> <span style="color:#ae81ff">4</span> <span style="color:#f92672">;;</span> <span style="color:#ae81ff">7</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">0</span> <span style="color:#f92672">;</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">;;</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>Pipes and semicolons as data column separator can not be mixed one table, if the column separator changes, this starts a new stand aline data table.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MathSpec</span> <span style="color:#66d9ef">extends</span> Specification <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#e6db74">&#34;maximum of two numbers&#34;</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    expect:
+</span></span><span style="display:flex;"><span>    Math<span style="color:#f92672">.</span><span style="color:#a6e22e">max</span><span style="color:#f92672">(</span>a<span style="color:#f92672">,</span> b<span style="color:#f92672">)</span> <span style="color:#f92672">==</span> c
+</span></span><span style="display:flex;"><span>    Math<span style="color:#f92672">.</span><span style="color:#a6e22e">max</span><span style="color:#f92672">(</span>d<span style="color:#f92672">,</span> e<span style="color:#f92672">)</span> <span style="color:#f92672">==</span> f
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    where:
+</span></span><span style="display:flex;"><span>    a <span style="color:#f92672">|</span> b <span style="color:#f92672">||</span> c
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">1</span> <span style="color:#f92672">|</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">||</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">7</span> <span style="color:#f92672">|</span> <span style="color:#ae81ff">4</span> <span style="color:#f92672">||</span> <span style="color:#ae81ff">7</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">0</span> <span style="color:#f92672">|</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    d <span style="color:#f92672">;</span> e <span style="color:#f92672">;;</span> f
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">1</span> <span style="color:#f92672">;</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">;;</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">7</span> <span style="color:#f92672">;</span> <span style="color:#ae81ff">4</span> <span style="color:#f92672">;;</span> <span style="color:#ae81ff">7</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">0</span> <span style="color:#f92672">;</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">;;</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h2 id="reporting-of-failures">Reporting of Failures</h2>
+<p>Assume that our implementation of the max method has a flaw, and one of the iterations fails</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>maximum of two numbers [a: 1, b: 3, c: 3, #0]   PASSED
+</span></span><span style="display:flex;"><span>maximum of two numbers [a: 7, b: 4, c: 7, #1]   FAILED
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Condition not satisfied:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Math.max(a, b) == c
+</span></span><span style="display:flex;"><span>|    |   |  |  |  |
+</span></span><span style="display:flex;"><span>|    |   7  4  |  7
+</span></span><span style="display:flex;"><span>|    42        false
+</span></span><span style="display:flex;"><span>class java.lang.Math
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>maximum of two numbers [a: 0, b: 0, c: 0, #2]   PASSED
+</span></span></code></pre></div><p>Iterations of a feature method are by default unrolled with a rich naming pattern. This pattern can also be configured as documented at Unrolled Iteration Names or the unrolling can be disabled</p>
+<h2 id="method-uprolling-and-unrolling">Method Uprolling and Unrolling</h2>
+<p>A method annoted with @Rollup will have its iteration not reportrd independently but only aggregated within the feature.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#a6e22e">@Rollup</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#e6db74">&#34;maximum of two numbers&#34;</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">...</span>
+</span></span></code></pre></div><p>Note that up- and unrolling has no effect on how the method gets executed; it is only an alternation in reporting. Depending on the execution environment, the output will look something like:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>maximum of two numbers   FAILED
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Condition not satisfied:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Math.max(a, b) == c
+</span></span><span style="display:flex;"><span>|    |   |  |  |  |
+</span></span><span style="display:flex;"><span>|    |   7  4  |  7
+</span></span><span style="display:flex;"><span>|    42        false
+</span></span><span style="display:flex;"><span>class java.lang.Math
+</span></span></code></pre></div><p>The @Rollup annotation can also be placed on a spec. This has the same effect as placing it on each data-driven feature method of the spec that does not have an @Unroll annotation.</p>
+<p>Alternatively the configuration file setting unrollByDefault in the unroll section can be set to false to roll up all features automatically unless they are annotated with @Unroll or are contained in an @Unrolled spec and thus reinstate the pre Spock 2.0 behavior where this was the default.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#75715e">//Disable Default Unrolling
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>unroll <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    unrollByDefault <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>It is illegal to annotate a spec or a feature with both the @Unroll and the @Rollup annotation and if detected this will cause an exception to be thrown.</p>
+<p>To summarize:</p>
+<p>A feature will be uprolled</p>
+<ul>
+<li>if the method is annotated with @Rollup</li>
+<li>if the method is not annotated with @Unroll and the spec is annotated with @Rollup</li>
+<li>if neither the method nor the spec is annotated with @Unroll and the configuration option unroll { unrollByDefault } is set to false</li>
+</ul>
+<p>A feature will be unrolled</p>
+<ul>
+<li>if the method is annotated with @Unroll</li>
+<li>if the method is not annotated with @Rollup and the spec is annotated with @Unroll</li>
+<li>if neither the method nor the spec is annotated with @Rollup and the configuration option unroll { unrollByDefault } is set to its default value true</li>
+</ul>
+<h2 id="data-pipes">Data Pipes</h2>
+<p>A data pipe, indicated by the left-shift <code>&lt;&lt;</code> operator, connects a data variable to a <em>data prvider</em>. The data provider holds all values for the variable, one per iteration. This include objects of type Collection, Strings, Iterables and objects implementing the Iterable contract.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>where:
+</span></span><span style="display:flex;"><span>a <span style="color:#f92672">&lt;&lt;</span> <span style="color:#f92672">[</span><span style="color:#ae81ff">1</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">7</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>b <span style="color:#f92672">&lt;&lt;</span> <span style="color:#f92672">[</span><span style="color:#ae81ff">3</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">4</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>c <span style="color:#f92672">&lt;&lt;</span> <span style="color:#f92672">[</span><span style="color:#ae81ff">3</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">7</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">]</span>
+</span></span></code></pre></div><h2 id="multi-variable-data-pipes">Multi-Variable Data Pipes</h2>
+<p>If a data provider returns multiple values per iteration, it can be connected to multiple data variables simultaneously</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#a6e22e">@Shared</span> sql <span style="color:#f92672">=</span> Sql<span style="color:#f92672">.</span><span style="color:#a6e22e">newInstance</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;jdbc:h2:mem:&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;org.h2.Driver&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#e6db74">&#34;maximum of two numbers&#34;</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  expect:
+</span></span><span style="display:flex;"><span>  Math<span style="color:#f92672">.</span><span style="color:#a6e22e">max</span><span style="color:#f92672">(</span>a<span style="color:#f92672">,</span> b<span style="color:#f92672">)</span> <span style="color:#f92672">==</span> c
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  where:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">[</span>a<span style="color:#f92672">,</span> b<span style="color:#f92672">,</span> c<span style="color:#f92672">]</span> <span style="color:#f92672">&lt;&lt;</span> sql<span style="color:#f92672">.</span><span style="color:#a6e22e">rows</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;select a, b, c from maxdata&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>Data can be ignored with an underscore <code>_</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>where:
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>a<span style="color:#f92672">,</span> b<span style="color:#f92672">,</span> _<span style="color:#f92672">,</span> c<span style="color:#f92672">]</span> <span style="color:#f92672">&lt;&lt;</span> sql<span style="color:#f92672">.</span><span style="color:#a6e22e">rows</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;select * from maxdata&#34;</span><span style="color:#f92672">)</span>
+</span></span></code></pre></div><p>The multi-assignments can even be nested. The following example will generate these iterations:</p>
+<table>
+<thead>
+<tr>
+<th>a</th>
+<th>b</th>
+<th>c</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[&lsquo;a1&rsquo;, &lsquo;a2&rsquo;]</td>
+<td>&lsquo;b1&rsquo;</td>
+<td>&lsquo;c1&rsquo;</td>
+</tr>
+<tr>
+<td>[&lsquo;a2&rsquo;, &lsquo;a1&rsquo;]</td>
+<td>&lsquo;b1&rsquo;</td>
+<td>&lsquo;c1&rsquo;</td>
+</tr>
+<tr>
+<td>[&lsquo;a1&rsquo;, &lsquo;a2&rsquo;]</td>
+<td>&lsquo;b2&rsquo;</td>
+<td>&lsquo;c2&rsquo;</td>
+</tr>
+<tr>
+<td>[&lsquo;a2&rsquo;, &lsquo;a1&rsquo;]</td>
+<td>&lsquo;b2&rsquo;</td>
+<td>&lsquo;c2&rsquo;</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>where:
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>a<span style="color:#f92672">,</span> <span style="color:#f92672">[</span>b<span style="color:#f92672">,</span> _<span style="color:#f92672">,</span> c<span style="color:#f92672">]]</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#f92672">[</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">[</span><span style="color:#e6db74">&#39;a1&#39;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#39;a2&#39;</span><span style="color:#f92672">].</span><span style="color:#a6e22e">permutations</span><span style="color:#f92672">(),</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">[</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">[</span><span style="color:#e6db74">&#39;b1&#39;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#39;d1&#39;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#39;c1&#39;</span><span style="color:#f92672">],</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">[</span><span style="color:#e6db74">&#39;b2&#39;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#39;d2&#39;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#39;c2&#39;</span><span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">].</span><span style="color:#a6e22e">combinations</span><span style="color:#f92672">()</span>
+</span></span></code></pre></div><h2 id="named-deconstruction-of-data-pipes">Named deconstruction of data pipes</h2>
+<p>Since Spock 2.2, multi variable data pipes can also be deconstructed from maps. This is useful when the data provider returns a map with named keys. Or, if you have long values that don’t fit well into a data-table, then using the maps makes it easier to read.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>where:
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>a<span style="color:#f92672">,</span> b<span style="color:#f92672">,</span> c<span style="color:#f92672">]</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#f92672">[</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">[</span>
+</span></span><span style="display:flex;"><span>    a: <span style="color:#ae81ff">1</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>    b: <span style="color:#ae81ff">3</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>    c: <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">],</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">[</span>
+</span></span><span style="display:flex;"><span>    a: <span style="color:#ae81ff">2</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>    b: <span style="color:#ae81ff">4</span><span style="color:#f92672">,</span>
+</span></span><span style="display:flex;"><span>    c: <span style="color:#ae81ff">6</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">]</span>
+</span></span></code></pre></div><p>You can use named deconstruction with nested data pipes, but only on the innermost nesting level.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>where:
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>a<span style="color:#f92672">,</span> <span style="color:#f92672">[</span>b<span style="color:#f92672">,</span> c<span style="color:#f92672">]]</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#f92672">[</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">[</span><span style="color:#ae81ff">1</span><span style="color:#f92672">,</span> <span style="color:#f92672">[</span>b: <span style="color:#ae81ff">3</span><span style="color:#f92672">,</span> c: <span style="color:#ae81ff">5</span><span style="color:#f92672">]],</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">[</span><span style="color:#ae81ff">2</span><span style="color:#f92672">,</span> <span style="color:#f92672">[</span>c: <span style="color:#ae81ff">6</span><span style="color:#f92672">,</span> b: <span style="color:#ae81ff">4</span><span style="color:#f92672">]]</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">]</span>
+</span></span></code></pre></div><h2 id="data-variable-assigment">Data Variable Assigment</h2>
+<p>A data variable can be directly assigned</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>where:
+</span></span><span style="display:flex;"><span>a <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>b <span style="color:#f92672">=</span> Math<span style="color:#f92672">.</span><span style="color:#a6e22e">random</span><span style="color:#f92672">()</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">100</span>
+</span></span><span style="display:flex;"><span>c <span style="color:#f92672">=</span> a <span style="color:#f92672">&gt;</span> b <span style="color:#f92672">?</span> a <span style="color:#f92672">:</span> b
+</span></span></code></pre></div><p>Assignments are re-evaluated for every iteration. As already shown above, the right-hand side of an assignment may refer to other data variables:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>where:
+</span></span><span style="display:flex;"><span>row <span style="color:#f92672">&lt;&lt;</span> sql<span style="color:#f92672">.</span><span style="color:#a6e22e">rows</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;select * from maxdata&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// pick apart columns
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>a <span style="color:#f92672">=</span> row<span style="color:#f92672">.</span><span style="color:#a6e22e">a</span>
+</span></span><span style="display:flex;"><span>b <span style="color:#f92672">=</span> row<span style="color:#f92672">.</span><span style="color:#a6e22e">b</span>
+</span></span><span style="display:flex;"><span>c <span style="color:#f92672">=</span> row<span style="color:#f92672">.</span><span style="color:#a6e22e">c</span>
+</span></span></code></pre></div><h2 id="accessing-other-data-variables">Accessing Other Data Variables</h2>
+<p>There are only two possibilities to access one data variable</p>
+<p>The first possibility are derived data variables like every data variable that is defined by a direct assignment can access all previously defined data variables, including the ones defined through data tables or data pipes:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>where:
+</span></span><span style="display:flex;"><span>a <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>b <span style="color:#f92672">=</span> Math<span style="color:#f92672">.</span><span style="color:#a6e22e">random</span><span style="color:#f92672">()</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">100</span>
+</span></span><span style="display:flex;"><span>c <span style="color:#f92672">=</span> a <span style="color:#f92672">&gt;</span> b <span style="color:#f92672">?</span> a <span style="color:#f92672">:</span> b
+</span></span></code></pre></div><p>The second possibility is to access previous columns within data tables:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>where:
+</span></span><span style="display:flex;"><span>a <span style="color:#f92672">|</span> b
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">3</span> <span style="color:#f92672">|</span> a <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">7</span> <span style="color:#f92672">|</span> a <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">0</span> <span style="color:#f92672">|</span> a <span style="color:#f92672">+</span> <span style="color:#ae81ff">3</span>
+</span></span></code></pre></div><p>This also includes columns in previous data tables in the same where block:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>where:
+</span></span><span style="display:flex;"><span>a <span style="color:#f92672">|</span> b
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">3</span> <span style="color:#f92672">|</span> a <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">7</span> <span style="color:#f92672">|</span> a <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">0</span> <span style="color:#f92672">|</span> a <span style="color:#f92672">+</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>and:
+</span></span><span style="display:flex;"><span>c <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>and:
+</span></span><span style="display:flex;"><span>d     <span style="color:#f92672">|</span> e
+</span></span><span style="display:flex;"><span>a <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">|</span> b <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>a <span style="color:#f92672">*</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">|</span> b <span style="color:#f92672">*</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>a <span style="color:#f92672">*</span> <span style="color:#ae81ff">4</span> <span style="color:#f92672">|</span> b <span style="color:#f92672">*</span> <span style="color:#ae81ff">4</span>
+</span></span></code></pre></div><h2 id="multi-variable-assignment">Multi-Variable Assignment</h2>
+<p>You can also assign to multiple variables in one expression, if you have some object Groovy can iterate over.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#a6e22e">@Shared</span> sql <span style="color:#f92672">=</span> Sql<span style="color:#f92672">.</span><span style="color:#a6e22e">newInstance</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;jdbc:h2:mem:&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;org.h2.Driver&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#e6db74">&#34;maximum of two numbers multi-assignment&#34;</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  expect:
+</span></span><span style="display:flex;"><span>  Math<span style="color:#f92672">.</span><span style="color:#a6e22e">max</span><span style="color:#f92672">(</span>a<span style="color:#f92672">,</span> b<span style="color:#f92672">)</span> <span style="color:#f92672">==</span> c
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  where:
+</span></span><span style="display:flex;"><span>  row <span style="color:#f92672">&lt;&lt;</span> sql<span style="color:#f92672">.</span><span style="color:#a6e22e">rows</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;select a, b, c from maxdata&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">(</span>a<span style="color:#f92672">,</span> b<span style="color:#f92672">,</span> c<span style="color:#f92672">)</span> <span style="color:#f92672">=</span> row
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>The data values thar aren&rsquo;t of intereset can be ignored with an underscore <code>_</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>where:
+</span></span><span style="display:flex;"><span>row <span style="color:#f92672">&lt;&lt;</span> sql<span style="color:#f92672">.</span><span style="color:#a6e22e">rows</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;select * from maxdata&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>a<span style="color:#f92672">,</span> b<span style="color:#f92672">,</span> _<span style="color:#f92672">,</span> c<span style="color:#f92672">)</span> <span style="color:#f92672">=</span> row
+</span></span></code></pre></div><h2 id="combining-data-tables-data-pipes-and-variable-assigments">Combining Data Tables, Data Pipes and Variable Assigments</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>where:
+</span></span><span style="display:flex;"><span>a <span style="color:#f92672">|</span> b
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1</span> <span style="color:#f92672">|</span> a <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">7</span> <span style="color:#f92672">|</span> a <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">0</span> <span style="color:#f92672">|</span> a <span style="color:#f92672">+</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>c <span style="color:#f92672">&lt;&lt;</span> <span style="color:#f92672">[</span><span style="color:#ae81ff">3</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">4</span><span style="color:#f92672">,</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>d <span style="color:#f92672">=</span> a <span style="color:#f92672">&gt;</span> c <span style="color:#f92672">?</span> a <span style="color:#f92672">:</span> c
+</span></span></code></pre></div><h2 id="type-coercion-for-data-variable-values">Type Coercion for Data Variable Values</h2>
+<p>Data variable values are coerced to the declared parameter type using type coercion. Due to that custom type conversions can be provided as extension module or with the help of the @Use extension on the specification (as it has no effect to the where: block if applied to a feature).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#e6db74">&#34;type coercion for data variable values&#34;</span><span style="color:#f92672">(</span>Integer i<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  expect:
+</span></span><span style="display:flex;"><span>  i <span style="color:#66d9ef">instanceof</span> Integer
+</span></span><span style="display:flex;"><span>  i <span style="color:#f92672">==</span> <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  where:
+</span></span><span style="display:flex;"><span>  i <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;10&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>and</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#a6e22e">@Use</span><span style="color:#f92672">(</span>CoerceBazToBar<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Foo</span> <span style="color:#66d9ef">extends</span> Specification <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">foo</span><span style="color:#f92672">(</span>Bar bar<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    expect:
+</span></span><span style="display:flex;"><span>    bar <span style="color:#f92672">==</span> Bar<span style="color:#f92672">.</span><span style="color:#a6e22e">FOO</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    where:
+</span></span><span style="display:flex;"><span>    bar <span style="color:#f92672">=</span> Baz<span style="color:#f92672">.</span><span style="color:#a6e22e">FOO</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">enum</span> Bar <span style="color:#f92672">{</span> FOO<span style="color:#f92672">,</span> BAR <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">enum</span> Baz <span style="color:#f92672">{</span> FOO<span style="color:#f92672">,</span> BAR <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CoerceBazToBar</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">static</span> Bar <span style="color:#a6e22e">asType</span><span style="color:#f92672">(</span>Baz self<span style="color:#f92672">,</span> Class<span style="color:#f92672">&lt;</span>Bar<span style="color:#f92672">&gt;</span> clazz<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> Bar<span style="color:#f92672">.</span><span style="color:#a6e22e">valueOf</span><span style="color:#f92672">(</span>self<span style="color:#f92672">.</span><span style="color:#a6e22e">name</span><span style="color:#f92672">())</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h2 id="number-of-iterations">Number of iterations</h2>
+<p>The number of iterations depends on how much data is available. Successive executions of the same method can yield different numbers of iterations.</p>
+<h2 id="closing-of-data-providers">Closing of Data Providers</h2>
+<p>After all iterations have completed, the zero-argument close method is called on all data providers that have such a method.</p>
+<h2 id="unrolled-iteration-names">Unrolled Iteration Names</h2>
+<p>By default, the names of unrolled iteration are the name of the feature, plus the data variable and the iterations index. This will always produce unique names and should enable you to identify easily the falling data variable combination like this</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#e6db74">&#34;maximum of #a and #b is #c&#34;</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">...</span>
+</span></span></code></pre></div><p>This method name uses placeholders, denoted by a leading hash sign (#), to refer to data variables a, b, and c. In the output, the placeholders will be replaced with concrete values:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>maximum of 1 and 3 is 3   PASSED
+</span></span><span style="display:flex;"><span>maximum of 7 and 4 is 7   FAILED
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Math.max(a, b) == c
+</span></span><span style="display:flex;"><span>|    |   |  |  |  |
+</span></span><span style="display:flex;"><span>|    |   7  4  |  7
+</span></span><span style="display:flex;"><span>|    42        false
+</span></span><span style="display:flex;"><span>class java.lang.Math
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>maximum of 0 and 0 is 0   PASSED
+</span></span></code></pre></div><p>An unrolled method name is similar to a Groovy GString.except for the following differences:</p>
+<ul>
+<li>Expressions are denoted with # instead of $, and there is no equivalent for the ${&hellip;} syntax</li>
+<li>Express only support property access and zero-arg methods calls.</li>
+</ul>
+<p>Given a class Person with properties name and age, and a data variable person of type Person, the following are valid method names:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#e6db74">&#34;#person is #person.age years old&#34;</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>  <span style="color:#75715e">// property access
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">def</span> <span style="color:#e6db74">&#34;#person.name.toUpperCase()&#34;</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>        <span style="color:#75715e">// zero-arg method call
+</span></span></span></code></pre></div><p>Non-string values (like #person above) are converted to Strings according to Groovy semantics.</p>
+<p>The following are invalid method names:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#e6db74">&#34;#person.name.split(&#39; &#39;)[1]&#34;</span> <span style="color:#f92672">{</span>  <span style="color:#75715e">// cannot have method arguments
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">def</span> <span style="color:#e6db74">&#34;#person.age / 2&#34;</span> <span style="color:#f92672">{</span>  <span style="color:#75715e">// cannot use operators
+</span></span></span></code></pre></div><p>Additionally, to the data variables the tokens #featureName and #iterationIndex are supported. The former does not make much sense inside an actual feature name.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#e6db74">&#34;#person is #person.age years old [#iterationIndex]&#34;</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">...</span>
+</span></span></code></pre></div><p>will be reported as</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>╷
+</span></span><span style="display:flex;"><span>└─ Spock ✔
+</span></span><span style="display:flex;"><span>   └─ PersonSpec ✔
+</span></span><span style="display:flex;"><span>      └─ #person.name is #person.age years old [#iterationIndex] ✔
+</span></span><span style="display:flex;"><span>         ├─ Fred is 38 years old [0] ✔
+</span></span><span style="display:flex;"><span>         ├─ Wilma is 36 years old [1] ✔
+</span></span><span style="display:flex;"><span>         └─ Pebbles is 5 years old [2] ✔
+</span></span></code></pre></div><p>Alternatively, to specifying the unroll-pattern as method name, it can be given as parameter to the @Unroll annotation which takes precedence over the method name:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#a6e22e">@Unroll</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;#featureName[#iterationIndex] (#person.name is #person.age years old)&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#e6db74">&#34;person age should be calculated properly&#34;</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// ...
+</span></span></span></code></pre></div><p>will reported as</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>╷
+</span></span><span style="display:flex;"><span>└─ Spock ✔
+</span></span><span style="display:flex;"><span>   └─ PersonSpec ✔
+</span></span><span style="display:flex;"><span>      └─ person age should be calculated properly ✔
+</span></span><span style="display:flex;"><span>         ├─ person age should be calculated properly[0] (Fred is 38 years old) ✔
+</span></span><span style="display:flex;"><span>         ├─ person age should be calculated properly[1] (Wilma is 36 years old) ✔
+</span></span><span style="display:flex;"><span>         └─ person age should be calculated properly[2] (Pebbles is 5 years old) ✔
+</span></span></code></pre></div><p>The advantage is, that you can have a descriptive method name for the whole feature, while having a separate template for each iteration. Furthermore, the feature method name is not filled with placeholders and thus better readable.</p>
+<p>If neither a parameter to the annotation is given, nor the method name contains a #, the configuration file setting defaultPattern in the unroll section is inspected. If it is set to a non-null string, this value is used as unroll-pattern. This could for example be set to</p>
+<ul>
+<li>featureName to have all iterations reported with the same name, or</li>
+<li>featureName[#iterationIndex] to have a simply indexed iteration name, or</li>
+<li>iterationName if you make sure that in each data-driven feature you also set a data variable called iterationName that is then used for reporting</li>
+</ul>
+<h2 id="special-tokens">Special Tokens</h2>
+<p>This is a list of special tokens</p>
+<ul>
+<li>#featureName is the name of the feature (mostly useful for the defaultPatter setting)</li>
+<li>#iterationIndex is the current iteration index</li>
+<li>#dataVariables lists all data varuables for this iteration, eg x:1, y:2, z:3</li>
+<li>#dataVariablesWithIndex the same as #dataVariables but with an index at the end, eg x:1, y:2, z:3, #0</li>
+</ul>
+<h2 id="configuration">Configuration</h2>
+<p>Set Default Unroll-Pattern</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span>unroll <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    defaultPattern <span style="color:#e6db74">&#39;#featureName[#iterationIndex]&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>Disable Unroll-pattern Expression Asserting</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span>unroll <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    validateExpressions <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>Disable repetition of feature name in iterations</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span>unroll <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    includeFeatureNameForIterations <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>With includeFeatureNameForIterations true</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>╷
+</span></span><span style="display:flex;"><span>└─ Spock ✔
+</span></span><span style="display:flex;"><span>   └─ ASpec ✔
+</span></span><span style="display:flex;"><span>      └─ really long and informative test name that doesn&#39;t have to be repeated ✔
+</span></span><span style="display:flex;"><span>         ├─ really long and informative test name that doesn&#39;t have to be repeated [x: 1, y: a, #0] ✔
+</span></span><span style="display:flex;"><span>         ├─ really long and informative test name that doesn&#39;t have to be repeated [x: 2, y: b, #1] ✔
+</span></span><span style="display:flex;"><span>         └─ really long and informative test name that doesn&#39;t have to be repeated [x: 3, y: c, #2] ✔
+</span></span></code></pre></div><p>With includeFeatureNameForIterations false</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>└─ Spock ✔
+</span></span><span style="display:flex;"><span>   └─ ASpec ✔
+</span></span><span style="display:flex;"><span>      └─ really long and informative test name that doesn&#39;t have to be repeated ✔
+</span></span><span style="display:flex;"><span>         ├─ x: 1, y: a, #0 ✔
+</span></span><span style="display:flex;"><span>         ├─ x: 2, y: b, #1 ✔
+</span></span><span style="display:flex;"><span>         └─ x: 3, y: c, #2 ✔
+</span></span></code></pre></div><h1 id="interaction-based-testing">Interaction Based Testing</h1>
+<p>Interation-based hased testing is a design and testing technique that emerged in the Extreme Programming (XP) community in the early 2000&rsquo;s. Focusing on tje behavior of objects rather than their state, it explores hot the objects under specification interact, by the way of mthods calls. with their collaborators.</p>
+<p>Given this Groovy classes:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Publisher</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  List<span style="color:#f92672">&lt;</span>Subscriber<span style="color:#f92672">&gt;</span> subscribers <span style="color:#f92672">=</span> <span style="color:#f92672">[]</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">int</span> messageCount <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">send</span><span style="color:#f92672">(</span>String message<span style="color:#f92672">){</span>
+</span></span><span style="display:flex;"><span>    subscribers<span style="color:#f92672">*.</span><span style="color:#a6e22e">receive</span><span style="color:#f92672">(</span>message<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    messageCount<span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Subscriber</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">receive</span><span style="color:#f92672">(</span>String message<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PublisherSpec</span> <span style="color:#66d9ef">extends</span> Specification <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  Publisher publisher <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Publisher<span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h2 id="creating-mock-objects">Creating Mock Objects</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> subscriber <span style="color:#f92672">=</span> Mock<span style="color:#f92672">(</span>Subscriber<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> subscriber2 <span style="color:#f92672">=</span> Mock<span style="color:#f92672">(</span>Subscriber<span style="color:#f92672">)</span>
+</span></span></code></pre></div><p>Alternatively, the following Java-like syntaxis is supported:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span>Subscriber subscriber <span style="color:#f92672">=</span> Mock<span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>Subscriber subscriber2 <span style="color:#f92672">=</span> Mock<span style="color:#f92672">()</span>
+</span></span></code></pre></div><h2 id="default-behavior-of-mock-objects">Default Behavior of Mock Objects</h2>
+<p>Initially, mock objects have no behavior. Calling methods on them is allowed but has no effect other than returning the default value for the method’s return type (false, 0, or null). An exception are the Object.equals, Object.hashCode, and Object.toString methods, which have the following default behavior: A mock object is only equal to itself, has a unique hash code, and a string representation that includes the name of the type it represents.</p>
+<h2 id="injecting-mock-objects-into-code-under-specification">Injecting Mock Objects into Code Under Specification</h2>
+<p>After creating the publisher and his subscribes, we need to make the latter known to the former:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PublisherSpec</span> <span style="color:#66d9ef">extends</span> Specification <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  Publisher publisher <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Publisher<span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>  Subscriber subscriber <span style="color:#f92672">=</span> Mock<span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>  Subscriber subscriber2 <span style="color:#f92672">=</span> Mock<span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">setup</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    publisher<span style="color:#f92672">.</span><span style="color:#a6e22e">subscribers</span> <span style="color:#f92672">&lt;&lt;</span> subscriber         <span style="color:#75715e">// &lt;&lt; is a Groovy shorthand for List.add()
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    publisher<span style="color:#f92672">.</span><span style="color:#a6e22e">subscribers</span> <span style="color:#f92672">&lt;&lt;</span> subscriber2
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span></code></pre></div><h2 id="mocking">Mocking</h2>
+<p>Mocking is the act of describing (mandatory) interactions between the objects under specification and its collaborators.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#e6db74">&#34;should send messages to all subscribers&#34;</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  when:
+</span></span><span style="display:flex;"><span>  publisher<span style="color:#f92672">.</span><span style="color:#a6e22e">send</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;hello&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  then:
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">1</span> <span style="color:#f92672">*</span> subscriber<span style="color:#f92672">.</span><span style="color:#a6e22e">receive</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;hello&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">1</span> <span style="color:#f92672">*</span> subscriber2<span style="color:#f92672">.</span><span style="color:#a6e22e">receive</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;hello&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><blockquote>
+<p>When the publisehd send a &lsquo;hello&rsquo; message, then both subscribers receive that message exactly once</p>
+</blockquote>
+<p>When this feature methods gets run, all invocations on mock objects that occurs while executing the <code>when</code> block will be matched against the interactions described in the <code>then</code> block.</p>
+<p>If one of the interactions isn&rsquo;t satisfied, a (subclass of) <code>InteractionNotSatisfiedError</code> will be thrown.</p>
+<h2 id="interactions-1">Interactions</h2>
+<p>While an insteraction looks similar to a regular method invocation, it is simply a way to express whicj method invocation are expected to occur. A good way og an interaction is as a regular expression that all incoming invocations on mock objects are matched against. Depending on the circumstances, the interaction may match zero, one, or multiple invocations.</p>
+<p>Let&rsquo;s take a closer look at the <code>then:</code>  block. It containt two <em>interactions</em>, each of which has four distinct parts:</p>
+<ul>
+<li>cardinality</li>
+<li>target constraint</li>
+<li>method constraint</li>
+<li>argument constraint</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>1 * subscriber.receive(&#34;hello&#34;)
+</span></span><span style="display:flex;"><span>|   |          |       |
+</span></span><span style="display:flex;"><span>|   |          |       argument constraint
+</span></span><span style="display:flex;"><span>|   |          method constraint
+</span></span><span style="display:flex;"><span>|   target constraint
+</span></span><span style="display:flex;"><span>cardinality
+</span></span></code></pre></div><h2 id="cardinality">Cardinality</h2>
+<p>The cardinality of an interaction describes how often a method call is expected</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#ae81ff">1</span> <span style="color:#f92672">*</span> subscriber<span style="color:#f92672">.</span><span style="color:#a6e22e">receive</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;hello&#34;</span><span style="color:#f92672">)</span>        <span style="color:#75715e">// exactly one call
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#ae81ff">0</span> <span style="color:#f92672">*</span> subscriber<span style="color:#f92672">.</span><span style="color:#a6e22e">receive</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;hello&#34;</span><span style="color:#f92672">)</span>        <span style="color:#75715e">// zero calls
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">(</span><span style="color:#ae81ff">1</span><span style="color:#f92672">..</span><span style="color:#ae81ff">3</span><span style="color:#f92672">)</span> <span style="color:#f92672">*</span> subscriber<span style="color:#f92672">.</span><span style="color:#a6e22e">receive</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;hello&#34;</span><span style="color:#f92672">)</span>   <span style="color:#75715e">// between one and three calls (inclusive)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">(</span><span style="color:#ae81ff">1</span><span style="color:#f92672">..</span><span style="color:#a6e22e">_</span><span style="color:#f92672">)</span> <span style="color:#f92672">*</span> subscriber<span style="color:#f92672">.</span><span style="color:#a6e22e">receive</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;hello&#34;</span><span style="color:#f92672">)</span>   <span style="color:#75715e">// at least one call
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">(</span>_<span style="color:#f92672">..</span><span style="color:#ae81ff">3</span><span style="color:#f92672">)</span> <span style="color:#f92672">*</span> subscriber<span style="color:#f92672">.</span><span style="color:#a6e22e">receive</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;hello&#34;</span><span style="color:#f92672">)</span>   <span style="color:#75715e">// at most three calls
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>_ <span style="color:#f92672">*</span> subscriber<span style="color:#f92672">.</span><span style="color:#a6e22e">receive</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;hello&#34;</span><span style="color:#f92672">)</span>        <span style="color:#75715e">// any number of calls, including zero
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                                       <span style="color:#75715e">// (rarely needed; see &#39;Strict Mocking&#39;)
+</span></span></span></code></pre></div><h2 id="target-constraint">Target Constraint</h2>
+<p>The target constraint of an interaction describes which mock object is expected to receive the method call</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#ae81ff">1</span> <span style="color:#f92672">*</span> subscriber<span style="color:#f92672">.</span><span style="color:#a6e22e">receive</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;hello&#34;</span><span style="color:#f92672">)</span>         <span style="color:#75715e">// a call to &#39;subscriber&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#ae81ff">1</span> <span style="color:#f92672">*</span> _<span style="color:#f92672">.</span><span style="color:#a6e22e">receive</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;hello&#34;</span><span style="color:#f92672">)</span>                  <span style="color:#75715e">// a call to any mock object
+</span></span></span></code></pre></div><h2 id="method-constraint">Method Constraint</h2>
+<p>The method constraint of an interaction describes which method is expected to be called</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#ae81ff">1</span> <span style="color:#f92672">*</span> subscriber<span style="color:#f92672">.</span><span style="color:#a6e22e">receive</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;hello&#34;</span><span style="color:#f92672">)</span>         <span style="color:#75715e">// a method named &#39;receive&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#ae81ff">1</span> <span style="color:#f92672">*</span> subscriber<span style="color:#f92672">.</span><span style="color:#e6db74">/r.*e/</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;hello&#34;</span><span style="color:#f92672">)</span>          <span style="color:#75715e">// a method whose name matches the given regular expression
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                                        <span style="color:#75715e">// (here: method name starts with &#39;r&#39; and ends in &#39;e&#39;)
+</span></span></span></code></pre></div><p>When expecting a call to a getter method, Groovy property syntax can be used instead of method syntax</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#ae81ff">1</span> <span style="color:#f92672">*</span> subscriber<span style="color:#f92672">.</span><span style="color:#a6e22e">status</span>                   <span style="color:#75715e">// same as: 1 * subscriber.getStatus()
+</span></span></span></code></pre></div><p>When expecting a call to a setter method, only method syntax can be used</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#ae81ff">1</span> <span style="color:#f92672">*</span> subscriber<span style="color:#f92672">.</span><span style="color:#a6e22e">setStatus</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;ok&#34;</span><span style="color:#f92672">)</span>          <span style="color:#75715e">// NOT: 1 * subscriber.status = &#34;ok&#34;
+</span></span></span></code></pre></div></section>
+
+  
+  
+
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="https://julitiux.github.io/posts/functional_programming_in_java/"
+      ><span class="mr-1.5">←</span><span>Functional Programming in Java</span></a
+    >
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="https://julitiux.github.io/posts/vim/"
+      ><span>Vim</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+
+  
+  
+
+  
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+  <div class="mr-auto">
+    &copy; 2023
+    <a class="link" href="https://julitiux.github.io/">Blogs</a>
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >Powered by Hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >✎ Paper</a
+  >
+</footer>
+
+  </body>
+</html>

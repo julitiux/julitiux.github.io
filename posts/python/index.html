@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #fbfbfb"
+  lang="en-us"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Python - Blogs</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  <meta name="description" content="INDEX GETTING STARTED How To Install How To Install PyEnv Build Build Dependencies Using the pyenv-installer Using pyenv. List all pythons availables. Install a version of python. Installation Location. Uninstall a version of python. Running Python Programs from a terminal VARIABLES AND SIMPLE DATA TYPES Naming and Using Variables Strings Changing Case in a String with Methods Combining or Concatenating Strings Adding Whitespace to String with Tabs or Newlines Stripping Whitespace Numbers Integers Floats Avoid Type Errors with the str() Function Comments Introducing List Accessing Elements in a List Changing, Adding, and Removing Elements Modifying Elements in a List." />
+  <meta name="author" content="Julitiux" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="https://julitiux.github.io/main.min.css" />
+
+  
+
+  
+     
+  <link rel="preload" as="image" href="https://julitiux.github.io/theme.svg" />
+
+  
+  
+  
+  <link rel="preload" as="image" href="https://cdn.v2ex.com/gravatar/6fd8df4abe41f17fd8e2dd7d97b5cc8c?s=160&amp;d=identicon" />
+  
+  
+
+  
+  <link rel="preload" as="image" href="https://julitiux.github.io/twitter.svg" />
+  
+  <link rel="preload" as="image" href="https://julitiux.github.io/github.svg" />
+  
+  <link rel="preload" as="image" href="https://julitiux.github.io/instagram.svg" />
+  
+  
+
+  
+  
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css"
+  integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI"
+  crossorigin="anonymous"
+/>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js"
+  integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t"
+  crossorigin="anonymous"
+></script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js"
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"
+></script>
+
+  
+  
+  
+
+  
+  <link rel="icon" href="https://julitiux.github.io/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://julitiux.github.io/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.107.0">
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:title" content="Python" />
+<meta property="og:description" content="INDEX GETTING STARTED How To Install How To Install PyEnv Build Build Dependencies Using the pyenv-installer Using pyenv. List all pythons availables. Install a version of python. Installation Location. Uninstall a version of python. Running Python Programs from a terminal VARIABLES AND SIMPLE DATA TYPES Naming and Using Variables Strings Changing Case in a String with Methods Combining or Concatenating Strings Adding Whitespace to String with Tabs or Newlines Stripping Whitespace Numbers Integers Floats Avoid Type Errors with the str() Function Comments Introducing List Accessing Elements in a List Changing, Adding, and Removing Elements Modifying Elements in a List." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://julitiux.github.io/posts/python/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-09-01T22:05:10-05:00" />
+<meta property="article:modified_time" content="2020-09-01T22:05:10-05:00" />
+
+
+  
+  <meta itemprop="name" content="Python">
+<meta itemprop="description" content="INDEX GETTING STARTED How To Install How To Install PyEnv Build Build Dependencies Using the pyenv-installer Using pyenv. List all pythons availables. Install a version of python. Installation Location. Uninstall a version of python. Running Python Programs from a terminal VARIABLES AND SIMPLE DATA TYPES Naming and Using Variables Strings Changing Case in a String with Methods Combining or Concatenating Strings Adding Whitespace to String with Tabs or Newlines Stripping Whitespace Numbers Integers Floats Avoid Type Errors with the str() Function Comments Introducing List Accessing Elements in a List Changing, Adding, and Removing Elements Modifying Elements in a List."><meta itemprop="datePublished" content="2020-09-01T22:05:10-05:00" />
+<meta itemprop="dateModified" content="2020-09-01T22:05:10-05:00" />
+<meta itemprop="wordCount" content="4135">
+<meta itemprop="keywords" content="" />
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Python"/>
+<meta name="twitter:description" content="INDEX GETTING STARTED How To Install How To Install PyEnv Build Build Dependencies Using the pyenv-installer Using pyenv. List all pythons availables. Install a version of python. Installation Location. Uninstall a version of python. Running Python Programs from a terminal VARIABLES AND SIMPLE DATA TYPES Naming and Using Variables Strings Changing Case in a String with Methods Combining or Concatenating Strings Adding Whitespace to String with Tabs or Newlines Stripping Whitespace Numbers Integers Floats Avoid Type Errors with the str() Function Comments Introducing List Accessing Elements in a List Changing, Adding, and Removing Elements Modifying Elements in a List."/>
+
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-3xl px-8 lg:justify-center">
+  <div class="relative z-50 mr-auto flex items-center">
+    <a
+      class="-translate-x-[1px] -translate-y-[1px] text-2xl font-semibold"
+      href="https://julitiux.github.io/"
+      >Blogs</a
+    >
+    <div
+      class="btn-dark text-[0] ml-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 -mr-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#fbfbfb'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+
+    
+    <nav
+      class="mt-12 flex justify-center space-x-10 dark:invert lg:ml-12 lg:mt-0 lg:items-center lg:space-x-6"
+    >
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./twitter.svg)"
+        href="https://twitter.com/julitiux"
+        target="_blank"
+        rel="me"
+      >
+        twitter
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href="https://github.com/julitiux"
+        target="_blank"
+        rel="me"
+      >
+        github
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./instagram.svg)"
+        href="https://instagram.com/julitiux"
+        target="_blank"
+        rel="me"
+      >
+        instagram
+      </a>
+      
+    </nav>
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    <h1 class="!my-0 pb-2.5">Python</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Sep 1, 2020</time>
+      
+      
+      
+      
+    </div>
+    
+  </header>
+
+  <section><h1 id="index"><strong>INDEX</strong></h1>
+<h1 id="getting-startedgetting-started"><a href="#getting-started">GETTING STARTED</a></h1>
+<h2 id="how-to-installhow-to-install"><a href="#how-to-install">How To Install</a></h2>
+<h2 id="how-to-install-pyenvhow-to-install-pyenv"><a href="#how-to-install-pyenv">How To Install PyEnv</a></h2>
+<h3 id="build-build-dependenciesbuild-build-dependencies"><a href="#build-build-dependencies">Build Build Dependencies</a></h3>
+<h3 id="using-the-pyenv-installerusing-the-pyenv-installer"><a href="#using-the-pyenv-installer">Using the pyenv-installer</a></h3>
+<h2 id="using-pyenvusing-pyenv"><a href="#using-pyenv.">Using pyenv.</a></h2>
+<h3 id="list-all-pythons-availableslist-all-pythons-availables"><a href="#list-all-pythons-availables.">List all pythons availables.</a></h3>
+<h3 id="install-a-version-of-pythoninstall-a-version-of-python"><a href="#install-a-version-of-python.">Install a version of python.</a></h3>
+<h3 id="installation-locationinstallation-location"><a href="#installation-location.">Installation Location.</a></h3>
+<h3 id="uninstall-a-version-of-pythonuninstall-a-version-of-python"><a href="#uninstall-a-version-of-python.">Uninstall a version of python.</a></h3>
+<h2 id="running-python-programs-from-a-terminalrunning-python-programs-from-a-terminal"><a href="#running-python-programs-from-a-terminal">Running Python Programs from a terminal</a></h2>
+<h1 id="variables-and-simple-data-typesvariables-and-simple-data-types"><a href="#variables-and-simple-data-types">VARIABLES AND SIMPLE DATA TYPES</a></h1>
+<h2 id="naming-and-using-variablesnaming-and-using-variables"><a href="#naming-and-using-variables">Naming and Using Variables</a></h2>
+<h2 id="stringsstrings"><a href="#strings">Strings</a></h2>
+<h3 id="changing-case-in-a-string-with-methodschanging-case-in-a-string-with-methods"><a href="#changing-case-in-a-string-with-methods">Changing Case in a String with Methods</a></h3>
+<h3 id="combining-or-concatenating-stringscombining-or-concatenating-strings"><a href="#combining-or-concatenating-strings">Combining or Concatenating Strings</a></h3>
+<h3 id="adding-whitespace-to-string-with-tabs-or-newlinesadding-whitespace-to-string-with-tabs-or-newlines"><a href="#adding-whitespace-to-string-with-tabs-or-newlines">Adding Whitespace to String with Tabs or Newlines</a></h3>
+<h3 id="stripping-whitespacestripping-whitespace"><a href="#stripping-whitespace">Stripping Whitespace</a></h3>
+<h2 id="numbersnumbers"><a href="#numbers">Numbers</a></h2>
+<h3 id="integersintegers"><a href="#integers">Integers</a></h3>
+<h3 id="floatsfloats"><a href="#floats">Floats</a></h3>
+<h3 id="avoid-type-errors-with-the-str-functionavoid-type-errors-with-the-str-function"><a href="#avoid-type-errors-with-the-str-function">Avoid Type Errors with the str() Function</a></h3>
+<h3 id="commentscomments"><a href="#comments">Comments</a></h3>
+<h1 id="introducing-listintroducing-list"><a href="#introducing-list">Introducing List</a></h1>
+<h3 id="accessing-elements-in-a-listaccessing-elements-in-a-list"><a href="#accessing-elements-in-a-list">Accessing Elements in a List</a></h3>
+<h2 id="changing-adding-and-removing-elementschanging-adding-and-removing-elements"><a href="#changing-adding-and-removing-elements">Changing, Adding, and Removing Elements</a></h2>
+<h3 id="modifying-elements-in-a-listmodifying-elements-in-a-list"><a href="#modifying-elements-in-a-list">Modifying Elements in a List.</a></h3>
+<h3 id="adding-elements-to-a-listadding-elements-to-a-list"><a href="#adding-elements-to-a-list">Adding Elements to a List</a></h3>
+<h3 id="inserting-elements-into-a-listinserting-elements-into-a-list"><a href="#inserting-elements-into-a-list">Inserting Elements into a List</a></h3>
+<h3 id="removing-elements-from-a-list-using-the-_del_-statementremoving-elements-from-a-list-using-the-_del_-statement"><a href="#removing-elements-from-a-list-using-the-_del_-statement">Removing Elements from a List using the <em>del</em> Statement</a></h3>
+<h3 id="removing-elements-from-a-list-using-the-_pop_-methodremoving-elements-from-a-list-using-the-_pop_-method"><a href="#removing-elements-from-a-list-using-the-_pop_-method">Removing Elements from a List using the <em>pop()</em> method</a></h3>
+<h3 id="popping-items-from-any-position-in-a-listpopping-items-from-any-position-in-a-list"><a href="#popping-items-from-any-position-in-a-list">Popping items from any Position in a list</a></h3>
+<h3 id="removing-items-by-valueremoving-items-by-value"><a href="#removing-items-by-value">Removing Items by Value</a></h3>
+<h2 id="organizing-a-listorganizing-a-list"><a href="#organizing-a-list">Organizing a List</a></h2>
+<h3 id="sorting-a-list-permanently-with-the-sort-methodsorting-a-list-permanently-with-the-sort-method"><a href="#sorting-a-list-permanently-with-the-sort-method">Sorting a List permanently with the sort() method</a></h3>
+<h3 id="sorting-a-list-temporarily-with-the-sorted-functionsorting-a-list-temporarily-with-the-sorted-function"><a href="#sorting-a-list-temporarily-with-the-sorted-function">Sorting a List temporarily with the sorted() function</a></h3>
+<h3 id="printing-a-list-in-reverse-orderprinting-a-list-in-reverse-order"><a href="#printing-a-list-in-reverse-order">Printing a List in reverse order</a></h3>
+<h3 id="finding-the-length-of-a-listfinding-the-length-of-a-list"><a href="#finding-the-length-of-a-list">Finding the length of a List</a></h3>
+<h1 id="working-with-listsworking-with-lists"><a href="#working-with-lists">Working with Lists</a></h1>
+<h2 id="looping-an-entire-listlooping-an-entire-list"><a href="#looping-an-entire-list">Looping an entire List</a></h2>
+<h3 id="do-something-after-a-for-loopdo-something-after-a-for-loop"><a href="#do-something-after-a-for-loop">Do something after a for loop</a></h3>
+<h3 id="forgetting-to-ident-additional-linesforgetting-to-ident-additional-lines"><a href="#forgetting-to-ident-additional-lines">Forgetting to ident additional lines</a></h3>
+<h3 id="identing-unnecessarilyidenting-unnecessarily"><a href="#identing-unnecessarily">Identing unnecessarily</a></h3>
+<h3 id="identing-unnecessarily-after-the-loopidenting-unnecessarily-after-the-loop"><a href="#identing-unnecessarily-after-the-loop">Identing unnecessarily after the loop</a></h3>
+<h3 id="forgetting-the-colonforgetting-the-colon"><a href="#forgetting-the-colon">Forgetting the colon</a></h3>
+<h1 id="making-numerical-listsmaking-numerical-lists"><a href="#making-numerical-lists">Making numerical lists</a></h1>
+<h2 id="using-the-range-functionusing-the-range-function"><a href="#using-the-range-function">Using the range() function</a></h2>
+<h2 id="using-range-to-make-a-list-of-numbersusing-range-to-make-a-list-of-numbers"><a href="#using-range-to-make-a-list-of-numbers">Using range() to make a list of numbers</a></h2>
+<h3 id="simple-statistics-with-a-list-of-numbersimple-statistics-with-a-list-of-number"><a href="#simple-statistics-with-a-list-of-number">Simple statistics with a list of number</a></h3>
+<h1 id="working-with-part-of-a-listworking-with-part-of-a-list"><a href="#working-with-part-of-a-list">Working with part of a list</a></h1>
+<h3 id="looping-through-a-slicelooping-through-a-slice"><a href="#looping-through-a-slice">Looping through a slice</a></h3>
+<h3 id="copyiing-a-listcopyiing-a-list"><a href="#copyiing-a-list">Copyiing a list</a></h3>
+<h1 id="tuplestuples"><a href="#tuples">Tuples</a></h1>
+<h3 id="defining-a-tupledefining-a-tuple"><a href="#defining-a-tuple">Defining a Tuple</a></h3>
+<h3 id="looping-through-all-values-in-a-tuplalooping-through-all-values-in-a-tupla"><a href="#looping-through-all-values-in-a-tupla">Looping through all values in a tupla</a></h3>
+<h1 id="if-statementsif-statements"><a href="#if-statements">if statements</a></h1>
+<h3 id="a-simple-examplea-simple-example"><a href="#a-simple-example">A simple example</a></h3>
+<h2 id="checking-for-equalitychecking-for-equality"><a href="#checking-for-equality">Checking for Equality</a></h2>
+<h3 id="ignoring-case-when-checking-for-equalityignoring-case-when-checking-for-equality"><a href="#ignoring-case-when-checking-for-equality">Ignoring case when checking for equality</a></h3>
+<h2 id="checking-for-inequalitychecking-for-inequality"><a href="#checking-for-inequality">Checking for Inequality</a></h2>
+<h2 id="numerical-comparisonsnumerical-comparisons"><a href="#numerical-comparisons">Numerical Comparisons</a></h2>
+<h2 id="checking-mmultiple-conditionschecking-mmultiple-conditions"><a href="#checking-mmultiple-conditions">Checking mmultiple conditions</a></h2>
+<h2 id="checking-whether-a-value-is-in-a-listchecking-whether-a-value-is-in-a-list"><a href="#checking-whether-a-value-is-in-a-list">Checking whether a value is in a list</a></h2>
+<h2 id="if-statementif-statement"><a href="#if-statement">If Statement</a></h2>
+<h2 id="if-else-statementsif-else-statements"><a href="#if-else-statements">if-else statements</a></h2>
+<h2 id="the-if-elif-else-chainthe-if-elif-else-chain"><a href="#the-if-elif-else-chain">The if-elif-else chain</a></h2>
+<h1 id="dictionariesdictionaries"><a href="#dictionaries">Dictionaries</a></h1>
+<h3 id="add-new-key-value-pairsadd-new-key-value-pairs"><a href="#add-new-key-value-pairs">Add new key-value pairs</a></h3>
+<h3 id="removing-a-key-value-pairsremoving-a-key-value-pairs"><a href="#removing-a-key-value-pairs">Removing a key-value pairs</a></h3>
+<h3 id="a-dictionary-of-similar-objectsa-dictionary-of-similar-objects"><a href="#a-dictionary-of-similar-objects">A Dictionary of similar Objects</a></h3>
+<h1 id="user-input-and-while-loopsuser-input-and-while-loops"><a href="#user-input-and-while-loops">User Input and While Loops</a></h1>
+<h3 id="how-the-input-function-workshow-the-input-function-works"><a href="#how-the-input-function-works">How the input Function Works</a></h3>
+<h3 id="using-int-to-accept-numerical-inputusing-int-to-accept-numerical-input"><a href="#using-int-to-accept-numerical-input">Using int() to Accept numerical input</a></h3>
+<h2 id="the-modulo-operatorthe-modulo-operator"><a href="#the-modulo-operator">The modulo operator</a></h2>
+<h2 id="the-while-loopthe-while-loop"><a href="#the-while-loop">The while Loop</a></h2>
+<h1 id="functionsfunctions"><a href="#functions">FUNCTIONS</a></h1>
+<h3 id="defining-a-functiondefining-a-function"><a href="#defining-a-function">Defining a Function</a></h3>
+<h3 id="passing-information-to-a-functionpassing-information-to-a-function"><a href="#passing-information-to-a-function">Passing Information to a function</a></h3>
+<h3 id="arguments-and-parametersarguments-and-parameters"><a href="#arguments-and-parameters">Arguments and Parameters.</a></h3>
+<h3 id="positional-argumentspositional-arguments"><a href="#positional-arguments">Positional Arguments</a></h3>
+<h3 id="keyword-argumentskeyword-arguments"><a href="#keyword-arguments">Keyword arguments</a></h3>
+<h3 id="default-valuedefault-value"><a href="#default-value">Default value</a></h3>
+<h3 id="returning-a-simple-valuereturning-a-simple-value"><a href="#returning-a-simple-value">Returning a simple value</a></h3>
+<h3 id="returning-a-dictionaryreturning-a-dictionary"><a href="#returning-a-dictionary">Returning a Dictionary</a></h3>
+<h3 id="passing-a-listpassing-a-list"><a href="#passing-a-list">Passing a list</a></h3>
+<h3 id="passing-an-arbitrary-number-of-argumentspassing-an-arbitrary-number-of-arguments"><a href="#passing-an-arbitrary-number-of-arguments">Passing an arbitrary number of arguments</a></h3>
+<h3 id="mixing-positional-and-arbitrary-argumentsmixing-positional-and-arbitrary-arguments"><a href="#mixing-positional-and-arbitrary-arguments">Mixing positional and arbitrary arguments</a></h3>
+<h2 id="storing-your-functions-in-modulesstoring-your-functions-in-modules"><a href="#storing-your-functions-in-modules">Storing your functions in modules</a></h2>
+<h3 id="importing-an-entire-moduleimporting-an-entire-module"><a href="#importing-an-entire-module">Importing an entire module</a></h3>
+<h3 id="import-specific-functionsimport-specific-functions"><a href="#import-specific-functions">Import specific functions</a></h3>
+<h3 id="using-_as_-to-give-a-function-an-aliasusing-_as_-to-give-a-function-an-alias"><a href="#using-_as_-to-give-a-function-an-alias">Using <em>as</em> to give a function an alias</a></h3>
+<h3 id="using-as-to-give-a-module-an-aliasusing-as-to-give-a-module-an-alias"><a href="#using-as-to-give-a-module-an-alias">Using as to give a module an alias</a></h3>
+<h2 id="importing-all-functions-in-a-moduleimporting-all-functions-in-a-module"><a href="#importing-all-functions-in-a-module">Importing all functions in a module</a></h2>
+<h1 id="classes-9classes-9"><a href="#classes-9">Classes 9</a></h1>
+<h3 id="creating-ans-using-a-classcreating-ans-using-a-class"><a href="#creating-ans-using-a-class">Creating ans Using a Class</a></h3>
+<h2 id="creating-a-class-dog-classcreating-a-class-dog-class"><a href="#creating-a-class-dog-class">Creating a class Dog Class</a></h2>
+<h2 id="the-__init__-methodthe-__init__-method"><a href="#the-__init__-method">The <strong>init</strong>() Method</a></h2>
+<h2 id="making-an-instance-from-a-classmaking-an-instance-from-a-class"><a href="#making-an-instance-from-a-class">Making an Instance from a Class</a></h2>
+<h2 id="accessing-attributesaccessing-attributes"><a href="#accessing-attributes">Accessing Attributes</a></h2>
+<h2 id="calling-methodscalling-methods"><a href="#calling-methods">Calling Methods</a></h2>
+<h2 id="creating-multiple-instancescreating-multiple-instances"><a href="#creating-multiple-instances">Creating Multiple Instances</a></h2>
+<h3 id="working-with-classes-and-instancesworking-with-classes-and-instances"><a href="#working-with-classes-and-instances">Working with classes and instances</a></h3>
+<h2 id="setting-a-default-value-for-an-attributesetting-a-default-value-for-an-attribute"><a href="#setting-a-default-value-for-an-attribute">Setting a default value for an attribute</a></h2>
+<h2 id="modifying-attribute-valuemodifying-attribute-value"><a href="#modifying-attribute-value">Modifying Attribute Value</a></h2>
+<h3 id="modifying-an-attributes-value-directlymodifying-an-attributes-value-directly"><a href="#modifying-an-attributes-value-directly">Modifying an attribute&rsquo;s value directly</a></h3>
+<h3 id="modifying-and-attributes-value-through-a-methodmodifying-and-attributes-value-through-a-method"><a href="#modifying-and-attributes-value-through-a-method">Modifying and Attribute&rsquo;s value through a Method</a></h3>
+<h2 id="inheritanceinheritance"><a href="#inheritance">Inheritance</a></h2>
+<h1 id="files-and-exceptionsfiles-and-exceptions"><a href="#files-and-exceptions">Files and Exceptions</a></h1>
+<h2 id="reading-from-a-filereading-from-a-file"><a href="#reading-from-a-file">Reading from a file</a></h2>
+<h2 id="file-pathfile-path"><a href="#file-path">File Path</a></h2>
+<h2 id="reading-line-by-linereading-line-by-line"><a href="#reading-line-by-line">Reading Line by Line</a></h2>
+<h2 id="making-a-list-of-lines-from-a-filemaking-a-list-of-lines-from-a-file"><a href="#making-a-list-of-lines-from-a-file">Making a List of Lines from a File</a></h2>
+<h2 id="working-with-a-files-contentsworking-with-a-files-contents"><a href="#working-with-a-files-contents">Working with a File&rsquo;s contents</a></h2>
+<h1 id="getting-started">GETTING STARTED</h1>
+<h2 id="how-to-install">How To Install</h2>
+<p>There are two versions of Python available: Python 2 and the newer Python 3. By default in Mac OS has Python 2.</p>
+<p>How to know the version that you has, type something like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">~</span> <span style="color:#960050;background-color:#1e0010">»</span> python <span style="color:#f92672">--</span>version
+</span></span><span style="display:flex;"><span>Python <span style="color:#ae81ff">2.7.16</span>
+</span></span></code></pre></div><p>Python comes with an interpreter that runs a terminal. For launch the interpreter, open a terminal and write something like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">~</span> <span style="color:#960050;background-color:#1e0010">»</span> python
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>WARNING: Python <span style="color:#ae81ff">2.7</span> <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> recommended<span style="color:#f92672">.</span>
+</span></span><span style="display:flex;"><span>This version <span style="color:#f92672">is</span> included <span style="color:#f92672">in</span> macOS <span style="color:#66d9ef">for</span> compatibility <span style="color:#66d9ef">with</span> legacy software<span style="color:#f92672">.</span>
+</span></span><span style="display:flex;"><span>Future versions of macOS will <span style="color:#f92672">not</span> include Python <span style="color:#ae81ff">2.7</span><span style="color:#f92672">.</span>
+</span></span><span style="display:flex;"><span>Instead, it <span style="color:#f92672">is</span> recommended that you transition to using <span style="color:#e6db74">&#39;python3&#39;</span> <span style="color:#f92672">from</span> within Terminal<span style="color:#f92672">.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Python <span style="color:#ae81ff">2.7.16</span> (default, Feb <span style="color:#ae81ff">29</span> <span style="color:#ae81ff">2020</span>, <span style="color:#ae81ff">01</span>:<span style="color:#ae81ff">55</span>:<span style="color:#ae81ff">37</span>)
+</span></span><span style="display:flex;"><span>[GCC <span style="color:#ae81ff">4.2.1</span> Compatible Apple LLVM <span style="color:#ae81ff">11.0.3</span> (clang<span style="color:#f92672">-</span><span style="color:#ae81ff">1103.0.29.20</span>) (<span style="color:#f92672">-</span>macos10<span style="color:#ae81ff">.15</span><span style="color:#f92672">-</span>objc<span style="color:#f92672">-</span> on darwin
+</span></span><span style="display:flex;"><span>Type <span style="color:#e6db74">&#34;help&#34;</span>, <span style="color:#e6db74">&#34;copyright&#34;</span>, <span style="color:#e6db74">&#34;credits&#34;</span> <span style="color:#f92672">or</span> <span style="color:#e6db74">&#34;license&#34;</span> <span style="color:#66d9ef">for</span> more information<span style="color:#f92672">.</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span>
+</span></span></code></pre></div><p>To install Python 3, go on your terminal and run the following command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>~ » brew install python3
+</span></span></code></pre></div><h2 id="how-to-install-pyenv">How To Install PyEnv</h2>
+<h3 id="build-build-dependencies">Build Build Dependencies</h3>
+<p>pyenv builds Python from source, which means you will need build dependencies to actually use pyenv.</p>
+<p>This command relies on Homebrew and installs the few dependencies for macOS users.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>brew install openssl readline sqlite3 xz zlib
+</span></span></code></pre></div><h3 id="using-the-pyenv-installer">Using the pyenv-installer</h3>
+<p>After you have installed the build dependencies, you are ready to install pyenv itself.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>curl https://pyenv.run | bash
+</span></span></code></pre></div><p>This command will install pyenv along with a few plugins that are useful:</p>
+<ul>
+<li><em>pyenv</em>: The actual pyenv application</li>
+<li><em>pyenv-virtualenv</em>: Plugin for pyenv and virtual environments</li>
+<li><em>pyenv-update</em>: Plugin for updating pyenv</li>
+<li><em>pyenv-doctor</em>: Plugin to verify that pyenv and build dependencies are installed</li>
+<li><em>pyenv-which-ext</em>: Plugin to automatically lookup system commands</li>
+</ul>
+<p>At the end of the run, you should see something like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>WARNING: seems you still have not added <span style="color:#e6db74">&#39;pyenv&#39;</span> to the load path.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Load pyenv automatically by adding</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># the following to ~/.bashrc:</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>export PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$HOME<span style="color:#e6db74">/.pyenv/bin:</span>$PATH<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>eval <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>pyenv init -<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>eval <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>pyenv virtualenv-init -<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+</span></span></code></pre></div><p>Once you have done this, you need to reload your shell:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>soruce .zshrc
+</span></span></code></pre></div><h2 id="using-pyenv">Using pyenv.</h2>
+<h3 id="list-all-pythons-availables">List all pythons availables.</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>pyenv install --list
+</span></span><span style="display:flex;"><span>pyenv install --list | grep <span style="color:#e6db74">&#34;jython&#34;</span>
+</span></span><span style="display:flex;"><span>pyenv install --list | grep <span style="color:#e6db74">&#34; 3\.[678]&#34;</span>
+</span></span></code></pre></div><h3 id="install-a-version-of-python">Install a version of python.</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>pyenv install -v 3.7.2
+</span></span><span style="display:flex;"><span>pyenv install 3.8-dev
+</span></span></code></pre></div><h3 id="installation-location">Installation Location.</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ls ~/.pyenv/versions/
+</span></span></code></pre></div><h3 id="uninstall-a-version-of-python">Uninstall a version of python.</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>rm -rf ~/.pyenv/versions/2.7.15
+</span></span></code></pre></div><p>or</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>pyenv uninstall 2.7.15
+</span></span></code></pre></div><h2 id="running-python-programs-from-a-terminal">Running Python Programs from a terminal</h2>
+<p>To start your first program, make a file called hello_world.py and enter the following line:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Hello Python world!&#34;</span>)
+</span></span></code></pre></div><p>Open a terminal and then, run the file using the command python, like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>python hello_world.py
+</span></span></code></pre></div><h1 id="variables-and-simple-data-types">VARIABLES AND SIMPLE DATA TYPES</h1>
+<h2 id="naming-and-using-variables">Naming and Using Variables</h2>
+<p>In the same file, we are going to do something like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>message <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Hello Python World!&#34;</span>
+</span></span><span style="display:flex;"><span>print(message)
+</span></span></code></pre></div><ul>
+<li>Variable names can contain only letters, numbers, and underscores.</li>
+<li>Spaces are not allowed in variable names, but underscores can be used to separate words in variable names.</li>
+<li>Variable names should be short but descriptive</li>
+</ul>
+<h2 id="strings">Strings</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#e6db74">&#34;This is a string.&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;This is a string.&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;This flexibility &#34;allows&#34; you to use quotes and apostrophes within your strings.&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;This flexibility &#39;allows&#39; you to use quotes and apostrophes within your strings.&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;This flexibility allows you to use quotes and apostrophe&#39;s within your strings.&#34;</span>
+</span></span></code></pre></div><h3 id="changing-case-in-a-string-with-methods">Changing Case in a String with Methods</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;julio ramirez&#34;</span>
+</span></span><span style="display:flex;"><span>print(name<span style="color:#f92672">.</span>title())
+</span></span><span style="display:flex;"><span>print(name<span style="color:#f92672">.</span>upper())
+</span></span><span style="display:flex;"><span>print(name<span style="color:#f92672">.</span>lower())
+</span></span></code></pre></div><h3 id="combining-or-concatenating-strings">Combining or Concatenating Strings</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>first_name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Julio&#39;</span>
+</span></span><span style="display:flex;"><span>last_name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Ramirez&#39;</span>
+</span></span><span style="display:flex;"><span>full_name <span style="color:#f92672">=</span> first_name <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; &#34;</span> <span style="color:#f92672">+</span> last_name
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Hello, &#34;</span> <span style="color:#f92672">+</span> full_name<span style="color:#f92672">.</span>title() <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;!&#34;</span>)
+</span></span></code></pre></div><h3 id="adding-whitespace-to-string-with-tabs-or-newlines">Adding Whitespace to String with Tabs or Newlines</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> print(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\t</span><span style="color:#e6db74">Python&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> print(<span style="color:#e6db74">&#34;Languages:</span><span style="color:#ae81ff">\n\t</span><span style="color:#e6db74">Python</span><span style="color:#ae81ff">\n\t</span><span style="color:#e6db74">Swift</span><span style="color:#ae81ff">\n\t</span><span style="color:#e6db74">Groovy&#34;</span>)
+</span></span></code></pre></div><h3 id="stripping-whitespace">Stripping Whitespace</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> language <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39; groovy &#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> language
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39; python &#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> language<span style="color:#f92672">.</span>rstrip()
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39; python&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> language<span style="color:#f92672">.</span>lstrip()
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;python &#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> language<span style="color:#f92672">.</span>strip()
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;python&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> language
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39; python &#39;</span>
+</span></span></code></pre></div><h2 id="numbers">Numbers</h2>
+<h3 id="integers">Integers</h3>
+<p>You can add (+), subtract (-), multiply ( * ), divide (/), exponents( ** ) integers in Python.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">6</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1.5</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">**</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">27</span>
+</span></span></code></pre></div><h3 id="floats">Floats</h3>
+<p>Python calls any number with a decimal point a float.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#ae81ff">0.1</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">0.1</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">0.2</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#ae81ff">0.2</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">0.2</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">0.4</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">0.1</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">0.2</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">0.2</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">0.4</span>
+</span></span></code></pre></div><p>But be aware that you can sometimes get an arbitrary number of decimal places in your answer.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#ae81ff">0.2</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">0.1</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">0.30000000000000004</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">0.1</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">0.30000000000000004</span>
+</span></span></code></pre></div><h3 id="avoid-type-errors-with-the-str-function">Avoid Type Errors with the str() Function</h3>
+<p>This is a type error. It means Python can not recognize the kind of information you are using. In ths example Python sees that you are using variable that has an integer value (int), but it is not sure how to interpret that value.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> age <span style="color:#f92672">=</span> <span style="color:#ae81ff">23</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> message <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;happy &#34;</span> <span style="color:#f92672">+</span> age <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; anios!!&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Traceback (most recent call last):
+</span></span><span style="display:flex;"><span>  File <span style="color:#e6db74">&#34;&lt;stdin&gt;&#34;</span>, line <span style="color:#ae81ff">1</span>, <span style="color:#f92672">in</span> <span style="color:#f92672">&lt;</span>module<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">TypeError</span>: can only concatenate str (<span style="color:#f92672">not</span> <span style="color:#e6db74">&#34;int&#34;</span>) to str
+</span></span></code></pre></div><p>you have to fix it like this.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> message <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;happy &#34;</span> <span style="color:#f92672">+</span> str(age) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; anios!!&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> print(message)
+</span></span><span style="display:flex;"><span>happy <span style="color:#ae81ff">23</span> anios<span style="color:#960050;background-color:#1e0010">!!</span>
+</span></span></code></pre></div><h3 id="comments">Comments</h3>
+<p>In Python, the hash mark (#) indicates a comment.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Never say goodbye</span>
+</span></span></code></pre></div><h1 id="introducing-list">Introducing List</h1>
+<p>A list is a collection of items in a particular order. You can make a list that includes the letters of the alphabet, the digits from 0-9, or the names of all things that you want.</p>
+<h3 id="accessing-elements-in-a-list">Accessing Elements in a List</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>bicycles <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;trek&#39;</span>, <span style="color:#e6db74">&#39;cannondale&#39;</span>, <span style="color:#e6db74">&#39;redline&#39;</span>,<span style="color:#e6db74">&#39;specialized&#39;</span>]
+</span></span><span style="display:flex;"><span>print(bicycles[<span style="color:#ae81ff">0</span>])
+</span></span></code></pre></div><h2 id="changing-adding-and-removing-elements">Changing, Adding, and Removing Elements</h2>
+<h3 id="modifying-elements-in-a-list">Modifying Elements in a List.</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>motorcycles <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;honda&#39;</span>,<span style="color:#e6db74">&#39;yamaha&#39;</span>,<span style="color:#e6db74">&#39;suzuki&#39;</span>]
+</span></span><span style="display:flex;"><span>print(motorcycles)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>motorcycles[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;ducati&#39;</span>
+</span></span><span style="display:flex;"><span>print(motorcycles)
+</span></span></code></pre></div><h3 id="adding-elements-to-a-list">Adding Elements to a List</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>motorcycles <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;honda&#39;</span>,<span style="color:#e6db74">&#39;yamaha&#39;</span>,<span style="color:#e6db74">&#39;suzuki&#39;</span>]
+</span></span><span style="display:flex;"><span>print(motorcycles)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>motorcycles<span style="color:#f92672">.</span>append(<span style="color:#e6db74">&#39;ducati&#39;</span>)
+</span></span><span style="display:flex;"><span>print(motorcycles)
+</span></span></code></pre></div><h3 id="inserting-elements-into-a-list">Inserting Elements into a List</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>motorcycles <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;honda&#39;</span>,<span style="color:#e6db74">&#39;yamaha&#39;</span>,<span style="color:#e6db74">&#39;suzuki&#39;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>motorcycles<span style="color:#f92672">.</span>insert(<span style="color:#ae81ff">0</span>,<span style="color:#e6db74">&#39;ducati&#39;</span>)
+</span></span><span style="display:flex;"><span>print(motorcycles)
+</span></span></code></pre></div><h3 id="removing-elements-from-a-list-using-the-_del_-statement">Removing Elements from a List using the <em>del</em> Statement</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>motorcycles <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;honda&#39;</span>,<span style="color:#e6db74">&#39;yamaha&#39;</span>,<span style="color:#e6db74">&#39;suzuki&#39;</span>]
+</span></span><span style="display:flex;"><span>print(motorcycles)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">del</span> motorcycles[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>print(motorcycles)
+</span></span></code></pre></div><h3 id="removing-elements-from-a-list-using-the-_pop_-method">Removing Elements from a List using the <em>pop()</em> method</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>motorcycles <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;honda&#39;</span>,<span style="color:#e6db74">&#39;yamaha&#39;</span>,<span style="color:#e6db74">&#39;suzuki&#39;</span>]
+</span></span><span style="display:flex;"><span>print(motorcycles)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>popped_motorcycle <span style="color:#f92672">=</span> motorcycles<span style="color:#f92672">.</span>pop()
+</span></span><span style="display:flex;"><span>print(motorcycles)
+</span></span><span style="display:flex;"><span>print(popped_motorcycle)
+</span></span></code></pre></div><h3 id="popping-items-from-any-position-in-a-list">Popping items from any Position in a list</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>motorcycles <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;honda&#39;</span>,<span style="color:#e6db74">&#39;yamaha&#39;</span>,<span style="color:#e6db74">&#39;suzuki&#39;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>first_owned <span style="color:#f92672">=</span> motorcycles<span style="color:#f92672">.</span>pop(<span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>print(first_owned)
+</span></span><span style="display:flex;"><span>print(motorcycles)
+</span></span></code></pre></div><h3 id="removing-items-by-value">Removing Items by Value</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>motorcycles <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;honda&#39;</span>,<span style="color:#e6db74">&#39;yamaha&#39;</span>,<span style="color:#e6db74">&#39;suzuki&#39;</span>]
+</span></span><span style="display:flex;"><span>print(motorcycles)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>motorcycles<span style="color:#f92672">.</span>remove(<span style="color:#e6db74">&#39;ducati&#39;</span>)
+</span></span><span style="display:flex;"><span>print(motorcycles)
+</span></span></code></pre></div><h2 id="organizing-a-list">Organizing a List</h2>
+<h3 id="sorting-a-list-permanently-with-the-sort-method">Sorting a List permanently with the sort() method</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>cars <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;bmw&#39;</span>,<span style="color:#e6db74">&#39;audi&#39;</span>,<span style="color:#e6db74">&#39;toyota&#39;</span>,<span style="color:#e6db74">&#39;subaru&#39;</span>]
+</span></span><span style="display:flex;"><span>cars<span style="color:#f92672">.</span>sort()
+</span></span><span style="display:flex;"><span>print(cars)
+</span></span></code></pre></div><h3 id="sorting-a-list-temporarily-with-the-sorted-function">Sorting a List temporarily with the sorted() function</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>cars <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;bmw&#39;</span>,<span style="color:#e6db74">&#39;audi&#39;</span>,<span style="color:#e6db74">&#39;toyota&#39;</span>,<span style="color:#e6db74">&#39;subaru&#39;</span>]
+</span></span><span style="display:flex;"><span>print(sorted(cars))
+</span></span><span style="display:flex;"><span>print(cars)
+</span></span></code></pre></div><h3 id="printing-a-list-in-reverse-order">Printing a List in reverse order</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>cars <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;bmw&#39;</span>,<span style="color:#e6db74">&#39;audi&#39;</span>,<span style="color:#e6db74">&#39;toyota&#39;</span>,<span style="color:#e6db74">&#39;subaru&#39;</span>]
+</span></span><span style="display:flex;"><span>print(cars)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cars<span style="color:#f92672">.</span>reverse()
+</span></span><span style="display:flex;"><span>print(cars)
+</span></span></code></pre></div><h3 id="finding-the-length-of-a-list">Finding the length of a List</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>cars <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;bmw&#39;</span>,<span style="color:#e6db74">&#39;audi&#39;</span>,<span style="color:#e6db74">&#39;toyota&#39;</span>,<span style="color:#e6db74">&#39;subaru&#39;</span>]
+</span></span><span style="display:flex;"><span>print(len(cars))
+</span></span></code></pre></div><h1 id="working-with-lists">Working with Lists</h1>
+<h2 id="looping-an-entire-list">Looping an entire List</h2>
+<p>In a file magicians.py</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>magicians <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;alice&#39;</span>, <span style="color:#e6db74">&#39;davis&#39;</span>, <span style="color:#e6db74">&#39;carolina&#39;</span>]
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> magician <span style="color:#f92672">in</span> magicians:
+</span></span><span style="display:flex;"><span>	print(magician)
+</span></span></code></pre></div><h3 id="do-something-after-a-for-loop">Do something after a for loop</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>magicians <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;alice&#39;</span>, <span style="color:#e6db74">&#39;davis&#39;</span>, <span style="color:#e6db74">&#39;carolina&#39;</span>]
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> magician <span style="color:#f92672">in</span> magicians:
+</span></span><span style="display:flex;"><span>	print(magician)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Thank you, everyone. That was a great magic show!&#34;</span>)
+</span></span></code></pre></div><h3 id="forgetting-to-ident-additional-lines">Forgetting to ident additional lines</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>magicians <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;alice&#39;</span>, <span style="color:#e6db74">&#39;davis&#39;</span>, <span style="color:#e6db74">&#39;carolina&#39;</span>]
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> magician <span style="color:#f92672">in</span> magicians:
+</span></span><span style="display:flex;"><span>	print(magician)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;The last magician is &#34;</span> <span style="color:#f92672">+</span> magician)
+</span></span></code></pre></div><h3 id="identing-unnecessarily">Identing unnecessarily</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>message <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Hello Python world&#34;</span>
+</span></span><span style="display:flex;"><span>	print(message)
+</span></span></code></pre></div><h3 id="identing-unnecessarily-after-the-loop">Identing unnecessarily after the loop</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>magicians <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;alice&#39;</span>, <span style="color:#e6db74">&#39;davis&#39;</span>, <span style="color:#e6db74">&#39;carolina&#39;</span>]
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> magician <span style="color:#f92672">in</span> magicians:
+</span></span><span style="display:flex;"><span>	print(magician)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	print(<span style="color:#e6db74">&#34;Thank you, everyone. That was a great magic show!&#34;</span>)
+</span></span></code></pre></div><h3 id="forgetting-the-colon">Forgetting the colon</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>magicians <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;alice&#39;</span>, <span style="color:#e6db74">&#39;davis&#39;</span>, <span style="color:#e6db74">&#39;carolina&#39;</span>]
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> magician <span style="color:#f92672">in</span> magicians
+</span></span><span style="display:flex;"><span>	print(magician)
+</span></span></code></pre></div><h1 id="making-numerical-lists">Making numerical lists</h1>
+<h2 id="using-the-range-function">Using the range() function</h2>
+<p>In a file numbers.py</p>
+<p>In this example, range() prints only the numbers 1 through 4.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> value <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">5</span>):
+</span></span><span style="display:flex;"><span>	print(value)
+</span></span></code></pre></div><h2 id="using-range-to-make-a-list-of-numbers">Using range() to make a list of numbers</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>numbers <span style="color:#f92672">=</span> list(range(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">5</span>))
+</span></span><span style="display:flex;"><span>print(numbers)
+</span></span></code></pre></div><p>using a increment</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>pairs_numbers <span style="color:#f92672">=</span> list(range(<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">11</span>,<span style="color:#ae81ff">2</span>))
+</span></span><span style="display:flex;"><span>print(pairs_numbers)
+</span></span></code></pre></div><p>You can create almost any set of numbers you want to using the range() function</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>squares <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> value <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">11</span>)
+</span></span><span style="display:flex;"><span>	square <span style="color:#f92672">=</span> value<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>	squares<span style="color:#f92672">.</span>append(square)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(squares)
+</span></span></code></pre></div><p>To write this code more concisely, omit the temporary variable square and append each new value directly to the list:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>squares <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> value <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">11</span>)
+</span></span><span style="display:flex;"><span>	squares<span style="color:#f92672">.</span>append(value<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(squares)
+</span></span></code></pre></div><p>or better</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>squares <span style="color:#f92672">=</span> [value<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span> <span style="color:#66d9ef">for</span> value <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">11</span>)]
+</span></span><span style="display:flex;"><span>print(squares)
+</span></span></code></pre></div><h3 id="simple-statistics-with-a-list-of-number">Simple statistics with a list of number</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>digits <span style="color:#f92672">=</span> list(range(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">11</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(min(digits))
+</span></span><span style="display:flex;"><span>print(max(digits))
+</span></span><span style="display:flex;"><span>print(sum(digits))
+</span></span></code></pre></div><h1 id="working-with-part-of-a-list">Working with part of a list</h1>
+<p>In a file players.py</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>players <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;charles&#39;</span>, <span style="color:#e6db74">&#39;martina&#39;</span>, <span style="color:#e6db74">&#39;michael&#39;</span>, <span style="color:#e6db74">&#39;florence&#39;</span>, <span style="color:#e6db74">&#39;eli&#39;</span>]
+</span></span><span style="display:flex;"><span>print(players[<span style="color:#ae81ff">0</span>:<span style="color:#ae81ff">3</span>])
+</span></span><span style="display:flex;"><span>print(players[<span style="color:#ae81ff">1</span>:<span style="color:#ae81ff">4</span>])
+</span></span><span style="display:flex;"><span>print(players[:<span style="color:#ae81ff">4</span>])
+</span></span><span style="display:flex;"><span>print(players[<span style="color:#ae81ff">2</span>:])
+</span></span><span style="display:flex;"><span>print(players[<span style="color:#f92672">-</span><span style="color:#ae81ff">3</span>:])
+</span></span></code></pre></div><h3 id="looping-through-a-slice">Looping through a slice</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>players <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;charles&#39;</span>, <span style="color:#e6db74">&#39;martina&#39;</span>, <span style="color:#e6db74">&#39;michael&#39;</span>, <span style="color:#e6db74">&#39;florence&#39;</span>, <span style="color:#e6db74">&#39;eli&#39;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Here are the first three players on my team:&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> player <span style="color:#f92672">in</span> players[:<span style="color:#ae81ff">3</span>]:
+</span></span><span style="display:flex;"><span>	print(player)
+</span></span></code></pre></div><h3 id="copyiing-a-list">Copyiing a list</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>my_foods <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;pizza&#39;</span>, <span style="color:#e6db74">&#39;falafel&#39;</span>, <span style="color:#e6db74">&#39;carrot cake&#39;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>friend_foods <span style="color:#f92672">=</span> my_foods[:]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;My favorite foods are:&#34;</span>)
+</span></span><span style="display:flex;"><span>print(my_foods)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;My friend&#39;s favorite foods are:&#34;</span>)
+</span></span><span style="display:flex;"><span>print(friend_foods)
+</span></span></code></pre></div><p>This does not work</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>friend_foods <span style="color:#f92672">=</span> my_foods
+</span></span></code></pre></div><h1 id="tuples">Tuples</h1>
+<p>List of items that cannot change. Python refers to values that cannot change as immutable, and an immutable list is called a tuple.</p>
+<h3 id="defining-a-tuple">Defining a Tuple</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>dimensions <span style="color:#f92672">=</span> (<span style="color:#ae81ff">200</span>, <span style="color:#ae81ff">50</span>)
+</span></span><span style="display:flex;"><span>print(dimensions[<span style="color:#ae81ff">0</span>])
+</span></span><span style="display:flex;"><span>print(dimensions[<span style="color:#ae81ff">1</span>])
+</span></span></code></pre></div><h3 id="looping-through-all-values-in-a-tupla">Looping through all values in a tupla</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>dimensions <span style="color:#f92672">=</span> (<span style="color:#ae81ff">200</span>, <span style="color:#ae81ff">50</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> dimension <span style="color:#f92672">in</span> dimensions:
+</span></span><span style="display:flex;"><span>	print(dimension)
+</span></span></code></pre></div><p>You can not modify a tuple, you can assign a new value to a variable that holds a tuple</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>dimensions <span style="color:#f92672">=</span> (<span style="color:#ae81ff">200</span>, <span style="color:#ae81ff">50</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> dimension <span style="color:#f92672">in</span> dimensions:
+</span></span><span style="display:flex;"><span>	print(dimension)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>dimensions <span style="color:#f92672">=</span> (<span style="color:#ae81ff">400</span>, <span style="color:#ae81ff">100</span>)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Modified dimensions&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> dimension <span style="color:#f92672">in</span> dimensions:
+</span></span><span style="display:flex;"><span>	print(dimension)
+</span></span></code></pre></div><h1 id="if-statements">if statements</h1>
+<h3 id="a-simple-example">A simple example</h3>
+<p>In a file cars.py</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>cars <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;audi&#39;</span>, <span style="color:#e6db74">&#39;bmw&#39;</span>, <span style="color:#e6db74">&#39;subaru&#39;</span>, <span style="color:#e6db74">&#39;toyota&#39;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> car <span style="color:#f92672">in</span> cars:
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> car <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;bmw&#39;</span>:
+</span></span><span style="display:flex;"><span>    print(car<span style="color:#f92672">.</span>upper())
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>    print(car<span style="color:#f92672">.</span>title())
+</span></span></code></pre></div><h2 id="checking-for-equality">Checking for Equality</h2>
+<p>The <em>equality</em> operator checks whether the value of car is &lsquo;Audi&rsquo; using a double equal sign (==)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>car <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Audi&#39;</span>
+</span></span><span style="display:flex;"><span>car <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;Audi&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">True</span>
+</span></span></code></pre></div><h3 id="ignoring-case-when-checking-for-equality">Ignoring case when checking for equality</h3>
+<p>Testing for equality is case sensitive in Python. For example, two values with different capitalization are not considered equal.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>car <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Audi&#39;</span>
+</span></span><span style="display:flex;"><span>car <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;audi&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">False</span>
+</span></span></code></pre></div><h2 id="checking-for-inequality">Checking for Inequality</h2>
+<p>When you want to determine whether two values are not equal, ypu can combine an exclamation point and an equal sigh (!=).</p>
+<p>In a file topping.py</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>requested_topping <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;mushrooms&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> requested_topping <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;anchovies&#39;</span>
+</span></span><span style="display:flex;"><span>  print(<span style="color:#e6db74">&#39;Hold the anchovies&#39;</span>)
+</span></span></code></pre></div><h2 id="numerical-comparisons">Numerical Comparisons</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>age <span style="color:#f92672">=</span> <span style="color:#ae81ff">19</span>
+</span></span><span style="display:flex;"><span>age <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">21</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>age <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">21</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>age <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">21</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>age <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">21</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">False</span>
+</span></span></code></pre></div><h2 id="checking-mmultiple-conditions">Checking mmultiple conditions</h2>
+<p>Using <em>and</em> or <em>or</em> conditions</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>age_0 <span style="color:#f92672">=</span> <span style="color:#ae81ff">22</span>
+</span></span><span style="display:flex;"><span>age_1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">18</span>
+</span></span><span style="display:flex;"><span>age_0 <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">21</span> <span style="color:#f92672">and</span> age_1 <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">21</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>age_0 <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">21</span> <span style="color:#f92672">or</span> age_1 <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">21</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">True</span>
+</span></span></code></pre></div><h2 id="checking-whether-a-value-is-in-a-list">Checking whether a value is in a list</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>requested_topping <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;mushrooms&#39;</span>, <span style="color:#e6db74">&#39;onions&#39;</span>, <span style="color:#e6db74">&#39;pineaple&#39;</span>]
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;mushrooms&#39;</span> <span style="color:#f92672">in</span> requested_topping
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;pepperoni&#39;</span> <span style="color:#f92672">in</span> requested_topping
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">False</span>
+</span></span></code></pre></div><h2 id="if-statement">If Statement</h2>
+<p>The simple kind of if statement has one test and one action:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> _conditional_test_:
+</span></span><span style="display:flex;"><span>  _do something_
+</span></span></code></pre></div><p>by example, in a file voting.py</p>
+<pre tabindex="0"><code class="language-pyhton" data-lang="pyhton">age = 19
+if age &gt;= 18:
+  print(&#34;You are old enough to vote!&#34;)
+</code></pre><h2 id="if-else-statements">if-else statements</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>age <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> age <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">18</span>:
+</span></span><span style="display:flex;"><span>  print(<span style="color:#e6db74">&#34;You are old enough to vote!&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>  print(<span style="color:#e6db74">&#34;You are too young to vote&#34;</span>)
+</span></span></code></pre></div><h2 id="the-if-elif-else-chain">The if-elif-else chain</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>age <span style="color:#f92672">=</span> <span style="color:#ae81ff">12</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> age <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">4</span>:
+</span></span><span style="display:flex;"><span>  print(<span style="color:#e6db74">&#34;Your admission cost is $0.&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">elif</span> age <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">18</span>:
+</span></span><span style="display:flex;"><span>  print(<span style="color:#e6db74">&#34;Yout admission cost is $5.&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>  print(<span style="color:#e6db74">&#34;Yout admission cost is $10.&#34;</span>)
+</span></span></code></pre></div><p>In summary, if you want only execute one block of code to run, use an if-elif-else chain. If more than one block of code needs to run, use a series of independent if statement,</p>
+<h1 id="dictionaries">Dictionaries</h1>
+<p>Python&rsquo;s dictionaries , which allow you to connect pieces of related information.</p>
+<h3 id="a-simple-dictionary">A simple dictionary</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>alien <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;color&#39;</span>:<span style="color:#e6db74">&#39;green&#39;</span>, <span style="color:#e6db74">&#39;points&#39;</span>:<span style="color:#ae81ff">10</span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(alien[<span style="color:#e6db74">&#39;color&#39;</span>])
+</span></span><span style="display:flex;"><span>print(alien[<span style="color:#e6db74">&#39;points&#39;</span>])
+</span></span></code></pre></div><h3 id="add-new-key-value-pairs">Add new key-value pairs</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>alien <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;color&#39;</span>:<span style="color:#e6db74">&#39;green&#39;</span>, <span style="color:#e6db74">&#39;points&#39;</span>:<span style="color:#ae81ff">10</span>}
+</span></span><span style="display:flex;"><span>print(alien)
+</span></span><span style="display:flex;"><span>alien[<span style="color:#e6db74">&#39;x_position&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>
+</span></span><span style="display:flex;"><span>alien[<span style="color:#e6db74">&#39;y_position&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">50</span>
+</span></span><span style="display:flex;"><span>print(alien)
+</span></span></code></pre></div><h3 id="removing-a-key-value-pairs">Removing a key-value pairs</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>alien <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;color&#39;</span>:<span style="color:#e6db74">&#39;green&#39;</span>, <span style="color:#e6db74">&#39;points&#39;</span>:<span style="color:#ae81ff">10</span>}
+</span></span><span style="display:flex;"><span>print(alien)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">del</span> alien [<span style="color:#e6db74">&#39;color&#39;</span>]
+</span></span><span style="display:flex;"><span>print(alien)
+</span></span></code></pre></div><h3 id="a-dictionary-of-similar-objects">A Dictionary of similar Objects</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>any_dictionary<span style="color:#f92672">.</span>keys()   <span style="color:#75715e">#Get a keys of a dictionary</span>
+</span></span><span style="display:flex;"><span>any_dictionary<span style="color:#f92672">.</span>values()  <span style="color:#75715e">#Get a values of a dictionary</span>
+</span></span><span style="display:flex;"><span>any_dictionary<span style="color:#f92672">.</span>items()   <span style="color:#75715e">#Get a items of a dictionary</span>
+</span></span></code></pre></div><h1 id="user-input-and-while-loops">User Input and While Loops</h1>
+<h3 id="how-the-input-function-works">How the input Function Works</h3>
+<p>The input() funtion pauses your program and waits for the user to enter some text. Obe Python receives the use&rsquo;s input, it store it in a variable to make convenient for you to work with.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>message <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#34;Tell me something, and I will repeat it back to you: &#34;</span>)
+</span></span><span style="display:flex;"><span>print(message)
+</span></span></code></pre></div><h3 id="using-int-to-accept-numerical-input">Using int() to Accept numerical input</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> age <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#34;How old are u? &#34;</span>)
+</span></span><span style="display:flex;"><span>How old are u<span style="color:#960050;background-color:#1e0010">?</span> <span style="color:#ae81ff">21</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> are <span style="color:#f92672">=</span> int(are)
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> are <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">18</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">True</span>
+</span></span></code></pre></div><h2 id="the-modulo-operator">The modulo operator</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#ae81ff">4</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#ae81ff">5</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#ae81ff">6</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">0</span>
+</span></span></code></pre></div><h2 id="the-while-loop">The while Loop</h2>
+<p>You can use a while loop to count up through a series number.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>current_number <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">while</span> current_number <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">5</span>:
+</span></span><span style="display:flex;"><span>  print(current_number)
+</span></span><span style="display:flex;"><span>  current_number <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</span></span></code></pre></div><h1 id="functions">FUNCTIONS</h1>
+<h3 id="defining-a-function">Defining a Function</h3>
+<p>Here is a example function named greet_user()</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">greet_user</span>():
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;&#34;&#34;Display a simple greeting&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>  print(<span style="color:#e6db74">&#34;hello&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>greet_user()
+</span></span></code></pre></div><h3 id="passing-information-to-a-function">Passing Information to a function</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">greet_user</span>(username):
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;&#34;&#34;Display a simple greeting&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>  print(<span style="color:#e6db74">&#34;hello &#34;</span> <span style="color:#f92672">+</span> username)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>greet_user()
+</span></span></code></pre></div><h3 id="arguments-and-parameters">Arguments and Parameters.</h3>
+<p>People sometimes speak of arguments and parameters interchangeably. Do not be surprised if you see the variable in a funtion definition refered to as arguments or the variables in a function calla referred to as parameters.</p>
+<h3 id="positional-arguments">Positional Arguments</h3>
+<p>When you call a function. Python must match each argument in the function call with a parameter in the function definition.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">describe_pet</span>(animal_type,pet_name):
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">--</span>snip<span style="color:#f92672">--</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>describe_pet(<span style="color:#e6db74">&#39;hamster&#39;</span>,<span style="color:#e6db74">&#39;harry&#39;</span>)
+</span></span></code></pre></div><h3 id="keyword-arguments">Keyword arguments</h3>
+<p>A keyword argument is a name-value pair that you pass to a function. You directly associate the name and the value within the argument, so when you pass the argument to the function, there is no confusion, like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e">#after</span>
+</span></span><span style="display:flex;"><span>describe_pet(<span style="color:#e6db74">&#39;hamster&#39;</span>,<span style="color:#e6db74">&#39;harry&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#before</span>
+</span></span><span style="display:flex;"><span>describe_pet(animal_type<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;hamster&#39;</span>,pet_name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;harry&#39;</span>)
+</span></span></code></pre></div><h3 id="default-value">Default value</h3>
+<p>You can define a default value for each parameter</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">describe_pet</span>(pet_name, animal_type<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span>):
+</span></span><span style="display:flex;"><span><span style="color:#f92672">--</span>snip<span style="color:#f92672">--</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">describe_pet</span>(pet_name, animal_type<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;dog&#39;</span>):
+</span></span><span style="display:flex;"><span><span style="color:#f92672">--</span>snip<span style="color:#f92672">--</span>
+</span></span></code></pre></div><h3 id="returning-a-simple-value">Returning a simple value</h3>
+<p>A function does not always have to desplay its output directly. Instead, it can process some data and then return a value or set of value, like this example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_formatted_name</span>(first_name,last_name):
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;&#34;&#34;Resturn a full name, neatly formatted&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>  full_name <span style="color:#f92672">=</span> first_name <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; &#39;</span> <span style="color:#f92672">+</span> last_name
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> full_name<span style="color:#f92672">.</span>title()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>musican <span style="color:#f92672">=</span> get_formatted_name(<span style="color:#e6db74">&#39;Hanna&#39;</span>, <span style="color:#e6db74">&#39;Montana&#39;</span>)
+</span></span><span style="display:flex;"><span>print(musican)
+</span></span></code></pre></div><h3 id="returning-a-dictionary">Returning a Dictionary</h3>
+<p>A function can return any kind of value you need it to.including more complicated data structures like list and dictionaries.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">build_person</span>(first_name, last_name):
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;&#34;&#34;REturn a dictionary of information about a person&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>  person <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;first&#39;</span>:first_name,<span style="color:#e6db74">&#39;last&#39;</span>:last_name}
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> person
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>musican <span style="color:#f92672">=</span> build_person(<span style="color:#e6db74">&#39;kimi&#39;</span>,<span style="color:#e6db74">&#39;hendrix&#39;</span>)
+</span></span><span style="display:flex;"><span>print(musican)
+</span></span></code></pre></div><h3 id="passing-a-list">Passing a list</h3>
+<p>You will often find it useful to pass a list to a function, whether it&rsquo;s a list of names, numbers, or more complex objects, such a dictionary.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">greet_users</span>(names):
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;&#34;&#34;Print a simple greeting to each user in the list.&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> name <span style="color:#f92672">in</span> names:
+</span></span><span style="display:flex;"><span>    msg <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;hello &#34;</span> <span style="color:#f92672">+</span> name<span style="color:#f92672">.</span>title() <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;!&#34;</span>
+</span></span><span style="display:flex;"><span>    print(msg)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>username <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;sabas&#39;</span>,<span style="color:#e6db74">&#39;ty&#39;</span>,<span style="color:#e6db74">&#39;margot&#39;</span>]
+</span></span><span style="display:flex;"><span>greet_users(username)
+</span></span></code></pre></div><h3 id="passing-an-arbitrary-number-of-arguments">Passing an arbitrary number of arguments</h3>
+<p>Sometimes you wont know ahead of time how many arguments a function needs to accept. Fortunately, Python allows a function to collect an arbitrary number of arguments form the calling statement.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">make_pizza</span>(<span style="color:#f92672">*</span>toppings):
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;&#34;&#34;Print the list of toppings that have been requested&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>  print(toppings)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>make_pizza(<span style="color:#e6db74">&#39;pepperoni&#39;</span>)
+</span></span><span style="display:flex;"><span>make_pizza(<span style="color:#e6db74">&#39;pepperoni&#39;</span>,<span style="color:#e6db74">&#39;green peppers&#39;</span>,<span style="color:#e6db74">&#39;extra cheese&#39;</span>)
+</span></span></code></pre></div><h3 id="mixing-positional-and-arbitrary-arguments">Mixing positional and arbitrary arguments</h3>
+<p>If you want a function to accept several different kind of argument, the parameter that accepts an arbitrary number of arguments must be placed last in the function definition, like this way:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">make_pizza</span>(size,<span style="color:#f92672">*</span>toppings):
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;&#34;&#34;Print the list of toppings that have been requested&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>  print(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">Making a &#34;</span> <span style="color:#f92672">+</span> int(size) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;-inch pizza with the following toppings!:&#34;</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> topping <span style="color:#f92672">in</span> toppings:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;- &#34;</span> <span style="color:#f92672">+</span> topping)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>make_pizza(<span style="color:#ae81ff">16</span>,<span style="color:#e6db74">&#39;pepperoni&#39;</span>)
+</span></span><span style="display:flex;"><span>make_pizza(<span style="color:#ae81ff">12</span>,<span style="color:#e6db74">&#39;pepperoni&#39;</span>,<span style="color:#e6db74">&#39;green peppers&#39;</span>,<span style="color:#e6db74">&#39;extra cheese&#39;</span>)
+</span></span></code></pre></div><h2 id="storing-your-functions-in-modules">Storing your functions in modules</h2>
+<p>One advantage of functions is the way they separate blocks of code from your main program.</p>
+<h3 id="importing-an-entire-module">Importing an entire module</h3>
+<p>To start importing functions, we first need to create a module. A <em>module</em> is a file ending in <em>.py</em> that contains the code you want to impor into your program:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e">#pizza.py</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">make_pizza</span>(size,<span style="color:#f92672">*</span>toppings):
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;&#34;&#34;Print the list of toppings that have been requested&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>  print(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">Making a &#34;</span> <span style="color:#f92672">+</span> int(size) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;-inch pizza with the following toppings!:&#34;</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> topping <span style="color:#f92672">in</span> toppings:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;- &#34;</span> <span style="color:#f92672">+</span> topping)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e">#making_pizza.py</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> pizza
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>pizza<span style="color:#f92672">.</span>make_pizza(<span style="color:#ae81ff">16</span>,<span style="color:#e6db74">&#39;pepperoni&#39;</span>)
+</span></span><span style="display:flex;"><span>pizza<span style="color:#f92672">.</span>make_pizza(<span style="color:#ae81ff">12</span>,<span style="color:#e6db74">&#39;pepperoni&#39;</span>,<span style="color:#e6db74">&#39;green peppers&#39;</span>,<span style="color:#e6db74">&#39;extra cheese&#39;</span>)
+</span></span></code></pre></div><h3 id="import-specific-functions">Import specific functions</h3>
+<p>You can also import a specific function from a module. Here is genera sintaxis for this approach:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> module_name <span style="color:#f92672">import</span> function_name
+</span></span></code></pre></div><p>You can import as many functions as you want from a module by separating each function&rsquo;s name with a comma:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> module_name <span style="color:#f92672">import</span> function_0, function_1, function_2
+</span></span></code></pre></div><p>like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e">#making_pizza.py and pizza.py</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> pizza <span style="color:#f92672">import</span> make_pizza
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>make_pizza(<span style="color:#ae81ff">16</span>,<span style="color:#e6db74">&#39;pepperoni&#39;</span>)
+</span></span><span style="display:flex;"><span>make_pizza(<span style="color:#ae81ff">12</span>,<span style="color:#e6db74">&#39;pepperoni&#39;</span>,<span style="color:#e6db74">&#39;green peppers&#39;</span>,<span style="color:#e6db74">&#39;extra cheese&#39;</span>)
+</span></span></code></pre></div><h3 id="using-_as_-to-give-a-function-an-alias">Using <em>as</em> to give a function an alias</h3>
+<p>If the name a function you are importing might conflict with an existing name in your program of if the function name is long, you can use a short, unique <em>alias</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e">#making_pizza.py and pizza.py</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> pizza <span style="color:#f92672">import</span> make_pizza mp
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>mp(<span style="color:#ae81ff">16</span>,<span style="color:#e6db74">&#39;pepperoni&#39;</span>)
+</span></span><span style="display:flex;"><span>mp(<span style="color:#ae81ff">12</span>,<span style="color:#e6db74">&#39;pepperoni&#39;</span>,<span style="color:#e6db74">&#39;green peppers&#39;</span>,<span style="color:#e6db74">&#39;extra cheese&#39;</span>)
+</span></span></code></pre></div><p>The general sintanxis for providing an alias is:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> module_name <span style="color:#f92672">import</span> function_name <span style="color:#66d9ef">as</span> fn
+</span></span></code></pre></div><h3 id="using-as-to-give-a-module-an-alias">Using as to give a module an alias</h3>
+<p>You can also provide an alias for a module name.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e">#making_pizza.py and pizza.py</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> pizza p
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>p<span style="color:#f92672">.</span>make_pizza(<span style="color:#ae81ff">16</span>,<span style="color:#e6db74">&#39;pepperoni&#39;</span>)
+</span></span><span style="display:flex;"><span>p<span style="color:#f92672">.</span>make_pizza(<span style="color:#ae81ff">12</span>,<span style="color:#e6db74">&#39;pepperoni&#39;</span>,<span style="color:#e6db74">&#39;green peppers&#39;</span>,<span style="color:#e6db74">&#39;extra cheese&#39;</span>)
+</span></span></code></pre></div><p>The general sintaxis fot this approach is:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> module_name <span style="color:#66d9ef">as</span> mn
+</span></span></code></pre></div><h2 id="importing-all-functions-in-a-module">Importing all functions in a module</h2>
+<p>You can tell Python to import every function a module by using the asterisk ( * ) operator:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e">#making_pizza.py and pizza.py</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> pizza <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>make_pizza(<span style="color:#ae81ff">16</span>,<span style="color:#e6db74">&#39;pepperoni&#39;</span>)
+</span></span><span style="display:flex;"><span>make_pizza(<span style="color:#ae81ff">12</span>,<span style="color:#e6db74">&#39;pepperoni&#39;</span>,<span style="color:#e6db74">&#39;green peppers&#39;</span>,<span style="color:#e6db74">&#39;extra cheese&#39;</span>)
+</span></span></code></pre></div><p>The best approach is to import the function or functions you want, or import the entire module and use the dot notation. This lead to clear code that is easy to read and understand, like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> module_name <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+</span></span></code></pre></div><h1 id="classes-9">Classes 9</h1>
+<p><em>Object-oriented programming</em> is one of the most effective approaches to writting software.</p>
+<h3 id="creating-ans-using-a-class">Creating ans Using a Class</h3>
+<p>You can model almost anything using classes. Let&rsquo;s start by writing a simple class <em>Dog</em>.</p>
+<h2 id="creating-a-class-dog-class">Creating a class Dog Class</h2>
+<p>Each instance created from the Dog class will store a name and an age, and  we will give each dog the ability to sit() and roll()</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Dog</span>():
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;&#34;&#34;A simple attempt to model a dog.&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> __init__(self, name, age):
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;&#34;&#34;Initialize name and age attributes.&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>  self<span style="color:#f92672">.</span>name <span style="color:#f92672">=</span> name self<span style="color:#f92672">.</span>age <span style="color:#f92672">=</span> age
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sit</span>(self):
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;&#34;&#34;Simulate a dog sitting in response to a command.&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>  print(self<span style="color:#f92672">.</span>name<span style="color:#f92672">.</span>title() <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; is now sitting.&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">roll_over</span>(self):
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;Simulate rolling over in response to a command.&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    print(self<span style="color:#f92672">.</span>name<span style="color:#f92672">.</span>title() <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; rolled over!&#34;</span>)
+</span></span></code></pre></div><h2 id="the-__init__-method">The <strong>init</strong>() Method</h2>
+<p>The <strong>init</strong>() method is a special method Python runs automatically whenever we create a new instance based on the Dog Class. This method has two leading underscores and two trailing underscores, a convention that helps prevent Python&rsquo;s default methods name fro conflicting with your method name.</p>
+<h2 id="making-an-instance-from-a-class">Making an Instance from a Class</h2>
+<p>Think of a class as a set of instruction fro how to make an instance</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Dog</span>():
+</span></span><span style="display:flex;"><span><span style="color:#f92672">--</span>snip<span style="color:#f92672">--</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>my_dog <span style="color:#f92672">=</span> Dog(<span style="color:#e6db74">&#39;willie&#39;</span>, <span style="color:#ae81ff">6</span>)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;My dog&#39;s name is &#34;</span> <span style="color:#f92672">+</span> my_dog<span style="color:#f92672">.</span>name<span style="color:#f92672">.</span>title() <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;.&#34;</span>)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;My dog is &#34;</span> <span style="color:#f92672">+</span> str(my_dog<span style="color:#f92672">.</span>age) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; years old.&#34;</span>)
+</span></span></code></pre></div><h2 id="accessing-attributes">Accessing Attributes</h2>
+<p>To access the attributes of an instance, you use dot notation like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>my_dog<span style="color:#f92672">.</span>name
+</span></span></code></pre></div><h2 id="calling-methods">Calling Methods</h2>
+<p>After created an instance from the class Dog, we can use dot notation to call any method defined in Dog. Let&rsquo;s make our dog sit and roll over:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Dog</span>():
+</span></span><span style="display:flex;"><span><span style="color:#f92672">--</span>snip<span style="color:#f92672">--</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>my_dog <span style="color:#f92672">=</span> Dog(<span style="color:#e6db74">&#39;willie&#39;</span>, <span style="color:#ae81ff">6</span>)
+</span></span><span style="display:flex;"><span>my_dog<span style="color:#f92672">.</span>sit()
+</span></span><span style="display:flex;"><span>my_dog<span style="color:#f92672">.</span>roll_over()
+</span></span></code></pre></div><h2 id="creating-multiple-instances">Creating Multiple Instances</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Dog</span>():
+</span></span><span style="display:flex;"><span><span style="color:#f92672">--</span>snip<span style="color:#f92672">--</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>my_dog <span style="color:#f92672">=</span> Dog(<span style="color:#e6db74">&#39;Baby Drogon&#39;</span>, <span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>your_dog <span style="color:#f92672">=</span> Dog(<span style="color:#e6db74">&#39;other dog&#39;</span>, <span style="color:#960050;background-color:#1e0010">?</span>)
+</span></span></code></pre></div><h3 id="working-with-classes-and-instances">Working with classes and instances</h3>
+<p>You can use classes to represent many real-world stitations. Once write a class, you will spend most of your time working with instances created for that class.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Car</span>():
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;&#34;&#34;A simple attempt to represent a car.&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> __init__(self, make, model, year):
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;Initialize attributes to describe a car.&#34;&#34;&#34;</span> self<span style="color:#f92672">.</span>make <span style="color:#f92672">=</span> make
+</span></span><span style="display:flex;"><span>    self<span style="color:#f92672">.</span>model <span style="color:#f92672">=</span> model
+</span></span><span style="display:flex;"><span>    self<span style="color:#f92672">.</span>year <span style="color:#f92672">=</span> year
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_descriptive_name</span>(self):
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;Return a neatly formatted descriptive name.&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    long_name <span style="color:#f92672">=</span> str(self<span style="color:#f92672">.</span>year) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; &#39;</span> <span style="color:#f92672">+</span> self<span style="color:#f92672">.</span>make <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; &#39;</span> <span style="color:#f92672">+</span> self<span style="color:#f92672">.</span>model
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> long_name<span style="color:#f92672">.</span>title()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>my_new_car <span style="color:#f92672">=</span> Car(<span style="color:#e6db74">&#39;audi&#39;</span>, <span style="color:#e6db74">&#39;a4&#39;</span>, <span style="color:#ae81ff">2016</span>)
+</span></span><span style="display:flex;"><span>print(my_new_car<span style="color:#f92672">.</span>get_descriptive_name())
+</span></span></code></pre></div><h2 id="setting-a-default-value-for-an-attribute">Setting a default value for an attribute</h2>
+<p>Every attribute in a class needs an initial value, even if a 0 or a empty string.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Car</span>():
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> __init__(self, make, model, year):
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;Initialize attributes to describe a car.&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    self<span style="color:#f92672">.</span>make <span style="color:#f92672">=</span> make
+</span></span><span style="display:flex;"><span>    self<span style="color:#f92672">.</span>model <span style="color:#f92672">=</span> model
+</span></span><span style="display:flex;"><span>    self<span style="color:#f92672">.</span>year <span style="color:#f92672">=</span> year
+</span></span><span style="display:flex;"><span>    self<span style="color:#f92672">.</span>odometer_reading <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span> <span style="color:#66d9ef">def</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">get_descriptive_name</span>(self):
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">--</span>snip<span style="color:#f92672">--</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">read_odometer</span>(self):
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;Print a statement showing the car&#39;s mileage.&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;This car has &#34;</span> <span style="color:#f92672">+</span> str(self<span style="color:#f92672">.</span>odometer_reading) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; miles on it.&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>my_new_car <span style="color:#f92672">=</span> Car(<span style="color:#e6db74">&#39;audi&#39;</span>, <span style="color:#e6db74">&#39;a4&#39;</span>, <span style="color:#ae81ff">2016</span>)
+</span></span><span style="display:flex;"><span>print(my_new_car<span style="color:#f92672">.</span>get_descriptive_name())
+</span></span><span style="display:flex;"><span>my_new_car<span style="color:#f92672">.</span>read_odometer()
+</span></span></code></pre></div><h2 id="modifying-attribute-value">Modifying Attribute Value</h2>
+<h3 id="modifying-an-attributes-value-directly">Modifying an attribute&rsquo;s value directly</h3>
+<p>The simple way to modify the value of an attribute is to access the attribute directly through an instance. We use the <em>dot</em> anotatuon to access the car&rsquo;s odometer_reading attribute and set this value directly.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Car</span>():
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">--</span>snip<span style="color:#f92672">--</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>my_new_car <span style="color:#f92672">=</span> Car(<span style="color:#e6db74">&#39;audi&#39;</span>, <span style="color:#e6db74">&#39;a4&#39;</span>, <span style="color:#ae81ff">2016</span>)
+</span></span><span style="display:flex;"><span>print(my_new_car<span style="color:#f92672">.</span>get_descriptive_name())
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>umy_new_car<span style="color:#f92672">.</span>odometer_reading <span style="color:#f92672">=</span> <span style="color:#ae81ff">23</span> my_new_car<span style="color:#f92672">.</span>read_odometer()
+</span></span></code></pre></div><h3 id="modifying-and-attributes-value-through-a-method">Modifying and Attribute&rsquo;s value through a Method</h3>
+<p>It can be helpful to have method that update certain attributes for you. Instead of accesing the attribute directly , you pass the new value to a method that handly the updating internally.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Car</span>():
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">--</span>snip<span style="color:#f92672">--</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">update_odometer</span>(self, mileage):
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;Set the odometer reading to the given value.&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    self<span style="color:#f92672">.</span>odometer_reading <span style="color:#f92672">=</span> mileage
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>my_new_car <span style="color:#f92672">=</span> Car(<span style="color:#e6db74">&#39;audi&#39;</span>, <span style="color:#e6db74">&#39;a4&#39;</span>, <span style="color:#ae81ff">2016</span>)
+</span></span><span style="display:flex;"><span>print(my_new_car<span style="color:#f92672">.</span>get_descriptive_name())
+</span></span><span style="display:flex;"><span>my_new_car<span style="color:#f92672">.</span>update_odometer(<span style="color:#ae81ff">23</span>) my_new_car<span style="color:#f92672">.</span>read_odometer()
+</span></span></code></pre></div><h2 id="inheritance">Inheritance</h2>
+<p>You don&rsquo;t always have to start from scratch when writing a class. If the class  you are writing is specialized version of another class you wrote, you can us inheritance. When one class inherits from another, it automatically takes on all of attributes and methods of the first class. The original class is called <em>parent class</em>, and the new class is the <em>child class</em>. The child class inherits every attribute and method from its parent class but is also free to define new attibutes and methods of its own.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Car</span>():
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;&#34;&#34;A simple attempt to represent a car.&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> __init__(self, make, model, year):
+</span></span><span style="display:flex;"><span>     self<span style="color:#f92672">.</span>make <span style="color:#f92672">=</span> make
+</span></span><span style="display:flex;"><span>     self<span style="color:#f92672">.</span>model <span style="color:#f92672">=</span> model
+</span></span><span style="display:flex;"><span>     self<span style="color:#f92672">.</span>year <span style="color:#f92672">=</span> year
+</span></span><span style="display:flex;"><span>     self<span style="color:#f92672">.</span>odometer_reading <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_descriptive_name</span>(self):
+</span></span><span style="display:flex;"><span>     long_name <span style="color:#f92672">=</span> str(self<span style="color:#f92672">.</span>year) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; &#39;</span> <span style="color:#f92672">+</span> self<span style="color:#f92672">.</span>make <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; &#39;</span> <span style="color:#f92672">+</span> self<span style="color:#f92672">.</span>model
+</span></span><span style="display:flex;"><span>     <span style="color:#66d9ef">return</span> long_name<span style="color:#f92672">.</span>title()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">read_odometer</span>(self):
+</span></span><span style="display:flex;"><span>     print(<span style="color:#e6db74">&#34;This car has &#34;</span> <span style="color:#f92672">+</span> str(self<span style="color:#f92672">.</span>odometer_reading) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; miles on it.&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">update_odometer</span>(self, mileage):
+</span></span><span style="display:flex;"><span>     <span style="color:#66d9ef">if</span> mileage <span style="color:#f92672">&gt;=</span> self<span style="color:#f92672">.</span>odometer_reading:
+</span></span><span style="display:flex;"><span>       self<span style="color:#f92672">.</span>odometer_reading <span style="color:#f92672">=</span> mileage
+</span></span><span style="display:flex;"><span>     <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>       print(<span style="color:#e6db74">&#34;You can&#39;t roll back an odometer!&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">increment_odometer</span>(self, miles):
+</span></span><span style="display:flex;"><span>     self<span style="color:#f92672">.</span>odometer_reading <span style="color:#f92672">+=</span> miles
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ElectricCar</span>(Car):
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;&#34;&#34;Represent aspects of a car, specific to electric vehicles.&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> __init__(self, make, model, year):
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;Initialize attributes of the parent class.&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>     super()<span style="color:#f92672">.</span>__init__(make, model, year)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>my_tesla <span style="color:#f92672">=</span> ElectricCar(<span style="color:#e6db74">&#39;tesla&#39;</span>, <span style="color:#e6db74">&#39;model s&#39;</span>, <span style="color:#ae81ff">2016</span>)
+</span></span><span style="display:flex;"><span>print(my_tesla<span style="color:#f92672">.</span>get_descriptive_name())
+</span></span></code></pre></div><h1 id="files-and-exceptions">Files and Exceptions</h1>
+<h2 id="reading-from-a-file">Reading from a file</h2>
+<p>To begin, we need a file with a few text in it. Lets start with a file that contains <em>pi</em> to 30 decimals places per line, like the next file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>pi_digits<span style="color:#f92672">.</span>py
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">3.1415926535</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">8979323846</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">264338327</span>
+</span></span></code></pre></div><p>Here&rsquo;s a program that opens this file, reads it, and prints the contents of file to the screen:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#39;pi_digits.txt&#39;</span>) <span style="color:#66d9ef">as</span> file_object:
+</span></span><span style="display:flex;"><span>    contents <span style="color:#f92672">=</span> file_object<span style="color:#f92672">.</span>read()
+</span></span><span style="display:flex;"><span>    print(contents)
+</span></span></code></pre></div><h2 id="file-path">File Path</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#39;text_files/filename.txt&#39;</span>) <span style="color:#66d9ef">as</span> file_object:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>file_path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;home/ehmatters/other_files/filename.txt&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> open(file_path) <span style="color:#66d9ef">as</span> file_object:
+</span></span></code></pre></div><h2 id="reading-line-by-line">Reading Line by Line</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>filename <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;pi_digits.txt&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> open(filename) <span style="color:#66d9ef">as</span> object_file:
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> line <span style="color:#f92672">in</span> object_file:
+</span></span><span style="display:flex;"><span>    print(line)
+</span></span></code></pre></div><h2 id="making-a-list-of-lines-from-a-file">Making a List of Lines from a File</h2>
+<p>The following example store the lines of po_digits_txt in a list inside the with block and then prints thelines outside the with block:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>filename <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;pi_digits.txt&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> open(filename) <span style="color:#66d9ef">as</span> file_object:
+</span></span><span style="display:flex;"><span>  lines <span style="color:#f92672">=</span> file_object<span style="color:#f92672">.</span>readlines()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> line <span style="color:#f92672">in</span> lines:
+</span></span><span style="display:flex;"><span>  print(line<span style="color:#f92672">.</span>rstrip())
+</span></span></code></pre></div><h2 id="working-with-a-files-contents">Working with a File&rsquo;s contents</h2>
+</section>
+
+  
+  
+
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="https://julitiux.github.io/posts/java8/"
+      ><span class="mr-1.5">←</span><span>Java8</span></a
+    >
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="https://julitiux.github.io/posts/swift/"
+      ><span>Swift</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+
+  
+  
+
+  
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+  <div class="mr-auto">
+    &copy; 2023
+    <a class="link" href="https://julitiux.github.io/">Blogs</a>
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >Powered by Hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >✎ Paper</a
+  >
+</footer>
+
+  </body>
+</html>

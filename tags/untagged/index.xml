@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>untagged on Blogs</title>
+    <link>https://julitiux.github.io/tags/untagged/</link>
+    <description>Recent content in untagged on Blogs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 27 Jan 2021 23:55:55 -0600</lastBuildDate><atom:link href="https://julitiux.github.io/tags/untagged/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java8</title>
+      <link>https://julitiux.github.io/posts/java8/</link>
+      <pubDate>Wed, 27 Jan 2021 23:55:55 -0600</pubDate>
+      
+      <guid>https://julitiux.github.io/posts/java8/</guid>
+      <description>INDEX Functional programming Imperative and declarative programming Imperative programming: Declarative programming: Java 8 and Lambdas. Lambda Lambda Sintaxis Lambda Scopes Interface Default Methods Functional Interfaces Method References Reference to a static method. With a expresion lambda: With a method reference and deleting the expression lambda Reference to an instance method. Anonymous Function Expresion lambda With method reference Instance Object Reference to a constructor. Anonymous Function Expresion lambda With a method reference Colections -&amp;gt; forEach, removeIf, sort Implementation forEach Implementation removeIf Implementation sort Streams Optional StreamParallels Map Annotations Date API Compare two Dates Count years Convert String to Date Format a Date High Order Functions RXJava Nashorn Functional programming Functional Programming is a programming paradigm where the programs are constructed by applying and composing functions.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #fbfbfb"
+  lang="en-us"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Vim - Blogs</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  <meta name="description" content="INDEX Introduction to Vim Edit the vim style Normal mode Insert mode Visual mode Command mode Edit multiple files Panels and tabs How to move quickly through files 1 How to move quickly through files 2 Registers Three power of macros Patterns Substitutions Global commands Autocomplete Introduction to Vim Diferent mode of vim Normal Vim start in normal mode, this is the central mode. You can change to another modes beginning in normal mode." />
+  <meta name="author" content="Julitiux" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="https://julitiux.github.io/main.min.css" />
+
+  
+
+  
+     
+  <link rel="preload" as="image" href="https://julitiux.github.io/theme.svg" />
+
+  
+  
+  
+  <link rel="preload" as="image" href="https://cdn.v2ex.com/gravatar/6fd8df4abe41f17fd8e2dd7d97b5cc8c?s=160&amp;d=identicon" />
+  
+  
+
+  
+  <link rel="preload" as="image" href="https://julitiux.github.io/twitter.svg" />
+  
+  <link rel="preload" as="image" href="https://julitiux.github.io/github.svg" />
+  
+  <link rel="preload" as="image" href="https://julitiux.github.io/instagram.svg" />
+  
+  
+
+  
+  
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css"
+  integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI"
+  crossorigin="anonymous"
+/>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js"
+  integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t"
+  crossorigin="anonymous"
+></script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js"
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"
+></script>
+
+  
+  
+  
+
+  
+  <link rel="icon" href="https://julitiux.github.io/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://julitiux.github.io/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.107.0">
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:title" content="Vim" />
+<meta property="og:description" content="INDEX Introduction to Vim Edit the vim style Normal mode Insert mode Visual mode Command mode Edit multiple files Panels and tabs How to move quickly through files 1 How to move quickly through files 2 Registers Three power of macros Patterns Substitutions Global commands Autocomplete Introduction to Vim Diferent mode of vim Normal Vim start in normal mode, this is the central mode. You can change to another modes beginning in normal mode." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://julitiux.github.io/posts/vim/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-05-05T14:10:47-06:00" />
+<meta property="article:modified_time" content="2023-05-05T14:10:47-06:00" />
+
+
+  
+  <meta itemprop="name" content="Vim">
+<meta itemprop="description" content="INDEX Introduction to Vim Edit the vim style Normal mode Insert mode Visual mode Command mode Edit multiple files Panels and tabs How to move quickly through files 1 How to move quickly through files 2 Registers Three power of macros Patterns Substitutions Global commands Autocomplete Introduction to Vim Diferent mode of vim Normal Vim start in normal mode, this is the central mode. You can change to another modes beginning in normal mode."><meta itemprop="datePublished" content="2023-05-05T14:10:47-06:00" />
+<meta itemprop="dateModified" content="2023-05-05T14:10:47-06:00" />
+<meta itemprop="wordCount" content="2575">
+<meta itemprop="keywords" content="" />
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Vim"/>
+<meta name="twitter:description" content="INDEX Introduction to Vim Edit the vim style Normal mode Insert mode Visual mode Command mode Edit multiple files Panels and tabs How to move quickly through files 1 How to move quickly through files 2 Registers Three power of macros Patterns Substitutions Global commands Autocomplete Introduction to Vim Diferent mode of vim Normal Vim start in normal mode, this is the central mode. You can change to another modes beginning in normal mode."/>
+
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-3xl px-8 lg:justify-center">
+  <div class="relative z-50 mr-auto flex items-center">
+    <a
+      class="-translate-x-[1px] -translate-y-[1px] text-2xl font-semibold"
+      href="https://julitiux.github.io/"
+      >Blogs</a
+    >
+    <div
+      class="btn-dark text-[0] ml-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 -mr-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#fbfbfb'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+
+    
+    <nav
+      class="mt-12 flex justify-center space-x-10 dark:invert lg:ml-12 lg:mt-0 lg:items-center lg:space-x-6"
+    >
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./twitter.svg)"
+        href="https://twitter.com/julitiux"
+        target="_blank"
+        rel="me"
+      >
+        twitter
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href="https://github.com/julitiux"
+        target="_blank"
+        rel="me"
+      >
+        github
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./instagram.svg)"
+        href="https://instagram.com/julitiux"
+        target="_blank"
+        rel="me"
+      >
+        instagram
+      </a>
+      
+    </nav>
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    <h1 class="!my-0 pb-2.5">Vim</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>May 5, 2023</time>
+      
+      
+      
+      
+    </div>
+    
+  </header>
+
+  <section><h1 id="index"><strong>INDEX</strong></h1>
+<h1 id="introduction-to-vimintroduction-to-vim"><a href="#introduction-to-vim">Introduction to Vim</a></h1>
+<h1 id="edit-the-vim-styleedit-the-vim-style"><a href="#edit-the-vim-style">Edit the vim style</a></h1>
+<h1 id="normal-modenormal-mode"><a href="#normal-mode">Normal mode</a></h1>
+<h1 id="insert-modeinsert-mode"><a href="#insert-mode">Insert mode</a></h1>
+<h1 id="visual-modevisual-mode"><a href="#visual-mode">Visual mode</a></h1>
+<h1 id="command-modecommand-mode"><a href="#command-mode">Command mode</a></h1>
+<h1 id="edit-multiple-filesedit-multiple-files"><a href="#edit-multiple-files">Edit multiple files</a></h1>
+<h1 id="panels-and-tabspanels-and-tabs"><a href="#panels-and-tabs">Panels and tabs</a></h1>
+<h1 id="how-to-move-quickly-through-files-1how-to-move-quickly-through-files-1"><a href="#how-to-move-quickly-through-files-1">How to move quickly through files 1</a></h1>
+<h1 id="how-to-move-quickly-through-files-2how-to-move-quickly-through-files-2"><a href="#how-to-move-quickly-through-files-2">How to move quickly through files 2</a></h1>
+<h1 id="registersregisters"><a href="#registers">Registers</a></h1>
+<h1 id="three-power-of-macrosthree-power-of-macros"><a href="#three-power-of-macros">Three power of macros</a></h1>
+<h1 id="patternspatterns"><a href="#patterns">Patterns</a></h1>
+<h1 id="substitutionssubstitutions"><a href="#substitutions">Substitutions</a></h1>
+<h1 id="global-commandsglobal-commands"><a href="#global-commands">Global commands</a></h1>
+<h1 id="autocompleteautocomplete"><a href="#autocomplete">Autocomplete</a></h1>
+<h1 id="introduction-to-vim">Introduction to Vim</h1>
+<h2 id="diferent-mode-of-vim">Diferent mode of vim</h2>
+<ol>
+<li>
+<p>Normal
+Vim start in normal mode, this is the central mode. You can change to another modes beginning in normal mode. Press the <code>Esc</code> key always turn normal mode.</p>
+</li>
+<li>
+<p>Insert
+In this mode you can add text. You can add text press the <code>i</code> key. There are another commands that turn the insert mode..</p>
+</li>
+<li>
+<p>Command
+In this mode you can access press the <code>:</code> key. This mode you can add different commands like save, open, find, replace words with regrex between Files.</p>
+</li>
+<li>
+<p>Visual
+In this mode you can access press the <code>v</code> key. In this mode, you can select text whit the cursor and you can apply commands just for drive it.</p>
+</li>
+<li>
+<p>Select
+In this mode you can acces press the <code>Ctrl-G</code>. Has a similar behavior to the visual mode, except that when writing we will not carry out commands.</p>
+</li>
+<li>
+<p>Ex
+This mode is similar to command mode, with the difference that after executing it does not return to normal mode. Tou enter by press <code>Q</code> key and exit.</p>
+</li>
+</ol>
+<h2 id="vim-like-a-lenguage">vim like a lenguage</h2>
+<p>Using vim is a different experience than usgin any other code editor. You have to use the next sintax</p>
+<p><code>verb - modifier - object</code></p>
+<p>Verbs</p>
+<ul>
+<li>v - visual</li>
+<li>c - change</li>
+<li>d - delete</li>
+<li>y - yank, copy</li>
+</ul>
+<p>Modifier</p>
+<ul>
+<li>i - inside</li>
+<li>a - around</li>
+<li>t - till</li>
+<li>f - find</li>
+<li>/ - search</li>
+</ul>
+<p>Objects</p>
+<ul>
+<li>w - word</li>
+<li>s - sentence</li>
+<li>p - paragraph</li>
+<li>b - block</li>
+<li>t - tag (html)</li>
+</ul>
+<h2 id="lets-talk-vim">Let&rsquo;s talk vim</h2>
+<p>Now that we are in normal mode we can talk to vim.</p>
+<p>You don&rsquo;t press everything at once you do it letter by letter.</p>
+<p>Delete the word where the cursor is</p>
+<pre tabindex="0"><code class="language-code" data-lang="code">diw - delete inside word
+</code></pre><p>Change the sentense you are on</p>
+<pre tabindex="0"><code class="language-code" data-lang="code">cis - change inside sentence
+</code></pre><p>Change what is inside the quotes</p>
+<pre tabindex="0"><code class="language-code" data-lang="code">ci&#34; - change inside quote
+</code></pre><p>Change anything up to &lsquo;foo&rsquo;</p>
+<pre tabindex="0"><code class="language-code" data-lang="code">c/foo - change search foo
+</code></pre><p>Change everything up to the letter X</p>
+<pre tabindex="0"><code class="language-code" data-lang="code">ctX - change till X
+</code></pre><p>When we have finished editing the file, in <code>normal</code> mode:</p>
+<p><strong>save</strong></p>
+<pre tabindex="0"><code class="language-code" data-lang="code">:w
+</code></pre><p><strong>exit</strong></p>
+<pre tabindex="0"><code class="language-code" data-lang="code">:q
+</code></pre><p><strong>save and exit</strong></p>
+<pre tabindex="0"><code class="language-code" data-lang="code">:wq
+</code></pre><p><strong>exit without save the changes</strong></p>
+<pre tabindex="0"><code class="language-code" data-lang="code">:q!
+</code></pre><h1 id="edit-the-vim-style">Edit the vim style</h1>
+<p>First, create a file <code>.vimrc</code></p>
+<h2 id="know-the-power-of-the-dot-command">Know the power of the dot command</h2>
+<h3 id="dot-command">dot command</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">.
+</code></pre><p>The dot command allow us repeat the last change. Press the dot command, you can keep the same behavior from delete a line.</p>
+<h3 id="delete-a-line">Delete a line</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">dd
+</code></pre><h3 id="indent-a-line">Indent a line</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">&gt;&gt;
+</code></pre><h3 id="go-to-the-end-of-the-line-without-edit">Go to the end of the line without edit</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">$
+</code></pre><h3 id="go-to-the-end-of-the-line-with-edit">Go to the end of the line with edit</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">A
+</code></pre><h3 id="exit-the-insert-mode-to-normal-pressing-the-esc-key">Exit the insert mode to normal pressing the <!-- raw HTML omitted --> key</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">&lt;esc&gt;
+</code></pre><h1 id="normal-mode">Normal mode</h1>
+<p>Normal mode is a rest state.</p>
+<h2 id="regulate-how-you-undo-your-changes">Regulate how you undo your changes.</h2>
+<h3 id="undo">undo</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">u
+</code></pre><h3 id="redo">redo</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">Ctrl-R
+</code></pre><h2 id="essential-commands">Essential commands.</h2>
+<h3 id="first-line-of-document">first line of document</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">gg
+</code></pre><h3 id="last-line-of-document">last line of document</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">G
+</code></pre><h3 id="beginning-of-the-sentence">beginning of the sentence</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">0
+</code></pre><h3 id="ending-of-the-sentence">ending of the sentence</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">$
+</code></pre><h3 id="end-to-the-word">end to the word</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">e / E
+</code></pre><h3 id="end-to-the-word-1">end to the word</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">w / W
+</code></pre><h3 id="begin-of-the-word">begin of the word</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">b / B
+</code></pre><h3 id="begin-and-end-of-the-sentence">begin and end of the sentence</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">{ - }
+</code></pre><h3 id="yank-copy">yank, copy</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">y
+</code></pre><h3 id="paste">paste</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">p
+</code></pre><h3 id="find">find</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">f / F
+</code></pre><h3 id="till">till</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">t / T
+</code></pre><h3 id="add-a-number">add a number</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">Ctrl-a
+</code></pre><h3 id="rest-a-number">rest a number</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">Ctrl-x
+</code></pre><h1 id="insert-mode">Insert mode</h1>
+<h2 id="make-corrections-instantly-from-insert-mode">Make corrections instantly from Insert mode</h2>
+<h3 id="delete-around-word">Delete around word</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">daw
+</code></pre><h3 id="center-the-content-where-the-cursor-is-present">Center the content where the cursor is present.</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">zz
+</code></pre><h2 id="insert-special-characters">Insert special characters</h2>
+<h3 id="insert-special-chatacter-insert-mode">insert special chatacter (insert mode)</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">Ctrl-v {code}
+</code></pre><h3 id="how-to-know-the-code-of-special-caracter">how to know the code of special caracter</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">ga
+</code></pre><h3 id="insert-special-character-decimal-insert-mode">Insert special character decimal (insert mode)</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">Ctrl-v u{code}
+</code></pre><h2 id="overwrite-text-with-replace-mode">Overwrite text with replace mode</h2>
+<h3 id="replace-the-following-characters-until-you-press-esc">Replace the following characters until you press <!-- raw HTML omitted --></h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">R
+</code></pre><h3 id="replace-just-a-caracters">Replace just a caracters</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">r
+</code></pre><h3 id="delete-a-character-and-kept-in-insert-mode">Delete a character and kept in insert mode</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">s
+</code></pre><h3 id="fix-the-capitalization-of-a-character">fix the capitalization of a character</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">option-ñ
+</code></pre><h1 id="visual-mode">Visual mode</h1>
+<p>The visual mode resembles the text selection in other code editors. But in this case we eill select text and execute actions on it.</p>
+<p>The visula mode has three variants of selections:</p>
+<ul>
+<li>by characteres and words</li>
+<li>by complete lines</li>
+<li>by rectangular blocks of text</li>
+</ul>
+<h3 id="to-enter-the-visual-mode">to enter the visual mode</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">v
+</code></pre><p>In visual mode you can use the command for to seleect the text like:</p>
+<h3 id="in-visual-mode-find-until-letter">in visual mode. find until letter</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">f{letter}
+</code></pre><h3 id="repeat-the-find">repeat the <code>find</code></h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">; / ,
+</code></pre><h3 id="replace-all-the-text-selected-and-deleted-it-on-visual-mode">replace all the text selected and deleted it, on visual mode</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">c
+</code></pre><h3 id="visual-lineal-mode">visual-lineal mode</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">V
+</code></pre><h3 id="visual-block-mode">visual-block mode</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">Ctrl-v
+</code></pre><h3 id="convert-text-to-uppercase-in-visual-mode">convert text to uppercase (in visual mode)</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">U
+</code></pre><h3 id="convert-text-to-lowercase-in-visual-mode">convert text to lowercase (in visual mode)</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">u
+</code></pre><h3 id="convert-text-to-uppercaselowercase-in-visual-mode">convert text to uppercase/lowercase (in visual mode)</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">~
+</code></pre><h1 id="command-mode">Command mode</h1>
+<p>The fundamental is know is that to enter vim&rsquo;s command mode have to press <code>:</code></p>
+<p>In command mode you can access <code>find mode</code>, this mode is specialized in searches</p>
+<pre tabindex="0"><code class="language-code" data-lang="code">/
+</code></pre><p>some commands.</p>
+<h3 id="delete-the-specified-lines">delete the specified lines</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">:[range]d[elete]
+</code></pre><h3 id="copy-lines">copy lines</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">:[range]y[ank]
+</code></pre><h3 id="paste-lines">paste lines</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">:[line]put
+</code></pre><h3 id="copy-lines-below-the-address">copy lines below the address</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">:[range]c[opy]{direction}
+</code></pre><h3 id="copy-lines-below-the-addres-with-t">copy lines below the addres with :t</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">:t
+</code></pre><h3 id="move-specified-lines-in-the-chosen-direction">move specified lines in the chosen direction.</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">:[range]m[ove]{direction}
+</code></pre><h3 id="join-lines">join lines</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">:[range]j[oin]
+</code></pre><h3 id="execute-commands-in-the-normal-mode-on-the-specified-lines">execute commands in the normal mode on the specified lines</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">:[range]norm[al]{command}
+</code></pre><h3 id="replace-occurrences-of-pattern-with-string-on-each-specified-line">replace occurrences of {pattern} with {string} on each specified line</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">:[range]s[ubstitute]/{pattern}/{string}/[flags]
+</code></pre><h3 id="execute-a-command-on-the-each-specified-line-that-matches-the-seach-pattern">execute a command on the each specified line that matches the seach {pattern}</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">:[range]g[lobal]/{pattern}/[command]
+</code></pre><h3 id="show-us-the-range-just-for-practicing">show us the range, just for practicing</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">:[range]p[rint]
+</code></pre><h3 id="detail-information-of-each-command">detail information of each command</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">:h
+</code></pre><h2 id="command-line-positions">Command line positions</h2>
+<h3 id="first-line-of-file">first line of file</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">:1
+</code></pre><h3 id="last-line-of-file">last line of file</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">:$
+</code></pre><h3 id="previous-line-of-the-first-line">previous line of the first line</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">:1
+</code></pre><h3 id="line-where-the-cursos-is-located">line where the cursos is located</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">:.
+</code></pre><h3 id="line-containing-the-mark">line containing the mark</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">:&#39;m
+</code></pre><h3 id="if-we-select-some-lines-in-visual-mode-and-press--the-next-range-will-be-created">if we select some lines in visual mode and press <code>:</code> the next range will be created</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">:&#39;&lt;,&#39;&gt;
+</code></pre><h3 id="the-whole-file">the whole file</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">:%
+</code></pre><h2 id="perfect-for-practicing-ranges">Perfect for practicing ranges</h2>
+<h3 id="show-the-line-five">show the line five</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">:5p
+</code></pre><h3 id="show-the-content-of-lines-between-two-and-ten">show the content of lines between two and ten</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">:2,10p
+</code></pre><h3 id="show-the-current-line-and-three-more-down">show the current line and three more down</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">:.,+3p
+</code></pre><h3 id="show-the-current-visual-selection">show the current visual selection</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">:&#39;&lt;,&#39;&gt;p
+</code></pre><h2 id="now-some-exercies">Now some exercies</h2>
+<h3 id="put-semicolon-in-the-whole-file">put semicolon in the whole file</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">A;&lt;esc&gt; (normal mode)
+gg
+V
+G
+:&#39;&lt;,&#39;&gt; norm .
+</code></pre><h3 id="move-current-line-after-line-1">move current line after line 1</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">:.,m0
+</code></pre><h3 id="copy-the-line-4-before-to-line-9">copy the line 4 before to line 9</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">:4t9
+</code></pre><h3 id="replace-the-word-madrid-by-bilbao-in-the-whole-file">replace the word <code>Madrid</code> by <code>Bilbao</code> in the whole file</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">:%s/Madrid/Bilbao
+</code></pre><h3 id="execute-a-command-in-the-shell-exit-to-return-to-vim">execute a command in the shell, exit to return to vim</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">:shell
+</code></pre><h3 id="execute-a-command-in-the-shell">execute a command in the shell</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">:![command&#39;s shell]
+</code></pre><h3 id="repeat-the-last-command-in-normal-mode">repeat the last command in normal mode</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">@:
+</code></pre><h1 id="edit-multiple-files">Edit multiple files</h1>
+<h2 id="buffers-list">Buffer&rsquo;s list</h2>
+<p>A file is saved on disk while a buffer is saved on memory</p>
+<h3 id="show-us-a-list-of-buffers">show us a list of buffers</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">:ls
+</code></pre><ul>
+<li><code>#</code> previous buffer</li>
+<li><code>%</code> current buffer</li>
+</ul>
+<h3 id="open-next-buffer">open next buffer</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">:bn[ext]
+</code></pre><h3 id="open-previous-buffer">open previous buffer</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">:bp[revious]
+</code></pre><h3 id="open-first-buffer">open first buffer</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">:bf[irst]
+</code></pre><h3 id="open-last-buffer">open last buffer</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">:bl[ast]
+</code></pre><h3 id="remove-buffer-from-list-does-not-remove-file">remove buffer from list, does not remove file</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">bd[elete] [buffer]
+</code></pre><h3 id="show-a-list-using-arguments">show a list using arguments</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">:args **/*.md
+</code></pre><h3 id="allow-us-execute-a-command-on-all-the-buffers-in-the-list-at-once">allow us execute a command on all the buffers in the list at once</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">:argdo [command]
+</code></pre><h3 id="save-all-files">save all files</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">:w[rite]a[all]
+</code></pre><h3 id="exit-all-files-without-save">exit all files without save</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">:!q[uit]a[all]
+</code></pre><h1 id="panels-and-tabs">Panels and tabs</h1>
+<h2 id="panels">Panels</h2>
+<p>Vim called windows, when open vim, it has only one panel but we can split it both horizontally and vertically</p>
+<h3 id="divide-the-panel-horizontally">divide the panel horizontally</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">:sp[lit] {file}
+</code></pre><h3 id="divide-the-panel-vertically">divide the panel vertically</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">:vsp[lit] {file}
+</code></pre><h2 id="moving-between-panels">Moving between panels</h2>
+<h3 id="move-between-panels">Move between panels</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">&lt;Ctrl-w&gt; w
+</code></pre><h3 id="go-to-left-panel">go to left panel</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">&lt;Ctrl-w&gt; left
+</code></pre><h3 id="go-to-down-panel">go to down panel</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">&lt;Ctrl-w&gt; down
+</code></pre><h3 id="go-to-up-panel">go to up panel</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">&lt;Ctrl-w&gt; up
+</code></pre><h3 id="go-to-right-panel">go to right panel</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">&lt;Ctrl-w&gt; rigth
+</code></pre><h3 id="close-a-panel">close a panel</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">&lt;Ctrl-w&gt; c
+:cl[ose]
+</code></pre><h3 id="keep-the-panel-active-and-closing-the-other-one">keep the panel active and closing the other one</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">&lt;Ctrl-w&gt; o
+:on[ly]
+</code></pre><h3 id="equalize-the-height-and-width-of-the-panels">equalize the height and width of the panels</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">&lt;Ctrl-w&gt; =
+</code></pre><h3 id="maximizes-the-height-of-the-active-panel">maximizes the height of the active panel</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">&lt;Ctrl-w&gt; _
+</code></pre><h3 id="maximize-the-width-of-the-active-panel">maximize the width of the active panel</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">&lt;Ctrl-w&gt; |
+</code></pre><h2 id="tabs">Tabs</h2>
+<h3 id="open-a-new-tab">open a new tab</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">:tabnew
+</code></pre><h3 id="change-the-path-the-forlder-where-the-panel-points-to">change the path (the forlder) where the panel points to.</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">:lcd {path}
+</code></pre><h3 id="change-the-path-where-all-the-panels-in-a-tab-point-to">change the path where all the panels in a tab point to.</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">:windo lcd {path}
+</code></pre><h3 id="move-the-current-panel-to-a-new-tab">move the current panel to a new tab</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">&lt;Ctrl-w&gt; T
+</code></pre><h3 id="open-a-file-in-a-new-tab">open a file in a new tab</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">:tabe[dit] {file}
+</code></pre><h3 id="close-a-tab">close a tab</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">:tabc[lose]
+</code></pre><h3 id="close-all-tabs-except-the-active-one">close all tabs except the active one</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">:tabo[only]
+</code></pre><h3 id="go-to-tab-n">go to tab {N}</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">:tabn[ext] {N}
+</code></pre><h3 id="go-to-tab-n-1">go to tab {N}</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">:tabn[ext] {N} gt
+</code></pre><h3 id="next-tab">next tab</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">:tabn[ext]
+</code></pre><h3 id="previous-tab">previous tab</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">:tabp[revious]
+</code></pre><h3 id="move-tab-n">move tab {N}</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">:tabmove {N}
+</code></pre><h3 id="help-about-tabs">help about tabs</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">:h tabpage
+</code></pre><h1 id="how-to-move-quickly-through-files-1">How to move quickly through files 1</h1>
+<h2 id="disable-arrow-keys">disable arrow keys</h2>
+<pre tabindex="0"><code class="language-code" data-lang="code">noremap &lt;up&gt; &lt;nop&gt;
+noremap &lt;down&gt; &lt;nop&gt;
+noremap &lt;left&gt; &lt;nop&gt;
+noremap &lt;right&gt; &lt;nop&gt;
+</code></pre><h2 id="motions">motions</h2>
+<h3 id="down-a-line">down a line</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">j
+</code></pre><h3 id="up-a-line">up a line</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">k
+</code></pre><h3 id="go-to-beginning-of-the-line">go to beginning of the line</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">0
+</code></pre><h3 id="go-to-end-of-the-line">go to end of the line</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">$
+</code></pre><h3 id="go-to-beginning-of-the-paragraph">go to beginning of the paragraph</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">{
+</code></pre><h3 id="go-to-the-end-of-the-paragraph">go to the end of the paragraph</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">}
+</code></pre><h3 id="go-to-the-beginning-of-the-file">go to the beginning of the file</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">gg
+</code></pre><h3 id="go-to-the-end-of-the-file">go to the end of the file</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">G
+</code></pre><h3 id="go-to-the-beginning-of-the-next-word">go to the beginning of the next word</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">w
+</code></pre><h3 id="go-to-the-end-of-the-next-word">go to the end of the next word</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">e
+</code></pre><h3 id="go-back-to-the-beginning-of-the-current-or-previous-word">go back to the beginning of the current or previous word</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">b
+</code></pre><h3 id="find-any-character">find any character</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">f/{character}
+</code></pre><h3 id="find-any-character-reverse">find any character (reverse)</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">F/{character}
+</code></pre><h3 id="go-forward-and-stop-one-column-before-the-character">go forward and stop one column before the character</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">t/{character}
+</code></pre><h3 id="go-forward-and-stop-one-column-before-the-character-reverse">go forward and stop one column before the character (reverse)</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">T/{character}
+</code></pre><h3 id="repeat-last-search-character">repeat last search character</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">;
+</code></pre><h3 id="repeat-last-search-character-reverse">repeat last search character ((reverse)</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">,
+</code></pre><h1 id="how-to-move-quickly-through-files-2">How to move quickly through files 2</h1>
+<h2 id="make-accurate-selections">make accurate selections</h2>
+<p>This commands you are going execute from normal mode is thta they are proceded by v (visual selection), c (change text) or d (delete text)</p>
+<h3 id="vcd-around-">v/c/d around )</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">a)
+</code></pre><h3 id="vcd-inside-">v/c/d inside )</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">i)
+</code></pre><h3 id="vcd-around--1">v/c/d around }</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">a}
+</code></pre><h3 id="vcd-inside--1">v/c/d inside }</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">i}
+</code></pre><h3 id="vcd-aroung-">v/c/d aroung ]</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">a]
+</code></pre><h3 id="vcd-inside--2">v/c/d inside ]</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">i]
+</code></pre><h3 id="vcd-around--2">v/c/d around &gt;</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">a&gt;
+</code></pre><h3 id="vcd-inside--3">v/c/d inside &lt;</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">i&lt;
+</code></pre><h3 id="vcd-around--3">v/c/d around '</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">a&#39;
+</code></pre><h3 id="vcd-inside--4">v/c/d inside '</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">i&#39;
+</code></pre><h3 id="vcd-around--4">v/c/d around &quot;</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">a&#34;
+</code></pre><h3 id="vcd-inside--5">v/c/d inside &quot;</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">i&#34;
+</code></pre><h3 id="vcd-around--5">v/c/d around `</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">a`
+</code></pre><h3 id="vcd-around-tag-html">v/c/d around tag HTML</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">at
+</code></pre><h3 id="vcd-inside-tag-html">v/c/d inside tag HTML</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">it
+</code></pre><h3 id="vcd-around-word">v/c/d around word</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">aw
+</code></pre><h3 id="vcd-inside-word">v/c/d inside word</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">iw
+</code></pre><h3 id="vcd-inside-word-1">v/c/d inside WORD</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">iW
+</code></pre><h3 id="vcd-around-word-1">v/c/d around WORD</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">aW
+</code></pre><h3 id="vcd-inside-phrase">v/c/d inside phrase</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">is
+</code></pre><h3 id="vcd-around-phrase">v/c/d around phrase</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">as
+</code></pre><h3 id="vcd-around-paragraph">v/c/d around paragraph</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">ap
+</code></pre><h3 id="vcd-inside-paragraph">v/c/d inside paragraph</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">ip
+</code></pre><h2 id="bookmarks">Bookmarks</h2>
+<h3 id="make-a-bookmark">make a bookmark</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">m{a-zA-Z}}
+</code></pre><h3 id="return-to-the-bookmark">return to the bookmark</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">`{letter of mark}
+</code></pre><h3 id="go-to-the-position-before-the-last-jump-in-the-current-file">go to the position before the last jump in the current file</h3>
+<pre tabindex="0"><code>``
+</code></pre><h3 id="go-to-the-last-change">go to the last change</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">`.
+</code></pre><h3 id="go-to-position-of-last-insert">go to position of last insert</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">`^
+</code></pre><h3 id="go-to-the-start-position-of-the-last-change-or-copy">go to the start position of the last change or copy</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">`[
+</code></pre><h3 id="go-to-the-end-position-of-the-last-change-or-copy">go to the end position of the last change or copy</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">`]
+</code></pre><h3 id="go-to-the-start-position-of-the-last-visual-selection">go to the start position of the last visual selection</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">`&lt;
+</code></pre><h3 id="go-to-the-end-position-of-the-last-visual-selection">go to the end position of the last visual selection</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">`&gt;
+</code></pre><h1 id="registers">Registers</h1>
+<p>There are 9 types of registers:</p>
+<ol>
+<li>The unnamed register &quot;&quot;</li>
+<li>10 numbered register &ldquo;0 to &ldquo;9</li>
+<li>The small delete register &ldquo;-</li>
+<li>26 named registers &ldquo;a to &ldquo;z or &ldquo;A to &ldquo;Z</li>
+<li>4 read-only registers &ldquo;:, &ldquo;., &ldquo;% and &ldquo;#</li>
+<li>The expression register &ldquo;=</li>
+<li>The selection and drop registers &ldquo;*, &ldquo;+ and &ldquo;~</li>
+<li>The black hole register &ldquo;_</li>
+<li>Last search pattern register &ldquo;/</li>
+</ol>
+<p>To access register&rsquo;s vim is simple, just specify the register like this</p>
+<pre tabindex="0"><code class="language-code" data-lang="code">&#34;{register}
+</code></pre><h3 id="use-the-register-a-and-copy-a-word-like-this">use the register <code>a</code> and copy a word like this</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">&#34;ayiw
+</code></pre><h3 id="to-acces-the-register-has-to-do-this">to acces the register has to do this:</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">&#34;ap
+</code></pre><p>copy and paste the content of the register <code>a</code></p>
+<h3 id="access-the-content-deleted">access the content deleted</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">&#34;&#34;
+</code></pre><h2 id="other-registers">Other registers</h2>
+<h3 id="the-black-hole-register">the black hole register</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">#_
+</code></pre><h3 id="the-system-clipboard">the system clipboard</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">&#34;+ / &#34;*
+</code></pre><h1 id="three-power-of-macros">Three power of macros</h1>
+<h2 id="record-and-execute-a-macro">Record and execute a macro</h2>
+<p>Macros start recording as soon as we press the <code>q</code> key and assign a record to it. To stop recording we will press <code>q</code> again.</p>
+<h3 id="start-to-record-a-macro">start to record a macro</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">q
+</code></pre><h3 id="end-to-record-a-macro">end to record a macro</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">q
+</code></pre><h3 id="start-to-record-a-macro-with-register">start to record a macro with register</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">q{letter&#39;s register}
+</code></pre><h3 id="execute-a-macro">execute a macro</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">@{letter&#39;s register}
+</code></pre><h2 id="variables">variables</h2>
+<h3 id="declare-a-variable">declare a variable</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">:let {variable}={number}
+:ley i=1
+</code></pre><h3 id="you-can-modify-the-variable-even-inside-the-macro">you can modify the variable even inside the macro</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">let i+=1
+</code></pre><h3 id="execute-a-macro-in-parallel-visual-mode">execute a macro in parallel (visual mode)</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">:&#39;&lt;,&#39;&gt; normal @{letter&#39;s macro}
+</code></pre><h3 id="lets-paste-the-content-of-variable-insert-mode">lets paste the content of variable (insert mode)</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">&lt;ctrl-r&gt;=i
+</code></pre><h2 id="tricks">tricks</h2>
+<ul>
+<li>for macros use commands like <code>A</code> and <code>I</code> just for normalize the position of cursor</li>
+<li>to repeat a macro just we have will use <code>@@</code> as many times as we want</li>
+<li>to see the contents of our macro, we can use the <code>:reg a</code> command</li>
+<li>to edit a macro saved in the registry, we can paste its content with <code>:put a</code> and when we have edited it yo our linking, copy it back to registry with, for example, &ldquo;ay$</li>
+<li>to execute a macro on all open buffers <code>:argdo normal @a</code></li>
+</ul>
+<h1 id="patterns">Patterns</h1>
+<h2 id="search">search</h2>
+<h3 id="to-search-forward">to search forward</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">/{enter the text to search for}
+</code></pre><h3 id="to-search-back">to search back</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">?{enter the text to search for}
+</code></pre><p>for both cases you can press the key <code>n</code> for the next search or press the key <code>N</code> for the back search</p>
+<p>If you do not want Vim to take capital letters into account, we will put the following in our <code>.vimrc</code></p>
+<pre tabindex="0"><code class="language-code" data-lang="code">set ignorecase
+</code></pre><ul>
+<li><code>hola</code> find (with <em>ignorecase</em>) Hola hola HoLA</li>
+<li><code>hola</code> find (without <em>ignorecase</em>) hola</li>
+<li><code>holac</code> find (dont matter default option) hola Hola HoLa</li>
+<li><code>holaC</code> find (dont matter default option) hola</li>
+</ul>
+<p>Take capital letters into account if we include it in our search</p>
+<pre tabindex="0"><code class="language-code" data-lang="code">set smartcase
+</code></pre><h1 id="substitutions">Substitutions</h1>
+<h2 id="the-replace-command">The replace command</h2>
+<p>The replace command has the following structure</p>
+<pre tabindex="0"><code class="language-code" data-lang="code">:[range]s[ubstitute]/{pattern}/{string}/[flags]
+</code></pre><p>These are a few useful flags</p>
+<h3 id="makes-the-replace-command-act-globally">makes the replace command act globally</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">g:
+</code></pre><h3 id="confirm-every-change">confirm every change</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">c:
+</code></pre><h3 id="confirms-us-of-the-number-of-cases-that-would-be-affected">confirms us of the number of cases that would be affected</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">n:
+</code></pre><h3 id="reuse-the-flags-from-the-previous-command">reuse the flags from the previous command</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">&amp;:
+</code></pre><h2 id="special-characteres-that-we-can-use-as-replacement">Special characteres that we can use as replacement</h2>
+<h3 id="insert-a-carriage-return">insert a carriage return</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">r:
+</code></pre><h3 id="insert-a-tab">insert a tab</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">t:
+</code></pre><h3 id="insert-a--since-it-is-a-character-that-is-used-as-a-special-it-needs-to-be-preceded-by-a-">insert a <code>,</code> since it is a character that is used as a special it needs to be preceded by a <code>.</code></h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">\:
+</code></pre><h3 id="insert-the-first-_submatch_">insert the first <em>submatch</em></h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">1:
+</code></pre><h3 id="insert-the-second-_submatch_">insert the second <em>submatch</em></h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">2:
+</code></pre><h3 id="insert-the-entire-search-pattern">insert the entire search pattern</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">:
+</code></pre><h3 id="insert-the-entire-search-pattern-1">insert the entire search pattern</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">&amp;:
+</code></pre><h3 id="use-the-substitution-command-string-above">use the substitution command {string} above</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">~:
+</code></pre><h3 id="evaluates-an-expression-vim-script-and-uses-the-result-as-the-string-to-replace">evaluates an expression {vim script} and uses the result as the {string} to replace</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">={vim script}:
+</code></pre><h2 id="lets-start-with-practice">Let&rsquo;s start with practice</h2>
+<p>In this text</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Line 1 Mexico Mexico
+</span></span><span style="display:flex;"><span>Line 2 Tlaxcala Tlaxcala
+</span></span><span style="display:flex;"><span>Line 3 Monterrey MTY
+</span></span><span style="display:flex;"><span>Line 4 Monterrey Monterrey
+</span></span></code></pre></div><h3 id="over-the-line-will-replace-the-first-mexico">over the line; will replace the first Mexico</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">:s/Mexico/CDMX
+</code></pre><h3 id="over-the-line-will-replace-all-matches-in-the-same-line">over the line; will replace all matches in the same line</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">:s/Mexico/CDMX/g
+</code></pre><h3 id="will-replace-the-first-match-of-all-lines-in-the-file">will replace the first match of all lines in the file</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">:%s/Mexico/CDMX/
+</code></pre><h3 id="will-replace-all-matches-in-the-file">will replace all matches in the file</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">:%s/Mexico/CDMX/g
+</code></pre><h3 id="it-will-ask-us-for-confirmation-to-replace-each-match">It will ask us for confirmation to replace each match</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">:%s/Mexico/CDMX/gc
+</code></pre><h1 id="global-commands">Global commands</h1>
+<p>The command <code>:global</code> allow us to execute an Ex command on the lines that match the pattern that we indicate.</p>
+<p>The structure of <code>:global</code> command as follows</p>
+<pre tabindex="0"><code class="language-code" data-lang="code">:[range] global[!] /{pattern}/ [cmd]
+</code></pre><ul>
+<li>The range of this command by default is the entire file, is important make the differents between other commands like :delete</li>
+<li><code>{patter}</code> is the search pattern</li>
+<li>[cmd] is the command to execute. if you dont declare nothing, will use the command :print by default.</li>
+<li>[!] the command will act on the lines that do not match the pattern. The command it could be same with the next sintaxis <code>:vglobal</code></li>
+</ul>
+<h2 id="examples-to-execute-the-global-command">Examples to execute the <code>:global</code> command</h2>
+<h3 id="get-the-content-of-html-tags">get the content of HTML tags</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">:g/re/d
+</code></pre><h1 id="autocomplete">Autocomplete</h1>
+<p>Vim has several options for autocompletion and that autocompletion is always done in insert mode. To activate the different autocomplete options we have the following keyboard shorcuts.</p>
+<h3 id="vims-autocompletion-is-triggered-by-the-above-keyboard-shorcut-by">Vim&rsquo;s autocompletion is triggered by the above keyboard shorcut by</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">&lt;Ctrl-n&gt;&lt;Ctrl-p&gt;
+</code></pre><h3 id="search-a-list-of-words-in-the-buffer-in-the-current-file">search a list of words in the buffer (in the current file)</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">&lt;Ctrl-x&gt;&lt;Ctrl-n&gt;
+</code></pre><h3 id="autocompletion-of-files-included">autocompletion of files included.</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">&lt;Ctrl-x&gt;&lt;Ctrl-i&gt;
+</code></pre><h3 id="search-words-in-the-tags-files-a-tags-file-has-an-index-of-functionsm-classes-or-other-types-of-structures-but-this-deserves-a-poster-lates-to-undestand-it">search words in the tags files. A tags file has an index of functionsm classes, or other types of structures. But this deserves a poster lates to undestand it.</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">&lt;Ctrl-x&gt;&lt;Ctrl-]&gt;
+</code></pre><h3 id="look-at-a-list-of-words-in-the-dictionary">look at a list of words in the dictionary</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">&lt;Ctrl-x&gt;&lt;Ctrl-k&gt;
+</code></pre><h3 id="autocompletion-of-complete-lines">autocompletion of complete lines</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">&lt;Ctrl-x&gt;&lt;Ctrl-l&gt;
+</code></pre><h3 id="autompletion-for-file-or-folder-names">autompletion for file or folder names</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">&lt;Ctrl-x&gt;&lt;Ctrl-f&gt;
+</code></pre><h3 id="code-based-hints-such-as-css-properties">code-based hints, such as CSS properties</h3>
+<pre tabindex="0"><code class="language-code" data-lang="code">&lt;Ctrl-x&gt;&lt;Ctrl-o&gt;
+</code></pre></section>
+
+  
+  
+
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="https://julitiux.github.io/posts/spock_framework/"
+      ><span class="mr-1.5">←</span><span>Spock Framework</span></a
+    >
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="https://julitiux.github.io/posts/docker/"
+      ><span>Docker</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+
+  
+  
+
+  
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+  <div class="mr-auto">
+    &copy; 2023
+    <a class="link" href="https://julitiux.github.io/">Blogs</a>
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >Powered by Hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >✎ Paper</a
+  >
+</footer>
+
+  </body>
+</html>
