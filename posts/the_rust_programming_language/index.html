@@ -63,7 +63,7 @@
   
   
   
-  <meta name="description" content="INDEX Chapter 1 Getting Started Chapter 1 Getting Started Installing rustup on macOS curl https://sh.rustup.rs -sSf | sh Add on your .zshrc
+  <meta name="description" content="INDEX Chapter 1 Getting Started Chapter 2 Programming a Guessing Game Chapter 1 Getting Started Installing rustup on macOS curl https://sh.rustup.rs -sSf | sh Add on your .zshrc
 . &#34;$HOME/.cargo/env&#34; Updating and Unistalling rustc update rustup self unistall Creating a Project Directory mkdir ~/projects cd ~/projects mkdir hello_world cd hello_world Writing and Running a Rust Program fn main(){ println!(&#34;hello wolf&#34;); } Go to the terminal and enter the following commands to compule and run the file" />
   <meta name="author" content="Julitiux" />
   
@@ -142,7 +142,7 @@
   
   
   <meta property="og:title" content="The Rust Programming Language (2018)" />
-<meta property="og:description" content="INDEX Chapter 1 Getting Started Chapter 1 Getting Started Installing rustup on macOS curl https://sh.rustup.rs -sSf | sh Add on your .zshrc
+<meta property="og:description" content="INDEX Chapter 1 Getting Started Chapter 2 Programming a Guessing Game Chapter 1 Getting Started Installing rustup on macOS curl https://sh.rustup.rs -sSf | sh Add on your .zshrc
 . &#34;$HOME/.cargo/env&#34; Updating and Unistalling rustc update rustup self unistall Creating a Project Directory mkdir ~/projects cd ~/projects mkdir hello_world cd hello_world Writing and Running a Rust Program fn main(){ println!(&#34;hello wolf&#34;); } Go to the terminal and enter the following commands to compule and run the file" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://julitiux.github.io/posts/the_rust_programming_language/" /><meta property="article:section" content="posts" />
@@ -152,15 +152,15 @@
 
   
   <meta itemprop="name" content="The Rust Programming Language (2018)">
-<meta itemprop="description" content="INDEX Chapter 1 Getting Started Chapter 1 Getting Started Installing rustup on macOS curl https://sh.rustup.rs -sSf | sh Add on your .zshrc
+<meta itemprop="description" content="INDEX Chapter 1 Getting Started Chapter 2 Programming a Guessing Game Chapter 1 Getting Started Installing rustup on macOS curl https://sh.rustup.rs -sSf | sh Add on your .zshrc
 . &#34;$HOME/.cargo/env&#34; Updating and Unistalling rustc update rustup self unistall Creating a Project Directory mkdir ~/projects cd ~/projects mkdir hello_world cd hello_world Writing and Running a Rust Program fn main(){ println!(&#34;hello wolf&#34;); } Go to the terminal and enter the following commands to compule and run the file"><meta itemprop="datePublished" content="2023-08-01T23:24:43-06:00" />
 <meta itemprop="dateModified" content="2023-08-01T23:24:43-06:00" />
-<meta itemprop="wordCount" content="171">
+<meta itemprop="wordCount" content="2217">
 <meta itemprop="keywords" content="" />
   
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="The Rust Programming Language (2018)"/>
-<meta name="twitter:description" content="INDEX Chapter 1 Getting Started Chapter 1 Getting Started Installing rustup on macOS curl https://sh.rustup.rs -sSf | sh Add on your .zshrc
+<meta name="twitter:description" content="INDEX Chapter 1 Getting Started Chapter 2 Programming a Guessing Game Chapter 1 Getting Started Installing rustup on macOS curl https://sh.rustup.rs -sSf | sh Add on your .zshrc
 . &#34;$HOME/.cargo/env&#34; Updating and Unistalling rustc update rustup self unistall Creating a Project Directory mkdir ~/projects cd ~/projects mkdir hello_world cd hello_world Writing and Running a Rust Program fn main(){ println!(&#34;hello wolf&#34;); } Go to the terminal and enter the following commands to compule and run the file"/>
 
   
@@ -302,6 +302,7 @@
 
   <section><h2 id="index"><strong>INDEX</strong></h2>
 <h1 id="chapter-1-getting-startedchapter-1-getting-started"><a href="#chapter-1-getting-started">Chapter 1 Getting Started</a></h1>
+<h1 id="chapter-2-programming-a-guessing-gamechapter-2-programming-a-guessing-game"><a href="#chapter-2-programming-a-guessing-game">Chapter 2 Programming a Guessing Game</a></h1>
 <h1 id="chapter-1-getting-started">Chapter 1 Getting Started</h1>
 <h2 id="installing-rustup-on-macos">Installing rustup on macOS</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>curl https://sh.rustup.rs -sSf | sh
@@ -341,7 +342,321 @@
 </span></span></code></pre></div><h2 id="building-for-release">Building for Release</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cargo build --release
 </span></span></code></pre></div><p>This command will create an executable in <em>target/release</em> instead of <em>target/debug</em></p>
-</section>
+<h1 id="chapter-2-programming-a-guessing-game">Chapter 2 Programming a Guessing Game</h1>
+<h2 id="setting-up-a-new-project">Setting Up a New Project</h2>
+<p>Using <code>cargo</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cargo new guessing_game
+</span></span><span style="display:flex;"><span>cd guessing_game
+</span></span></code></pre></div><p>Look at the generated <code>Cargo.toml</code> file</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>[<span style="color:#a6e22e">package</span>]
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;guessing_game&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">version</span> = <span style="color:#e6db74">&#34;0.1.0&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">authors</span> = [<span style="color:#e6db74">&#34;Your Name &lt;you@example.com&gt;&#34;</span>]
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">edition</span> = <span style="color:#e6db74">&#34;2018&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">dependencies</span>]
+</span></span></code></pre></div><p>src/main.rs</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    println!(<span style="color:#e6db74">&#34;Hello, world!&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Compile and run it in the same step using the <code>cargo run</code> command</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cargo run
+</span></span><span style="display:flex;"><span>Compiling guessing_game v0.1.0 <span style="color:#f92672">(</span>file:///projects/guessing_game<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span> Finished dev <span style="color:#f92672">[</span>unoptimized + debuginfo<span style="color:#f92672">]</span> target<span style="color:#f92672">(</span>s<span style="color:#f92672">)</span> in 1.50 secs
+</span></span><span style="display:flex;"><span>  Running <span style="color:#e6db74">`</span>target/debug/guessing_game<span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>Hello, world!
+</span></span></code></pre></div><h2 id="processing-a-guess">Processing a Guess</h2>
+<p>The first part of the guessing game program will ask for user input</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">use</span> std::io;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    println!(<span style="color:#e6db74">&#34;Guess the number!&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    println!(<span style="color:#e6db74">&#34;Please input your guess.&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> <span style="color:#66d9ef">mut</span> guess <span style="color:#f92672">=</span> String::new();
+</span></span><span style="display:flex;"><span>    io::stdin().read_line(<span style="color:#f92672">&amp;</span><span style="color:#66d9ef">mut</span> guess)
+</span></span><span style="display:flex;"><span>        .expect(<span style="color:#e6db74">&#34;Failed to read line&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    println!(<span style="color:#e6db74">&#34;You guessed: {}&#34;</span>, guess);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The io library comes from the stardard library, is known as std. Using the std::io library provides you with a number of useful features, including the ability to accept user input</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">use</span> std::io;
+</span></span></code></pre></div><p>This code is printing a prompt starting what the game is and requesting input from the user.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span>println!(<span style="color:#e6db74">&#34;Guess the number!&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>println!(<span style="color:#e6db74">&#34;Please input your guess.&#34;</span>);
+</span></span></code></pre></div><h2 id="storing-values-with-variables">Storing Values with Variables</h2>
+<p>We create a place to store the user input.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#66d9ef">mut</span> guess <span style="color:#f92672">=</span> String::new
+</span></span></code></pre></div><p>The following example shows how to use mut before the variable name to make a variable mutable.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> foo <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>; <span style="color:#75715e">// immutable
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#66d9ef">mut</span> bar <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>; <span style="color:#75715e">// mutable
+</span></span></span></code></pre></div><blockquote>
+<p>The // syntax starts a comment that continues intul the end of the line. Rust ignores everything in comments.</p>
+</blockquote>
+<p>The :: syntax in the ::new line indicates that new is an <em>associated function</em> of the String type.</p>
+<p>This new function creates a new, empty string.</p>
+<p>To summarize, the let mut guess = String::new(); has created a mutable variable that is currently bound to a new, empty instance of a String.</p>
+<p>Now we&rsquo;ll call the stdin function from the io module.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span>io::stdin().read_line(<span style="color:#f92672">&amp;</span><span style="color:#66d9ef">mut</span> guess)
+</span></span><span style="display:flex;"><span>    .expect(<span style="color:#e6db74">&#34;Failed to read line&#34;</span>);
+</span></span></code></pre></div><p>We could have writtern this function call as std::io::stdin. The stdin function returns an instance of std::io::Stdin, which is a type that represents a handle to the standard input for you terminal.</p>
+<p>.read_line(&amp;mut guess), calls the read_line method on the standard input handle to get input from the user. We&rsquo;re also passing one argument to read_line: &amp;mut guess.</p>
+<p>The job of read_line is to take whatever the user tyes into stadard input and place that into a string.</p>
+<p>The &amp; indicates that this argument is a <em>reference</em></p>
+<h2 id="handling-potential-failure-with-the-result-type">Handling Potential Failure with the Result Type</h2>
+<p>The second part the method.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span>.expect(<span style="color:#e6db74">&#34;Failed to read line&#34;</span>);
+</span></span></code></pre></div><p>Read_line puts what the user types into the string we&rsquo;re passing it, but it also returns a value - in this case, an io::Result. Rust has a number of types named Result int its standard library: a generic Result as well as specific versions of submodules, such as io::Result.</p>
+<p>The Result  types are <em>enumerations</em>, often referred to as <em>enums</em>.</p>
+<p>For Result, the variants are <em>Ok</em> or <em>Err</em>.</p>
+<p>The <em>Ok</em> variant indicates the operation was successful, and inside <em>Ok</em> is the successfully generated value. The Err variant means the operation failed, and Err contains information about how or why the operation failed.</p>
+<h2 id="printing-values-with-println-placeholders">Printing Values with println! Placeholders.</h2>
+<p>This line prints the string we saved the user&rsquo;s input in. The set of curly brackets, {}, is a placeholder: think of {}as little crab pincers that hold a values in place.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span>println!(<span style="color:#e6db74">&#34;You guessed: {}&#34;</span>, guess);
+</span></span></code></pre></div><p>Printing multiples values in one call to println!.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> x <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> y <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>println!(<span style="color:#e6db74">&#34;x = {} and y = {}&#34;</span>, x, y)
+</span></span></code></pre></div><h2 id="testing-the-first-part">Testing the First Part</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cargo run
+</span></span><span style="display:flex;"><span>Compiling guessing_game v0.1.0 <span style="color:#f92672">(</span>file:///projects/guessing_game<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  Finished dev <span style="color:#f92672">[</span>unoptimized + debuginfo<span style="color:#f92672">]</span> target<span style="color:#f92672">(</span>s<span style="color:#f92672">)</span> in 1.50 secs
+</span></span><span style="display:flex;"><span>    Running <span style="color:#e6db74">`</span>target/debug/guessing_game<span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>Guess the number!
+</span></span><span style="display:flex;"><span>Please input your guess.
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">6</span>
+</span></span><span style="display:flex;"><span>You guessed: <span style="color:#ae81ff">6</span>
+</span></span></code></pre></div><p>At this point, the first part of the game is done.</p>
+<h2 id="generating-a-secret-number">Generating a Secret Number</h2>
+<h2 id="using-a-grate-to-get-more-functionality">Using a Grate to Get More Functionality</h2>
+<p>The project we&rsquo;ve benn building is a <em>binary crate</em>, which is an executable. The <em>rand</em> crate us a <em>binary crate</em>, which contains code intended to be used in other programs.</p>
+<p>Cargo&rsquo;s use of external crates is where it really shines.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">//</span> <span style="color:#a6e22e">Cargo</span>.<span style="color:#a6e22e">toml</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">dependencies</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">rand</span> = <span style="color:#e6db74">&#34;0.3.14&#34;</span>
+</span></span></code></pre></div><p>In the <em>Cargo.toml</em> file, everything that follows a header is part of a section that continues until another section starts. The [dependencies] section is where you tell Cargo which external crates you project depends on and which version of those crate you require.</p>
+<p>Cargo understands Semantic Versioning; sometimes called <em>SemVer</em>.</p>
+<p>Now without changing any of the code, build the project.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cargo build
+</span></span><span style="display:flex;"><span>    Updating registry <span style="color:#e6db74">`</span>https://github.com/rust-lang/crates.io-index<span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span> Downloading rand v0.3.14
+</span></span><span style="display:flex;"><span> Downloading libc v0.2.14
+</span></span><span style="display:flex;"><span>   Compiling libc v0.2.14
+</span></span><span style="display:flex;"><span>   Compiling rand v0.3.14
+</span></span><span style="display:flex;"><span>  Compiling guessing_game v0.1.0 <span style="color:#f92672">(</span>file:///projects/guessing_game<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>   Finished dev <span style="color:#f92672">[</span>unoptimized + debuginfo<span style="color:#f92672">]</span> target<span style="color:#f92672">(</span>s<span style="color:#f92672">)</span> in 1.50 secs
+</span></span></code></pre></div><p>Cargo fetches the lastest versions of everything fromt he <em>registry</em>, which is a copy of data from <a href="https://crates.io/">https://crates.io/</a>. Crates.io is where people in the Rust ecosystem post their open source Rust projects for others to use.</p>
+<h2 id="ensuring-reproducible-builds-with-the-cargolink-file">Ensuring Reproducible Builds with the Cargo.link File</h2>
+<p>Cargo has a mechanism that ensures you can rebuild the same artifact every time you or anyone else builds your code: Cargo will use only the ver- sions of the dependencies you specified until you indicate otherwise. For example, what happens if next week version 0.3.15 of the rand crate comes out and contains an important bug fix but also contains a regression that will break your code?
+The answer to this problem is the Cargo.lock file, which was created the first time you ran cargo build and is now in your guessing_game directory. When you build a project for the first time, Cargo figures out all the ver- sions of the dependencies that fit the criteria and then writes them to the Cargo.lock file. When you build your project in the future, Cargo will see that the Cargo.lock file exists and use the versions specified there rather than doing all the work of figuring out versions again. This lets you have a reproducible build automatically. In other words, your project will remain at 0.3.14 until you explicitly upgrade, thanks to the Cargo.lock file.</p>
+<h2 id="updating-a-crate-to-get-a-new-version">Updating a Crate to Get a New Version</h2>
+<p>When you <em>do</em> want to update a crate, Cargo provides another command, <strong>update</strong>, which will ignore the <em>Cargo.lock</em> file and figure out all the latest versions that fit your specifications in <em>Cargo.toml</em>. If that works, Cargo will write those versions to the <em>Cargo.lock</em> file.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cargo update
+</span></span><span style="display:flex;"><span>   Updating registry <span style="color:#e6db74">`</span>https://github.com/rust-lang/crates.io-index<span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>   Updating rand v0.3.14 -&gt; v0.3.15
+</span></span></code></pre></div><p>If you want to use rand version 0.4.0 or any version in the 0.4.x series.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>[<span style="color:#a6e22e">dependencies</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">rand</span> = <span style="color:#e6db74">&#34;0.4.0&#34;</span>
+</span></span></code></pre></div><h2 id="generation-a-random-number">Generation a Random Number</h2>
+<p>After to add the rand crate to Cargo.toml, let&rsquo;s start using rand.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">use</span> std::io;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">use</span> rand::Rng;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    println!(<span style="color:#e6db74">&#34;Guess the number!&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> secret_number <span style="color:#f92672">=</span> rand::thread_rng().gen_range(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">101</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    println!(<span style="color:#e6db74">&#34;The secret number is: {}&#34;</span>, secret_number);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    println!(<span style="color:#e6db74">&#34;Please input your guess.&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> <span style="color:#66d9ef">mut</span> guess <span style="color:#f92672">=</span> String::new();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    io::stdin().read_line(<span style="color:#f92672">&amp;</span><span style="color:#66d9ef">mut</span> guess)
+</span></span><span style="display:flex;"><span>        .expect(<span style="color:#e6db74">&#34;Failed to read line&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    println!(<span style="color:#e6db74">&#34;You guessed: {}&#34;</span>, guess);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The Rng trait defines methods that random number generators implement.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">use</span> rand::Rng
+</span></span></code></pre></div><p>The rand::thread_rng function will give us the particular random number generator that we&rsquo;re going to use.</p>
+<p>Then we call the gen_range method on the random number generator.</p>
+<p>The gen_range method takes two number as arguments and generates a random number between them, so we need to specify 1 and 101 to request a number between 1 and 100.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> secret_number <span style="color:#f92672">=</span> rand::thread_rng().gen_range(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">101</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>println!(<span style="color:#e6db74">&#34;The secret number is: {}&#34;</span>, secret_number);
+</span></span></code></pre></div><h2 id="comparing-the-guess-to-the-secret-number">Comparing the Guess to the Secret Number</h2>
+<p>Now we compare two numbers</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">use</span> std::io;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">use</span> std::cmp::Ordering;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">use</span> rand::Rng;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// --snip--
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    println!(<span style="color:#e6db74">&#34;You guessed: {}&#34;</span>, guess);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">match</span> guess.cmp(<span style="color:#f92672">&amp;</span>secret_number) {
+</span></span><span style="display:flex;"><span>        Ordering::Less <span style="color:#f92672">=&gt;</span> println!(<span style="color:#e6db74">&#34;Too small!&#34;</span>),
+</span></span><span style="display:flex;"><span>        Ordering::Greater <span style="color:#f92672">=&gt;</span> println!(<span style="color:#e6db74">&#34;Too big!&#34;</span>),
+</span></span><span style="display:flex;"><span>        Ordering::Equal <span style="color:#f92672">=&gt;</span> println!(<span style="color:#e6db74">&#34;You win!&#34;</span>),
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Bringing a type called std::cmp::Ordering into scope from the standard library. Like Result, Ordering is another enum, but the variants for Ordering are Less, Greater, and Equal.</p>
+<p>These are the three outcomes that are possible when yoy compare two values.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">use</span> std::cmp::Ordering;
+</span></span></code></pre></div><p>The cmp method compares two values and can be called on anything that can be compared. Here it&rsquo;s comparing the guess to the secret_number. Then it returns a variant of the Ordering enum. We use a match expression to decide what do next based on which variant of Ordering was returned from the call to cmp.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">match</span> guess.cmp(<span style="color:#f92672">&amp;</span>secret_number) {
+</span></span><span style="display:flex;"><span>    Ordering::Less <span style="color:#f92672">=&gt;</span> println!(<span style="color:#e6db74">&#34;Too small!&#34;</span>),
+</span></span><span style="display:flex;"><span>    Ordering::Greater <span style="color:#f92672">=&gt;</span> println!(<span style="color:#e6db74">&#34;Too big!&#34;</span>),
+</span></span><span style="display:flex;"><span>    Ordering::Equal <span style="color:#f92672">=&gt;</span> println!(<span style="color:#e6db74">&#34;You win!&#34;</span>),
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>A match expression is made uo of <em>arms</em>. An arm consists of a <em>pattern</em> and the code should be run if the value given to the beginning of the match expression fits that arm&rsquo;s pattern.</p>
+<p>Building the code</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cargo build
+</span></span><span style="display:flex;"><span> Compiling guessing_game v0.1.0 <span style="color:#f92672">(</span>file:///projects/guessing_game<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>error<span style="color:#f92672">[</span>E0308<span style="color:#f92672">]</span>: mismatched types
+</span></span><span style="display:flex;"><span>  --&gt; src/main.rs:23:21
+</span></span><span style="display:flex;"><span>   |
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">23</span> |     match guess.cmp<span style="color:#f92672">(</span>&amp;secret_number<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>   |                     ^^^^^^^^^^^^^^ expected struct <span style="color:#e6db74">`</span>std::string::String<span style="color:#e6db74">`</span>,
+</span></span><span style="display:flex;"><span>found integral variable
+</span></span><span style="display:flex;"><span>   |
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">=</span> note: expected type <span style="color:#e6db74">`</span>&amp;std::string::String<span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">=</span> note:    found type <span style="color:#e6db74">`</span>&amp;<span style="color:#f92672">{</span>integer<span style="color:#f92672">}</span><span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>error: aborting due to previous error
+</span></span><span style="display:flex;"><span>Could not compile <span style="color:#e6db74">`</span>guessing_game<span style="color:#e6db74">`</span>.
+</span></span></code></pre></div><p>Now the core of the error states that there are <em>mismatched types</em>. Rust has a string, static type system. Afew number types can have a value between 1 and 100: i32, a 32-bit number; u32, an unsigned 32-bit number; i64, a 64-bit number. Rust defaults to an i32, which is the type of secret_number. The reason for the error here is that Rust cannot compare a string and a number type.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#75715e">// --snip--
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">let</span> <span style="color:#66d9ef">mut</span> guess <span style="color:#f92672">=</span> String::new();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    io::stdin().read_line(<span style="color:#f92672">&amp;</span><span style="color:#66d9ef">mut</span> guess)
+</span></span><span style="display:flex;"><span>        .expect(<span style="color:#e6db74">&#34;Failed to read line&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> guess: <span style="color:#66d9ef">u32</span> <span style="color:#f92672">=</span> guess.trim().parse()
+</span></span><span style="display:flex;"><span>        .expect(<span style="color:#e6db74">&#34;Please type a number!&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    println!(<span style="color:#e6db74">&#34;You guessed: {}&#34;</span>, guess);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">match</span> guess.cmp(<span style="color:#f92672">&amp;</span>secret_number) {
+</span></span><span style="display:flex;"><span>        Ordering::Less <span style="color:#f92672">=&gt;</span> println!(<span style="color:#e6db74">&#34;Too small!&#34;</span>),
+</span></span><span style="display:flex;"><span>        Ordering::Greater <span style="color:#f92672">=&gt;</span> println!(<span style="color:#e6db74">&#34;Too big!&#34;</span>),
+</span></span><span style="display:flex;"><span>        Ordering::Equal <span style="color:#f92672">=&gt;</span> println!(<span style="color:#e6db74">&#34;You win!&#34;</span>),
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Rust allows us to <em>shadow</em> the previous value of guess with a new one. The trim method on a String instance will eliminate any whitespace at the beginning and end.</p>
+<p>The parse method on strings parses a string into some kind of number.</p>
+<p>The colon (:) after guess tells Rust we’ll annotate the variable’s type.</p>
+<p>If parse can successfully convert the string to a num- ber, it will return the Ok variant of Result, and expect will return the number that we want from the Ok value.</p>
+<p>Let&rsquo;s run the program now!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span>cargo run
+</span></span><span style="display:flex;"><span>Compiling guessing_game v0.<span style="color:#ae81ff">1.0</span> (file:<span style="color:#e6db74">///projects/guessing_game)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"></span> Finished dev[unoptimized <span style="color:#f92672">+</span> debuginfo] target(s) <span style="color:#66d9ef">in</span> <span style="color:#ae81ff">1.50</span> secs
+</span></span><span style="display:flex;"><span>  Running <span style="color:#960050;background-color:#1e0010">`</span>target<span style="color:#f92672">/</span>debug<span style="color:#f92672">/</span>guessing_game<span style="color:#960050;background-color:#1e0010">`</span>
+</span></span><span style="display:flex;"><span>Guess the number<span style="color:#f92672">!</span>
+</span></span><span style="display:flex;"><span>The secret number is: <span style="color:#ae81ff">58</span>
+</span></span><span style="display:flex;"><span>Please input your guess.
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">76</span>
+</span></span><span style="display:flex;"><span>You guessed: <span style="color:#ae81ff">76</span>
+</span></span><span style="display:flex;"><span>Too big<span style="color:#f92672">!</span>
+</span></span></code></pre></div><p>Nice!</p>
+<h2 id="allowing-multiple-guesses-with-looping">Allowing Multiple Guesses with Looping</h2>
+<p>The loop keyword creates an infinite loop.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#75715e">// --snip--
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    println!(<span style="color:#e6db74">&#34;The secret number is: {}&#34;</span>, secret_number);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">loop</span> {
+</span></span><span style="display:flex;"><span>        println!(<span style="color:#e6db74">&#34;Please input your guess.&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// --snip--
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">match</span> guess.cmp(<span style="color:#f92672">&amp;</span>secret_number) {
+</span></span><span style="display:flex;"><span>            Ordering::Less <span style="color:#f92672">=&gt;</span> println!(<span style="color:#e6db74">&#34;Too small!&#34;</span>),
+</span></span><span style="display:flex;"><span>            Ordering::Greater <span style="color:#f92672">=&gt;</span> println!(<span style="color:#e6db74">&#34;Too big!&#34;</span>),
+</span></span><span style="display:flex;"><span>            Ordering::Equal <span style="color:#f92672">=&gt;</span> println!(<span style="color:#e6db74">&#34;You win!&#34;</span>),
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The user could always interrupt the program by using the keyboard shortcut CTRL-C.</p>
+<h2 id="quitting-after-a-correct-guess">Quitting After a Correct Guess</h2>
+<p>Let&rsquo;s program the game to quit when the user wins by adding a break statement.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#75715e">// --snip--
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">match</span> guess.cmp(<span style="color:#f92672">&amp;</span>secret_number) {
+</span></span><span style="display:flex;"><span>            Ordering::Less <span style="color:#f92672">=&gt;</span> println!(<span style="color:#e6db74">&#34;Too small!&#34;</span>),
+</span></span><span style="display:flex;"><span>            Ordering::Greater <span style="color:#f92672">=&gt;</span> println!(<span style="color:#e6db74">&#34;Too big!&#34;</span>),
+</span></span><span style="display:flex;"><span>            Ordering::Equal <span style="color:#f92672">=&gt;</span> {
+</span></span><span style="display:flex;"><span>                println!(<span style="color:#e6db74">&#34;You win!&#34;</span>);
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Adding the break line after You Win! makes the program wxit the loop when the user guesses the secret number correctly.</p>
+<h2 id="handling-invalid-input">Handling Invalid Input</h2>
+<p>We make the game ignore a non-number so the user can continue guessing.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#75715e">// --snip--
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>io::stdin().read_line(<span style="color:#f92672">&amp;</span><span style="color:#66d9ef">mut</span> guess)
+</span></span><span style="display:flex;"><span>    .expect(<span style="color:#e6db74">&#34;Failed to read line&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> guess: <span style="color:#66d9ef">u32</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">match</span> guess.trim().parse() {
+</span></span><span style="display:flex;"><span>    Ok(num) <span style="color:#f92672">=&gt;</span> num,
+</span></span><span style="display:flex;"><span>    Err(_) <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">continue</span>,
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>println!(<span style="color:#e6db74">&#34;You guessed: {}&#34;</span>, guess);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// --snip--
+</span></span></span></code></pre></div><p>Switching from an expect call to match expression is how you generally move from crashing on an error to handling the error. Remember that parse returns a Result type and Result is an enum that has the variants Ok or Err.</p>
+<p>The underscore, is a cathallvakue; in this example, we&rsquo;re saying we want to match all Err values, no matter what information the have inside them. So the program will execute the second arm&rsquo;s code, continue, which tells the program to go to the next iteration of the loop and ask for another guess.</p>
+<p>The final code</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">use</span> std::io;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">use</span> std::cmp::Ordering;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">use</span> rand::Rng;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    println!(<span style="color:#e6db74">&#34;Guess the number!&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> secret_number <span style="color:#f92672">=</span> rand::thread_rng().gen_range(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">101</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">loop</span> {
+</span></span><span style="display:flex;"><span>        println!(<span style="color:#e6db74">&#34;Please input your guess.&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> <span style="color:#66d9ef">mut</span> guess <span style="color:#f92672">=</span> String::new();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        io::stdin().read_line(<span style="color:#f92672">&amp;</span><span style="color:#66d9ef">mut</span> guess)
+</span></span><span style="display:flex;"><span>            .expect(<span style="color:#e6db74">&#34;Failed to read line&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> guess: <span style="color:#66d9ef">u32</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">match</span> guess.trim().parse() {
+</span></span><span style="display:flex;"><span>            Ok(num) <span style="color:#f92672">=&gt;</span> num,
+</span></span><span style="display:flex;"><span>            Err(_) <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">continue</span>,
+</span></span><span style="display:flex;"><span>        };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        println!(<span style="color:#e6db74">&#34;You guessed: {}&#34;</span>, guess);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">match</span> guess.cmp(<span style="color:#f92672">&amp;</span>secret_number) {
+</span></span><span style="display:flex;"><span>            Ordering::Less <span style="color:#f92672">=&gt;</span> println!(<span style="color:#e6db74">&#34;Too small!&#34;</span>),
+</span></span><span style="display:flex;"><span>            Ordering::Greater <span style="color:#f92672">=&gt;</span> println!(<span style="color:#e6db74">&#34;Too big!&#34;</span>),
+</span></span><span style="display:flex;"><span>            Ordering::Equal <span style="color:#f92672">=&gt;</span> {
+</span></span><span style="display:flex;"><span>                println!(<span style="color:#e6db74">&#34;You win!&#34;</span>);
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></section>
 
   
   

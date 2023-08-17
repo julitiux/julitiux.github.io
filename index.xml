@@ -13,7 +13,7 @@
       <pubDate>Tue, 01 Aug 2023 23:24:43 -0600</pubDate>
       
       <guid>https://julitiux.github.io/posts/the_rust_programming_language/</guid>
-      <description>INDEX Chapter 1 Getting Started Chapter 1 Getting Started Installing rustup on macOS curl https://sh.rustup.rs -sSf | sh Add on your .zshrc
+      <description>INDEX Chapter 1 Getting Started Chapter 2 Programming a Guessing Game Chapter 1 Getting Started Installing rustup on macOS curl https://sh.rustup.rs -sSf | sh Add on your .zshrc
 . &amp;#34;$HOME/.cargo/env&amp;#34; Updating and Unistalling rustc update rustup self unistall Creating a Project Directory mkdir ~/projects cd ~/projects mkdir hello_world cd hello_world Writing and Running a Rust Program fn main(){ println!(&amp;#34;hello wolf&amp;#34;); } Go to the terminal and enter the following commands to compule and run the file</description>
     </item>
     
