@@ -63,7 +63,7 @@
   
   
   
-  <meta name="description" content="INDEX Chapter 1 Getting Started Chapter 2 Programming a Guessing Game Chapter 1 Getting Started Installing rustup on macOS curl https://sh.rustup.rs -sSf | sh Add on your .zshrc
+  <meta name="description" content="INDEX Chapter 1 Getting Started Chapter 2 Programming a Guessing Game Chapter 3 Common Programming Concepts Chapter 1 Getting Started Installing rustup on macOS curl https://sh.rustup.rs -sSf | sh Add on your .zshrc
 . &#34;$HOME/.cargo/env&#34; Updating and Unistalling rustc update rustup self unistall Creating a Project Directory mkdir ~/projects cd ~/projects mkdir hello_world cd hello_world Writing and Running a Rust Program fn main(){ println!(&#34;hello wolf&#34;); } Go to the terminal and enter the following commands to compule and run the file" />
   <meta name="author" content="Julitiux" />
   
@@ -142,7 +142,7 @@
   
   
   <meta property="og:title" content="The Rust Programming Language (2018)" />
-<meta property="og:description" content="INDEX Chapter 1 Getting Started Chapter 2 Programming a Guessing Game Chapter 1 Getting Started Installing rustup on macOS curl https://sh.rustup.rs -sSf | sh Add on your .zshrc
+<meta property="og:description" content="INDEX Chapter 1 Getting Started Chapter 2 Programming a Guessing Game Chapter 3 Common Programming Concepts Chapter 1 Getting Started Installing rustup on macOS curl https://sh.rustup.rs -sSf | sh Add on your .zshrc
 . &#34;$HOME/.cargo/env&#34; Updating and Unistalling rustc update rustup self unistall Creating a Project Directory mkdir ~/projects cd ~/projects mkdir hello_world cd hello_world Writing and Running a Rust Program fn main(){ println!(&#34;hello wolf&#34;); } Go to the terminal and enter the following commands to compule and run the file" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://julitiux.github.io/posts/the_rust_programming_language/" /><meta property="article:section" content="posts" />
@@ -152,15 +152,15 @@
 
   
   <meta itemprop="name" content="The Rust Programming Language (2018)">
-<meta itemprop="description" content="INDEX Chapter 1 Getting Started Chapter 2 Programming a Guessing Game Chapter 1 Getting Started Installing rustup on macOS curl https://sh.rustup.rs -sSf | sh Add on your .zshrc
+<meta itemprop="description" content="INDEX Chapter 1 Getting Started Chapter 2 Programming a Guessing Game Chapter 3 Common Programming Concepts Chapter 1 Getting Started Installing rustup on macOS curl https://sh.rustup.rs -sSf | sh Add on your .zshrc
 . &#34;$HOME/.cargo/env&#34; Updating and Unistalling rustc update rustup self unistall Creating a Project Directory mkdir ~/projects cd ~/projects mkdir hello_world cd hello_world Writing and Running a Rust Program fn main(){ println!(&#34;hello wolf&#34;); } Go to the terminal and enter the following commands to compule and run the file"><meta itemprop="datePublished" content="2023-08-01T23:24:43-06:00" />
 <meta itemprop="dateModified" content="2023-08-01T23:24:43-06:00" />
-<meta itemprop="wordCount" content="2217">
+<meta itemprop="wordCount" content="4692">
 <meta itemprop="keywords" content="" />
   
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="The Rust Programming Language (2018)"/>
-<meta name="twitter:description" content="INDEX Chapter 1 Getting Started Chapter 2 Programming a Guessing Game Chapter 1 Getting Started Installing rustup on macOS curl https://sh.rustup.rs -sSf | sh Add on your .zshrc
+<meta name="twitter:description" content="INDEX Chapter 1 Getting Started Chapter 2 Programming a Guessing Game Chapter 3 Common Programming Concepts Chapter 1 Getting Started Installing rustup on macOS curl https://sh.rustup.rs -sSf | sh Add on your .zshrc
 . &#34;$HOME/.cargo/env&#34; Updating and Unistalling rustc update rustup self unistall Creating a Project Directory mkdir ~/projects cd ~/projects mkdir hello_world cd hello_world Writing and Running a Rust Program fn main(){ println!(&#34;hello wolf&#34;); } Go to the terminal and enter the following commands to compule and run the file"/>
 
   
@@ -303,6 +303,7 @@
   <section><h2 id="index"><strong>INDEX</strong></h2>
 <h1 id="chapter-1-getting-startedchapter-1-getting-started"><a href="#chapter-1-getting-started">Chapter 1 Getting Started</a></h1>
 <h1 id="chapter-2-programming-a-guessing-gamechapter-2-programming-a-guessing-game"><a href="#chapter-2-programming-a-guessing-game">Chapter 2 Programming a Guessing Game</a></h1>
+<h1 id="chapter-3-common-programming-conceptschapter-3-common-programming-concepts"><a href="#chapter-3-common-programming-concepts">Chapter 3 Common Programming Concepts</a></h1>
 <h1 id="chapter-1-getting-started">Chapter 1 Getting Started</h1>
 <h2 id="installing-rustup-on-macos">Installing rustup on macOS</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>curl https://sh.rustup.rs -sSf | sh
@@ -656,7 +657,447 @@ The answer to this problem is the Cargo.lock file, which was created the first t
 </span></span><span style="display:flex;"><span>        }
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div></section>
+</span></span></code></pre></div><h1 id="chapter-3-common-programming-concepts">Chapter 3 Common Programming Concepts</h1>
+<h2 id="variables-and-mutability">Variables and Mutability</h2>
+<p>By default variables are immutables, however you still have the option to make variables mutables.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//let x = 5;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">let</span> <span style="color:#66d9ef">mut</span> x <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;
+</span></span><span style="display:flex;"><span>    println!(<span style="color:#e6db74">&#34;The value of x is: {}&#34;</span>, x);
+</span></span><span style="display:flex;"><span>    x <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span>;
+</span></span><span style="display:flex;"><span>    println!(<span style="color:#e6db74">&#34;The value of x is: {}&#34;</span>, x);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="differeces-between-variables-and-constants">Differeces Between Variables and Constants</h2>
+<p>You are not allowed to use <em>mut</em> with constants; they are always immutables.</p>
+<p>You declare constants using the <em>const</em> keyword instead of the let keyword and the tyoe of the value must be annotated.</p>
+<p>Constants can be declared in any scope, including the global scope.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> MAX_POINTS: <span style="color:#66d9ef">u32</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">10_000</span>;
+</span></span></code></pre></div><h2 id="shadowing">Shadowing</h2>
+<p>We can shadow a variable by using the same variable&rsquo;s name and repeating the use of the let keyword</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> x <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> x <span style="color:#f92672">=</span> x <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> x <span style="color:#f92672">=</span> x <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>    println!(<span style="color:#e6db74">&#34;The value of x is: {}&#34;</span>, x);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The big difference between mut and shadowing is that because we&rsquo;re effectively creating a new variable when we use keyword again, we can change the type of the value but reuse the same name.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#75715e">// shadowing
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> spaces <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;    &#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> spaces <span style="color:#f92672">=</span> spaces.len();
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#75715e">// mismatched types
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#66d9ef">mut</span> spaces <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;    &#34;</span>;
+</span></span><span style="display:flex;"><span>spaces <span style="color:#f92672">=</span> spaces.len();
+</span></span></code></pre></div><h2 id="data-types">Data Types</h2>
+<p>Keep in mind that Rust is a <em>statically typed</em> language, which means that it must know the types of all variables at compile time. The compiles can usually infer what type we want to use based on the value and how we use it.</p>
+<p>If we don&rsquo;t add the type annotation, Rust will display the following error, which means the compiler needs more information from us to know whit type we want to use.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>error<span style="color:#f92672">[</span>E0282<span style="color:#f92672">]</span>: type annotations needed
+</span></span><span style="display:flex;"><span>  --&gt; src/main.rs:2:9
+</span></span><span style="display:flex;"><span>   |
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">2</span> |     let guess <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;42&#34;</span>.parse<span style="color:#f92672">()</span>.expect<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Not a number!&#34;</span><span style="color:#f92672">)</span>;
+</span></span><span style="display:flex;"><span>   |         ^^^^^
+</span></span><span style="display:flex;"><span>   |         |
+</span></span><span style="display:flex;"><span>   |         cannot infer type <span style="color:#66d9ef">for</span> <span style="color:#e6db74">`</span>_<span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>   |         consider giving <span style="color:#e6db74">`</span>guess<span style="color:#e6db74">`</span> a type
+</span></span></code></pre></div><h2 id="scalar-types">Scalar Types</h2>
+<p>A scalar type represent a single value. Rust has four primary scalar types: integers, floating-point numbers, Booleans, and characters.</p>
+<h2 id="integer-types">Integer Types</h2>
+<p>An <em>integer</em> is a number without a fractional component. Each variant in the Signed and Unsigned columns can be used to declare the type of an insteger value</p>
+<table>
+<thead>
+<tr>
+<th>Length</th>
+<th>Signed</th>
+<th>Unsigned</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8-bit</td>
+<td>i8</td>
+<td>u8</td>
+</tr>
+<tr>
+<td>16-bit</td>
+<td>i16</td>
+<td>u16</td>
+</tr>
+<tr>
+<td>32-bit</td>
+<td>i32</td>
+<td>u32</td>
+</tr>
+<tr>
+<td>64-bit</td>
+<td>i64</td>
+<td>u64</td>
+</tr>
+<tr>
+<td>128-bit</td>
+<td>i128</td>
+<td>u128</td>
+</tr>
+<tr>
+<td>arch</td>
+<td>isize</td>
+<td>usize</td>
+</tr>
+</tbody>
+</table>
+<p>If you are unsure, Rust&rsquo;s defaults are generally good choices, and integer types default to i32: this types is generally the fastest, even on 64-bit systems.</p>
+<h2 id="floating-point-types">Floating-Point Types</h2>
+<p>Rust has two primitive types for <em>floating-point numbers</em>, which are numbers with decimal points: f32 and f64; wich are 32 bits and 64 bits in size, repectively. The default is f64 because on modern CPUs it&rsquo;s roughly the same speed as f32 but is capable or more precision.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> x <span style="color:#f92672">=</span> <span style="color:#ae81ff">2.0</span>; <span style="color:#75715e">// f64
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">let</span> y: <span style="color:#66d9ef">f32</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">3.0</span>; <span style="color:#75715e">// f32
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><h2 id="numeric-operations">Numeric Operations</h2>
+<p>Rust support the basic mathematical operations: addition, substraction, multiplication, division, and remainder.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// addition
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">let</span> sum <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">10</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// subtraction
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">let</span> difference <span style="color:#f92672">=</span> <span style="color:#ae81ff">95.5</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">4.3</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// multiplication
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">let</span> product <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">30</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// division
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">let</span> quotient <span style="color:#f92672">=</span> <span style="color:#ae81ff">56.7</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">32.2</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// remainder
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">let</span> remainder <span style="color:#f92672">=</span> <span style="color:#ae81ff">43</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">5</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="the-boolean-type">The Boolean Type</h2>
+<p>A Boolean type in Rust has two possible values: <em>true</em> and <em>false</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> t <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> f: <span style="color:#66d9ef">bool</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>; <span style="color:#75715e">// with explicit type annotation
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><h2 id="the-character-type">The Character Type</h2>
+<p>Rust supports letters too. That char literals are specified with single quotes, as opposed to string literals, which use doble quotes</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> c <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;z&#39;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> z <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Ƶ&#39;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> heart_eyed_cat <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;😻&#39;</span>; }
+</span></span></code></pre></div><h2 id="compound-types">Compound Types</h2>
+<p><em>Coumpound types</em> can group multiple values into one type. Rust has two primitive compound types: tuples and arrays.</p>
+<h2 id="the-tuple-type">The Tuple Type</h2>
+<p>A tuple is a general way of grouping tohether some number of other values with a variety of types into one compound type. Tuples have a fixed length: once declared, they cannot grow or shrink in size.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> tup: (<span style="color:#66d9ef">i32</span>, <span style="color:#66d9ef">f64</span>, <span style="color:#66d9ef">u8</span>) <span style="color:#f92672">=</span> (<span style="color:#ae81ff">500</span>, <span style="color:#ae81ff">6.4</span>, <span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The variable <em>tup</em> binds to the entire tuple, because a tuple is considered a single compound element. To get the individual values out of a tuple, we can use pattern matching to destructure a tuple value.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> tup <span style="color:#f92672">=</span> (<span style="color:#ae81ff">500</span>, <span style="color:#ae81ff">6.4</span>, <span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> (x, y, z) <span style="color:#f92672">=</span> tup;
+</span></span><span style="display:flex;"><span>    println!(<span style="color:#e6db74">&#34;The value of y is: {}&#34;</span>, y);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This is called <em>destructuring</em>, because it breaks the single tuple into three parts.</p>
+<p>In addition to destructuring throught patter matching, we can access a tuple element directly by using a period (.) followed by the index of the value we want to access.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> x: (<span style="color:#66d9ef">i32</span>, <span style="color:#66d9ef">f64</span>, <span style="color:#66d9ef">u8</span>) <span style="color:#f92672">=</span> (<span style="color:#ae81ff">500</span>, <span style="color:#ae81ff">6.4</span>, <span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> five_hundred <span style="color:#f92672">=</span> x.<span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> six_point_four <span style="color:#f92672">=</span> x.<span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> one <span style="color:#f92672">=</span> x.<span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="the-array-type">The Array Type</h2>
+<p>Another way to have a collection of multiple values is with an array. Unlike a tuple, every element of an array must have the same type. The values going into an array are written as a comma-separated list inside square brackets.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> a <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>];
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>You would write an array&rsquo;s type by using square bracketsm and within the brackets include the type of each element, a semicolon, and then the number of elements.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> a: [<span style="color:#66d9ef">i32</span>; <span style="color:#ae81ff">5</span>] <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>];
+</span></span></code></pre></div><p>If you want to create an array that containts the same value for each element, you can specify the initial value, followed by a semicolon, and then the length of the array in square brackets.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> a <span style="color:#f92672">=</span> [<span style="color:#ae81ff">3</span>; <span style="color:#ae81ff">5</span>];
+</span></span></code></pre></div><h2 id="accessing-array-elements">Accessing Array Elements</h2>
+<p>An array is a single chunk of memory allocated on the stack. Tou can access elements of an array using indexing.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> a <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>];
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> first <span style="color:#f92672">=</span> a[<span style="color:#ae81ff">0</span>];
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> second <span style="color:#f92672">=</span> a[<span style="color:#ae81ff">1</span>];
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="invalid-array-element-access">Invalid Array Element Access</h2>
+<p>If you access an element of an array that is past the end of the array.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> a <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>];
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> index <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> element <span style="color:#f92672">=</span> a[index];
+</span></span><span style="display:flex;"><span>    println!(<span style="color:#e6db74">&#34;The value of element is: {}&#34;</span>, element);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Running this code using cargo <em>run</em> produces the following result</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cargo run
+</span></span><span style="display:flex;"><span>Compiling arrays v0.1.0 <span style="color:#f92672">(</span>file:///projects/arrays<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span> Finished dev <span style="color:#f92672">[</span>unoptimized + debuginfo<span style="color:#f92672">]</span> target<span style="color:#f92672">(</span>s<span style="color:#f92672">)</span> in 1.50 secs
+</span></span><span style="display:flex;"><span>  Running <span style="color:#e6db74">`</span>target/debug/arrays<span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>thread <span style="color:#e6db74">&#39;&lt;main&gt;&#39;</span> panicked at <span style="color:#e6db74">&#39;index out of bounds: the len is 5 but the index
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">is 10&#39;</span>, src/main.rs:6
+</span></span><span style="display:flex;"><span>note: Run with <span style="color:#e6db74">`</span>RUST_BACKTRACE<span style="color:#f92672">=</span>1<span style="color:#e6db74">`</span> <span style="color:#66d9ef">for</span> a backtrace.
+</span></span></code></pre></div><h2 id="functions">Functions</h2>
+<p>Functions are pervasive in Rust code. Rust code uses <em>snake case</em> as the conventional atyle for function and variables names.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    println!(<span style="color:#e6db74">&#34;Hello, world!&#34;</span>);
+</span></span><span style="display:flex;"><span>    another_function();
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">another_function</span>() {
+</span></span><span style="display:flex;"><span>    println!(<span style="color:#e6db74">&#34;Another function.&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Function definition in Rust start with fn and have a set of parhentheses after the funtion name. You should be see the following output.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span>cargo run
+</span></span><span style="display:flex;"><span>Compiling functions v0.<span style="color:#ae81ff">1.0</span> (file:<span style="color:#e6db74">///projects/functions)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"></span> Finished dev [unoptimized <span style="color:#f92672">+</span> debuginfo] target(s) <span style="color:#66d9ef">in</span> <span style="color:#ae81ff">1.50</span> secs
+</span></span><span style="display:flex;"><span>  Running <span style="color:#960050;background-color:#1e0010">`</span>target<span style="color:#f92672">/</span>debug<span style="color:#f92672">/</span>functions<span style="color:#960050;background-color:#1e0010">`</span>
+</span></span><span style="display:flex;"><span>Hello, world<span style="color:#f92672">!</span>
+</span></span><span style="display:flex;"><span>Another function.
+</span></span></code></pre></div><h2 id="function-parameters">Function Parameters</h2>
+<p>Functions can also be defines to have <em>parameters</em>, which are special variables that are part of a function&rsquo;s signature. The concrete values are called <em>arguments</em>, but in casual conversation, people tend to use the words <em>parameter</em> and <em>arguement</em>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    another_function(<span style="color:#ae81ff">5</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">another_function</span>(x: <span style="color:#66d9ef">i32</span>) {
+</span></span><span style="display:flex;"><span>    println!(<span style="color:#e6db74">&#34;The value of x is: {}&#34;</span>, x);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>In function signatures, you must declare the type of each parameter. This is a deliberate decision in Rust design. When you want a function to have multiple parameters, separate the parameter declarations with comas.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    another_function(<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">6</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">another_function</span>(x: <span style="color:#66d9ef">i32</span>, y: <span style="color:#66d9ef">i32</span>) {
+</span></span><span style="display:flex;"><span>    println!(<span style="color:#e6db74">&#34;The value of x is: {}&#34;</span>, x);
+</span></span><span style="display:flex;"><span>    println!(<span style="color:#e6db74">&#34;The value of y is: {}&#34;</span>, y);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="statements-and-expressions-in-functions-bodies">Statements and Expressions in Functions Bodies.</h2>
+<p>Functions bodies are made up of a series of statements optionally ending in a expression. So far, we&rsquo;ve only convered functions without an ending expression, buy yiu have seen and expression as part of statement.</p>
+<blockquote>
+<p>Rust is an expression-based language.</p>
+</blockquote>
+<p><em>Statements</em> are instructions that perform some action and do not return a value.</p>
+<p><em>Expressions</em> evaluate to a resulting value.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#75715e">// this is a statement
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> y <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><blockquote>
+<p>Calling a function is an expression.</p>
+</blockquote>
+<blockquote>
+<p>Calling a macro is an expression.</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#75715e">// this is an expression
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> x <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> y <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> x <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;
+</span></span><span style="display:flex;"><span>        x <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    println!(<span style="color:#e6db74">&#34;The value of y is: {}&#34;</span>, y);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The expressions do not include ending semicolons.</p>
+<p>If you add a semicolon to the end of an expression, you turn it into a statement, which will then not return a value.</p>
+<h2 id="functions-with-return-values">Functions with Return Values.</h2>
+<p>Functions can return values to the code that calls them. We don&rsquo;t name return values, but we do declare their type after an arrow ( -&gt; ). In Rust, the return values of the function is synonymous with the value of the final expression in the block of the body of a function. You can return early from a function by using teh return keyword and specifying a value, but most functions return the last expression implicity</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">five</span>() -&gt; <span style="color:#66d9ef">i32</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> x <span style="color:#f92672">=</span> five();
+</span></span><span style="display:flex;"><span>    println!(<span style="color:#e6db74">&#34;The value of x is: {}&#34;</span>, x);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>There are no function calls, macros, or even let statements in the five function - just the number 5 by itself . That&rsquo;s a perfectly valid function in Rust.</p>
+<p>Let&rsquo;s look at another example</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> x <span style="color:#f92672">=</span> plus_one(<span style="color:#ae81ff">5</span>);
+</span></span><span style="display:flex;"><span>    println!(<span style="color:#e6db74">&#34;The value of x is: {}&#34;</span>, x);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">plus_one</span>(x: <span style="color:#66d9ef">i32</span>) -&gt; <span style="color:#66d9ef">i32</span> {
+</span></span><span style="display:flex;"><span>    x <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="comments">Comments</h2>
+<p>Here&rsquo;s a simple comment</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#75715e">// hello, world
+</span></span></span></code></pre></div><p>In Rust, comments must start with two slashes and continue until the end of the line.</p>
+<p>For comments that extend beyond a single line, you&rsquo;ll need to include // on each line.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#75715e">// So we&#39;re doing something complicated here, long enough that we need
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// multiple lines of comments to do it! Whew! Hopefully, this comment will
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// explain what&#39;s going on.
+</span></span></span></code></pre></div><p>Comments can also be placed at the end of lines containing code</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> lucky_number <span style="color:#f92672">=</span> <span style="color:#ae81ff">7</span>; <span style="color:#75715e">// I&#39;m feeling lucky today
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><h2 id="control-flow">Control Flow</h2>
+<p>The most common contructs that let you control the flow of execution of Rust code are if expressions and loops.</p>
+<h2 id="if-expressions">If Expressions</h2>
+<p>An if expression allows you to branch your code depending on condition. If this condition is met, run this block of code like this</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> number <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> number <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">5</span> {
+</span></span><span style="display:flex;"><span>        println!(<span style="color:#e6db74">&#34;condition was true&#34;</span>);
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>        println!(<span style="color:#e6db74">&#34;condition was false&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>It&rsquo;s also worth noting that the condition in this code <em>must</em> be a bool. If the condition isn&rsquo;t a bool, we&rsquo;ll get an error</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> number <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> number {
+</span></span><span style="display:flex;"><span>        println!(<span style="color:#e6db74">&#34;number was three&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>the error:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>error<span style="color:#f92672">[</span>E0308<span style="color:#f92672">]</span>: mismatched types
+</span></span><span style="display:flex;"><span> --&gt; src/main.rs:4:8
+</span></span><span style="display:flex;"><span>  |
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">4</span> |     <span style="color:#66d9ef">if</span> number <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  |        ^^^^^^ expected bool, found integral variable
+</span></span><span style="display:flex;"><span>  |
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">=</span> note: expected type <span style="color:#e6db74">`</span>bool<span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>             found type <span style="color:#e6db74">`</span><span style="color:#f92672">{</span>integer<span style="color:#f92672">}</span><span style="color:#e6db74">`</span>
+</span></span></code></pre></div><p>Fixing the error</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> number <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> number <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>        println!(<span style="color:#e6db74">&#34;number was something other than zero&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="handling-multiple-conditions-with-else-if">Handling Multiple Conditions with else if</h2>
+<p>You can have multiple conditions by combining if and else in an else if expression.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> number <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> number <span style="color:#f92672">%</span> <span style="color:#ae81ff">4</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>        println!(<span style="color:#e6db74">&#34;number is divisible by 4&#34;</span>);
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> number <span style="color:#f92672">%</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>        println!(<span style="color:#e6db74">&#34;number is divisible by 3&#34;</span>);
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> number <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>        println!(<span style="color:#e6db74">&#34;number is divisible by 2&#34;</span>);
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>        println!(<span style="color:#e6db74">&#34;number is not divisible by 4, 3, or 2&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>this program will be check every if expression in turn and executes the first body for wich the condition holds true.</p>
+<h2 id="using-if-in-a-let-statement">Using if in a let Statement</h2>
+<p>Because ud is an expression, we can use it on the right side of a let statement.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> condition <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> number <span style="color:#f92672">=</span> <span style="color:#66d9ef">if</span> condition {
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">6</span>
+</span></span><span style="display:flex;"><span>    };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    println!(<span style="color:#e6db74">&#34;The value of number is: {}&#34;</span>, number);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>If the types are mismatched, as in the following example, we&rsquo;ll get an error</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> condition <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> number <span style="color:#f92672">=</span> <span style="color:#66d9ef">if</span> condition {
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;six&#34;</span>
+</span></span><span style="display:flex;"><span>    };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    println!(<span style="color:#e6db74">&#34;The value of number is: {}&#34;</span>, number);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The error</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>error<span style="color:#f92672">[</span>E0308<span style="color:#f92672">]</span>: <span style="color:#66d9ef">if</span> and <span style="color:#66d9ef">else</span> have incompatible types
+</span></span><span style="display:flex;"><span> --&gt; src/main.rs:4:18
+</span></span><span style="display:flex;"><span>  |
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">4</span> |       let number <span style="color:#f92672">=</span> <span style="color:#66d9ef">if</span> condition <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  |  __________________^
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">5</span> | |         <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">6</span> | |     <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">7</span> | |         <span style="color:#e6db74">&#34;six&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">8</span> | |     <span style="color:#f92672">}</span>;
+</span></span><span style="display:flex;"><span>  | |_____^ expected integral variable, found &amp;str
+</span></span><span style="display:flex;"><span>  |
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">=</span> note: expected type <span style="color:#e6db74">`</span><span style="color:#f92672">{</span>integer<span style="color:#f92672">}</span><span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>             found type <span style="color:#e6db74">`</span>&amp;str<span style="color:#e6db74">`</span>
+</span></span></code></pre></div><h2 id="repetition-with-loops">Repetition with Loops</h2>
+<p>It&rsquo;s often useful to execute a block of code more than once. For this task, Rust provides several <em>loops</em></p>
+<blockquote>
+<p>Rust has three kinds of loops: loop, while, and for.</p>
+</blockquote>
+<h2 id="repeating-code-with-loop">Repeating Code with loop</h2>
+<p>The loop keyword tells Rust to execute a block of code over and over again forever or until you explicitly tell it to stop.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">loop</span> {
+</span></span><span style="display:flex;"><span>        println!(<span style="color:#e6db74">&#34;again!&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>CTRL-C to interrupt. Try it</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cargo run
+</span></span><span style="display:flex;"><span>Compiling loops v0.1.0 <span style="color:#f92672">(</span>file:///projects/loops<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    Finished dev <span style="color:#f92672">[</span>unoptimized + debuginfo<span style="color:#f92672">]</span> target<span style="color:#f92672">(</span>s<span style="color:#f92672">)</span> in 1.50 secs
+</span></span><span style="display:flex;"><span>     Running <span style="color:#e6db74">`</span>target/debug/loops<span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>again!
+</span></span><span style="display:flex;"><span>again!
+</span></span><span style="display:flex;"><span>again!
+</span></span><span style="display:flex;"><span>again!
+</span></span><span style="display:flex;"><span>^Cagain!
+</span></span></code></pre></div><h2 id="returning-values-from-loops">Returning Values from Loops</h2>
+<p>To do this, you can add the value you want returned after the break expression you use to stop the loop; that value will be returned out of the loop so you can use it.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> <span style="color:#66d9ef">mut</span> counter <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> result <span style="color:#f92672">=</span> <span style="color:#66d9ef">loop</span> {
+</span></span><span style="display:flex;"><span>        counter <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> counter <span style="color:#f92672">==</span> <span style="color:#ae81ff">10</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">break</span> counter <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    println!(<span style="color:#e6db74">&#34;The result is {}&#34;</span>, result);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="conditional-loops-with-while">Conditional Loops with while</h2>
+<p>While the condition is true, the loop runs. When the condition ceases to be true, the program calls break, stopping the loop.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> <span style="color:#66d9ef">mut</span> number <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> number <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>  {
+</span></span><span style="display:flex;"><span>        println!(<span style="color:#e6db74">&#34;{}!&#34;</span>, number);
+</span></span><span style="display:flex;"><span>        number <span style="color:#f92672">=</span> number <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    println!(<span style="color:#e6db74">&#34;LIFTOFF!!!&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="looping-through-a-collection-with-for">Looping Through a Collection with for</h2>
+<p>You could use the while construct to loop over the elements of a collection, such as an array.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> a <span style="color:#f92672">=</span> [<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">40</span>, <span style="color:#ae81ff">50</span>];
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> <span style="color:#66d9ef">mut</span> index <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> index <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">5</span> {
+</span></span><span style="display:flex;"><span>        println!(<span style="color:#e6db74">&#34;the value is: {}&#34;</span>, a[index]);
+</span></span><span style="display:flex;"><span>        index <span style="color:#f92672">=</span> index <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>As a more concise alternative, you can use a for loop and execute some code for each item in a collection.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> a <span style="color:#f92672">=</span> [<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">40</span>, <span style="color:#ae81ff">50</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> element <span style="color:#66d9ef">in</span> a.iter() {
+</span></span><span style="display:flex;"><span>        println!(<span style="color:#e6db74">&#34;the value is: {}&#34;</span>, element);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Here&rsquo;s what the countdown would look like using a for loop and another method we&rsquo;ve not yet talked about, rev, to reverse the range</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> number <span style="color:#66d9ef">in</span> (<span style="color:#ae81ff">1</span><span style="color:#f92672">..</span><span style="color:#ae81ff">4</span>).rev() {
+</span></span><span style="display:flex;"><span>        println!(<span style="color:#e6db74">&#34;{}!&#34;</span>, number);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    println!(<span style="color:#e6db74">&#34;LIFTOFF!!!&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Rust is nicer, isn&rsquo;t it?</p>
+</section>
 
   
   
