@@ -6,7 +6,17 @@
     <description>Recent content on Blogs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 01 Aug 2023 23:24:43 -0600</lastBuildDate><atom:link href="https://julitiux.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Nov 2023 23:16:32 -0600</lastBuildDate><atom:link href="https://julitiux.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mockito made clear (2023)</title>
+      <link>https://julitiux.github.io/posts/mockito_made_clear/</link>
+      <pubDate>Tue, 28 Nov 2023 23:16:32 -0600</pubDate>
+      
+      <guid>https://julitiux.github.io/posts/mockito_made_clear/</guid>
+      <description>INDEX Chapter 1 Build a Testing Foundation Chapter 1 Build a Testing Foundation Saying Hello to Mockito // HelloWorld.java public class HelloWorld{ public static void main(String[] args){ System.out.println(&amp;#34;Hello, World!&amp;#34;); } } // HelloMockito.java public class HelloMockito{ private String greeting = &amp;#34;Hello, %s, from Mockito!&amp;#34;; public String greet(String name){ return String.format(greeting, name); } } It&amp;rsquo;s easy enough to create a JUnit 5 test
+import org.junit.jupiter.api.Test class HelloMockitoTest { private HelloMockito helloMockito = new HelloMockito(); @Test void greetPerson(){ String greeting = helloMockito.</description>
+    </item>
+    
     <item>
       <title>The Rust Programming Language (2018)</title>
       <link>https://julitiux.github.io/posts/the_rust_programming_language/</link>
