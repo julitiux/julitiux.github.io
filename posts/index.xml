@@ -13,8 +13,7 @@
       <pubDate>Tue, 28 Nov 2023 23:16:32 -0600</pubDate>
       
       <guid>https://julitiux.github.io/posts/mockito_made_clear/</guid>
-      <description>INDEX Chapter 1 Build a Testing Foundation Chapter 2 Work with the Mockito API Chapter 1 Build a Testing Foundation Saying Hello to Mockito // HelloWorld.java public class HelloWorld{ public static void main(String[] args){ System.out.println(&amp;#34;Hello, World!&amp;#34;); } } // HelloMockito.java public class HelloMockito{ private String greeting = &amp;#34;Hello, %s, from Mockito!&amp;#34;; public String greet(String name){ return String.format(greeting, name); } } It&amp;rsquo;s easy enough to create a JUnit 5 test
-import org.</description>
+      <description>INDEX Chapter 1 Build a Testing Foundation Chapter 2 Work with the Mockito API Chapter 1 Build a Testing Foundation Chapter 2 Work with the Mockito API </description>
     </item>
     
     <item>
