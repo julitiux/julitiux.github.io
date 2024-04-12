@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #fbfbfb"
+  lang="en-us"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Pro Git - Blogs</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  <meta name="description" content="INDEX Getting Started Git Basics Getting Started Installing Git Installing on Linux If you want ton install the basic Git tools on Linux via a binary installer
+sudo dfn install git-all If you are on a Debian-based distribution, such a Ubuntu, try apt
+sudo apt install git-all Installing on macOS The easiest is probably to install the Xcode Command Line Tools. On Mavericks (10.9) above you can do this simply by trying to run git from the Terminal the very first time." />
+  <meta name="author" content="Julitiux" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="https://julitiux.github.io/main.min.css" />
+
+  
+
+  
+     
+  <link rel="preload" as="image" href="https://julitiux.github.io/theme.svg" />
+
+  
+  
+  
+  <link rel="preload" as="image" href="https://cdn.v2ex.com/gravatar/6fd8df4abe41f17fd8e2dd7d97b5cc8c?s=160&amp;d=identicon" />
+  
+  
+
+  
+  <link rel="preload" as="image" href="https://julitiux.github.io/twitter.svg" />
+  
+  <link rel="preload" as="image" href="https://julitiux.github.io/github.svg" />
+  
+  <link rel="preload" as="image" href="https://julitiux.github.io/instagram.svg" />
+  
+  
+
+  
+  
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css"
+  integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI"
+  crossorigin="anonymous"
+/>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js"
+  integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t"
+  crossorigin="anonymous"
+></script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js"
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"
+></script>
+
+  
+  
+  
+
+  
+  <link rel="icon" href="https://julitiux.github.io/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://julitiux.github.io/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.107.0">
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:title" content="Pro Git" />
+<meta property="og:description" content="INDEX Getting Started Git Basics Getting Started Installing Git Installing on Linux If you want ton install the basic Git tools on Linux via a binary installer
+sudo dfn install git-all If you are on a Debian-based distribution, such a Ubuntu, try apt
+sudo apt install git-all Installing on macOS The easiest is probably to install the Xcode Command Line Tools. On Mavericks (10.9) above you can do this simply by trying to run git from the Terminal the very first time." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://julitiux.github.io/posts/pro_git/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-04-08T23:46:43-06:00" />
+<meta property="article:modified_time" content="2024-04-08T23:46:43-06:00" />
+
+
+  
+  <meta itemprop="name" content="Pro Git">
+<meta itemprop="description" content="INDEX Getting Started Git Basics Getting Started Installing Git Installing on Linux If you want ton install the basic Git tools on Linux via a binary installer
+sudo dfn install git-all If you are on a Debian-based distribution, such a Ubuntu, try apt
+sudo apt install git-all Installing on macOS The easiest is probably to install the Xcode Command Line Tools. On Mavericks (10.9) above you can do this simply by trying to run git from the Terminal the very first time."><meta itemprop="datePublished" content="2024-04-08T23:46:43-06:00" />
+<meta itemprop="dateModified" content="2024-04-08T23:46:43-06:00" />
+<meta itemprop="wordCount" content="559">
+<meta itemprop="keywords" content="" />
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Pro Git"/>
+<meta name="twitter:description" content="INDEX Getting Started Git Basics Getting Started Installing Git Installing on Linux If you want ton install the basic Git tools on Linux via a binary installer
+sudo dfn install git-all If you are on a Debian-based distribution, such a Ubuntu, try apt
+sudo apt install git-all Installing on macOS The easiest is probably to install the Xcode Command Line Tools. On Mavericks (10.9) above you can do this simply by trying to run git from the Terminal the very first time."/>
+
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-3xl px-8 lg:justify-center">
+  <div class="relative z-50 mr-auto flex items-center">
+    <a
+      class="-translate-x-[1px] -translate-y-[1px] text-2xl font-semibold"
+      href="https://julitiux.github.io/"
+      >Blogs</a
+    >
+    <div
+      class="btn-dark text-[0] ml-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 -mr-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#fbfbfb'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+
+    
+    <nav
+      class="mt-12 flex justify-center space-x-10 dark:invert lg:ml-12 lg:mt-0 lg:items-center lg:space-x-6"
+    >
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./twitter.svg)"
+        href="https://twitter.com/julitiux"
+        target="_blank"
+        rel="me"
+      >
+        twitter
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href="https://github.com/julitiux"
+        target="_blank"
+        rel="me"
+      >
+        github
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./instagram.svg)"
+        href="https://instagram.com/julitiux"
+        target="_blank"
+        rel="me"
+      >
+        instagram
+      </a>
+      
+    </nav>
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    <h1 class="!my-0 pb-2.5">Pro Git</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Apr 8, 2024</time>
+      
+      
+      
+      
+    </div>
+    
+  </header>
+
+  <section><h1 id="index"><strong>INDEX</strong></h1>
+<h1 id="getting-startedgetting-started"><a href="#getting-started">Getting Started</a></h1>
+<h1 id="git-basicsgit-basics"><a href="#git-basics">Git Basics</a></h1>
+<h1 id="getting-started">Getting Started</h1>
+<h2 id="installing-git">Installing Git</h2>
+<h3 id="installing-on-linux">Installing on Linux</h3>
+<p>If you want ton install the basic Git tools on Linux via a binary installer</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">sudo dfn install git-all
+</code></pre><p>If you are on a Debian-based distribution, such a Ubuntu, try <em>apt</em></p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">sudo apt install git-all
+</code></pre><h3 id="installing-on-macos">Installing on macOS</h3>
+<p>The easiest is probably to install the Xcode Command Line Tools. On Mavericks (10.9) above you can do this simply by trying to run <em>git</em> from the Terminal the very first time.</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git --version
+</code></pre><p>If you don&rsquo;t have it installed already, it will prompt you to install it.</p>
+<p>If you want a more up to date version, you can also install it via a binary installer. A macOS Git installer is maintained and available for download at the Git website, at <a href="https://git-scm.com/download/mac">https://git-scm.com/download/mac</a>.</p>
+<h3 id="installing-on-windows">Installing on Windows</h3>
+<p>The are also a few ways to install Git on Windows.</p>
+<p>The most official build is available for download on the Git website: <a href="https://git-scm.com/download/win">https://git-scm.com/download/win</a></p>
+<p>To get an automated installation you can use the <a href="https://community.chocolatey.org/packages/git">Git Chocolatey package</a></p>
+<h2 id="first-time-git-setup">First-Time Git Setup</h2>
+<p>You should have to do these things only once on any given computer. You can also change them at any time by running through the commands again.</p>
+<h3 id="git-config">git config</h3>
+<p>Thats lets get and set configuration variables that control all aspects of how Git looks and operates. The variables can be stored in three different places:</p>
+<blockquote>
+<ol>
+<li><code>[path]/etc/gitconfig</code> file: Contains values applied to every user on the system and all their repositories. If you pass the option <code>--system</code> to <code>git config</code>, it reads and writes from this file specifically.</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="2">
+<li><code>~/.gitconfig</code> or <code>~/.config/git/config</code> file: Values specific personally to you, the user. You can make Git read and write to this file specifically by passing the <code>--global</code> option, and this affects all of the repositories you work with on your system.</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="3">
+<li><code>config</code> file in the Git directory (that is, .git/config) of whatever repository you are currently using: Specific to that single repositoy. You can force Git to read from and write to this dile with the <code>--local</code> option.</li>
+</ol>
+</blockquote>
+<p>Each level overrides values in the previous level, so values in <code>.git/config</code> trump those in <code>[path]/etc/gitcconfig</code></p>
+<p>You can view all of you settings and where they are coming from using:</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git config --list --show-origin
+</code></pre><h3 id="your-identity">Your Identity</h3>
+<p>the first thing you shoul do when you install Git is set your user name and email address.</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git config --global user.name &#34;Julio Ramirez&#34;
+git config --global user.email rrodriguez.julio@gmail.com
+</code></pre><h3 id="your-editor">Your Editor</h3>
+<p>If you want to user a different text editor, such as Emacs, you can do the following:</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git config --global core.editor emacs
+</code></pre><p>In the case of Notepad++</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git config --global core.editor &#34;&#39;C:/Program Files/Notepad++/notepad++.exe&#39; -multiInst -notabbar -nosession -noPlugin&#34;
+</code></pre><h3 id="your-default-branch-name">Your default branch name</h3>
+<p>To set main as the default branch name do:</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git config --global init.defaultBranch main
+</code></pre><h3 id="checking-your-settings">Checking your Settings</h3>
+<p>If you want to check your configuration settings do:</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git config --list
+</code></pre><p>You may see keys more than once, because Git reads the same key from different files ([path]/etc/gitconfig and ~/.gitconfig, for example). In this case, Git uses the last value for each unique key it sees.</p>
+<p>You can also check what Git thinks a specifiv key&rsquo;s values typing:</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git config user.name
+</code></pre><p>Even you can see the origin of property doing:</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git config --show-origin user.name
+</code></pre><h2 id="getting-help">Getting Help</h2>
+<p>If you ever need help while using Git, do:</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git help &lt;verb&gt;
+git &lt;verb&gt; --help
+man git-&lt;verb&gt;
+</code></pre><h1 id="git-basics">Git Basics</h1>
+</section>
+
+  
+  
+
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="https://julitiux.github.io/posts/mockito_made_clear/"
+      ><span>Mockito made clear (2023)</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+
+  
+  
+
+  
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+  <div class="mr-auto">
+    &copy; 2024
+    <a class="link" href="https://julitiux.github.io/">Blogs</a>
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >Powered by Hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >✎ Paper</a
+  >
+</footer>
+
+  </body>
+</html>

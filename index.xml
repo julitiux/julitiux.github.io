@@ -6,14 +6,26 @@
     <description>Recent content on Blogs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 28 Nov 2023 23:16:32 -0600</lastBuildDate><atom:link href="https://julitiux.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 08 Apr 2024 23:46:43 -0600</lastBuildDate><atom:link href="https://julitiux.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pro Git</title>
+      <link>https://julitiux.github.io/posts/pro_git/</link>
+      <pubDate>Mon, 08 Apr 2024 23:46:43 -0600</pubDate>
+      
+      <guid>https://julitiux.github.io/posts/pro_git/</guid>
+      <description>INDEX Getting Started Git Basics Getting Started Installing Git Installing on Linux If you want ton install the basic Git tools on Linux via a binary installer
+sudo dfn install git-all If you are on a Debian-based distribution, such a Ubuntu, try apt
+sudo apt install git-all Installing on macOS The easiest is probably to install the Xcode Command Line Tools. On Mavericks (10.9) above you can do this simply by trying to run git from the Terminal the very first time.</description>
+    </item>
+    
     <item>
       <title>Mockito made clear (2023)</title>
       <link>https://julitiux.github.io/posts/mockito_made_clear/</link>
       <pubDate>Tue, 28 Nov 2023 23:16:32 -0600</pubDate>
       
       <guid>https://julitiux.github.io/posts/mockito_made_clear/</guid>
-      <description>INDEX Chapter 1 Build a Testing Foundation Chapter 2 Work with the Mockito API Chapter 1 Build a Testing Foundation Chapter 2 Work with the Mockito API </description>
+      <description>INDEX Chapter 1 Build a Testing Foundation Chapter 2 Work with the Mockito API Chapter 1 Build a Testing Foundation Mockito is a tool that helps you isolate particular componentsof software. You use Mockito to replace dependencies of the componentes you are testing so that methods in each dependency return knows outputs for know inputs.
+Stub A stub is an object that stands in for dependencies and returns known outputs for known inputs.</description>
     </item>
     
     <item>
