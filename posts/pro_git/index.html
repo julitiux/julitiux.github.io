@@ -63,7 +63,7 @@
   
   
   
-  <meta name="description" content="INDEX Getting Started Git Basics Getting Started Installing Git Installing on Linux If you want ton install the basic Git tools on Linux via a binary installer
+  <meta name="description" content="INDEX Getting Started Git Basics Best Command Ever Getting Started Installing Git Installing on Linux If you want ton install the basic Git tools on Linux via a binary installer
 sudo dfn install git-all If you are on a Debian-based distribution, such a Ubuntu, try apt
 sudo apt install git-all Installing on macOS The easiest is probably to install the Xcode Command Line Tools. On Mavericks (10.9) above you can do this simply by trying to run git from the Terminal the very first time." />
   <meta name="author" content="Julitiux" />
@@ -143,7 +143,7 @@ sudo apt install git-all Installing on macOS The easiest is probably to install 
   
   
   <meta property="og:title" content="Pro Git" />
-<meta property="og:description" content="INDEX Getting Started Git Basics Getting Started Installing Git Installing on Linux If you want ton install the basic Git tools on Linux via a binary installer
+<meta property="og:description" content="INDEX Getting Started Git Basics Best Command Ever Getting Started Installing Git Installing on Linux If you want ton install the basic Git tools on Linux via a binary installer
 sudo dfn install git-all If you are on a Debian-based distribution, such a Ubuntu, try apt
 sudo apt install git-all Installing on macOS The easiest is probably to install the Xcode Command Line Tools. On Mavericks (10.9) above you can do this simply by trying to run git from the Terminal the very first time." />
 <meta property="og:type" content="article" />
@@ -154,16 +154,16 @@ sudo apt install git-all Installing on macOS The easiest is probably to install 
 
   
   <meta itemprop="name" content="Pro Git">
-<meta itemprop="description" content="INDEX Getting Started Git Basics Getting Started Installing Git Installing on Linux If you want ton install the basic Git tools on Linux via a binary installer
+<meta itemprop="description" content="INDEX Getting Started Git Basics Best Command Ever Getting Started Installing Git Installing on Linux If you want ton install the basic Git tools on Linux via a binary installer
 sudo dfn install git-all If you are on a Debian-based distribution, such a Ubuntu, try apt
 sudo apt install git-all Installing on macOS The easiest is probably to install the Xcode Command Line Tools. On Mavericks (10.9) above you can do this simply by trying to run git from the Terminal the very first time."><meta itemprop="datePublished" content="2024-04-08T23:46:43-06:00" />
 <meta itemprop="dateModified" content="2024-04-08T23:46:43-06:00" />
-<meta itemprop="wordCount" content="559">
+<meta itemprop="wordCount" content="1612">
 <meta itemprop="keywords" content="" />
   
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Pro Git"/>
-<meta name="twitter:description" content="INDEX Getting Started Git Basics Getting Started Installing Git Installing on Linux If you want ton install the basic Git tools on Linux via a binary installer
+<meta name="twitter:description" content="INDEX Getting Started Git Basics Best Command Ever Getting Started Installing Git Installing on Linux If you want ton install the basic Git tools on Linux via a binary installer
 sudo dfn install git-all If you are on a Debian-based distribution, such a Ubuntu, try apt
 sudo apt install git-all Installing on macOS The easiest is probably to install the Xcode Command Line Tools. On Mavericks (10.9) above you can do this simply by trying to run git from the Terminal the very first time."/>
 
@@ -307,6 +307,7 @@ sudo apt install git-all Installing on macOS The easiest is probably to install 
   <section><h1 id="index"><strong>INDEX</strong></h1>
 <h1 id="getting-startedgetting-started"><a href="#getting-started">Getting Started</a></h1>
 <h1 id="git-basicsgit-basics"><a href="#git-basics">Git Basics</a></h1>
+<h1 id="best-command-everbest-command-ever"><a href="#best-command-ever">Best Command Ever</a></h1>
 <h1 id="getting-started">Getting Started</h1>
 <h2 id="installing-git">Installing Git</h2>
 <h3 id="installing-on-linux">Installing on Linux</h3>
@@ -371,7 +372,307 @@ git config --global user.email rrodriguez.julio@gmail.com
 git &lt;verb&gt; --help
 man git-&lt;verb&gt;
 </code></pre><h1 id="git-basics">Git Basics</h1>
-</section>
+<h2 id="getting-a-git-repository">Getting a Git repository</h2>
+<h3 id="initializing-a-repository-in-an-existing-directory">Initializing a Repository in an Existing Directory</h3>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git init
+</code></pre><h3 id="cloning-an-existenting-repository">Cloning an Existenting Repository</h3>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git clone &lt;url&gt;
+</code></pre><p>You can specify the new directory name as an aditional argument</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git clone https://github.com/julitiux/julitiux.git julito
+</code></pre><h2 id="recording-changes-to-the-repository">Recording changes to the repository</h2>
+<h3 id="checking-the-status-of-your-files">Checking the status of your files</h3>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git status
+</code></pre><h3 id="tracking-new-files">Tracking new files</h3>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git add &lt;file&gt;
+</code></pre><h3 id="short-status">Short status</h3>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git status -s
+</code></pre><p>or</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git status --short
+</code></pre><h3 id="ignoring-files">Ignoring files</h3>
+<p>The rules for the patterns you can put in the .gitignore files are as follow:</p>
+<ul>
+<li>Blank lines or lines stating with <code>#</code> are ignored.</li>
+<li>Standard glob patterns work, and will be applied recursively throughout the entire working tree.</li>
+<li>You can start patterns with a forward slash (<code>/</code>) to avoid recursivity</li>
+<li>You can end patterns with a forward slash (<code>/</code>) to specify a directory.</li>
+<li>You can negate a patter by starting it with an exclamation point (<code>!</code>).</li>
+<li>An asterisk (<code>*</code>) matches zero or more characteres.</li>
+<li>[<code>abc</code>] matches any character inside the brackets (in this case a, b, or c)</li>
+<li>A question mark (<code>?</code>) matches a single character.</li>
+<li>Brackets enclosing characters separated by a hyphen (<code>[0-9]</code>).</li>
+<li>You can also use two asterisks to match nested directories; <code>a/**/z</code> would match a/z, a/b/z, a/b/c/z and so on.</li>
+</ul>
+<p>Here is an example <code>.gitignore</code> file</p>
+<pre tabindex="0"><code class="language-file" data-lang="file"># ignore all -a files
+*.a
+
+# but do track lib.a, even though you&#39;re ignoring .a files above
+!lib.a
+
+# only ignore the TODO file in the current directory, not subdir/TODO
+/TODO
+
+# ignore all files in any directory named build
+build/
+
+# ignore doc/notes.txt, but not doc/server/arch.txt
+doc/*.txt
+
+# ignore all .pdf files in the doc/ directory and any of its subdirectories
+doc/**/*.pdf
+</code></pre><blockquote>
+<p>GitHub maintains a fairly comprehensive list of good .gitignore.
+<a href="https://github.com/github/gitignore">https://github.com/github/gitignore</a></p>
+</blockquote>
+<h3 id="viewing-your-staged-and-unstaged-changes">Viewing your staged and unstaged changes</h3>
+<p>Show you the exact lines added and removed</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git diff
+</code></pre><p>If you want to see what you&rsquo;ve staged that will go into your next commit</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git diff --staged
+</code></pre><p>To see what you&rsquo;ve staged so far (&ndash;staged and &ndash;cached are synonyms)</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git diff --cached
+</code></pre><h3 id="committing-your-changes">Committing your changes</h3>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git commit
+</code></pre><p>Alternatively, you can type your commit message inline with the <code>commit</code> command by specifying it after a <code>-m</code> flag</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git commit -m
+</code></pre><h3 id="skipping-the-staging-area">Skipping the staging area</h3>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git commit -a -m
+</code></pre><pre tabindex="0"><code class="language-terminal" data-lang="terminal">git commit -am
+</code></pre><h3 id="removing-files">Removing files</h3>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git rm
+</code></pre><pre tabindex="0"><code class="language-terminal" data-lang="terminal">git rm --cached
+</code></pre><p>You can pass files, directories, and file-glob patterns to:</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git rm log /\*.log
+</code></pre><p>This command removes all files whose names end with a ~</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git rm \*~
+</code></pre><h3 id="moving-files">Moving files</h3>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git mv file_from file_to
+</code></pre><pre tabindex="0"><code class="language-terminal" data-lang="terminal">git mv README.md README
+</code></pre><h2 id="viewing-the-commit-history">Viewing the commit history</h2>
+<p>By default, with no argument, <code>git log</code> lists the commits made in that repository in reverse chronological order.</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git log
+</code></pre><h3 id="option--p-or---patch">Option -p or &ndash;patch</h3>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git log -p -2
+</code></pre><h3 id="option---stat">Option &ndash;stat</h3>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git log --stat
+</code></pre><h3 id="option---prettyoneline">Option &ndash;pretty=oneline</h3>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git log --pretty=oneline
+</code></pre><h3 id="option---prettyshort">Option &ndash;pretty=short</h3>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git log --pretty=short
+</code></pre><h3 id="option---prettyfull">Option &ndash;pretty=full</h3>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git --pretty=full
+</code></pre><h3 id="option---prettyfuller">Option &ndash;pretty=fuller</h3>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git --pretty=fuller
+</code></pre><h3 id="option-with-format">Option with format</h3>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git log --pretty=format:&#34;%h - %an, %ar : %s&#34;
+</code></pre><h3 id="useful-specifiers-for-git-log---prettyformat">Useful specifiers for git log &ndash;pretty=format</h3>
+<table>
+<thead>
+<tr>
+<th>Specifier</th>
+<th>Description of Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>%H</td>
+<td>Commit hash</td>
+</tr>
+<tr>
+<td>%h</td>
+<td>Abbreviated commit hash</td>
+</tr>
+<tr>
+<td>%T</td>
+<td>Tree hash</td>
+</tr>
+<tr>
+<td>%t</td>
+<td>Abbreviated tree hash</td>
+</tr>
+<tr>
+<td>%P</td>
+<td>Parent hashes</td>
+</tr>
+<tr>
+<td>%p</td>
+<td>Abbreviated parent hashes</td>
+</tr>
+<tr>
+<td>%an</td>
+<td>Author name</td>
+</tr>
+<tr>
+<td>%ae</td>
+<td>Author email</td>
+</tr>
+<tr>
+<td>%ad</td>
+<td>Author date (format respect the &ndash;date=option)</td>
+</tr>
+<tr>
+<td>%ar</td>
+<td>Author date, relative</td>
+</tr>
+<tr>
+<td>%cn</td>
+<td>Committer name</td>
+</tr>
+<tr>
+<td>%ce</td>
+<td>Committer email</td>
+</tr>
+<tr>
+<td>%cd</td>
+<td>Committer date</td>
+</tr>
+<tr>
+<td>%cr</td>
+<td>Committer date, relative</td>
+</tr>
+<tr>
+<td>%s</td>
+<td>Subject</td>
+</tr>
+</tbody>
+</table>
+<h3 id="option---graph">Option &ndash;graph</h3>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git log --pretty=format:&#34;%h %s&#34; --graph
+</code></pre><h2 id="common-options-to-git">Common options to git</h2>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-p</td>
+<td>Show the patch introduced with each commit</td>
+</tr>
+<tr>
+<td>&ndash;stat</td>
+<td>Show statistics for files modified in each commit</td>
+</tr>
+<tr>
+<td>&ndash;shorstats</td>
+<td>Display only the changed/insertions/deletions line from the &ndash;stat command</td>
+</tr>
+<tr>
+<td>&ndash;name-only</td>
+<td>Show the list of files modified after the commit information</td>
+</tr>
+<tr>
+<td>&ndash;name-status</td>
+<td>Show the list of files modified after the commmit information</td>
+</tr>
+<tr>
+<td>&ndash;abbrev-commit</td>
+<td>Show only the first few character of the SHA-1 cheksum instead of all 40</td>
+</tr>
+<tr>
+<td>&ndash;relative-date</td>
+<td>Display the date in a relative format (for example, &ldquo;2 weeks ago&rdquo;) instead of using the full date format</td>
+</tr>
+<tr>
+<td>&ndash;graph</td>
+<td>Display an ASCII graph of the branch and merge history beside the log output</td>
+</tr>
+<tr>
+<td>&ndash;pretty</td>
+<td>Show commits it an alternative format. Option values include <code>oneline</code>, <code>short</code>, <code>full</code>, <code>fuller</code> and <code>format</code> (where you specify you own format)</td>
+</tr>
+<tr>
+<td>&ndash;online</td>
+<td>Showrthand for &ndash;pretty=oneline &ndash;abbrev-commit used togheter</td>
+</tr>
+</tbody>
+</table>
+<h2 id="limiting-log-output">Limiting log output</h2>
+<h3 id="option---since">Option &ndash;since</h3>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git log --since=2.weeks
+</code></pre><h3 id="option--s">Option -S</h3>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git log -S function_name
+</code></pre><h3 id="option----pathtofile">Option &ndash; path/to/file</h3>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git log -- path/to/file
+</code></pre><h2 id="options-to-limit-the-output-of-git-log">Options to limit the output of git log</h2>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-<!-- raw HTML omitted --></td>
+<td>Show only the last n commits</td>
+</tr>
+<tr>
+<td>&ndash;since, &ndash;after</td>
+<td>Limit the commits to those made after the specified date</td>
+</tr>
+<tr>
+<td>&ndash;unitl, &ndash;before</td>
+<td>Limit the commits to those made before the specified date</td>
+</tr>
+<tr>
+<td>&ndash;author</td>
+<td>Only show commits in which the autor entry matcher the specified string</td>
+</tr>
+<tr>
+<td>&ndash;committer</td>
+<td>Only show commits in which the committer entry matcher the specified string</td>
+</tr>
+<tr>
+<td>&ndash;grep</td>
+<td>Only shiw commut with a commit message contraining the string</td>
+</tr>
+<tr>
+<td>-S</td>
+<td>Only show commits adding or removing code matching the string</td>
+</tr>
+</tbody>
+</table>
+<p>For example, if you want to see which commits modifying test files in the Git source code history were committed by Junio Humano in the month of Octuber 2008 and are not merge commits, you can run something like this:</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git log --pretty=&#34;%h - %s&#34; --author=&#39;Junio C Hamano&#39; --since&#34;2008-10-01&#34; --before=&#34;2008-11-01&#34; --no-merges -- t/
+</code></pre><h2 id="undoing-things">Undoing Things</h2>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git commit --amend
+</code></pre><p>If you commit and then realize you forgot to stage the changes in a file you wanted to add to this commit</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git commit -m &#34;initial commit&#34;
+git add fogotten_file
+git commit --amend
+</code></pre><h3 id="unstaging-a-staged-file">Unstaging a staged file</h3>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git reset HEAD &lt;file&gt;
+git restore &lt;file&gt;
+</code></pre><h3 id="unmodifying-a-modified-file">Unmodifying a modified file</h3>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git checkout -- &lt;file staged&gt;
+git co &lt;file staged&gt;
+</code></pre><h3 id="unstaging-a-staged-file-with-restore">Unstaging a staged file with restore</h3>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git restore --staged &lt;file&gt;
+</code></pre><h2 id="working-with-remotes">Working with remotes</h2>
+<h3 id="showing-your-remotes">Showing your remotes</h3>
+<pre tabindex="0"><code class="language-term" data-lang="term">git remote
+</code></pre><h3 id="showing-your-remotes-with-options--v">Showing your remotes with options -v</h3>
+<p>If you have more than one remote, the command list then all</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git remote -v
+</code></pre><h3 id="showing-your-remotes-1">Showing your remotes</h3>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git remote -v
+</code></pre><h1 id="best-command-ever">Best Command Ever</h1>
+<p>You can see your changes in a more compact way.</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git status -s
+git status --short
+</code></pre><p>If you want to see what you have staged that will go into your next commit.</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git diff --staged
+git diff --cached
+</code></pre><p>This is particularly useful if you forgot to add something to your .gitignore.</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git rm --cached &lt;file&gt;
+</code></pre><p>If you forget add a file in a commit &ndash;amend and you dont want keep the commit&rsquo;s text</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git commit --amend --online
+</code></pre><p>Takes a string and shows only those commits that changed the number of occurences of that string</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git log -S function_name
+</code></pre></section>
 
   
   
