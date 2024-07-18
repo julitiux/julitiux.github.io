@@ -63,7 +63,7 @@
   
   
   
-  <meta name="description" content="INDEX Getting Started Git Basics Best Command Ever Getting Started Installing Git Installing on Linux If you want ton install the basic Git tools on Linux via a binary installer
+  <meta name="description" content="INDEX Getting Started Git Basics Best Command Ever Git Branching Getting Started Installing Git Installing on Linux If you want ton install the basic Git tools on Linux via a binary installer
 sudo dfn install git-all If you are on a Debian-based distribution, such a Ubuntu, try apt
 sudo apt install git-all Installing on macOS The easiest is probably to install the Xcode Command Line Tools. On Mavericks (10.9) above you can do this simply by trying to run git from the Terminal the very first time." />
   <meta name="author" content="Julitiux" />
@@ -143,7 +143,7 @@ sudo apt install git-all Installing on macOS The easiest is probably to install 
   
   
   <meta property="og:title" content="Pro Git" />
-<meta property="og:description" content="INDEX Getting Started Git Basics Best Command Ever Getting Started Installing Git Installing on Linux If you want ton install the basic Git tools on Linux via a binary installer
+<meta property="og:description" content="INDEX Getting Started Git Basics Best Command Ever Git Branching Getting Started Installing Git Installing on Linux If you want ton install the basic Git tools on Linux via a binary installer
 sudo dfn install git-all If you are on a Debian-based distribution, such a Ubuntu, try apt
 sudo apt install git-all Installing on macOS The easiest is probably to install the Xcode Command Line Tools. On Mavericks (10.9) above you can do this simply by trying to run git from the Terminal the very first time." />
 <meta property="og:type" content="article" />
@@ -154,16 +154,16 @@ sudo apt install git-all Installing on macOS The easiest is probably to install 
 
   
   <meta itemprop="name" content="Pro Git">
-<meta itemprop="description" content="INDEX Getting Started Git Basics Best Command Ever Getting Started Installing Git Installing on Linux If you want ton install the basic Git tools on Linux via a binary installer
+<meta itemprop="description" content="INDEX Getting Started Git Basics Best Command Ever Git Branching Getting Started Installing Git Installing on Linux If you want ton install the basic Git tools on Linux via a binary installer
 sudo dfn install git-all If you are on a Debian-based distribution, such a Ubuntu, try apt
 sudo apt install git-all Installing on macOS The easiest is probably to install the Xcode Command Line Tools. On Mavericks (10.9) above you can do this simply by trying to run git from the Terminal the very first time."><meta itemprop="datePublished" content="2024-04-08T23:46:43-06:00" />
 <meta itemprop="dateModified" content="2024-04-08T23:46:43-06:00" />
-<meta itemprop="wordCount" content="1940">
+<meta itemprop="wordCount" content="2454">
 <meta itemprop="keywords" content="" />
   
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Pro Git"/>
-<meta name="twitter:description" content="INDEX Getting Started Git Basics Best Command Ever Getting Started Installing Git Installing on Linux If you want ton install the basic Git tools on Linux via a binary installer
+<meta name="twitter:description" content="INDEX Getting Started Git Basics Best Command Ever Git Branching Getting Started Installing Git Installing on Linux If you want ton install the basic Git tools on Linux via a binary installer
 sudo dfn install git-all If you are on a Debian-based distribution, such a Ubuntu, try apt
 sudo apt install git-all Installing on macOS The easiest is probably to install the Xcode Command Line Tools. On Mavericks (10.9) above you can do this simply by trying to run git from the Terminal the very first time."/>
 
@@ -308,6 +308,7 @@ sudo apt install git-all Installing on macOS The easiest is probably to install 
 <h1 id="getting-startedgetting-started"><a href="#getting-started">Getting Started</a></h1>
 <h1 id="git-basicsgit-basics"><a href="#git-basics">Git Basics</a></h1>
 <h1 id="best-command-everbest-command-ever"><a href="#best-command-ever">Best Command Ever</a></h1>
+<h1 id="git-branchinggit-branching"><a href="#git-branching">Git Branching</a></h1>
 <h1 id="getting-started">Getting Started</h1>
 <h2 id="installing-git">Installing Git</h2>
 <h3 id="installing-on-linux">Installing on Linux</h3>
@@ -724,6 +725,62 @@ commit 66938dae3329c7aebe598c2246a8e6af90d04646
   Date:   Tue Aug 26 19:48:51 2008 +0800
       Test for current head
       Signed-off-by: Scott Chacon &lt;schacon@example.com&gt;
+</code></pre><p>this is a new begginig of implementation</p>
+<h1 id="git-branching">Git Branching</h1>
+<blockquote>
+<p>The &ldquo;master&rdquo; branch in Git is not special branch. It is exactly like any other branch. The only reason nearly every repository has one is thta the <code>git init</code> command create it by default and most people don&rsquo;t bother to change it.</p>
+</blockquote>
+<h2 id="creating-a-new-branch">Creating a new branch</h2>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git branch testing
+</code></pre><h3 id="head-pointing-to-a-branch">HEAD pointing to a branch</h3>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git log --online --decorate
+</code></pre><h3 id="switching-branches">Switching Branches</h3>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git checkout &lt;branch_name&gt;
+</code></pre><pre tabindex="0"><code class="language-terminal" data-lang="terminal">git co &lt;branch_name&gt;
+</code></pre><p>To show commit history for the desired branch you have to explicity specify it:</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git log &lt;branch_name&gt;
+</code></pre><p>Will print out the history of your commits, showing wher your branch pointer are and how your history has diverged.</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git log --oneline --decorate --graph --all
+</code></pre><p>Creating a new branch and switching to it at the same time</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git checkout -b &lt;newBranchName&gt;
+</code></pre><p>From Git version 2.23 onwards you can use <code>git switch</code> instead of <code>git checkout</code> to</p>
+<ul>
+<li>Switch to an existing branch: &lsquo;git switch testing-branch&rsquo;</li>
+<li>Create a new branch and switch to it: &lsquo;git switch -c new-branch&rsquo;. The -c flag stands for create, you can also use the full flag: &lsquo;&ndash;create&rsquo;</li>
+<li>Return to your proviously checked out branch: &lsquo;git switch -&rsquo;</li>
+</ul>
+<h2 id="basic-branching-and-merging">Basic branching and merging</h2>
+<p>The phrase &ldquo;fast-foward&rdquo; is when you try to merge one commit with a commit that can be reached by following the first commit&rsquo;s history, Git simplifies things by moving the pointer forward because there is no divergent work to merge together &ndash; this is called a &ldquo;fast-forward&rdquo;.</p>
+<p>If ypu no longer need it, delete it.</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git branch -d &lt;branch_name&gt;
+</code></pre><h2 id="basic-merge-conflicts">Basic merge conflicts</h2>
+<p>Anything that has merge conflicts and hasn&rsquo;t been resolved is listed as unmerged. Git adds standard conflict-resolution markers to the files tha have conflicts, so you can open them manually and resolve those conflicts. Your file contains a section that looks something like this:</p>
+<pre tabindex="0"><code class="language-code" data-lang="code">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD:index.html
+&lt;div id=&#34;footer&#34;&gt;contact : email.support@github.com&lt;/div&gt;
+=======
+&lt;div id=&#34;footer&#34;&gt;
+ please contact us at support@github.com
+&lt;/div&gt;
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; iss53:index.html
+</code></pre><p>This means the version in &lsquo;HEAD&rsquo; (your &lsquo;master&rsquo; branch, because that was what you had checked out when you ran your merge command) is the top part of that block (everything above the &lsquo;=======&rsquo;), while the version in your branch looks like everything in the bottom part. In order to resolve the conflict you have to either choose one side or the other or merge contents yourself. For instance, you might resolve this conflict by replacing the entire block with this:</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">&lt;div id=&#34;footer&#34;&gt;
+please contact us at email.support@github.com
+&lt;/div&gt;
+</code></pre><p>If you want to use a graphical tool to resolve these issues, you can run:</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git mergetool
+</code></pre><p>whichs fires up an appropiate visual merge tool and walks you through the conflicts</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">$ git mergetool
+  This message is displayed because &#39;merge.tool&#39; is not configured.
+  See &#39;git mergetool --tool-help&#39; or &#39;git help config&#39; for more details.
+  &#39;git mergetool&#39; will now attempt to use one of the following tools:
+  opendiff kdiff3 tkdiff xxdiff meld tortoisemerge gvimdiff diffuse diffmerge ecmerge
+  p4merge araxis bc3 codecompare vimdiff emerge
+  Merging:
+  index.html
+  Normal merge conflict for &#39;index.html&#39;:
+    {local}: modified file
+    {remote}: modified file
+  Hit return to start merge resolution tool (opendiff):
 </code></pre><h1 id="best-command-ever">Best Command Ever</h1>
 <p>You can see your changes in a more compact way.</p>
 <pre tabindex="0"><code class="language-terminal" data-lang="terminal">git status -s
