@@ -158,7 +158,7 @@ sudo apt install git-all Installing on macOS The easiest is probably to install 
 sudo dfn install git-all If you are on a Debian-based distribution, such a Ubuntu, try apt
 sudo apt install git-all Installing on macOS The easiest is probably to install the Xcode Command Line Tools. On Mavericks (10.9) above you can do this simply by trying to run git from the Terminal the very first time."><meta itemprop="datePublished" content="2024-04-08T23:46:43-06:00" />
 <meta itemprop="dateModified" content="2024-04-08T23:46:43-06:00" />
-<meta itemprop="wordCount" content="2459">
+<meta itemprop="wordCount" content="3008">
 <meta itemprop="keywords" content="" />
   
   <meta name="twitter:card" content="summary"/>
@@ -781,8 +781,60 @@ please contact us at email.support@github.com
     {local}: modified file
     {remote}: modified file
   Hit return to start merge resolution tool (opendiff):
-</code></pre><p>Add one line for test</p>
-<h1 id="best-command-ever">Best Command Ever</h1>
+</code></pre><h2 id="branching-management">Branching management</h2>
+<p>If you run with no arguments, you get a simple listing of your current branches</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git branch
+git br
+</code></pre><p>To see the last commit on each branch</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git branche -v
+</code></pre><p>The useful &lsquo;&ndash;merged&rsquo; and &lsquo;&ndash;no-merged&rsquo; options can filter this list to branches that you have or have not yet merge into the branch you are currently on.</p>
+<p>To see branches are already merged into the branch you are on</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git branch --merged
+</code></pre><p>To see all the branches that contain work you have not yet merged in</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git branch --no-merged
+</code></pre><p>If you have work that is not merged in yet and trying to delete it with:</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git branch -d &lt;branch_name&gt;
+</code></pre><p>appears something like this:</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">$ git branch -d branch_name
+  error: The branch &#39;branch_name&#39; is not fully merged.
+  If you are sure you want to delete it, run &#39;git branch -D branch_name&#39;.
+</code></pre><p>If you want to delete the branch and lose that work, you can force it with &lsquo;-D&rsquo;</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git branch -D &lt;branch_name&gt;
+</code></pre><p>The options described above &lsquo;&ndash;merged&rsquo; and &lsquo;&ndash;no-merged&rsquo; will, if not given a commit or branch name as an argument, show you what is, respectively, merged or not merged into your <em>current</em> branch.</p>
+<p>You can always provide and additional argument to ask about the merge state with respect to some other branch without cheking that other branch out first.</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git branch --no-merged &lt;branch_name&gt;
+</code></pre><h2 id="changing-a-branch-name">Changing a branch name</h2>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git branch --move bad-branch-name corrected-branch-name
+</code></pre><p>This replaces <em>bad-branch-name</em> with <em>corrected-branch-name</em>, but his change is only local for now. To let see the corrected branch on the remote, push it:</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git push --set-upstream origin corrected-branch-name
+</code></pre><p>Verying the rename branch</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">$ git branch --all
+* corrected-branch-name
+    main
+    remotes/origin/bad-branch-name
+    remotes/origin/corrected-branch-name
+    remotes/origin/main
+</code></pre><p>Deleting the remote branch</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git push origin --delete bad-branch-name
+</code></pre><pre tabindex="0"><code class="language-terminal" data-lang="terminal">git push origin :bad-branch-name
+</code></pre><h3 id="changing-the-master-branch-name">Changing the master branch name</h3>
+<p>Changin the name of a branch like master/main/mainline/default will break the integration, services, helper utilities and build/release scripts that your repository uses.</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git branch --move master main
+</code></pre><p>push it</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git push --set-upstream origin main
+</code></pre><p>Your local &lsquo;master&rsquo; brahch is gone, as it&rsquo;s replaced with the &lsquo;main&rsquo; branch. The main branch is pesented on the remote. However, the old &lsquo;master&rsquo; branch is still present on the remote. Other collaborattors will continue to use the &lsquo;master&rsquo; branch as the base of their work, until you make some futher changes.</p>
+<p>Now you have a few more tasks in front of you to complete the transition:</p>
+<ul>
+<li>Any project that depend on this one will need to update their code and/or configuration.</li>
+<li>Update any test-runner configuration files.</li>
+<li>Adjust build and release scripts.</li>
+<li>Redirect settings on you repo host for things like the repo&rsquo;s default branch, merge rules, and other things that match branch names.</li>
+<li>Update references to the old branch in documentation.</li>
+<li>Close or merge any pull request that target the old branch.</li>
+</ul>
+<p>After you have done all these tasks, and are certain the &lsquo;main&rsquo; branch performs just as the &lsquo;master&rsquo; branch, you can delete the &lsquo;maste&rsquo;r branch.</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git push origin --delete master
+</code></pre><h1 id="best-command-ever">Best Command Ever</h1>
 <p>You can see your changes in a more compact way.</p>
 <pre tabindex="0"><code class="language-terminal" data-lang="terminal">git status -s
 git status --short
@@ -791,10 +843,16 @@ git status --short
 git diff --cached
 </code></pre><p>This is particularly useful if you forgot to add something to your .gitignore.</p>
 <pre tabindex="0"><code class="language-terminal" data-lang="terminal">git rm --cached &lt;file&gt;
-</code></pre><p>If you forget add a file in a commit &ndash;amend and you dont want keep the commit&rsquo;s text</p>
+</code></pre><p>If you forget add a file in a commit &ndash;amend and you dont want keep the commit&rsquo;s text. Remember confirm you commit with &lsquo;git add .&rsquo; just for the command works</p>
 <pre tabindex="0"><code class="language-terminal" data-lang="terminal">git commit --amend --online
 </code></pre><p>Takes a string and shows only those commits that changed the number of occurences of that string</p>
 <pre tabindex="0"><code class="language-terminal" data-lang="terminal">git log -S function_name
+</code></pre><p>Show the log in a line with graph step by step</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git log --oneline --decorate --graph --all
+</code></pre><p>Show the last confirmations of changes over the branches.</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git branch -v
+</code></pre><p>The command is used to establish the relationship between your local branch and a remote branch</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git branch --set-upstream-to=origin/&lt;branch_name&gt;
 </code></pre></section>
 
   
