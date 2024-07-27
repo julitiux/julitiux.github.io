@@ -158,7 +158,7 @@ sudo apt install git-all Installing on macOS The easiest is probably to install 
 sudo dfn install git-all If you are on a Debian-based distribution, such a Ubuntu, try apt
 sudo apt install git-all Installing on macOS The easiest is probably to install the Xcode Command Line Tools. On Mavericks (10.9) above you can do this simply by trying to run git from the Terminal the very first time."><meta itemprop="datePublished" content="2024-04-08T23:46:43-06:00" />
 <meta itemprop="dateModified" content="2024-04-08T23:46:43-06:00" />
-<meta itemprop="wordCount" content="3008">
+<meta itemprop="wordCount" content="3404">
 <meta itemprop="keywords" content="" />
   
   <meta name="twitter:card" content="summary"/>
@@ -834,6 +834,46 @@ git br
 </ul>
 <p>After you have done all these tasks, and are certain the &lsquo;main&rsquo; branch performs just as the &lsquo;master&rsquo; branch, you can delete the &lsquo;maste&rsquo;r branch.</p>
 <pre tabindex="0"><code class="language-terminal" data-lang="terminal">git push origin --delete master
+</code></pre><h2 id="remote-branches">Remote branches</h2>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">gut ls-remote &lt;remote&gt;
+</code></pre><p>or</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git remote show &lt;remote&gt;
+</code></pre><p>&lsquo;origin&rsquo; is not special.
+Just like branch name &lsquo;master&rsquo; does not have any special meaning in Git, neither does &lsquo;origin&rsquo;. While &lsquo;master&rsquo; is the default name for starting branch when run <code>git init</code> which is the only reason it&rsquo;s widely used &lsquo;origin&rsquo; is the default name for a remote when you run &lsquo;git clone&rsquo;. If you run &lsquo;git clone -o booyah&rsquo; instead, the you will have &lsquo;booyah/master&rsquo; as your default remote branch.</p>
+<p>To synchronize your work with a given remote</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git fetch &lt;remote&gt;
+</code></pre><p>or</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git fetch
+</code></pre><h2 id="pushing">Pushing</h2>
+<p>This is a bit of a shortcut</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git push &lt;remote&gt; &lt;branch&gt;
+</code></pre><p>Like example</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git push origin serverfix
+</code></pre><p>Git automatically expands the serverfix branchname out to refs/heads/serverfix:refs/heads/serverfix, which means: &rsquo;take my serverfix local branch and push it to update the remote&rsquo;s serverfix branch.</p>
+<p>If you didn&rsquo;t want it to be called &lsquo;serverfix&rsquo; on the remote, you could instead run &lsquo;git push origin serverfix:awesomebranch&rsquo; to push your local &lsquo;serverfix&rsquo; branch to the &lsquo;awesomebranch&rsquo; branch on the remote projec</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git push origin serverfix:awesomebranch
+</code></pre><p>If you want your own &lsquo;serverfix&rsquo;  branch that you can work on, you can base it off your remote tracking branch</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git checkout -b serverfix origin/serverfix
+</code></pre><p>or use the next command, if you want to track branches on remotes</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git checkout --track &lt;remote&gt;/&lt;branch_name&gt;
+</code></pre><p>To set up a local branch with a different name than the remote branch</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git checkout --track &lt;new_name_branch&gt; &lt;remote&gt;/&lt;branch_name&gt;
+</code></pre><p>If you already have a local branch and want to set it to a remote branch you just pulled down or want to change the upstrem branch you are tracking, you can use the &lsquo;-u&rsquo; or &lsquo;&ndash;set-upstream-to&rsquo; like this</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git branch -u &lt;remote&gt;/&lt;branch_name&gt;
+</code></pre><p>or</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git branch --set-upstream-to &lt;remote&gt;/&lt;branch_name&gt;
+</code></pre><h3 id="upstream-shorthand">Upstream shorthand</h3>
+<p>When you have a tracking branch set uo, you can reference its upstream branch with the @{upstream} or @{u} shrthand. So if you are on the &lsquo;master&rsquo; branch and it is traking &lsquo;origin/master&rsquo;, you can say something like</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git merge @{u}
+</code></pre><p>instead of</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git merge origin/master
+</code></pre><h2 id="pulling">Pulling</h2>
+<p>This is a command called &lsquo;git pull&rsquo; which is essentially a &lsquo;git fetch&rsquo; immediately followed by a &lsquo;git merge&rsquo;</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git pull
+</code></pre><h2 id="deleting-remote-branches">Deleting remote branches</h2>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git push origin --delete &lt;branch_name&gt;
+</code></pre><p>or</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git push &lt;remote&gt; :&lt;branch_name&gt;
 </code></pre><h1 id="best-command-ever">Best Command Ever</h1>
 <p>You can see your changes in a more compact way.</p>
 <pre tabindex="0"><code class="language-terminal" data-lang="terminal">git status -s
@@ -853,6 +893,10 @@ git diff --cached
 <pre tabindex="0"><code class="language-terminal" data-lang="terminal">git branch -v
 </code></pre><p>The command is used to establish the relationship between your local branch and a remote branch</p>
 <pre tabindex="0"><code class="language-terminal" data-lang="terminal">git branch --set-upstream-to=origin/&lt;branch_name&gt;
+</code></pre><p>If you already have a local branch and you want to set it to a remote  branch</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git branch -u &lt;remote&gt;/&lt;branch_name&gt;
+</code></pre><p>or</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git branch --set-upstream-to &lt;remote&gt;/&lt;branch_name&gt;
 </code></pre></section>
 
   
