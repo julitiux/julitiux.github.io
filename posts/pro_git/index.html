@@ -158,7 +158,7 @@ sudo apt install git-all Installing on macOS The easiest is probably to install 
 sudo dfn install git-all If you are on a Debian-based distribution, such a Ubuntu, try apt
 sudo apt install git-all Installing on macOS The easiest is probably to install the Xcode Command Line Tools. On Mavericks (10.9) above you can do this simply by trying to run git from the Terminal the very first time."><meta itemprop="datePublished" content="2024-04-08T23:46:43-06:00" />
 <meta itemprop="dateModified" content="2024-04-08T23:46:43-06:00" />
-<meta itemprop="wordCount" content="3404">
+<meta itemprop="wordCount" content="3678">
 <meta itemprop="keywords" content="" />
   
   <meta name="twitter:card" content="summary"/>
@@ -874,6 +874,32 @@ Just like branch name &lsquo;master&rsquo; does not have any special meaning in 
 <pre tabindex="0"><code class="language-terminal" data-lang="terminal">git push origin --delete &lt;branch_name&gt;
 </code></pre><p>or</p>
 <pre tabindex="0"><code class="language-terminal" data-lang="terminal">git push &lt;remote&gt; :&lt;branch_name&gt;
+</code></pre><h2 id="rebasing">Rebasing</h2>
+<p>In git, there are two main ways to integrate changes from one branch into another: the <em>merge</em> and the <em>rebase</em></p>
+<p>Steps to use <em>rebase</em></p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git checkout experiment
+git rebase master
+First, rewinding head to replay your work on top of it...
+Applying: added staged command
+</code></pre><p>At this point, you can go back to the &lsquo;master&rsquo; branch and do a <em>fast-forward</em> merge</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git checkout master
+git merge experiment
+</code></pre><h2 id="more-interesting-rebases">More interesting rebases</h2>
+<p>Take the &lsquo;client&rsquo; branch, figure out the patches since it diverged the &lsquo;server&rsquo; branch, and relay these patches in the &lsquo;client&rsquo; branch as if it was directly off the &lsquo;master&rsquo; branch instead</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git rebase --onto master server client
+</code></pre><h2 id="the-perils-of-rebasing">The perils of rebasing</h2>
+<p>Do not rebase commits that exists outside your repository and that people may have based work on</p>
+<h2 id="rebase-when-you-rebase">Rebase when you rebase</h2>
+<p>For instance, in the previous scenario, if instead of doing a merge when we are at <em>Some pushes rebased commits, abandoning commits you have based your work on</em> we run</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git rebase teamone/master
+</code></pre><p>You can rebase using</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git pull --rebase
+</code></pre><p>intead of a normal &lsquo;git pull&rsquo;</p>
+<p>Or you could do it manually with a</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git fetch
+git rebase teamone/master
+</code></pre><p>If you are using &lsquo;git pull&rsquo; and want to make &lsquo;&ndash;rebase&rsquo; the default, you can set the &lsquo;pull.rebase&rsquo; config value with something like</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git config --global pull.rebase true
 </code></pre><h1 id="best-command-ever">Best Command Ever</h1>
 <p>You can see your changes in a more compact way.</p>
 <pre tabindex="0"><code class="language-terminal" data-lang="terminal">git status -s
@@ -897,6 +923,16 @@ git diff --cached
 <pre tabindex="0"><code class="language-terminal" data-lang="terminal">git branch -u &lt;remote&gt;/&lt;branch_name&gt;
 </code></pre><p>or</p>
 <pre tabindex="0"><code class="language-terminal" data-lang="terminal">git branch --set-upstream-to &lt;remote&gt;/&lt;branch_name&gt;
+</code></pre><p>Steps to use <em>rebase</em></p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git checkout experiment
+git rebase master
+First, rewinding head to replay your work on top of it...
+Applying: added staged command
+</code></pre><p>At this point, you can go back to the &lsquo;master&rsquo; branch and do a <em>fast-forward</em> merge</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git checkout master
+git merge experiment
+</code></pre><p>Rebasing with pull</p>
+<pre tabindex="0"><code class="language-terminal" data-lang="terminal">git pull --rebase
 </code></pre></section>
 
   
