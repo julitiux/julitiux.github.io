@@ -63,9 +63,9 @@
   
   
   
-  <meta name="description" content="INDEX Getting Started Git Basics Best Command Ever Git Branching Getting Started Installing Git Installing on Linux If you want ton install the basic Git tools on Linux via a binary installer
+  <meta name="description" content="INDEX Getting Started Git Basics Git Branching Git on the server Best Command Ever Getting Started Installing Git Installing on Linux If you want ton install the basic Git tools on Linux via a binary installer
 sudo dfn install git-all If you are on a Debian-based distribution, such a Ubuntu, try apt
-sudo apt install git-all Installing on macOS The easiest is probably to install the Xcode Command Line Tools. On Mavericks (10.9) above you can do this simply by trying to run git from the Terminal the very first time." />
+sudo apt install git-all Installing on macOS The easiest is probably to install the Xcode Command Line Tools. On Mavericks (10." />
   <meta name="author" content="Julitiux" />
   
 
@@ -143,9 +143,9 @@ sudo apt install git-all Installing on macOS The easiest is probably to install 
   
   
   <meta property="og:title" content="Pro Git" />
-<meta property="og:description" content="INDEX Getting Started Git Basics Best Command Ever Git Branching Getting Started Installing Git Installing on Linux If you want ton install the basic Git tools on Linux via a binary installer
+<meta property="og:description" content="INDEX Getting Started Git Basics Git Branching Git on the server Best Command Ever Getting Started Installing Git Installing on Linux If you want ton install the basic Git tools on Linux via a binary installer
 sudo dfn install git-all If you are on a Debian-based distribution, such a Ubuntu, try apt
-sudo apt install git-all Installing on macOS The easiest is probably to install the Xcode Command Line Tools. On Mavericks (10.9) above you can do this simply by trying to run git from the Terminal the very first time." />
+sudo apt install git-all Installing on macOS The easiest is probably to install the Xcode Command Line Tools. On Mavericks (10." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://julitiux.github.io/posts/pro_git/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2024-04-08T23:46:43-06:00" />
@@ -154,18 +154,18 @@ sudo apt install git-all Installing on macOS The easiest is probably to install 
 
   
   <meta itemprop="name" content="Pro Git">
-<meta itemprop="description" content="INDEX Getting Started Git Basics Best Command Ever Git Branching Getting Started Installing Git Installing on Linux If you want ton install the basic Git tools on Linux via a binary installer
+<meta itemprop="description" content="INDEX Getting Started Git Basics Git Branching Git on the server Best Command Ever Getting Started Installing Git Installing on Linux If you want ton install the basic Git tools on Linux via a binary installer
 sudo dfn install git-all If you are on a Debian-based distribution, such a Ubuntu, try apt
-sudo apt install git-all Installing on macOS The easiest is probably to install the Xcode Command Line Tools. On Mavericks (10.9) above you can do this simply by trying to run git from the Terminal the very first time."><meta itemprop="datePublished" content="2024-04-08T23:46:43-06:00" />
+sudo apt install git-all Installing on macOS The easiest is probably to install the Xcode Command Line Tools. On Mavericks (10."><meta itemprop="datePublished" content="2024-04-08T23:46:43-06:00" />
 <meta itemprop="dateModified" content="2024-04-08T23:46:43-06:00" />
-<meta itemprop="wordCount" content="3678">
+<meta itemprop="wordCount" content="3700">
 <meta itemprop="keywords" content="" />
   
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Pro Git"/>
-<meta name="twitter:description" content="INDEX Getting Started Git Basics Best Command Ever Git Branching Getting Started Installing Git Installing on Linux If you want ton install the basic Git tools on Linux via a binary installer
+<meta name="twitter:description" content="INDEX Getting Started Git Basics Git Branching Git on the server Best Command Ever Getting Started Installing Git Installing on Linux If you want ton install the basic Git tools on Linux via a binary installer
 sudo dfn install git-all If you are on a Debian-based distribution, such a Ubuntu, try apt
-sudo apt install git-all Installing on macOS The easiest is probably to install the Xcode Command Line Tools. On Mavericks (10.9) above you can do this simply by trying to run git from the Terminal the very first time."/>
+sudo apt install git-all Installing on macOS The easiest is probably to install the Xcode Command Line Tools. On Mavericks (10."/>
 
   
   
@@ -307,8 +307,9 @@ sudo apt install git-all Installing on macOS The easiest is probably to install 
   <section><h1 id="index"><strong>INDEX</strong></h1>
 <h1 id="getting-startedgetting-started"><a href="#getting-started">Getting Started</a></h1>
 <h1 id="git-basicsgit-basics"><a href="#git-basics">Git Basics</a></h1>
-<h1 id="best-command-everbest-command-ever"><a href="#best-command-ever">Best Command Ever</a></h1>
 <h1 id="git-branchinggit-branching"><a href="#git-branching">Git Branching</a></h1>
+<h1 id="git-on-the-servergit-on-the-server"><a href="#git-on-the-server">Git on the server</a></h1>
+<h1 id="best-command-everbest-command-ever"><a href="#best-command-ever">Best Command Ever</a></h1>
 <h1 id="getting-started">Getting Started</h1>
 <h2 id="installing-git">Installing Git</h2>
 <h3 id="installing-on-linux">Installing on Linux</h3>
@@ -900,7 +901,20 @@ git merge experiment
 git rebase teamone/master
 </code></pre><p>If you are using &lsquo;git pull&rsquo; and want to make &lsquo;&ndash;rebase&rsquo; the default, you can set the &lsquo;pull.rebase&rsquo; config value with something like</p>
 <pre tabindex="0"><code class="language-terminal" data-lang="terminal">git config --global pull.rebase true
-</code></pre><h1 id="best-command-ever">Best Command Ever</h1>
+</code></pre><h1 id="git-on-the-server">Git on the server</h1>
+<h2 id="the-protocols">The protocols</h2>
+<ul>
+<li>Local protocol</li>
+<li>HTTP protocol
+<ul>
+<li>Smart HTTP</li>
+<li>Dump HTTP</li>
+</ul>
+</li>
+<li>SSH protocol</li>
+<li>Git protocol</li>
+</ul>
+<h1 id="best-command-ever">Best Command Ever</h1>
 <p>You can see your changes in a more compact way.</p>
 <pre tabindex="0"><code class="language-terminal" data-lang="terminal">git status -s
 git status --short
@@ -943,6 +957,12 @@ git merge experiment
   
   <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
     
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="https://julitiux.github.io/posts/aquitectura_moderna_java/"
+      ><span class="mr-1.5">←</span><span>Aquitectura Moderna de Java</span></a
+    >
+    
     
     <a
       class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
@@ -967,7 +987,7 @@ git merge experiment
   class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
 >
   <div class="mr-auto">
-    &copy; 2024
+    &copy; 2025
     <a class="link" href="https://julitiux.github.io/">Blogs</a>
   </div>
   <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
