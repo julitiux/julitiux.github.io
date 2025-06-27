@@ -63,7 +63,7 @@
   
   
   
-  <meta name="description" content="" />
+  <meta name="description" content="Modulo 1 Introduccion a la Arquitectura de Software Entender que es la arquitectura de software Conocer los principios fundamentales Diferenciar tipos comunes de arquitectura Ver como se aplican en proyectos modernos Documentación basada en vistas Vista Lógica; Muestra los componentes principales del sistema y sus relaciones. Vista de desarrollo: Detalla la organización del sistema desde el punto de vista del desarrollo, cómo están estructurados los módulos. Vista de procesos: Explica cómo interactúan los componentes en tiempo de ejecución." />
   <meta name="author" content="Julitiux" />
   
 
@@ -141,7 +141,7 @@
   
   
   <meta property="og:title" content="Aquitectura Moderna de Java" />
-<meta property="og:description" content="" />
+<meta property="og:description" content="Modulo 1 Introduccion a la Arquitectura de Software Entender que es la arquitectura de software Conocer los principios fundamentales Diferenciar tipos comunes de arquitectura Ver como se aplican en proyectos modernos Documentación basada en vistas Vista Lógica; Muestra los componentes principales del sistema y sus relaciones. Vista de desarrollo: Detalla la organización del sistema desde el punto de vista del desarrollo, cómo están estructurados los módulos. Vista de procesos: Explica cómo interactúan los componentes en tiempo de ejecución." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://julitiux.github.io/posts/aquitectura_moderna_java/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2025-06-11T17:48:08-06:00" />
@@ -150,14 +150,14 @@
 
   
   <meta itemprop="name" content="Aquitectura Moderna de Java">
-<meta itemprop="description" content=""><meta itemprop="datePublished" content="2025-06-11T17:48:08-06:00" />
+<meta itemprop="description" content="Modulo 1 Introduccion a la Arquitectura de Software Entender que es la arquitectura de software Conocer los principios fundamentales Diferenciar tipos comunes de arquitectura Ver como se aplican en proyectos modernos Documentación basada en vistas Vista Lógica; Muestra los componentes principales del sistema y sus relaciones. Vista de desarrollo: Detalla la organización del sistema desde el punto de vista del desarrollo, cómo están estructurados los módulos. Vista de procesos: Explica cómo interactúan los componentes en tiempo de ejecución."><meta itemprop="datePublished" content="2025-06-11T17:48:08-06:00" />
 <meta itemprop="dateModified" content="2025-06-11T17:48:08-06:00" />
-<meta itemprop="wordCount" content="0">
+<meta itemprop="wordCount" content="5611">
 <meta itemprop="keywords" content="" />
   
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Aquitectura Moderna de Java"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:description" content="Modulo 1 Introduccion a la Arquitectura de Software Entender que es la arquitectura de software Conocer los principios fundamentales Diferenciar tipos comunes de arquitectura Ver como se aplican en proyectos modernos Documentación basada en vistas Vista Lógica; Muestra los componentes principales del sistema y sus relaciones. Vista de desarrollo: Detalla la organización del sistema desde el punto de vista del desarrollo, cómo están estructurados los módulos. Vista de procesos: Explica cómo interactúan los componentes en tiempo de ejecución."/>
 
   
   
@@ -296,7 +296,797 @@
     
   </header>
 
-  <section></section>
+  <section><h1 id="modulo-1">Modulo 1</h1>
+<ul>
+<li>Introduccion a la Arquitectura de Software
+<ul>
+<li>Entender que es la arquitectura de software</li>
+<li>Conocer los principios fundamentales</li>
+<li>Diferenciar tipos comunes de arquitectura</li>
+<li>Ver como se aplican en proyectos modernos</li>
+</ul>
+</li>
+</ul>
+<h2 id="documentación-basada-en-vistas">Documentación basada en vistas</h2>
+<ul>
+<li><em>Vista Lógica;</em> Muestra los componentes principales del sistema y sus relaciones.</li>
+<li><em>Vista de desarrollo:</em> Detalla la organización del sistema desde el punto de vista del desarrollo, cómo están estructurados los módulos.</li>
+<li><em>Vista de procesos:</em> Explica cómo interactúan los componentes en tiempo de ejecución.</li>
+<li><em>Vista física:</em> Muestra la topología de los componentes del sistema en el hadware.</li>
+</ul>
+<h2 id="vista-lógica">Vista Lógica</h2>
+<ul>
+<li>
+<p><em>Proposito:</em> La vista lógica muestra la estructura del sistema desde el punto de vista de los componentes de software principales y sus relaciones. Es útil para capturar el diseño de alto nivel del sistema.</p>
+</li>
+<li>
+<p><em>Pregunta clave:</em></p>
+<ul>
+<li>¿Cuáles son los componentes más importantes?</li>
+<li>¿Cómo interactúan entre si?</li>
+</ul>
+</li>
+<li>
+<p><em>Audiencia:</em> Principalmente desarrolladores y arquitectos de software, ya que les ayuda a entender cómo se descompone el sistema en apartes manejables y cómo estas partes colaboran entre si.</p>
+</li>
+<li>
+<p><em>Ejemplo:</em> Un diagrama UML de clases que muestran módulos, clases, funciones, y sus relaciones. Podría usarse un diagrama de componentes a alto nivel.</p>
+</li>
+</ul>
+<h2 id="vista-de-desarrollo-vista-de-implementación">Vista de Desarrollo (Vista de Implementación)</h2>
+<ul>
+<li><em>Proposito:</em> Esta vista describe la organizacion estática del sistema desde el punto de vista del equipo de desarrollo. Muestra como el código fuente está estructurado en paquetes, módulos o capas.</li>
+<li><em>Pregunta clave:</em>
+<ul>
+<li>¿Cómo se organiza el sistema a nivel de código?</li>
+<li>¿Cómo están estructurados los módulos?</li>
+<li>¿Qué equipos o personas son responsables de qué partes del sistema?</li>
+</ul>
+</li>
+<li><em>Audiencia:</em> Desarrolladores que necesitan entender cómo está organizado el sistema para trabajar en él y contribuir de manera efectiva</li>
+<li><em>Ejemplo:</em> Diagramas de paquetes o estructura de carpetas y archivos en el código fuente.</li>
+</ul>
+<h2 id="vista-de-procesos">Vista de Procesos</h2>
+<ul>
+<li><em>Proposito:</em> Se enfoca en la interaccion dinámica de los componentes del sistema en tiempo de ejecución. Muestra cómo los diferentes componentes interactúan a través de procesos, hilos y mensajes</li>
+<li><em>Pregunta clave:</em>
+<ul>
+<li>¿Cómo interactúan los componentes del sistema en tiempo de ejecución?</li>
+<li>¿Qué procesos se ejecutan en paralelo o secuencialmente?</li>
+</ul>
+</li>
+<li><em>Audiencia:</em> Arquitectos y desarrolladores interesados en cómo funciona el sistem en ejecución, especialmente para comprender problemas como el rendimiento y la escalabilidad</li>
+<li><em>Ejemplo:</em> Diagramas de secuencia o diagramas de actividad que muestren flujos de control y colaboración entre los componentes en tiempo de ejecución</li>
+</ul>
+<h2 id="vista-física-vista-de-despliegue">Vista Física (Vista de Despliegue)</h2>
+<ul>
+<li><em>Proposito:</em> Representa la topologia de hardware donde se ejecuta el sistema. Esta vista describe cómo se mapean los componentes de software a los nodos físicos de la red (servidores, máquinas virtuales, etc)</li>
+<li><em>Pregunta clave:</em>
+<ul>
+<li>¿Dónde se ejecuta cada parte del sistema?</li>
+<li>¿Cómo se distribuye el software en el hardware?</li>
+<li>¿Que nodos, servidores o contenedores están involucrados en la ejecución del sistema?</li>
+</ul>
+</li>
+<li><em>Audiencia:</em> Ingenieros de infraestructura, administradores de sistema y arquitectos responsables del despliegue físico del Software</li>
+<li><em>Ejemplo:</em> Diagramas de despliegue que muestran servidores, redes, dispositivos y como los componentes de software están destribuidos entre ellos</li>
+</ul>
+<h2 id="relación-entre-vistas">Relación entre vistas.</h2>
+<ul>
+<li>La vista no son independientes entre si, De hecho, las vistas debes estar relacionadas y se consistenes entre si. Por ejemplo:
+<ul>
+<li>Un componente descrito en la vista lógica debe estar reflejado de alguna manera en la vista de desarrollo (como un modulo o paquete).</li>
+<li>Los procesos descritos en la vista de procesos deben ejecutarse en los nodos descritos en la vista física.</li>
+</ul>
+</li>
+<li>Cada vista captura una parte de la arquitectura del sistema, y juntas proporcionan una imagen mas completa del sistema en conjunto.</li>
+</ul>
+<h2 id="personalización-de-vistas">Personalización de vistas</h2>
+<ul>
+<li>Debe existir flexibilidad en cuanto a la creacion de vistas adicionales si el sistema lo requiere.
+Por ejemplo:
+<ul>
+<li><em>Vista de serguridad:</em> Para sistemas que deben abordar requisitos de seguidad avanzados.</li>
+<li><em>Vista de rendimiento:</em> Si el rendimiento es una preocupación clave, se podría incluir una vista que muestre cómo las decisiones arquitetónicas afectan este atributo.</li>
+</ul>
+</li>
+</ul>
+<h2 id="beneficios-del-enfoque-basado-en-vistas">Beneficios del enfoque basado en vistas</h2>
+<ul>
+<li><em>Claridad:</em> Descomponer el sistema en diferentes vistas ficilita la compresión de la arquitectura por parte de diferentes grupos de interés. Cada vista aborda preocupaciones espcificas y es legible para una audiencia particular.</li>
+<li><em>Modularidad:</em> Permite a los equipos trabajar en diferentes partes de la arquitectura sin perder de vista el panorama completo.</li>
+<li><em>Facilita la comunicación:</em> Las vistas proporcionan un lenguaje común</li>
+</ul>
+<h2 id="documentación-basada-en-vistas-conclusión">Documentación basada en vistas: Conclusión</h2>
+<ul>
+<li>En el enfoque basado en vistas propuesto en &ldquo;Documenting Software Architecture&rdquo; es una forma eficaz de documentar arquitecturas complejas.</li>
+<li>Al dividir la arquitectura en varias vistas, es posible abordar diferentes preocupaciones de los interesados y crear una documentación que sea útil para todo equipo, desde desarrolladores hasta administradores de sistemas.</li>
+</ul>
+<h2 id="aspectos-más-allá-de-las-vistas">Aspectos más allá de las vistas</h2>
+<ul>
+<li>Existen varios elementos adicionales que son importantes para documentar adecuadamente la arquitectura de un sistem:
+<ul>
+<li>Tácticas y desiciones de diseño</li>
+<li>Requisitos de calidad</li>
+<li>Contexto arquitectónico</li>
+<li>Patrones arquitectónicos</li>
+<li>Evolución de la arquitectura</li>
+<li>Restricciones arquitectóicas</li>
+<li>Consideraciones de seguridad</li>
+<li>Riesgos y mitigaciones</li>
+</ul>
+</li>
+</ul>
+<h2 id="tácticas-y-decisiones-de-diseño">Tácticas y decisiones de diseño</h2>
+<ul>
+<li><em>Propósito:</em> Las desiciones arquitectónicas son las que determinan la estructura y comportamiento del sistema. Documentar las decisiones clave y las razones detrás de ellas permite que otros comprendan no solo que se hizo, sino por qué.</li>
+<li><em>Contenido:</em>
+<ul>
+<li><em>Justificación:</em> Explicar las razones detrás de las elecciones arquitectónicas, como la eleccion de ciertos patrones, tecnologías o enfoques</li>
+<li><em>Alternativas:</em> Describir las opciones que fueron consideradas pero no seleccionadas, así como las ventajas y desventajas de cada una.</li>
+<li><em>Implicaciones:</em> Cómo estas decisiones impactan en la calidad de sistema, su escalabilidad, en rendimiento, seguridad, etc.</li>
+</ul>
+</li>
+<li><em>Ejemplo:</em> Documentar por qué se eligió una arquitectura de microservicios en lugar de una monolitica y como esa elección afecta la escalabilidad y el mantenimiento del sistema a largo plazo</li>
+</ul>
+<h2 id="atribubtos-de-calidad">Atribubtos de calidad</h2>
+<ul>
+<li><em>Proposito:</em> Uno de los elementoa más importantes que influye en las decisiones arquitectónicas son los atributos de calidad del sistema. Estos atributos no siempre se ven directamente en las vistas de arquitectura, pero deben ser explícitamente documentados.</li>
+<li><em>Contenido:</em>
+<ul>
+<li>Especificar los atributos de calidad más importantes para el sistema</li>
+<li>Detallar cómo la arquitectura aborda esos atributos y qué decisiones se tomarin para optimizarlos</li>
+<li>Documentar cualquier compensación o compromiso realizado para lograr ciertos atributos de calidad a expensas de otros</li>
+</ul>
+</li>
+<li><em>Ejemplo:</em> En un sistema donde el rendimiento es crítico, se podría documentar cómo la arquitectura fue diseñada para minimizar la latencia, y qué decisiones se tomaron para balancear eso con la mantenibilidad del código</li>
+</ul>
+<h2 id="contexto-arquitectónico">Contexto arquitectónico</h2>
+<ul>
+<li><em>Proposito:</em> Describe el entorno en que opera el sistema y cómo interactúa con otros sistemas o entidades externas. Es fundamental entender las dependencias externas del sistema y las interfaces con las que debe interactuar</li>
+<li><em>Contenido:</em>
+<ul>
+<li>Definir los sistema externo con los que interactúa el sistema</li>
+<li>Describir los protocolos, APIs o interfaces utilizadas</li>
+<li>Explicar las limitaciones o dependencias que resultan de estas interacciones</li>
+</ul>
+</li>
+<li><em>Ejemplo:</em> Si un sistema depende de una API externa para recibir datos en tiempo real, la documentación debe describir esa dependencia, los mecanismos de comunicación y cualquier implicación en caso de fallo de esa API</li>
+</ul>
+<h2 id="patrones-arquitectonicos">Patrones arquitectonicos</h2>
+<ul>
+<li><em>Proposito:</em> Los patrones arquitectonicos son soluciones probadas a problemas comunes en el diseño de sistemas. Documentar los patrones utilizados proporciona a otros desarrolladores y arquitectos una vision mas clara de las decisiones estructurales generales del sistema.</li>
+<li><em>Contenido:</em>
+<ul>
+<li>Describir los patrones arquitectonicos utilziados, como MVC, microservicios, arquitectura en capas, entre otros.</li>
+<li>Explicar por que se selecciono un patron en particular y como se implementa en el sistema</li>
+</ul>
+</li>
+<li><em>Ejemplo:</em> Documentar el uso de un patron de eventos y comandos (CQRS) en un sistema donde se requiere operaciones intensivas de lectura y explicar como se mejora el rendimiento en esas areas.</li>
+</ul>
+<h2 id="evolución-de-la-arquitectura">Evolución de la arquitectura</h2>
+<ul>
+<li><em>Proposito:</em> Las arquitecturas de software suelen evolucionar con el tiempo, y es importante documentar como han cambiado o se espera que cambien a medida que el sistema crece o se adapta a nuevas necesidades.</li>
+<li><em>Contenido:</em>
+<ul>
+<li>Documentar los cambios importantes en la arquitectura a lo largo del tiempo</li>
+<li>Explicar las razones detras de estos cambios</li>
+<li>Describir el impacto de estos cambios en la calidad del sistema y en las futuras desiciones.</li>
+</ul>
+</li>
+<li><em>Ejemplo:</em> Un sistema que comienza como monolitico y luego migra a una arquitectura de microservicios debe documentar como y por que hizo esa transicion</li>
+</ul>
+<h2 id="restricciones-arquitetónicas">Restricciones arquitetónicas</h2>
+<ul>
+<li><em>Proposito:</em> En cualquier proyecto de software, existen restricciones que limitan las opciones arquitectonicas. Estas pueden provenir de requisitos de negocio, limitaciones tecnicas o necesidades especificas del cliente.</li>
+<li><em>Contenido:</em>
+<ul>
+<li>Documentar las restricciones impuestas en el diseño, ya sea por limitaciones de hardware, presupuesto, plazos o regulaciones.</li>
+<li>Explicar como esas restricciones influyeron en las decisiones de diseño</li>
+</ul>
+</li>
+<li><em>Ejemplo:</em> Si una aplicacion debe funcionar en dispositivos con recursos limitados, las restricciones de rendimiento y memoria se conviertan en factores clave que influiran en la Arquitectura</li>
+</ul>
+<h2 id="consideraciones-de-seguridad">Consideraciones de seguridad</h2>
+<ul>
+<li><em>Proposito:</em> En michos sistemas, la seguridad es un atributo fundamental. Es importante documentar como la arquitectura aborda los problemas de seguridad y como protege el sistem frente a amenazas</li>
+<li><em>Contenido:</em>
+<ul>
+<li>Identificar las amenzas de seguidad mas importantes que enfrenta el sistema</li>
+<li>Describir las contramedidas arquitectonicas implementadas para mitigar esas amenazas</li>
+<li>Explicar las decisiones tomadas para equilibrar la seguridad con otros atributos del sistema, como el rendimiento o la facilidad de uso</li>
+</ul>
+</li>
+<li><em>Ejemplo:</em> Documentar el uso de cifrado extremo a extremo para proteger la informacion sensible durante la transmision, y los mecanismo de autenticacion y autorizacion utilizados en el sistema</li>
+</ul>
+<h2 id="riesgos-y-mitigaciones">Riesgos y mitigaciones</h2>
+<ul>
+<li><em>Proposito:</em> Toda arquitectura conlleva riesgos, ya sean tecnicos, financieros o relacionados con la implementacion. Es importante documentar los riesgos identificados y como se planea mitigarlos</li>
+<li><em>Contenido:</em>
+<ul>
+<li>Identificar los riesgos arquitectonicos mas importantes</li>
+<li>Describir las estrategias utilizadas para mitigar esos riesgos</li>
+<li>Explicar los posibles impactos si los riesgos no se mitigan adecuadamente</li>
+</ul>
+</li>
+<li><em>Ejemplo:</em> En un sistema distribuido, los riesgos de fallos en la comunicación entre microservicios pueden ser mitigados con el uso de circuit breakers y politicas de reintento</li>
+</ul>
+<h2 id="mas-alla-de-las-vistas-conclusión">Mas alla de las vistas Conclusión</h2>
+<ul>
+<li>La documentacion de arquitectura no solo debe enfocarse en mostrar las estructuras y relaciones del sistema a traves de diferentes vistas</li>
+<li>Tambien debe proporcionar un contexto mas profundo sobre las decisiones arquitectonicas, los atributos de calidad, las retricciones y otros factores importantes</li>
+<li>Esto permite que la documentacion sea mas rica y util a lo largo del ciclo de la vida del sistema, ayudando a los equipos a comprender mejor el &ldquo;por que&rdquo; detras de la arquitectura y no solo el &ldquo;que&rdquo;</li>
+</ul>
+<h2 id="documentación-de-estilos-arquitectónicos">Documentación de estilos arquitectónicos</h2>
+<ul>
+<li>Es fundamental que este adecuadamente documentado el estilo o estilos elegidos para asegurar que todos los involucrados en el proyecto comprendan la estructura y las interacciones del sistema</li>
+<li>Esto incluye no solo la descripcion de los componentes y sus relaciones, si no tambien los principios y las decisiones clave que motivaron la eleccion del estilo</li>
+</ul>
+<h2 id="componetes-clave-al-documentar">Componetes clave al documentar</h2>
+<ul>
+<li>Descrpcion del estilo</li>
+<li>Estructura del sistema basada en el estilo</li>
+<li>Patrones de comunicación</li>
+<li>Razonamiento detras de la eleccion del estilo</li>
+<li>Limitaciones del estilo</li>
+<li>Adaptaciones o personalizaciones del estilo</li>
+<li>Patrones comunes asociados al estilo</li>
+<li>Consideraciones de calidad para el estilo</li>
+</ul>
+<h2 id="descripcion-del-estilo">Descripcion del estilo</h2>
+<ul>
+<li><em>Proposito:</em> Explicar las caracteristicas del estilo, los tipos de sistemas para los que es mas adecuado y los problemas que aborda</li>
+<li><em>Contenido:</em>
+<ul>
+<li>Definicion general del estilo</li>
+<li>Principales caracteristicas del estilo</li>
+<li>Ejemplos de sistemas que utilizan este estilo</li>
+</ul>
+</li>
+<li><em>Ejemplo:</em> Para una arquitectura en capas, se describe como el sistema se organiza en capas (capa de presentacion, capa logica, capa de datos) y como las capas interactúan entre si</li>
+</ul>
+<h2 id="estructura-del-sistema-bada-en-el-estilo">Estructura del sistema bada en el estilo</h2>
+<ul>
+<li><em>Proposito:</em> Definir la estructura concreta del sistema de acuerdo con ese estilo. Esto implica documentar los componentes principales, sus responsabilidades y como interactúan</li>
+<li><em>Contenido:</em>
+<ul>
+<li>Componetes principales del sistema</li>
+<li>Conexiones y relaciones entre esos componentes</li>
+<li>Responsabilidades de cada componente dentro de la estructura del sistema</li>
+</ul>
+</li>
+<li><em>Ejemplo:</em> En una arquitectura de microservicios, se documentan las microservicios individuales, como interactuan a traves de APIs, y como se gestionan aspectos como el descubrimiento de servicios y la orquestacion</li>
+</ul>
+<h2 id="patrones-de-comunicación">Patrones de comunicación</h2>
+<ul>
+<li><em>Proposito:</em> Cada estilo arquitectonico tiene un conjunto de patrones de comunicación de define como los componentes interactuan entre si. Documentar estos patrones es crucial para comprender como los datos y las solicitudes fluyen a traves del sistema</li>
+<li><em>Contenido</em>
+<ul>
+<li>Patrones de comunicación principales, como solicitudes sincronas, asincronia, mensajeria bada en eventos</li>
+<li>Tecnologias o protocolos utilizados para facilitar la comunicacion (HTTP, REST, gRPC, etc)</li>
+</ul>
+</li>
+<li><em>Ejemplo:</em> En una arquitectura orientada a eventos, se documenta como los eventos se publican y suscriben en un bus de eventosm y como los diferentes servicios reaccionan a esos eventos. OpenAPI, AsyncAPI</li>
+</ul>
+<h2 id="razonamiento-detras-de-la-eleccion-del-estilo">Razonamiento detras de la eleccion del estilo</h2>
+<ul>
+<li><em>Proposito:</em> Es fundamental documentar las razones por las cuales se eligio un estilo arquitectonico especifico. Esto proporciona contexto para las decisiones tomadas ya ayuda a futuros arquitectos y desarrolladores a entender por que el sistem es estructurado de esa manera.</li>
+<li><em>Contenido:</em>
+<ul>
+<li>Ventajas del estilo arquitectonico elegido en comparacion con otras alternatitvas</li>
+<li>Requisitos del sistema que llevaron a elegir ese estilo</li>
+<li>Descripcion de los problemas que resuelve el estilo seleccionado</li>
+</ul>
+</li>
+<li><em>Ejemplo:</em> Si se eligio una arquitectura de microservicios, se puede explicar que flexibilidad para escalar individualmente los componentes del sistema fue clave para satisfacer los requisitos de escalabilidad del negocio</li>
+</ul>
+<h2 id="limitaciones-del-estilo">Limitaciones del estilo</h2>
+<ul>
+<li><em>Proposito:</em> Ningun estilo arquitectonico es perfecto para todos los casos. Cada uno tiene limitaciones que es importante decumentar para que los equipos comprendan los desafios potenciales a los que se enfrentanran al adoptar un estilo especifico</li>
+<li><em>Contenido:</em>
+<ul>
+<li>Restricciones inherentes al estilo arquitectonico</li>
+<li>Desventajas o desafios tecnicos</li>
+<li>Situaciones en las que el estilo podria no ser adecuado</li>
+</ul>
+</li>
+<li><em>Ejemplo:</em> Para una arquitectura monolitica, las limitaciones decumentadas podrian incluir la dificultad para escalar horizontalmente y los problemas relacionados con el despliegue de grandes bases de codigo</li>
+</ul>
+<h2 id="adaptaciones-o-personalizaciones-del-estilo">Adaptaciones o personalizaciones del estilo</h2>
+<ul>
+<li><em>Proposito:</em> En algunos casos, un estilo arquitectonico necesita ser adaptado o personalizado para ajustarse mejor a los requisitos especificos del sistema. Documentar estas adaptaciones es esencial para que otros puedan entender como y por que se ha modificado el estilo</li>
+<li><em>Contenido:</em>
+<ul>
+<li>Explicacion de las personalizaciones o modificaciones al estilo estandar</li>
+<li>Justificacion para esas personalizaciones</li>
+<li>Como las adaptaciones impactan la arquitectura general del sistema</li>
+</ul>
+</li>
+<li><em>Ejemplo:</em> En una arquitectura orientada a eventos, podria ser necesario personalizar el mecanismo de enrutamiento de eventos para ajustarse a requisitos espcificos de latencia o seguridad</li>
+</ul>
+<h2 id="patrones-comunes-asociados-al-estilo">Patrones comunes asociados al estilo</h2>
+<ul>
+<li><em>Proposito:</em> Muchos estilos arquitectonicos se asocian comunmente con ciertos patrones de diseño. Documentar estos patrones es importante para que los desarrolladores puedan aplicarlos de manera consistente en el sistema</li>
+<li><em>Contenido:</em>
+<ul>
+<li>Patrones de diseño tipico asociados con el estilo arquitectonico</li>
+<li>Ejemplos de como se implementan estos patrones en el sistema</li>
+</ul>
+</li>
+<li><em>Ejemplo:</em> En una arquitectura en capas, los patrones tipicos incluyen el patron de &ldquo;DAO&rdquo; (Data Access Object) para la interaccion con la base de datos, o el patron &ldquo;MVC&rdquo; (Modelo Vista Controlador) en la capa de presentacion</li>
+</ul>
+<h2 id="consideraciones-de-calidad-para-el-estilo">Consideraciones de calidad para el estilo</h2>
+<ul>
+<li><em>Proposito:</em> Cada estilo arquitectonico tiene diferentes implicaciones para los atributos de calidad del sistema, como rendimiento, escalabilidad, mantenibilidad, etc. Documentar como el estilo afecta estos atributos ayuda a garantizar que el sistema cumpla con los requisitos de calidad.</li>
+<li><em>Contenido:</em>
+<ul>
+<li>Impacto del estilo en los atributos de calidad, como seguridad, escalabilidad, rendimiento, etc</li>
+<li>Compromisos entre diferentes atributos de calidad que resultan del estilo arquitectonico</li>
+</ul>
+</li>
+<li><em>Ejemplo:</em> En una arquitectura de microservicios, se podrian documentar como la escalabilidad horizontal es mejoradam pero a costa de una mayor complejidad operativa y sobrecarga en la comunicacion (latencia)</li>
+</ul>
+<h2 id="aspectos-clave-de-la-documentación">Aspectos clave de la Documentación</h2>
+<ul>
+<li>Conocer a la audiencia</li>
+<li>Usar un lenguaje claro y conciso</li>
+<li>Estructura coherente</li>
+<li>Incluir diagramas visuales</li>
+<li>Mantener la documentación actualizada</li>
+<li>Proporcionar referencias cruzadas</li>
+<li>Documentar las decisiones clave de diseño</li>
+<li>Especificar los atributos de calidad del sistema</li>
+<li>Evitar la redundancia innecesaria</li>
+</ul>
+<h2 id="conoce-a-tu-audiencia">Conoce a tu audiencia</h2>
+<ul>
+<li><em>Proposito:</em> La documentación de arquitectura es leida por una audiencia diversa que incluye desarrolladores, arquitectos, gerentes, partes interesadas no tecnicas e incluso clientes. Por lo tanto es esencial adaptar la escritura a las necesidades y el nivel de compresion de cada grupo</li>
+<li><em>Recomendaciones:</em>
+<ul>
+<li>Identificar claramente quien sera el lector de cada parte de la documentación</li>
+<li>Proporcionar diferentes niveles de detalle segun el tipo de audiencia: por ejemplo, altos niveles de abstraccion para gerentes o clientes, y detalles tecnicos profundos para desarrolladores y arquitectos</li>
+</ul>
+</li>
+<li><em>Ejemplo:</em> Un diagrama de alto nivel de la arquitectura para un cliente que no este familiarizado con los detalles tecnicos puede ser suficiente para explicar como interactúan los componentes principales del sistema. Sin embargo, los desarrolladores necesitaran diagramas mas detallados con descripciones precisas de los modulos y como interactúan</li>
+</ul>
+<h2 id="usa-un-lenguaje-claro-u-conciso">Usa un lenguaje claro u conciso</h2>
+<ul>
+<li><em>Proposito:</em> La claridad es crucial en la documentación de arquitectura para evitar malentendidos. Un lengiaje impreciso o ambiguo puede generar confusion entre los lectores, lo que podria llevar a errores en la implementacion</li>
+<li><em>Recomendaciones:</em>
+<ul>
+<li>Evitar jergas tecnicas innecesarias o complejidad excesiva, especialmente cuando no son necesarias para la comprension del concepto</li>
+<li>Ser directo en la explicacion de conceptos, evitando palabras o frases vagas</li>
+<li>Utilizar listas y tablas cuando sea apropiado para desglosar informacion compleja</li>
+</ul>
+</li>
+<li><em>Ejemplo:</em> En lugar de escribir &ldquo;este componente maneja varias tareas importantes&rdquo;, se puede ser mas perciso con &ldquo;este componente procesa solicitudes de autenticacion de usuarios y consultas de base de datos&rdquo;</li>
+</ul>
+<h2 id="estructura-coherente">Estructura coherente</h2>
+<ul>
+<li><em>Proposito:</em> Una buena estructura facilita que los lectores encuentren la informacion que necesitan. La organizacion logica de la documentacion ayuda a que esta sea mas accesible y facilita el mantenimiento a largo plazo</li>
+<li><em>Recomendacion:</em>
+<ul>
+<li>Seguir un esquema de organizacion claro y consistente en todos los documentos</li>
+<li>Incluir una tabla de contenidos que permita a los lectores navegar facilmente por la documentacion</li>
+<li>Separar las secciones en bloques logicos, como introduccion, vistas arquitectonicas, decisiones clave, etc</li>
+<li>Usar encabezados y subencabezados descriptivos que reflejen el contenido de cada seccion</li>
+</ul>
+</li>
+<li><em>Ejemplo:</em> Una buena estructura prodria empezar con una vision general de alto nivel, seguida de vistas especificas (logica, de desarrollo, de despliegue), y luego profundizar en las decisiones clave de diseño, patrones y tacticas utilizadas</li>
+</ul>
+<h2 id="incluye-diagramas-visuales">Incluye diagramas visuales</h2>
+<ul>
+<li><em>Proposito:</em> Los diagramas y representaciones graficas ayudan a ilustrar conceptos arquitectonicos complejos de manera mas clara que solo texto. Los diagramas permiten a los lectores visualizar las interacciones entre los componentes del sistema y como se organiza la arquitectura</li>
+<li><em>Recomendaciones:</em>
+<ul>
+<li>Usar diagramas consistentes, como diagramas de clase UML, diagramas de componentes o diagramas de despliegue, para ilustrar estructuras y relaciones</li>
+<li>Asegurarse de que los diagramas esten actualizados y alineados con las descripciones contextuales</li>
+<li>Proporcionar explicaciones textuales para cada diagrama, aclarando el contexto y los detalles clave</li>
+</ul>
+</li>
+<li><em>Ejemplo:</em> Incluir un diagrama de componentes que muestre como interactuan los microservicios en un sistema basado en microservicios, complementando con descripciones textuales de las responsabilidades de cada microservicios</li>
+</ul>
+<h2 id="mantener-la-documentacion-actualizada">Mantener la documentacion actualizada</h2>
+<ul>
+<li><em>Proposito:</em> La documentacion arquitectonica pierde valor si no se mantiene actualizada con respecto a los cambios en el sistema. A medida que el sistema evoluciona, la documentancion debe reflejar las nuevas decisiones arquitectonicas, los cambios en los componentes y cualquier evolucion en la estructura general</li>
+<li><em>Recomendacion:</em>
+<ul>
+<li>Definir procesos para la revision y actualizacion regular de la documentacion, especialmente despues de cambios, importantes en la arquitectura</li>
+<li>Asegurarse de que la documentación este alineada con el codigo actual, para evitar que los desarrolladores trabajen con informacion obsoleta</li>
+<li>Utilizar sistemas de control de versiones para la documentacion, similar a como se gestionan los cambios en el codigo</li>
+</ul>
+</li>
+<li><em>Ejemplo:</em> Si un nuevo microservicio se añade al sistema, la documentación debe ser actualizada para incluir ese microservicio y explicar su funcion y como interactua con el resto del sistema</li>
+</ul>
+<h2 id="proporciona-referencias-cruzadas">Proporciona referencias cruzadas</h2>
+<ul>
+<li><em>Proposito:</em> Dado que la documentacion arquitectonica cubre diferentes vistas y aspectos del sistema, es importante proporcionar referencias cruzadas entre las secciones para facilitar la navegacion y la compresion</li>
+<li><em>Recomendaciones:</em>
+<ul>
+<li>Incluir enlaces o referencias entre diferentes partes de la documentacion, como entre una vista logica y la vista de desarrollo, para que los lectores puedan conectar conceptos relacionados</li>
+</ul>
+</li>
+<li><em>Ejemplo:</em> Si se describe un componente en la vista logica, se puede proporcionar un enlace a la vista de desarrollo que muestra como se implementa ese componente en el codigo fuente</li>
+</ul>
+<h2 id="documenta-las-decisiones-clave-de-diseño">Documenta las decisiones clave de diseño</h2>
+<ul>
+<li><em>Proposito:</em> Las decisiones de diseño arquitectonico son criticas para comprender el por que detras de la arquitectura. Documentarlas de manera clara ayuda a los futuros desarrolladores y arquitectos a entender el contexto y las razones detras de la estructura actual del sistema</li>
+<li><em>Recomendacion:</em>
+<ul>
+<li>Para cada decision importante, incluir detalled sobre la alternativa considerada, los pro y contras de cada opcion, y la razon final para la decision tomada</li>
+<li>Incluir informacion sobre como estas decisiones afectan a los atributos de calidad del sistema (rendimiento, escalabilidad, etc)</li>
+</ul>
+</li>
+<li><em>Ejemplo:</em> Si se decide utilizar una arquitectura basada en eventos en lugar de una arquitectura monolitica, documentar por que esta decision se tomo, que beneficio aporto y cuales fueron las limitaciones a considerar</li>
+</ul>
+<h2 id="especifica-los-atributos-de-calidad-del-sistema">Especifica los atributos de calidad del sistema</h2>
+<ul>
+<li><em>Proposito:</em> Los atributos de calidad, como el rendimiento, la escalabilidad, la seguridad y la mantenibilidad, son esenciales para la arquitectura de un sistema y debe ser documentado claramente</li>
+<li><em>Recomendacion:</em>
+<ul>
+<li>Explicar como la arquitectura soporta los atributos de calidad clave</li>
+<li>Documentar cualquier compensación o sacrificio que se haya hecho en el diseño para priorizar ciertos atributos de calidad sobre otros</li>
+</ul>
+</li>
+<li><em>Ejemplo:</em> Si la arquitectura ha sido optimizada para escalabilidad, explicar como se logra esta escalabilidad, y si ha habido algun sacrificio en terminos de simplicidad o mantenibilidad</li>
+</ul>
+<h2 id="evita-la-redundancia-innecesaria">Evita la redundancia innecesaria</h2>
+<ul>
+<li><em>Proposito:</em> La documentacion de arquitectura debe ser clara y eficiente. evitando la repeticion innecesaria que puede hacerla mas dificil de leer y mantener. Sin embargo, es importante saber cuando la redundancia es util, como cuando se necesita proporcionar contecto o explicaciones clave en multiples lugares</li>
+<li><em>Recomendacion:</em>
+<ul>
+<li>Evitar duplicar informacion que ya se haya explicado claramente en otra parte del documento, utilizando referencias cruzadas cuando sea posible</li>
+<li>Repetir informacion solo cuando sea necesario para la claridad y la compresión en diferentes contexto</li>
+</ul>
+</li>
+<li><em>Ejemplo:</em> En lugar de repetir la descripcion de un componente en varias vistas, incluir una referencia a la vista correspondiente donde ya se haya explicado</li>
+</ul>
+<h2 id="plantillas-para-la-documentación">Plantillas para la documentación</h2>
+<ul>
+<li>Las plantillas son guias que estandarizan la manera en que se organiza la informacion en la documentacion. Usar plantillas ayuda a los arquitectos y equipos de desarrollo a asegurarse de que se cubren todos los aspectos relevantes de la arquitectura de manera clara y consistente</li>
+</ul>
+<ul>
+<li>Plantilla de vistas arquitectonicas</li>
+<li>Plantilla de decisiones arquitectonicas</li>
+<li>Plantilla de atributos de calidad</li>
+<li>Plantilla de riesgos y mitigaciones</li>
+</ul>
+<h2 id="plantillas-de-vistas-arquitectonicas">Plantillas de vistas arquitectonicas</h2>
+<ul>
+<li><em>Proposito:</em> Estructura la documentacion de las diferentes vistas de la arquitectura, asegurando que cada vista este documentada de manera coherente</li>
+<li><em>Contenido:</em>
+<ul>
+<li>Nombre de la vista: El nombre de la vista (por ejemplo, vista logica, vista de desarrollo)</li>
+<li>Proposito de la vista: Descripcion del objetivo de la vista y las preguntas que responde</li>
+<li>Elementos de la vista: Componente principales de la vista (modulos, servicios, nodos, etc)</li>
+<li>Relaciones entre elementos: Descripcion de como interactuan los componentes dentro de la vistas</li>
+<li>Diagramas: Diagramas que reprensentan visualmente la estructura o interaccion entre los componentes</li>
+<li>Decision arquitectonica: Las decisiones clave que afectan la estructura de esa vista</li>
+<li>Referencias cruzadas: Enlaces o referencias a otras vistas o decisiones arquitectonicas que afectan o complementan esta vista</li>
+</ul>
+</li>
+<li><em>Ejemplo:</em> Para la vista de desarrollo, esta plantilla incluiria la estructura de modulos y como se organiza en paquetes o subsistemas, junto con un diagrama que muestre esa organización</li>
+</ul>
+<h2 id="plantilla-de-decisiones-arquitectonicas">Plantilla de decisiones arquitectonicas</h2>
+<ul>
+<li><em>Proposito:</em> Facilita la captura de las decisiones arquitectonicas clave, incluyendo las alternativas evaluadas, las razones para tomar una decision y su impacto en el sistema</li>
+<li><em>Contenido:</em>
+<ul>
+<li>Titulo de la decision: Una descripcion concisa de la decision arquitectonica</li>
+<li>Contexto: Explicacion del problema que llevo a la decision y su contexto en el sistema</li>
+<li>Alternativas: Las diferentes opciones o enfoques que se consideraron</li>
+<li>Decision final: La opcion elegida y por que se selecciono</li>
+<li>Implicaciones: Los efectos de esta decision en otras partes del sistema, incluyendo posibles impactos en atributos de calidad (rendimiento, seguridad, escalabilidad, etc)</li>
+<li>Estado: Si la decision esta aprobada, pendiente o en revision</li>
+<li>Responsable: Quien tomo la decision o que es responsable de ella</li>
+</ul>
+</li>
+<li><em>Ejemplo:</em> Una decision sobre si utilizar una arquitectura de microservicios o una monolitaca podria documentarse en esta plantilla, describiendo los pros y contras de cada enfoque y la Justificacion para elegir uno sobre el otro</li>
+</ul>
+<h2 id="plantillas-de-atributos-de-calidad">Plantillas de atributos de calidad</h2>
+<ul>
+<li><em>Proposito:</em> Proporciona un formato estandarizado para documentar como la arquitectura satisface los atributos de calidad especificos, como la escalabilidad, rendimiento, seguidad, mantenibilidad, etc</li>
+<li><em>Contenido:</em>
+<ul>
+<li>Descripcion del atributo de calidad: Explicacion del atributo de calidad especifico (por ejemplo, tiempo de respuesta o capacidad de recuperacion ante fallos)</li>
+<li>Requisitos del sistem relacionados: Que requisitos especificos del sistema estan relacionados con este atributo</li>
+<li>Decisiones arquitectonicas: Que decisiones de diseño apoyan la Implementaciónde este atributo de calidad</li>
+<li>Impacto en otras partes del sistema: Como esta consideracion afecta a otros atributos o partes del sistema</li>
+<li>Evidencia de cumplimiento: Pruebas o mecanismos implementados para asegurar que el sistema cumple con los requisitos de calidad establecidos</li>
+</ul>
+</li>
+<li><em>Ejemplo:</em> Para el atributo de escalabilidad, la plantilla documentaria como se han implementado mecanismos para escalar componentes especificos, por ejemplo, mediante el uso de microservicios o una arquitectura de eventos</li>
+</ul>
+<h2 id="plantilla-de-riesgos-y-mitigaciones">Plantilla de riesgos y mitigaciones</h2>
+<ul>
+<li><em>Proposito:</em> Ayuda a capturar y documentar los riesgos arquitectonicos y las estrategias utilizadas para mitigar dichos riesgos</li>
+<li><em>Contenido:</em>
+<ul>
+<li>Descripcion del riesgo: Una explicacion del riesgo identificando en el diseño o la implementacion de la arquitectura</li>
+<li>Impacto potencial: Cual seria el efecto si el riesgo se materializa (por ejemplo, afectaria la seguridad, el rendimiento, etc)</li>
+<li>Probabilidad: Una estimacion de la probabilidad de que el riesgo ocurra</li>
+<li>Estrategia de mitigacion: Medidas para mitigar el riesgo o reducir su impacto</li>
+<li>Estado: El estado actual del riesgo (activo, mitigado, pendiente)</li>
+</ul>
+</li>
+<li><em>Ejemplo:</em> Un riesgo de sobrecarga en la base de datos podria documentarse con estrategias de mitigacion como el uso de caches distribuidos o la implementacion de replicacion de base de datos</li>
+</ul>
+<h2 id="herramientas-para-la-documentacion">Herramientas para la documentacion</h2>
+<ul>
+<li>Herramientas de modelado de diagramas</li>
+<li>Herramientas de gestion de documentación</li>
+<li>Sistemas de control de version (VCS)</li>
+<li>Herramientas de gestion de riesgos</li>
+<li>Generadores automaticos de documentacion</li>
+</ul>
+<h2 id="herramientas-de-modelado-de-diagramas">Herramientas de modelado de diagramas</h2>
+<ul>
+<li><em>Proposito:</em> Crear diagramas arquitectonicos, como diagramas UML, diagramas de componentes, diagramas de despliegue, entre otros. Se pueden generar visualmente o mediante codigo. Se recomienda usar una basada en codigo</li>
+<li><em>Recomendaciones visuales:</em>
+<ul>
+<li>Draw.io: Una opcion gratuita y de codigo abierto para crear diagramas de arquitectura</li>
+<li>Enterprice Architect: Herramienta orientada a la creacion de modelos UML y diseño arquitectonico, utilizada en entornos empresariales</li>
+</ul>
+</li>
+<li><em>Recomendaciones de basada en codigo</em>
+<ul>
+<li>Memaid (<a href="http://mermaid.live/">http://mermaid.live/</a>)</li>
+<li>PlantUML (<a href="https://plantuml.com/">https://plantuml.com/</a>)</li>
+</ul>
+</li>
+<li><em>Ejemplo de uso:</em> Crear un diagrama de componentes que muestre como los diferente modulos de un sistema de microservicios interactúan entre si</li>
+</ul>
+<h2 id="herramientas-de-gestiona-de-documentación">Herramientas de gestiona de documentación</h2>
+<ul>
+<li><em>Proposito:</em> Mantener y gestionar la documentacion arquitectonica, asegurando que este centralizada, accesible y versionada</li>
+<li><em>Herramientas recomendadas:</em>
+<ul>
+<li>Confluence: Una plataforma de colaboración para documentar y compartir informacion tecnica dentro de los equipos</li>
+<li>Google Docs o Microsoft Word: Herramientas simples pero efectivas para crear y colocar en ducumentos de texto</li>
+<li>Docusaurus o MkDocs: Herramientas de documentacion que permiten generar sitios web de documentacion estatica a partir de archivos Markdown, utiles para documentaciones extensas y tecnicas</li>
+<li>Asciidoctor</li>
+<li>GitHub Pages</li>
+</ul>
+</li>
+<li><em>Ejemplo de uso:</em> User Confluence para centralizar la documentacion arquitectonica, permitiendo que todos los equipos accedan y colaboren en ella facilmente</li>
+</ul>
+<h2 id="sistemas-de-control-de-versiones-vcs">Sistemas de control de versiones (VCS)</h2>
+<ul>
+<li><em>Proposito:</em> Versionar y gestionar los cambios en la documentacion de arquitectura de la misma manera que se hace con el codigo fuente</li>
+<li><em>Herramientas recomendadas:</em>
+<ul>
+<li>Git: Un sistema de control de versiones ampliamente utilizado que permite realizar seguimientos de los cambios en la documentacion    - GitHub: Pages o GitLab Pages: Permiten alojar documentacion en linea utilizando archivos Markdown versionados con Git</li>
+</ul>
+</li>
+<li><em>Ejemplo de uso:</em> Usar Git para versionar los documentos de arquitectura en formato Markdown y publicarlos automaticamente en un estatico utilizando GitHub Pages</li>
+</ul>
+<h2 id="herramientas-de-gestion-de-riesgos">Herramientas de gestion de riesgos</h2>
+<ul>
+<li><em>Proposito:</em> Gestionar los riesgos asociados a las decisiones arquitectonicas y las estrategias de mitigacion</li>
+<li><em>Herramientas recomendadas:</em>
+<ul>
+<li>JIRA: Herramienta de gestion de proyectos que permiten registrar y hacer seguimiento de los riesgos</li>
+<li>Trello: Una herramienta visual para la gestion de proyectos y tareas que puede ser usada para documentar y rastrear riesgos arquitectonicos</li>
+<li>GitHub Issues: Usando etiquetas en los issues prodriamos gestionar Riesgos</li>
+<li>Hojas de calculo: Google Sheets o Excel prodrian ser alternatitvas</li>
+</ul>
+</li>
+<li><em>Ejemplo de uso:</em> Crear tarjetas en Trello que representen riesgos arquitectonicos, asociando cada tarjeta con la estrategia de mitigacion correspondiente y manteniendo un seguimiento del estado del riesgo</li>
+</ul>
+<h2 id="generadores-automaticos-de-documentacion">Generadores automaticos de documentacion</h2>
+<ul>
+<li><em>Proposito:</em> Automatizar la generacion de documentacion a partir del codigo fuente o modelos arquitectonicos</li>
+<li><em>Herramientas recomendadas:</em>
+<ul>
+<li>PlantUML: Permite generar diagramas UML a partir de descripciones textuales. Es util para mantener los diagramas actualizados automaticamente en funcion de los cambios en el codigo</li>
+<li>Swagger: Herramienta para la generacion automatica de documentacion de APIs RESTful</li>
+</ul>
+</li>
+<li><em>Ejemplo de uso:</em> User PlantUML para generar diagramas de clases automaticamente a partir de descripciones textuales en la documentacion</li>
+</ul>
+<h2 id="mejores-practicas-para-la-documentacion">Mejores practicas para la documentacion</h2>
+<ul>
+<li>Manten la documentacion ligera</li>
+<li>Haz que la documentacion sea accesible y colaborativa</li>
+<li>Actualiza la documentacion de manera continua</li>
+<li>Incluye ejemplos y casos de uso reales</li>
+<li>Prioriza las decisiones arquitectonicas clave</li>
+<li>Documenta con diferentes niveles de abstraccion</li>
+<li>Alinea la documentacion con los ciclos de vida de desarrollo</li>
+<li>Incorpora pruebas y metricas de arquitectura</li>
+<li>Haz que la documentacion sea modular y reutilizable</li>
+<li>Utiliza una metodologia de documentacion iterativa</li>
+</ul>
+<h2 id="puntos-clave">Puntos clave</h2>
+<ul>
+<li>Atributos de calidad
+<ul>
+<li>Como identificarlos</li>
+<li>Administrarlos</li>
+</ul>
+</li>
+<li>Decisiones de diseño</li>
+</ul>
+<h2 id="identificar-atributos-de-calidad">Identificar atributos de calidad</h2>
+<ul>
+<li>Comprender los objetivos del negocio</li>
+<li>Analizar los casos de uso clave</li>
+<li>Entrevistar a los stakeholders</li>
+<li>Definir metricas claras</li>
+<li>Revisar patrones arquitectonicos</li>
+<li>Equilibrar compromisos (trade-offs)</li>
+<li>Herramientas utiles</li>
+</ul>
+<h2 id="comprender-los-objetivos-del-negocio">Comprender los objetivos del negocio</h2>
+<ul>
+<li>Lo primero es alinear la arquitectura con los objetivos del negocio. Preguntate: ¿Cuales son las prioridades y necesidades principales del cliente o negocio? Algunos ejemplos comunes son:
+<ul>
+<li>Escalabilidad: si se espera que el sistema crezca</li>
+<li>Disponibilidad: si el sistema debe estar accesible 24/7</li>
+<li>Seguridad: si se manejan datos sensibles</li>
+</ul>
+</li>
+</ul>
+<h2 id="analizar-los-casos-de-uso-clave">Analizar los casos de uso clave</h2>
+<ul>
+<li>Revisa los casos de uso o los escenarios mas importantes del sistema, y determina que atributos de calidad son criticos para el exito</li>
+<li>Cada caso de uso puede requerir diferentes atributos de calidad. Por ejemplo:
+<ul>
+<li>Un sistema de transacciones bancarias puede requerir integridad y confiabilidad</li>
+<li>Una aplicacion en tiempo real puede necesitar baja latencia y alto rendimiento</li>
+</ul>
+</li>
+</ul>
+<h2 id="entrevistar-a-los-stakeholders">Entrevistar a los stakeholders</h2>
+<ul>
+<li>Los stakeholders (clientes, usuarios finales, equipo de desarrollo, equipo de operaciones) tienen diferentes expectativas</li>
+<li>Realiza entrevistas para identificar sus prioridades en terminos de
+<ul>
+<li>Mantenibilidad: ¿Que tan facil sera modificar el sistema en el futuro?</li>
+<li>Protabilidad: ¿Necesita el sistema ser desplegado en diferentes plataformas?</li>
+<li>Usabilidad: ¿El sistema debe ser intuitivo para los usuarios?</li>
+</ul>
+</li>
+</ul>
+<h2 id="definir-metricas-claras">Definir metricas claras</h2>
+<ul>
+<li>Cada atributo de calidad debe tener una metrica cuantificable. Por ejemplo:
+<ul>
+<li>Rendimiento: El sistema debe procesar X solicitudes por segundo</li>
+<li>Disponibilidad: El sistema debe estar operativo el 99.9% del tiempo</li>
+<li>Seguridad: El sistema debe cumplir con las normativas X y Y</li>
+</ul>
+</li>
+</ul>
+<h2 id="definir-patrones-arquitectonicos">Definir patrones arquitectonicos</h2>
+<ul>
+<li>Con los atributos de calidad identificados puedes seleccionar patrones arquitectonicos que ayuden a cumplir con estos requisitos. Por ejemplo:
+<ul>
+<li>Para escalabilidad, podrias usar una arquitectura basada en microservicios</li>
+<li>Para seguridad, podrias aplicar principios de arquitectura hexagonal, donde los mecanismos de seguridad estan desacoplados del nucleo de la logica de negocio</li>
+</ul>
+</li>
+</ul>
+<h2 id="equilibrar-compromisos-trade-offs">Equilibrar compromisos Trade-offs</h2>
+<ul>
+<li>A menudo, los atributos de calidad entran en conflicto entre si</li>
+<li>Por ejemplo, mejorar la seguridad puede afectar la usabilidad o el rendimiento</li>
+<li>Es importante equilibrar estos compromisos con los stakeholders, priorizando los mas criticos para el exito del sistema</li>
+</ul>
+<h2 id="herramientas-utiles">Herramientas utiles</h2>
+<ul>
+<li>El uso de Herramientas de trabajo como ISO/IEC 25010 (calidad del software) puede ser de gran ayuda, ya que proporciona una lista detallada de atributos de calidad a considerar</li>
+<li>Tambien, metodologias como ATAM (Architectura Tradeoff Analysis Method) ayudan a analizar y priorizar estos atributos</li>
+<li>Identificar los atributos de calidad de un sistema es fundamental para tomar decisiones arquitectonicas que se alineen con las necesidades del negocio y las expectativas de los usuarios</li>
+</ul>
+<h2 id="que-es-atam-architecture-tradeoff-analysis-method">¿Que es ATAM? Architecture Tradeoff Analysis Method</h2>
+<ul>
+<li><em>Definicion:</em>
+<ul>
+<li>El ATAM es un proceso estructurado para evaluar las decisiones de arquitectura de software, basado en atributos de calidad, como rendimiento, escalabilidad, seguridad, entre otros</li>
+</ul>
+</li>
+<li>Proposito
+<ul>
+<li>Identificar los compromisos (Tradeoffs) entre estos atributos, revelando riesgos potenciales y oportunidades de mejora</li>
+</ul>
+</li>
+</ul>
+<h2 id="proposito-y-beneficios">Proposito y Beneficios</h2>
+<ul>
+<li>Proposito
+<ul>
+<li>Evaluar si una arquitectura puede satisfacer los requisitos de calidad de un sistema y ayudar a tomar decisiones informadas para mitigar riesgos</li>
+</ul>
+</li>
+<li>Beneficios
+<ul>
+<li>Integracion temprana de riesgos y problemas en la arquitectura</li>
+<li>Balancear diferentes atributos de calidad</li>
+<li>Alinear las decisiones arquitectonicas con los objetivos del negocio</li>
+<li>Crear una documentacion clara para todas las partes interesadas</li>
+</ul>
+</li>
+</ul>
+<h2 id="pasos-del-proceso-atam">Pasos del proceso ATAM</h2>
+<ul>
+<li>Introduccion al metodo:
+<ul>
+<li>Se reune a todas las partes interesadas y se explican los objetivos y el proceso</li>
+</ul>
+</li>
+<li>Presentacion de la arquitectura
+<ul>
+<li>El equipo de arquitectura describe la arquitectura propuesta</li>
+</ul>
+</li>
+<li>Identificacion de los atributos de calidad
+<ul>
+<li>Se priorizan los atributos de calidad que son mas revelantes para el sistema</li>
+</ul>
+</li>
+<li>Escenarios de calidad
+<ul>
+<li>Se desarrollan escenarios concretos que ejemplifiquen como se comportara el sistema bajo ciertas condiciones</li>
+</ul>
+</li>
+<li>Analisis de Tradeoffs
+<ul>
+<li>Se identifican los compromisos entre diferentes atributos de calidad</li>
+</ul>
+</li>
+<li>Evaluacion de riesgos
+<ul>
+<li>Se documentan los riesgos y oportunidades de mejora</li>
+</ul>
+</li>
+</ul>
+<h2 id="ejemplos-de-analisis-de-tradeoffs">Ejemplos de analisis de Tradeoffs</h2>
+<ul>
+<li>Rendimiento vs. Seguridad
+<ul>
+<li>Mejorar la seguridad puede reducir el rendimiento, ya que agregar mas controles o cifrado en el sistema puede hacerlo mas lento</li>
+</ul>
+</li>
+<li>Escalabilidad vs. Disponibilidad
+<ul>
+<li>Incremetar la escalabilidad puede aumentar la complejidad y, potencialmente, reducir la disponibilidad en ciertos momentos de alta carga</li>
+</ul>
+</li>
+</ul>
+<h2 id="ejemplo-de-escenario-de-calidad">Ejemplo de escenario de calidad</h2>
+<ul>
+<li>Escenario de rendimiento
+<ul>
+<li>&ldquo;El sistema debe manejar 10,000 solicitudes por segundo sin que la latencia supere los 100ms durantes picos de trafico&rdquo;</li>
+</ul>
+</li>
+<li>Escenario de seguridad
+<ul>
+<li>&ldquo;La plataforma debe cumplir con las normativas de seguridad ISO 27001 y detectar de intrusion en tiempo real&rdquo;</li>
+</ul>
+</li>
+</ul>
+<h2 id="resultados-del-atam">Resultados del ATAM</h2>
+<ul>
+<li>Riesgos identificados:
+<ul>
+<li>Se identifican las areas de mayor riesgo para los atributos de calidad mas criticos</li>
+</ul>
+</li>
+<li>Mejoras propuestas:
+<ul>
+<li>Se sugiere modificaciones para mitigar los riesgos y mejorar los Tradeoffs entra atributos de calidad</li>
+</ul>
+</li>
+</ul>
+<h2 id="conclusiones">Conclusiones</h2>
+<ul>
+<li>ATAM es un metodo robusto para garantizar que las arquitecturas de software cumplan los requisitos de calidad, balanceando compromisos clave</li>
+<li>Ayuda a alinear la arquitectura con las necesidades del negocio y las expectativas de los usuarios</li>
+<li>Facilita la toma de decisiones informadas sobr cambios y mejoras arquitectonicas</li>
+</ul>
+</section>
 
   
   

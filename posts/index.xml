@@ -13,7 +13,7 @@
       <pubDate>Wed, 11 Jun 2025 17:48:08 -0600</pubDate>
       
       <guid>https://julitiux.github.io/posts/aquitectura_moderna_java/</guid>
-      <description></description>
+      <description>Modulo 1 Introduccion a la Arquitectura de Software Entender que es la arquitectura de software Conocer los principios fundamentales Diferenciar tipos comunes de arquitectura Ver como se aplican en proyectos modernos Documentación basada en vistas Vista Lógica; Muestra los componentes principales del sistema y sus relaciones. Vista de desarrollo: Detalla la organización del sistema desde el punto de vista del desarrollo, cómo están estructurados los módulos. Vista de procesos: Explica cómo interactúan los componentes en tiempo de ejecución.</description>
     </item>
     
     <item>
