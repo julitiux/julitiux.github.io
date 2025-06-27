@@ -152,7 +152,7 @@
   <meta itemprop="name" content="Aquitectura Moderna de Java">
 <meta itemprop="description" content="Modulo 1 Introduccion a la Arquitectura de Software Entender que es la arquitectura de software Conocer los principios fundamentales Diferenciar tipos comunes de arquitectura Ver como se aplican en proyectos modernos Documentación basada en vistas Vista Lógica; Muestra los componentes principales del sistema y sus relaciones. Vista de desarrollo: Detalla la organización del sistema desde el punto de vista del desarrollo, cómo están estructurados los módulos. Vista de procesos: Explica cómo interactúan los componentes en tiempo de ejecución."><meta itemprop="datePublished" content="2025-06-11T17:48:08-06:00" />
 <meta itemprop="dateModified" content="2025-06-11T17:48:08-06:00" />
-<meta itemprop="wordCount" content="5611">
+<meta itemprop="wordCount" content="6020">
 <meta itemprop="keywords" content="" />
   
   <meta name="twitter:card" content="summary"/>
@@ -1085,6 +1085,68 @@ Por ejemplo:
 <li>ATAM es un metodo robusto para garantizar que las arquitecturas de software cumplan los requisitos de calidad, balanceando compromisos clave</li>
 <li>Ayuda a alinear la arquitectura con las necesidades del negocio y las expectativas de los usuarios</li>
 <li>Facilita la toma de decisiones informadas sobr cambios y mejoras arquitectonicas</li>
+</ul>
+<h2 id="que-son-los-adrs">¿Que son los ADRs?</h2>
+<ul>
+<li><em>Definicion:</em> Una Architecture Decision Record (ADR) es un documento que captura una decision arquitectonicamente importante, junto con su contexto y las razones detras de ella</li>
+<li><em>Origen:</em> Introducido por Michael Nygard en su libre &ldquo;Documenting Architecture Decisions&rdquo; (2011)</li>
+<li><em>Proposito:</em> Documentar y comunicar de manera clara la decisiones arquitectonicas clave</li>
+</ul>
+<h2 id="por-que-usar-adrs">¿Por que usar ADRs?</h2>
+<ul>
+<li><em>Claridad y Transparencia:</em> Facilita la comunicacion entre los miembros del equipo sobre por que se tomo una decision especifica</li>
+<li><em>Historial de decisiones:</em> Fomenta discusiones informadas basadas en contexto</li>
+<li><em>Evolucion:</em> Ayuda a comprender si las decisiones deben ser reevaluadas o modificadas a medidad que cambian los requisitos</li>
+</ul>
+<h2 id="estructura-de-un-adr">Estructura de un ADR</h2>
+<ul>
+<li><em>Titulo:</em> Describe la decision</li>
+<li><em>Contexto:</em> Explica las circunstancias que llevaron a la necesidad de tomar una decision</li>
+<li><em>Decision:</em> Resumen claro y conciso de la eleccion realizada</li>
+<li><em>Consecuencias:</em> Efectos a corto o largo plazo, tanto positivos como negativos</li>
+<li><em>Estado:</em> Si la decision esta aprobada, propuesta, o si ha sido rechazada</li>
+<li><em>Fecha:</em> Cuando se tomo la decision</li>
+<li><em>REferencia:</em> Documentos o fuentes revelantes que influyeron de la decision</li>
+</ul>
+<h2 id="beneficios-de-los-adrs">Beneficios de los ADRs</h2>
+<ul>
+<li>Decisiones centralizadas: Se consolidan las decisiones clave en un solo lugar</li>
+<li>Documentacion ligera: Son faciles de escribir y mantener</li>
+<li>Escalabilidad: Funciona bien en proyectos pequeños y grandes</li>
+<li>Comunicacion efectiva: El equipo y las partes interesadas externas pueden estar al tanto del proceso de decision</li>
+</ul>
+<h2 id="buenas-practicas">Buenas practicas</h2>
+<ul>
+<li><em>Se conciso:</em> Un ADRS debe ser breve y al grano</li>
+<li><em>Manten consistencia:</em> Utiliza una estrucutura estandar para todos los ADRs</li>
+<li><em>Actualiza regularmente:</em> Revisa las decisiones conforme evoluciona el proyecto</li>
+<li><em>Colaboracion:</em> Involucra a todo el equipo en la redaccion y revision de ADRs</li>
+</ul>
+<h2 id="ejemplo-de-un-adr">Ejemplo de un ADR</h2>
+<ul>
+<li><em>Titulo:</em> Eleccion del Framework de Microservicios</li>
+<li><em>Contexto:</em> Evaluamos varios frameworks para la Implementación de microservicios en nuestro sistema basado en Java</li>
+<li><em>Decision:</em> Se selecciono Spring Boot debido a la robustez y la experiencia del equipo con el framework</li>
+<li><em>Consecuencias:</em> Se espera un mayor velocidad de desarrollo, pero con un mayor uso de recursos en comparacion con opciones mas ligeras</li>
+<li><em>Estado:</em> Aprobado</li>
+<li><em>Fecha:</em> 01 de Octubre de 2024</li>
+</ul>
+<h2 id="conclusiones-1">Conclusiones</h2>
+<ul>
+<li>Los ADRs son una herramienta poderosa para documentar decisiones arquitectonicas</li>
+<li>Aseguran que el equipo este alineado y que las decisiones tengan un registro claro y consultable</li>
+<li>Ayudan a gestionar la complejidad a medida que el proyecto crece y evoluciona</li>
+<li>Implementarlos como parte de tu flujo de trabajo mejora la transparencia y el entendimiento en el equipo</li>
+</ul>
+<h2 id="herramientas-para-adr">Herramientas para ADR</h2>
+<ul>
+<li>Simple editor o procesador de texto</li>
+<li>Wiki o Confluence</li>
+<li>MARD (Markdown Architectual Decision Records)
+<ul>
+<li><a href="https://adr.github.oi/">https://adr.github.oi/</a></li>
+</ul>
+</li>
 </ul>
 </section>
 
