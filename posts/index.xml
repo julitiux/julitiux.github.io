@@ -6,7 +6,27 @@
     <description>Recent content in Posts on Blogs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 11 Jun 2025 17:48:08 -0600</lastBuildDate><atom:link href="https://julitiux.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 16 Sep 2025 22:21:32 -0600</lastBuildDate><atom:link href="https://julitiux.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Glossary</title>
+      <link>https://julitiux.github.io/posts/glossary/</link>
+      <pubDate>Tue, 16 Sep 2025 22:21:32 -0600</pubDate>
+      
+      <guid>https://julitiux.github.io/posts/glossary/</guid>
+      <description>Glossary var var es una palabra reservada que fue introducida en Java 10 que nos va a permitir inferir el tipo de la variable en tiempo de compilacion, no en ejecucion.
+Constante Una constante es un valor que no va a cambiar durante la ejecucion del programa. Para tener un constante en Java:
+No puede tener una reasignacion Debe pertenecer a la clase Tiene que ser public Tiene que ser static La variable debe ser final Enum Un Enum es una clase especial que nos va a permitir tener valores fijos y limitados que van a ser tratados como constantes.</description>
+    </item>
+    
+    <item>
+      <title>Copilot</title>
+      <link>https://julitiux.github.io/posts/copilot/</link>
+      <pubDate>Wed, 13 Aug 2025 17:07:06 -0600</pubDate>
+      
+      <guid>https://julitiux.github.io/posts/copilot/</guid>
+      <description>Copilot Modo &amp;lsquo;Tradicional&amp;rsquo; &amp;lsquo;Fase 2&amp;rsquo; del ciclo de desarrollo con Copilot Ideal para tareas pequeñas Trabajo sobre archivos individuales Estilo &amp;ldquo;ChatGPT&amp;rdquo; Interaccion directa con la Plataforma (prompt por prompt) Ask, Edit, Autocomplete e Inline Disponible en IDE y nevagador Varios LLMs disponibles Copilot es poliglota Ask Agrega contexto Agrega Folder Agrega por archivo Selecciona tu LLM Pregunta con normalidad Edit Agrega cambios directamente dentro del archivos Mas que preguntar es pedir implementaciones, fragmentos de codigo Reduce la complejidad cognitiva del metodo * para que sea mas mantenible mi proyecto Agent &amp;lsquo;Fase 1&amp;rsquo; del ciclo de desarrollo con Copilot Ideal para tareas complejas punta a punta Trabajo sobre varios archivos y proyectos completos Trabajo semi-autonomo Interaccion indirecta con la Plataforma (prompt inicial) Trabajo de flujos complejos e2e Disponible en IDE Varios LLMs disponibles Bases de Conocimiento &amp;lsquo;Fase 0&amp;rsquo; del ciclo de desarrollo con Copilot Acelera la busqueda de informacion Trabajo sobre repositorios completos &amp;ldquo;Google&amp;rdquo; powered by Copilot Explotacion de informacion cargada en repositorios Motor de busqueda para documentacion interna Disponible en IDE y navegador Varios LLMs disponibles </description>
+    </item>
+    
     <item>
       <title>Aquitectura Moderna de Java</title>
       <link>https://julitiux.github.io/posts/aquitectura_moderna_java/</link>

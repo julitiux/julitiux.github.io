@@ -152,7 +152,7 @@
   <meta itemprop="name" content="Aquitectura Moderna de Java">
 <meta itemprop="description" content="Modulo 1 Introduccion a la Arquitectura de Software Entender que es la arquitectura de software Conocer los principios fundamentales Diferenciar tipos comunes de arquitectura Ver como se aplican en proyectos modernos Documentación basada en vistas Vista Lógica; Muestra los componentes principales del sistema y sus relaciones. Vista de desarrollo: Detalla la organización del sistema desde el punto de vista del desarrollo, cómo están estructurados los módulos. Vista de procesos: Explica cómo interactúan los componentes en tiempo de ejecución."><meta itemprop="datePublished" content="2025-06-11T17:48:08-06:00" />
 <meta itemprop="dateModified" content="2025-06-11T17:48:08-06:00" />
-<meta itemprop="wordCount" content="6020">
+<meta itemprop="wordCount" content="12877">
 <meta itemprop="keywords" content="" />
   
   <meta name="twitter:card" content="summary"/>
@@ -1086,6 +1086,7 @@ Por ejemplo:
 <li>Ayuda a alinear la arquitectura con las necesidades del negocio y las expectativas de los usuarios</li>
 <li>Facilita la toma de decisiones informadas sobr cambios y mejoras arquitectonicas</li>
 </ul>
+<h1 id="modulo-3">Modulo 3</h1>
 <h2 id="que-son-los-adrs">¿Que son los ADRs?</h2>
 <ul>
 <li><em>Definicion:</em> Una Architecture Decision Record (ADR) es un documento que captura una decision arquitectonicamente importante, junto con su contexto y las razones detras de ella</li>
@@ -1148,6 +1149,1177 @@ Por ejemplo:
 </ul>
 </li>
 </ul>
+<h1 id="modulo-4">Modulo 4</h1>
+<h2 id="proceso-de-adr">Proceso de ADR</h2>
+<ul>
+<li>Uso de plantillas estandarizadas</li>
+<li>Almacenamiento junto al codigo</li>
+<li>Automatizacion con herramientas</li>
+<li>Incluir ADR en las revisiones de codigo</li>
+<li>Definir cuando usar ADR</li>
+<li>Revisiones periodicas</li>
+<li>Etiqueta tus ADRs con IDs</li>
+</ul>
+<h2 id="uso-de-plantillas-estandarizadas">Uso de plantillas estandarizadas</h2>
+<ul>
+<li>Una forma de asegurar consistencias y facilidad de uso es emplear una plantilla estandar para todos los ADRs
+<ul>
+<li><a href="https://adr.github.io/#existing-adr-templates">https://adr.github.io/#existing-adr-templates</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="almacenamiento-junto-al-codigo">Almacenamiento junto al codigo</h2>
+<ul>
+<li>Puedes almacenar los ADRs en el repositorio del codigo para que esten accesibles a todo el equipo y queden versionados junto con el proyecto</li>
+<li>Crear una carpeta llamada <em>docs/adr/</em> o simplemente <em>adr/</em> en la raiz del proyecto es una buena practica</li>
+<li>De esta forma, cada decision estara vinculada al contexto del codigo que refleja esa arquitectura</li>
+</ul>
+<h2 id="automatizacion-con-herramientas">Automatizacion con herramientas</h2>
+<ul>
+<li>Existen herramientas que ayudan a crear y gestionar ADRs en proyectos de software</li>
+<li>Una opcion es usar el plugin <em>adr-tools</em> que automatiza la creacion de nuevos registros y garantiza que sigan un formato consistente</li>
+<li>Si prefieres algo sencillo, con Git puedes versionar manualmente tus ADRs</li>
+</ul>
+<h2 id="incluir-adr-en-las-revisiones-de-codigo">Incluir ADR en las revisiones de codigo</h2>
+<ul>
+<li>Cada vez que se haga una revision de codigo, ´puedes revisar o actualizar los ADR relacionados si la decision impacta en la arquitectura</li>
+<li>De esta forma, mantienes la informacion al dia</li>
+</ul>
+<h2 id="definir-cuando-usar-adr">Definir cuando usar ADR</h2>
+<ul>
+<li>Es importante definir con tu equipo cuando es necesario crear un ADR</li>
+<li>No todas las decisiones tecnicas lo requieren</li>
+<li>Aqui hay algunos criterios para saber cuando es recomendable crear uno
+<ul>
+<li>Si la decision afecta signifcativamente la arquitectura del sistema</li>
+<li>Si implica un cambio en las tecnologias o patrones de diseño</li>
+<li>Si puede generar deuda tecnica futura o requerira compromisos importantes</li>
+<li>Si es una decision dificil de revertir</li>
+</ul>
+</li>
+</ul>
+<h2 id="revisiones-periodicas">Revisiones periodicas</h2>
+<ul>
+<li>Haz que las ADR sean parte de las reuniones de revision tecnica</li>
+<li>Cada cierto tiempo, puedes revisar las decisiones previas para ver si siguen siendo relevantes o necesitan ser modificadas</li>
+</ul>
+<h2 id="etiqueta-tus-adrs-con-ids">Etiqueta tus ADRs con IDs</h2>
+<ul>
+<li>Es util numerar y dar un ID unico a cada ADR</li>
+<li>Esto facilita la referencia y el seguimiento</li>
+<li>Por ejemplo, si decides cambiar el sistema de autenticacion en un microservicio, podrias referencias ese ADR en otros documentos o incluso commits</li>
+</ul>
+<h2 id="ejemplo-de-flujo-de-trabajo">Ejemplo de flujo de trabajo</h2>
+<ol>
+<li><em>Nuevo cambios arquitectonico:</em> Al proponer un cambio importante en la arquitectura, crea un nuevo ADR explicando el contexto y las alternativas</li>
+<li><em>Revision del equipo:</em> Revisa la propuesta con el equipo para obtener comentarios, y luego aprueba el ADR</li>
+<li><em>Implicacion:</em> Tras probar la decision, implementa el cambio en el codigo y marca el ADR como &ldquo;implementado&rdquo;</li>
+<li><em>Documentacion continua:</em> A medida que evolucionen las decisiones, actualiza los ADR o crea nuevos si cambian las circunstancias</li>
+</ol>
+<h2 id="amazon-y-adr">Amazon y ADR</h2>
+<ul>
+<li><a href="https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/adr-process.html">https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/adr-process.html</a></li>
+</ul>
+<h2 id="herramientas-para-adr-1">Herramientas para ADR</h2>
+<ul>
+<li>ADR-Tools</li>
+<li>Markdown como formato manual</li>
+<li>ADR Manager</li>
+<li>Helmsman ADR</li>
+<li>Alternativas Cloud-Hosted</li>
+<li>ADR GitHub Action
+<ul>
+<li>ADR TOC</li>
+<li>ADR Sync</li>
+</ul>
+</li>
+<li>Custom Solutions</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Herramientas</th>
+<th>Tipo</th>
+<th>Ventajas</th>
+<th>Recomendado para</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>adr-tools</td>
+<td>CLI</td>
+<td>Sencillo, ligero, facil de integrar</td>
+<td>Proectos peuqeños / medianos</td>
+</tr>
+<tr>
+<td>Markdown manual</td>
+<td>Manual</td>
+<td>Total control y flexibilidad</td>
+<td>equipos peuqeños</td>
+</tr>
+<tr>
+<td>ADR Manager</td>
+<td>GUI/Web</td>
+<td>Visual, facil de usar</td>
+<td>Equipos que prefieren GUI</td>
+</tr>
+<tr>
+<td>Helmsman ADR</td>
+<td>CLi + Integracion</td>
+<td>Avanzado, integra con CI/CD</td>
+<td>Equipos destribuidos/avanzados</td>
+</tr>
+<tr>
+<td>Confluence/Notion</td>
+<td>SaaS</td>
+<td>Colaboracion en tiempo real</td>
+<td>Equipos grandes</td>
+</tr>
+<tr>
+<td>GitHub Action ADR</td>
+<td>GitHub Action</td>
+<td>Automatizacion con CI/CD</td>
+<td>Equipos que usan GitHub</td>
+</tr>
+</tbody>
+</table>
+<h2 id="como-verificar-las-decisiones">¿Como verificar las decisiones?</h2>
+<ul>
+<li>Integrar ADRs con las revisiones de codigo (Code Revews)</li>
+<li>Usar reglas con ArchUnit</li>
+<li>Linting personalizado</li>
+<li>Documentacion viva</li>
+<li>Verificacion en pipelines CI/CD</li>
+<li>Generar alertas o abrir issues automaticamente</li>
+<li>Documentacion vinculatoria</li>
+</ul>
+<h2 id="integrar-adrs-con-las-revisiones-de-codigo">Integrar ADRs con las revisiones de codigo</h2>
+<ul>
+<li>Una de las formas mas simples de verificar el cumplimiento de ADRs es integrarlas en las revisiones de codigo. Antes de aprobar un pull request, se puede agregar un paso en el que el equipo revise si las decisiones tomadas en los ADRs se respeten</li>
+<li>Puedes incluir checks manuales en tus pull request o en los comentarios, recordando al revisor que valide el cumplimiento de las decisiones arquitectonicas</li>
+<li>GitHub Actions, GitLab CI, o Azure Pipelines pueden generar un recordatorio o incluso detener el flujo de trabajo si no se cumple una ADR relevante</li>
+</ul>
+<h2 id="usar-reglas-con-archunit">Usar reglas con ArchUnit</h2>
+<ul>
+<li>Puedes definir reglas especificas en ArchUnit que validen si el codigo cumple con las restricciones establecidas en tus ADRs</li>
+<li>ArchUnit te permite escribir pruebas automatizadas en Java que pueden comprobar que ciertos patrones o restricciones arquitectonicas se respeten en el codigo fuente</li>
+</ul>
+<h2 id="linting-personalizado">Linting personalizado</h2>
+<ul>
+<li>Puedes implementar linters personalizados que analicen el codigo en busca de patrones que incumplan tus ADRs</li>
+<li>Herramientas como SonarQube pueden configurarse para verificar reglas arquitectonicas personalizadas y generar alertas cuando el codigo no respeta una decision definida en un ADR</li>
+<li>Ejemplo: si una ADR define que todas las dependencias de acceso a datos deben ser interfaces, puedes escribir una regla en SonarQube que valide esto y genere un error si no se cumple</li>
+</ul>
+<h2 id="documentacion-viva">Documentacion viva</h2>
+<ul>
+<li>Puedes convertir tus ADRs en documentacion viva, donde las decisiones se convierten en pruebas o verificaiones automatizadas dentro de tu pipeline de CI/CD</li>
+<li>Algunas herramientas como ADR Manager o scripts personalizados puede integrarse con tu pipeline para validar si una nueva modificacion del codigo contradice una ADR. Esto se hace estableciendo tests que deben cumplirse para cada ADR, y si alguna falla, el pipeline puede detenerse</li>
+</ul>
+<h2 id="verificacion-en-pipelines-cicd">Verificacion en pipelines CI/CD</h2>
+<ul>
+<li>Si estas usando CI/CD (Continuos Integration/Continuos Deployment), puedes configurar un paso dentro del pipeline que verifique el cumplimiento de ADRs mediante herramientas como ArchUnit, SonarQube o scripts personalizados que revisen las decisiones arquitectonicas</li>
+</ul>
+<h2 id="generar-alertas-o-abrir-issues-automaticamente">Generar alertas o abrir issues automaticamente</h2>
+<ul>
+<li>Puedes configurar herramientas como GitHub Actions o GitLab CI para que, si aun ADR no se cumple, generen automaticamente una alerta o abran un issue en el repositorio</li>
+<li>Ejemplo: Si una prueba de arquitectura (definida con ArchUnit) falla, puedes configurar tu pipeline para abrir un issue con el detalle de que ADR se ha incumplido</li>
+</ul>
+<h2 id="documentacion-vinculatoria">Documentacion vinculatoria</h2>
+<ul>
+<li>Su usa ADR Manager, puedes generar vinculos entre las decisiones y las implementaciones. Estas decisiones pueden integrarse en el ciclo de vida de desarrollo mediante alertas o anotaciones en el codigo fuente</li>
+<li>Los ADR se pueden ligar a partes especificas del codigo (por ejemplo, componentes o clases) que deben respetar las decisiones</li>
+</ul>
+<h2 id="resumen">Resumen</h2>
+<ul>
+<li>Automatizar el cumplimiento de ADRs es una forma poderosa de garantizar que las decisiones arquitectonicas sigan vigentes en todo el ciclo de vida de desarrollo</li>
+<li>Algunas opciones incluyen:
+<ul>
+<li>Usar ArchUnit para crear reglas espcificas en proyectos java</li>
+<li>Integrar verificaciones en CI/CD  con herramientas como SonarQube, GitHub Actions, o scripts personalizados</li>
+<li>Automatizar alertas o issues si una ADR no se cumple</li>
+</ul>
+</li>
+<li>Revisar
+<ul>
+<li><a href="https://www.ozimmer.ch/practices/2020/09/24/ASRTestECSADecisions.html">https://www.ozimmer.ch/practices/2020/09/24/ASRTestECSADecisions.html</a></li>
+<li><a href="https://github.com/joelparkerhenderson/architecture-decision-record">https://github.com/joelparkerhenderson/architecture-decision-record</a></li>
+<li><a href="https://domainanalysis.io/p/document-your-product-and-software?r=26tm44">https://domainanalysis.io/p/document-your-product-and-software?r=26tm44</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="archunit">ArchUnit</h2>
+<ul>
+<li>ArchUnit es una biblioteca para Java que te permite realizar pruebas automaticas sobre la arquitectura de un sistema</li>
+<li>Con ArchUnit, puedes verificar que tu arquitectura sigue ciertas reglas o principios definidos por ti mismo</li>
+<li>Esto es particularmente util en aplicaciones que siguen patrones arquitectonicos como Clean Architecture, DDD o microservicios, donde se busca mantener el codigo bien organizado y modulas</li>
+</ul>
+<h2 id="caracteristicas-de-archunit">Caracteristicas de ArchUnit</h2>
+<ul>
+<li><em>Verificacion de dependencias:</em> Puedes asegurarte de que ciertos paquetes o clases no dependan de otros</li>
+<li><em>Cumplimiento de capas:</em> Verificar que las diferentes capas de tu aplicacion (por ejemplo, presentacion, dominio, infraestructura) esten correctamente separadas</li>
+<li><em>Validacion de convenciones:</em> Asegurarte de que las clases sigan ciertos patrones de nombres o ubicaciones</li>
+<li><em>Comprobacion de herencia y anotaciones:</em> Verificar que ciertas clases hereden de otras o tengan ciertas anotaciones</li>
+<li>Integracion con Frameworks de testing como JUnit</li>
+</ul>
+<h2 id="ejemplo">Ejemplo</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>JavaClasses importedClasses <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ClassFileImporter<span style="color:#f92672">().</span> importPackages<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;com.miapp&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ArchRuleDefinition<span style="color:#f92672">.</span><span style="color:#a6e22e">classes</span><span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">.</span><span style="color:#a6e22e">that</span><span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">.</span><span style="color:#a6e22e">resideInAPackage</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;...domain...&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">.</span><span style="color:#a6e22e">should</span><span style="color:#f92672">().</span><span style="color:#a6e22e">onlyHaveDependentClassesThat</span><span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">.</span><span style="color:#a6e22e">resideInAnyPackage</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;..domain..&#34;</span><span style="color:#f92672">,</span><span style="color:#e6db74">&#34;..application..&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">.</span><span style="color:#a6e22e">check</span><span style="color:#f92672">(</span>importedClasses<span style="color:#f92672">);</span>
+</span></span></code></pre></div><ul>
+<li>En Clean Architecture, podrias usar ArchUnit para asegurar que las capas internas (como dominio o casos de uso) no dependan de las capas externas (como infraestructura o la interfaz de usuario)</li>
+</ul>
+<h2 id="revision-codigo">Revision codigo</h2>
+<ul>
+<li>Tener JDK minimo 17, deseable 23</li>
+<li>Maven instalado, minimo 3.8, deseable 3.9.9</li>
+<li><a href="https://www.archunit.org/userguide/html/000_Index.html">https://www.archunit.org/userguide/html/000_Index.html</a></li>
+<li>Descomprimir el archivo <em>archunit.zip</em> en cuaquier parte de tu filesystem</li>
+</ul>
+<h2 id="ejercicio">Ejercicio</h2>
+<ul>
+<li>Ejecutar los test con: <em>mvn verify</em></li>
+<li>Hacer fallar la prueba, agregando una clase en el paquete controller y que rompa la regla definida</li>
+<li>Corregir la prueba</li>
+</ul>
+<h1 id="modulo-5">Modulo 5</h1>
+<h2 id="que-es-el-domain-driven-design">¿Que es el Domain-Driven-Design?</h2>
+<ul>
+<li>Domain-Driven Design (DDD) es una metodologia para desarrollar Software centrada en modelar y resolver problemas complejos del dominio del negocio</li>
+<li>Pone enfasis en la colaboracion entre expertos del domino y desarrolladores</li>
+<li>Enfoque clave: Crear un modelo de negocio basado en las necesaidades del negocio</li>
+</ul>
+<h2 id="principios-clave-del-ddd">Principios clave del DDD</h2>
+<ul>
+<li>Lenguaje Ubicuo (Ubiquitous Language):
+<ul>
+<li>Un lenguaje compartido entre expertos del negocio y desarrolladores</li>
+<li>Mejora la comunicacion y elimina malentendidos entre el equipo tecnico y no tecnico</li>
+</ul>
+</li>
+<li>Modelar segun el domino:
+<ul>
+<li>El modelo del software refleja fielmente las realidades del negocio</li>
+<li>Enfocado en capturar las reglas y comportamientos esenciales del domino</li>
+</ul>
+</li>
+</ul>
+<h2 id="colaboracion-con-los-expertos-del-dominio">Colaboracion con los expertos del Dominio</h2>
+<ul>
+<li><em>Experto del dominio:</em> persona con amplio conocimiento sobre el problema que se esta resolviendo</li>
+<li><em>Desarrollador:</em> transforma ese conocimiento en codigo</li>
+<li>Colaboracion  continua entre ambos roles es esencial para el exito del modelo</li>
+</ul>
+<h2 id="contexto-delimitado-bounded-context">Contexto Delimitado (Bounded Context)</h2>
+<ul>
+<li>Define los limites donde un modelo es aplicable</li>
+<li>Cada Bounded Context tiene su propio modelo de domino</li>
+<li>Evita conflictos entre modelos al establecer fronteras clara entre ellos</li>
+</ul>
+<h2 id="beneficios-de-los-contextos-delimitados">Beneficios de los Contextos Delimitados</h2>
+<ul>
+<li><em>Escalabilidad:</em> Los sistemas pueden dividirse en partes manejables y autonomas</li>
+<li><em>Separacion de preocupaciones:</em> Cada equipo puede trabajar en su contexto sin interferir con otros</li>
+<li><em>Claridad y mantenimiento:</em> Los limites permiten gestionar mejor codigo y los cambios</li>
+</ul>
+<h2 id="colaboracion-entres-contextos">Colaboracion entres contextos</h2>
+<ul>
+<li>Integracion  entre los contextos delimitados</li>
+<li>Los modelos de diferentes contextos interactuan de manera controlada</li>
+<li>Tecnicas como <em>Context Mapping</em> y <em>Anti-Corruption Layer</em> ayudan a gestionar esta interaccion</li>
+</ul>
+<h2 id="el-enfoque-estrategico">El enfoque estrategico</h2>
+<ul>
+<li>DDD no solo se centra en la estructura tecnica del software, sino tambien en las decisiones estrategicas</li>
+<li>Impulsa un diseño que responde a las necesidades del negocio, optmizando el impacto del software en los resultados empresariales</li>
+</ul>
+<h2 id="introduccion">Introduccion</h2>
+<ul>
+<li>DDD ayuda a gestionar la complejidad de los dominos empresariales avanzados</li>
+<li>Al establecer un lenguaje comun y dividir el sistema en contextos delimitados premiten crear software mas alineado con los objeticos del negocio</li>
+</ul>
+<h2 id="que-es-un-contexto-delimitado">¿Que es un Contexto Delimitado?</h2>
+<ul>
+<li>Un <em>Bounded Context</em> establece los limites donde un modelo de domino es valido</li>
+<li>Cada contexto tiene su propio lenguaje ubicuo y logica de negocio</li>
+<li>Ayuda a gestionar la complejidad del sistema, dividiendolo en partes manejables</li>
+</ul>
+<h2 id="por-que-son-importantes-los-limites">¿Por que son importantes los limites?</h2>
+<ul>
+<li>Los limites evitan que los modelos se mezclen y generen confusion</li>
+<li>Clara separacion de responsabilidades entre contextos</li>
+<li>Facilita la colaboracion entre equipos, ya que cada uno trabaja en su propio contexto</li>
+</ul>
+<h2 id="relacion-entre-contextos">Relacion entre contextos</h2>
+<ul>
+<li>Los Bounded Contexts pueden interacturar, pero deden hacerlo de manera controlada</li>
+<li>Tecnicas clave para gestionar la interaccion entre contextos
+<ul>
+<li><em>Context Maps:</em> Mapa visual de las relaciones netre los diferentes contextos</li>
+<li><em>Anti-Corruption Layer:</em> Barrera para proteger un contexto de la complejidad de otro</li>
+</ul>
+</li>
+</ul>
+<h2 id="mapa-de-contextos-context-map">Mapa de Contextos (Context Map)</h2>
+<ul>
+<li><em>Context Map:</em> una herramienta que muestra las relaciones y dependencias entre distintos contextos</li>
+<li>Proporciona una vision clara de como interactuan los contextos dentro del sistema</li>
+<li>Identifica las zonas de integracion y las posibles fuentes de conflicto entre modelos</li>
+</ul>
+<h2 id="context-map-para-un-sistema-de-e-commerce">Context Map para un sistema de e-commerce</h2>
+<ul>
+<li><em>Customer Management Context:</em> Gestiona la informacion de los clientes, perfiles, historial de compras etc</li>
+<li><em>Order Management Context:</em> Responsable de gestionar los pedidos, su creacion, procesamiento y estado</li>
+<li><em>Inventory Management Context:</em> Controla el stock de productos, la disponibilidad en el almacen y las actualizaciones del inventario</li>
+<li><em>Billing Context:</em> Encargado de la facturacion, pagos y cobros</li>
+<li><em>Shipping Context:</em> Gestiona el envio de los productos, seguimiento de paquetes, y comunicacion con proveedores logisticos</li>
+</ul>
+<h2 id="relaciones-y-patrones-del-context-map">Relaciones y patrones del Context Map</h2>
+<ul>
+<li>Customer Management -&gt; Order Management: Relacion de <em>Customer/Supplier</em>
+<ul>
+<li>Customer Management proporciona datos del cliente cuando se crea un pedido en Order Management</li>
+<li>Esta relacion indica que Order Management depende de Customer Management para obtener informacion actualizada del cliente</li>
+</ul>
+</li>
+<li>Order Management -&gt; Inventory Management: Relacion de <em>Conformist</em>
+<ul>
+<li>Order Management depende directamente del modelo de inventario de Inventory Management ara verificar si los productos estan en stock, aqui Oder Management acepta los terminos y modelo de datos que le dicta Inventory Management sin intentar cambiar o interferir en ese modelo</li>
+</ul>
+</li>
+<li>Oder Management -&gt; Billing: Relacion de <em>Anti-Corruption Layer (ACL)</em>
+<ul>
+<li>Oder Management necesita interactuar con Billing, pero los modelos internos de cada uno son diferentes. Para evitar que Order Management se &ldquo;contamine&rdquo; con el modelo de Billing, se crea una capa de anti-corruption que traduce y adapta los datos entre los dos contextos</li>
+</ul>
+</li>
+<li>Order Management -&gt; Shipping: Relacion de <em>Publish Language</em>
+<ul>
+<li>Order Management publica eventos de dominio cuando un pedido esta listo para ser enviado. Shipping escucha estos eventos para proceder con el proceso de envio. Ambos contextos utilizan un lenguaje de eventos compartido (por ejemplo, un &ldquo;pedido listo para enviar&rdquo;) para facilitar esta comunicación</li>
+</ul>
+</li>
+</ul>
+<h2 id="tipos-de-relaciones">Tipos de relaciones</h2>
+<ul>
+<li>Las relaciones entre los diferentes Bounded Context son fundamentales para definir como interactúan y colaboran las distintas partes del sistema</li>
+<li>Eric Evans y Vaughn Vernon describen varios tipos de relaciones entre contextos, y cada una define una forma particular de acoplamiento o interaccion
+<ul>
+<li>Customer/Supplier</li>
+<li>Conformist</li>
+<li>Anti-Corruption Layer (ACL)</li>
+<li>Published Language</li>
+<li>Shared Kernel</li>
+<li>Separate Ways</li>
+<li>Partnership</li>
+<li>Open Host Service</li>
+</ul>
+</li>
+</ul>
+<h2 id="customersupplier">Customer/Supplier</h2>
+<ul>
+<li>Esta relacion indica que un contexto (el Supplier) proporciona datos o servicios que otro contexto (el Consumer) necesita para funcionar. En este caso, el Customer depende de los datos o servicios del Supplier, y el Supplier define las reglas o el contrato que debe seguir el Consumer</li>
+<li>Ejemplo: En un sistema de e-commerce, el Orden Management necesita informacion del Customer Management para crear un pedido. Customer Management actua como el Supplier, y el Order Management es el Customer</li>
+<li>Implicaciones: El Customer depende del Supplier para recibir datos y debe adaptarse al modelo y las politicas del Supplier. Sin embargo, los cambios en el Supplier pueden afectar al Consumer, por lo que debe haber una colaboracion entre equipos</li>
+</ul>
+<h2 id="conformist">Conformist</h2>
+<ul>
+<li>En una relacion Conformist, un contexto depende de otro y acepta el modelo y reglas del tro contexto sin intentar imponer cambios o influir en su comportamiento. El contexto que se conforma debe adaptarse al modelo del contexto dominante</li>
+<li>Ejemplo: El Order Management podria depender del Inventory Management para verificar la disponibilidad de productos. El Order Management acepta y usa el modelo de Inventory Management tal cual, sin intentar modificarlo</li>
+<li>Implicaciones: El Conformist no tiene control sobre los cambios del otro contexto. Esto puede ser solucion rapida, pero tambien significa un fuerte acoplamiento y menos flexibilidad</li>
+</ul>
+<h2 id="anti-corruption-layer-acl">Anti-Corruption Layer (ACL)</h2>
+<ul>
+<li>Cuando dos contextos necesitan interactuar, pero tienen modelos muy diferentes, se puede utilizar una Anti-Corruption Layer. Esta capa actua como un intermediario que traduce y adapta las estructuras y comportamientos de un contexto al otro, evitando que uno &ldquo;contamine&rdquo; al otro</li>
+<li>Ejemplo: El Order Management podria necesitar interactuar con un sistema de facturacion (Billing), pero sus modelos de datos son diferentes. Para evitar que el modelo de Billing afecte el diseño del Order Management, se implementa una ACL que traduce las interacciones entre ambos</li>
+<li>Implicaciones: Esta capa agrega complejidad, pero permite mantener ambos contextos independientes y proteger sus modelos internos, evitando acoplamiento indeseados</li>
+</ul>
+<h2 id="published-language">Published Language</h2>
+<ul>
+<li>En una relacion Published Language, los contextos acuerdan utilizar un lenguaje compartido o estandar para intercambiar datos o eventos. Este lenguaje puede tomar la forma de mensajes de eventos o APIs bien definidas, lo que permite la comunicacion sin tener que conocer los detalles internos del otro contexto</li>
+<li>Ejemplo: En un sistema de e-commerce, el Orden Management podria publicar un evento llamado &ldquo;Order Shipped&rdquo; que Shipping escucha para comenzar el proceso de envio. Ambos contextos se ponen de acuerdo en el formato de ese evento</li>
+<li>Implicaciones: Este tipo de relacion reduce el acoplamiento entro los contextos, ya que dependen solo del lenguaje acordado (eventos o mensajes) y no de los detalles internos de cada uno</li>
+</ul>
+<h2 id="shared-kernel">Shared Kernel</h2>
+<ul>
+<li>En esta relacion, dos contextos comparten una pequeña parte del modelo o codigo, generalmente en forma de librerias o modulos comunes. El Shared Kernel contiene componentes que ambos contextos necesitan y deben mantener en conjunto, lo que requiere una fuerte colaboracion entre equipos para garantizar que estos componentes compartidos sean consistenes</li>
+<li>Ejemplo: Un sistema de pagos y un sistema de pedidos podria compartir un modulo que contiene logica de calculo de impuestos, que es necesaria para ambos. Esta logica compartida seria parte del Shared Kernel</li>
+<li>Implicaciones: Los equipos deben colaborar estrechamente para mantener el Shared Kernel, lo que puede generar dependencias y complejidad adicional si no se gestiona bien</li>
+</ul>
+<h2 id="separate-ways">Separate Ways</h2>
+<ul>
+<li>Es una relacion de Separate Ways, los contextos no necesitan interactuar entre si, y cada uno es independientes. A veces, es mas eficiente que ciertos modulos sigan su propio camino y no interfieran de otros</li>
+<li>Ejemplo: Un sistema de gestion de inventario y un sistema de marketing puede no necesitar comunicarse directamente, ya que gestionan funciones completamente diferentes</li>
+<li>Implicaciones: Los contextos son completamente autonomos, lo que permite mayor flexibilidad y menos acoplamiento. Sin embargo, esto es util si realmente no hay necesidad de interaccion entre ellos</li>
+</ul>
+<h2 id="partnership">Partnership</h2>
+<ul>
+<li>Es una relacion de Partnership, dos contextos trabajan muy estrechamente y de manera igualitaria para lograr un objetivo comun. Ambos contextos dependen del otro y los cambios en uno pueden afectar al otro. A diferencia de Customer/Supplier, aqui no hay contexto dominante</li>
+<li>Ejemplo: El Order Management y el Shipping pueden trabajar como socios igualitarios, ya que ambos necesitan coordinarse muy de cerca para garantizar que los pedidos se procesen y envien correctamente</li>
+<li>Implicaciones: Los equipos necesitan una colaboracion constantem lo que puede resultar en una mayor coordinacion y mayor riesgo de acoplamiento, pero tambien una integracion mas fluida</li>
+</ul>
+<h2 id="open-host-service-ohs">Open Host Service (OHS)</h2>
+<ul>
+<li>Su proposito es exponer un servicio claro y accesible para que otros contextos puedan interactuar con un determinado contexto de manera controlada y predecible</li>
+<li>Este patron permite que un contexto ofrezca su funcionalidad a otros contextos de forma publica, mediante una API o servicio, sin necesidad de que los detalles internos de su modelos de dominio sean expuestos</li>
+<li>Ejemplo: Inventory Management expone un servicio que permite consultar el stock de productos, quizas con una API REST o mensajes en un sistema de eventos. Order Management y Shipping consumen este servicio para verificar si un producto esta disponible antes de procesar el pedido o proceder con el envio</li>
+</ul>
+<h2 id="modularidad-y-contextos">Modularidad y Contextos</h2>
+<ul>
+<li>Al dividir el sistema en contextos delimitados, se fomenta la modularidad</li>
+<li>Cada modulo puede evolucionar de forma independiente, facilitando:
+<ul>
+<li>Mantenibilidad</li>
+<li>Escalabilidad</li>
+<li>Independencia entre equipos de desarrollo</li>
+</ul>
+</li>
+<li>Los Bounded Context son esenciales para gestionar la complejidad de un sistema de dominio</li>
+<li>Definen limites claros que mejoran la colaboracion, el diseño modular y la independencia entre los equipos</li>
+<li>Tecnicas como Context Maps y Anti-Corruption Layer ayudan a mantener la coherencia y claridad en la integracion entre contextos</li>
+</ul>
+<h2 id="que-es-el-lenguaje-ubicuo">¿Que es el Lenguaje Ubicuo?</h2>
+<ul>
+<li>Es un lenguaje compartido entre expertos del dominio y desarrolladores</li>
+<li>Evoluciona a medida que se profundiza en la compresion del modelo de dominio</li>
+<li>Sirve como base para todo el desarrollo del software y la comunicacion dentro del equipo</li>
+</ul>
+<h2 id="importancia-del-lenguaje-ubicuo">Importancia del Lenguaje Ubicuo</h2>
+<ul>
+<li>Evita malentendidos entre el equipo tecnico y los expertos del negocio</li>
+<li>Refuerza la colaboracion continua entre desarrolladores y expertos del dominio</li>
+<li>Mejora la calidad del codigo ya que los terminos utilizados en el codigo reflejan con precision el model del negocio</li>
+</ul>
+<h2 id="lenguaje-ubicuo-en-el-codigo">Lenguaje Ubicuo en el codigo</h2>
+<ul>
+<li>El lenguaje ubicuo debe estar presente en todos los artefactos del software, incluyendo:
+<ul>
+<li>Clases</li>
+<li>Metodos</li>
+<li>Nombres de variable</li>
+<li>Documentación</li>
+</ul>
+</li>
+<li>Ejemplo:
+<ul>
+<li>Si en el negocio se habla de &ldquo;pedido&rdquo;, la entidad en el codigo debe llamarse &ldquo;Pedido&rdquo; en lugar de usar terminos genericos como &ldquo;Transaction&rdquo; o &ldquo;Order&rdquo;</li>
+</ul>
+</li>
+</ul>
+<h2 id="colaboracion-con-los-expertos-del-dominio-1">Colaboracion con los expertos del dominio</h2>
+<ul>
+<li>El lenguaje se desarrolla y refina a traves de conversaciones continuas con los expertos del dominio</li>
+<li>Las discusiones sobre el dominio deben ser traducidas directamente en el modeli y codigo</li>
+<li>Crea un ciclo de retroalimentacion entre el desarrollo y el entendimiento del dominio</li>
+</ul>
+<h2 id="desarrollo-incremental-del-lenguaje">Desarrollo Incremental del Lenguaje</h2>
+<ul>
+<li>El lenguaje ubicuo no es estatico, evoluciona conforme cambia la compresion del dominio</li>
+<li>Las iteraciones en el desarrollo y la retroalimentacion del negocio permitan refinar tanto el lenguaje como el modelo</li>
+<li>Un lenguaje bien definido puede ayudar a detectar inconsistencias en el modelo</li>
+</ul>
+<h2 id="tecnicas-para-desarrollar-el-lenguaje-ubicuo">Tecnicas para desarrollar el lenguaje Ubicuo</h2>
+<ul>
+<li>Workshops de descrubrimiento:
+<ul>
+<li>Sesiones colaborativas con expertos del domino para identificar y definir terminos clave</li>
+</ul>
+</li>
+<li>Documentacion activa:
+<ul>
+<li>Registrar continuamente terminos, reglas y relaciones del dominio conforme surgen</li>
+</ul>
+</li>
+<li>Pruebas colaborativas:
+<ul>
+<li>Utilizar pruebas unitarias y test de aceptacion para reflejar el lengiaje y comportamiento esperado</li>
+</ul>
+</li>
+</ul>
+<h2 id="ventajas-del-lenguaje-ubicuo">Ventajas del Lenguaje Ubicuo</h2>
+<ul>
+<li>Cohesion del equipo: Todos los miembros del equipo, incluidos los no tecnicos, hablan del mismo idioma</li>
+<li>Codigo legible: El codigo es mas facil de entender y mantener, ya que utiliza terminos precisos del negocio</li>
+<li>Menos errores: Minimiza los malentendidos y descrepancias en la Implementación del modelo del negocio.</li>
+</ul>
+<h2 id="que-es-un-modelo-de-dominio">¿Que es un modelo de dominio?</h2>
+<ul>
+<li>Un modelo de dominio es una representacion conceptural del area de negocio que esta siendo implementada en el software</li>
+<li>Refleja las reglas de negocio, los comportamientos y las relaciones entre los objetos del domino</li>
+<li>Se contruye a traves de una colaboracion constante entre desarrolladores y expertos del dominio</li>
+</ul>
+<h2 id="entidades-y-valores">Entidades y Valores</h2>
+<ul>
+<li>Entidades: Objetos que tienen una identidad unica dentro del sistem y persisten a lo largo del tiempo</li>
+<li>Ejemplo: Cliente, Pedido, Factura</li>
+<li>Objetos de Valor: No tiene identidad propia, se definen por sus atributos y son inmutables</li>
+<li>Ejemplo: Direccion, Dinero, Fecha</li>
+</ul>
+<h2 id="que-es-un-agregado">¿Que es un Agregado?</h2>
+<ul>
+<li>Un agregado es un conjunto de entidades y objetos de valor relacionados que se comportan como una unidad de consistencia</li>
+<li>Garantiza la integridad de los datos al definir los limites dentro de los cuales las operaciones deben ser consistentes</li>
+<li>Cada agregado tiene una raiz de agregado que actua como punto de entrada para todas las interacciones externas</li>
+</ul>
+<h2 id="diseño-de-agregados">Diseño de Agregados</h2>
+<ul>
+<li>Un agregado debe:
+<ul>
+<li>Mantenerse lo mas pequeño posible</li>
+<li>Evitar la dependencia entre agregados</li>
+<li>Estar diseñado para que las operaciones puedan ser transaccionales dentro de sus limites</li>
+</ul>
+</li>
+<li>Ejemplo:
+<ul>
+<li>Un agregado Pedido puede incluir entidades como Cliente y Linea de Pedido, asegurando que caulquier cambio en el pedido sea consistente en su conjunto</li>
+</ul>
+</li>
+</ul>
+<h2 id="raiz-de-agregado">Raiz de Agregado</h2>
+<ul>
+<li>La raiz de agregado es la entidad principal que controla el acceso a los demas objetos dentro del agregado</li>
+<li>Solo se puede acceder a la entidades internas a traves de la raiz</li>
+<li>La raiz asegura la coherencia de los datos y las reglas de negocio</li>
+</ul>
+<h2 id="regla-de-consistencia">Regla de Consistencia</h2>
+<ul>
+<li>Los agregados garantizan que las reglas de negocio dentro de sus limites se cumplan</li>
+<li>La consistencia fuerte debe mantenerse dentro de los agregados, mientras que la consistencia eventual se puede permitir entre agregados, especialmente en sistemas distribuidos</li>
+</ul>
+<h2 id="consejos-para-diseñar-agregados">Consejos para Diseñar Agregados</h2>
+<ul>
+<li>Manten los agregados pequeños:
+<ul>
+<li>Limita el numero de entidades dentro de un agregado para reducir la complejidad y mejorar la escalabilidad</li>
+</ul>
+</li>
+<li>Revisa las transacciones:
+<ul>
+<li>Un agregado debe permitir que las operaciones sean atomicas y consistentes dentro de sus limites</li>
+</ul>
+</li>
+<li>Distingue responsabilidades:
+<ul>
+<li>Usa agregados para separar diferentes responsabilidades en el dominio, garantizando un modelo mas limpio y mantenible</li>
+</ul>
+</li>
+</ul>
+<h2 id="ejemplo-de-diseño-de-agregado">Ejemplo de Diseño de Agregado</h2>
+<ul>
+<li>Sistema de Comercio Electronico:
+<ul>
+<li>Agregado: Pedido</li>
+<li>Entidades internas: Cliente Linea de Pedido</li>
+<li>Objetos de valor: Direccion de Envio, Moneda</li>
+</ul>
+</li>
+<li>El agregado Pedido asegura que todas las operacion (agregar productos, modificar cliente, calcular precio) se realicen de manera coherente.</li>
+</ul>
+<h2 id="revisar-coodigo">Revisar Coodigo</h2>
+<ul>
+<li>agregados.zip</li>
+</ul>
+<h2 id="agregados-conclusiones">Agregados Conclusiones</h2>
+<ul>
+<li>Los agregados son esenciales para estructurar modelos de dominio complejos y asegurar la consistencia de los datos</li>
+<li>El diseño correcto de los agregados permite crear sistemas escalables, modulares y alineados con las reglas del negocio</li>
+<li>La raiz del agregado juega un papel en la proteccion de la integridad del domino</li>
+</ul>
+<h2 id="que-es-un-repositorio">¿Que es un Repositorio?</h2>
+<ul>
+<li>Un repositorio es una abstraccion que proporciona un mecanismo para almacenar y recuperar agregados</li>
+<li>Actua como una coleccion en memoria de agregados, aunque en realidad interactua con la base de datos u otro sistema de persistencia</li>
+<li>Proporciona acceso a los agregados sin exponer los detaller de como estan almacenados</li>
+</ul>
+<h2 id="rol-del-repositorio">Rol del Repositorio</h2>
+<ul>
+<li>Los repositorios permiten:
+<ul>
+<li>Agregar nuevos agregados</li>
+<li>Recuperar agregados existentes por su identidad</li>
+<li>Eliminar Agregados</li>
+<li>Abstener la complejidad del sistema de persistencia subyacente (base de datosm APIs, etc)</li>
+</ul>
+</li>
+</ul>
+<h2 id="interaccion-con-los-agregados">Interaccion con los Agregados</h2>
+<ul>
+<li>Los repositorios solo deben operar sobre agregados completos</li>
+<li>Deben encapsular la logica de acceso a la base de datos y garantizar que los agregados recuperados sean consistentes</li>
+<li>Mantienen la integridad de los datos entre las transaccion</li>
+</ul>
+<h2 id="diseño-de-un-repositorio">Diseño de un Repositorio</h2>
+<ul>
+<li>Un repositorio suele implementar metodos como:
+<ul>
+<li><em>save(Aggregate aggregate):</em> guarda un agregado</li>
+<li><em>findById(AggregateId id):</em> recupera un agregado por su identidad</li>
+<li><em>delete(Aggregate aggregate):</em> elimina un agregado</li>
+</ul>
+</li>
+</ul>
+<h2 id="relacion-con-la-persistencia">Relacion con la Persistencia</h2>
+<ul>
+<li>El repositorio abstrae la interaccion con la capa de persistencia, evitando que el codigo de dominio conozca detaller de como y donde se alamcenan los agregados</li>
+<li>Puede estar respaldado por:
+<ul>
+<li>Bases de datos relacionales (ORM como Hibernate)</li>
+<li>Base de datos NoSQL</li>
+<li>Sistemas de almacenamiento distribuido</li>
+</ul>
+</li>
+</ul>
+<h2 id="patron-repositorio-vs-dao">Patron Repositorio vs. DAO</h2>
+<ul>
+<li>Repositorio:
+<ul>
+<li>Operaciones enfocadas en agregados completos</li>
+<li>Mas cercano al dominio del negocio</li>
+</ul>
+</li>
+<li>DAO (Data Access Object)
+<ul>
+<li>Operaciones mas granulares, enfocadas en entidades individuales o datos sin estructura</li>
+<li>Mas tecnico, centrado en la persistencia de datos</li>
+</ul>
+</li>
+</ul>
+<h2 id="implementación-del-repositorio">Implementación del Repositorio</h2>
+<ul>
+<li>Al diseñar un repositorio, se debe:
+<ul>
+<li>Asegurar que sea especifico del dominio (trabajar con agregadosm no con entidades aisladas)</li>
+<li>Encapsular las relgas de negocio que deben aplicarse al guardar y recuperar datos</li>
+<li>Mantenerlo independiente de la infraestructura especifica</li>
+</ul>
+</li>
+<li>Ejemplo
+<ul>
+<li>Si usas JPA o Hibernate, el repositorio interactua con el EntityManager, pero ese detalle no debe estar expuesto al domino</li>
+</ul>
+</li>
+</ul>
+<h2 id="repositorios-y-consistencia">Repositorios y Consistencia</h2>
+<ul>
+<li>Los repositorios deben manejar la consistencia de los agregados, lo que incluye:
+<ul>
+<li>Garantizar que los agregados sean recuperados en un estado consistente</li>
+<li>Aplicar las reglas de negocio pertinentes al persistir o eliminar agregado</li>
+<li>En sistemas distribuidos, puede ser necesario manejar la consistencia eventual</li>
+</ul>
+</li>
+</ul>
+<h2 id="que-son-los-eventos-de-dominio">¿Que son los Eventos de Dominio?</h2>
+<ul>
+<li>Los eventos de domino representan hechos que han ocurrido en el dominio del negocio</li>
+<li>Son inmutables y describen cambios significativos en el estado del sistema</li>
+<li>Ejemplo: &ldquo;Pedido Creado&rdquo;, &ldquo;Pago Aceptado&rdquo;, &ldquo;Cliente Registrado&rdquo;</li>
+</ul>
+<h2 id="beneficios-de-los-eventos-de-dominio">Beneficios de los Eventos de Dominio</h2>
+<ul>
+<li><em>Desacoplamiento:</em> Permiten que distintas partes del sistema reaccionen sin necesidad de estar fuertemente acopladas</li>
+<li><em>Rastreo del Estado:</em> Los eventos del dominio proporcionan un historial detallado de los cambios del sistema</li>
+<li><em>Reactivo:</em> Facilita un diseño orientado a eventos donde los cambios se propagan automaticamente</li>
+</ul>
+<h2 id="eventos-en-el-modelo-de-dominio">Eventos en el Modelo de Dominio</h2>
+<ul>
+<li>Los eventos son parte del lenguaje ubicuo y deben reflejar hechos del negocio, no detalles tecnicos</li>
+<li>Se pueden utilizar para:
+<ul>
+<li>Informar a otros agregados de cambios</li>
+<li>Sincronizar diferentes sistemas</li>
+<li>Disparar procesos asincronos, como notificaciones o integraciones</li>
+</ul>
+</li>
+</ul>
+<h2 id="estructura-de-un-evento-de-dominio">Estructura de un Evento de Dominio</h2>
+<ul>
+<li>Un evento de dominio tipicamente incluye:
+<ul>
+<li>Nombre descriptiovo: Ejemplo, PedidoCreado</li>
+<li>Datos relevantes; Informacion sobre el hecho ocurrido, como el ID de pedido, fecha de creacion, monto total, etc.</li>
+<li>Momento del evento: Tiempo en que el evento ocurrio</li>
+</ul>
+</li>
+</ul>
+<h2 id="implementación-de-eventos-de-dominio">Implementación de Eventos de Dominio</h2>
+<ul>
+<li>Crear el Evento: Cuando ocurre una accion signifcativa, se genera el evento en el codigo
+<ul>
+<li>Ejemplo: Al crear un nuevo pedido, se dispara un evento PedidoCreado</li>
+</ul>
+</li>
+<li>Publicar el Evento: El evento se publica y es procesado por los interesados en el
+<ul>
+<li>Puede ser publicado sincronicamente o asincronamente</li>
+</ul>
+</li>
+<li>Procesar el Evento: Otros componentes del sistema escuchan y reaccionan al evento (Enviar un email, actualizar inventario, etc)</li>
+</ul>
+<h2 id="publicacion-y-manejor-de-eventos">Publicacion y Manejor de Eventos</h2>
+<ul>
+<li>Los eventos de dominio se pueden publicar de diferentes maneras:
+<ul>
+<li>Sincrono: Los eventos se manejan en el mismo proceso y transaccion</li>
+<li>Asincrono: Los eventos se envian a traves de un sistema de mensajeria y se procesan en un momento posterior</li>
+</ul>
+</li>
+<li>Infraestructura: Sistemas como RabbitMQ, Kafka o mensajeria interna pueden ser utilizados para manejar eventos asincronos</li>
+</ul>
+<h2 id="consistencia-y-eventualidad">Consistencia y Eventualidad</h2>
+<ul>
+<li>Los eventos de dominio ayudan a manejar la consistencia eventual en sistemas distribuidos</li>
+<li>Los sistemas que reaccionan a eventos pueden actualizarse de manera eventual, sin necesidad de una transaccion global</li>
+<li>Ejemplo: Un sistema de inventario puede recibir un evento de PedidoCreado y ahustar sus cifras en un proceso separado</li>
+</ul>
+<h2 id="ventajas-del-diseño-basado-en-eventos">Ventajas del Diseño Basado en Eventos</h2>
+<ul>
+<li>Escalabilidad; Los sistemas desacoplados y basados en eventos pueden escalar mas facilmente</li>
+<li>Auditoria y Rastreo: Los eventos proporcionan un registro claro de lo que ha ocurridom util para auditorias</li>
+<li>Resilencia: Al manejar los eventos de manera asincrona, los sistemas son menos propenso a fallos criticos debido a desacoplamiento</li>
+</ul>
+<h2 id="que-es-una-fabrica">¿Que es una Fabrica?</h2>
+<ul>
+<li>Una fabrica es un patron de diseño utilizado para la creacion de objetos complejos</li>
+<li>Encapsula la logica necesaria para construir un agregado o una entidad, asegurando que se respeten las reglas de negocio</li>
+<li>Facilita la creacion de objetos sin que el codigo cliente necesite conocer los detalles de su construccion</li>
+</ul>
+<h2 id="por-que-usar-una-fabrica">¿Por que usar una Fabrica?</h2>
+<ul>
+<li>Simplificacion: Evita que los clientes del modelo de dominio tengan que preocuparse por la logica de creacion de objetos</li>
+<li>Consistencia: Asegura que las reglas y restricciones de dominio se cumplan al crear objetos</li>
+<li>Desacoplamiento: Separa la responsabilidad de crear objetos de otras partes del codigo promoviendo la cohesion</li>
+</ul>
+<h2 id="cuando-utilizar-una-fabrica">¿Cuando utilizar una Fabrica?</h2>
+<ul>
+<li>Utiliza una fabrica cuando:</li>
+<li>La creacion del objeto es compleja y requiere de multiples pasos o validaciones</li>
+<li>El proceso de construccion puede cambiar en el futuro y deseas encapsular ese cambio</li>
+<li>Se debe garantizar que los objetos sean creados en un estado valido desde el inicio</li>
+</ul>
+<h2 id="fabricas-en-el-contexto-del-ddd">Fabricas en el Contexto del DDD</h2>
+<ul>
+<li>En Domain-Driven Design, las fabricas son responsables en crear:
+<ul>
+<li>Entidades: Cuando la creacion involucra logica compleja</li>
+<li>Agregados: Para garantizar que un agregado completo se construya correctamente, respetando todas las reglas de dominio</li>
+</ul>
+</li>
+<li>Las fabricas ayudan a proteger la consistencia y las reglas inmutables del modelo de dominio</li>
+</ul>
+<h2 id="beneficios-de-usar-fabricas">Beneficios de Usar Fabricas</h2>
+<ul>
+<li>Encapsulacion: Las reglas y la complejidad de la creacion del objeto estan encapsuladas en la fabrica, no en el codigo cliente</li>
+<li>Reduccion de errores: Evita la creacion incorrecta de objetos fuera de se un estado valido</li>
+<li>Reutilizacion: Puedes reutilizar la logica de creacion en diferentes partes del sistema</li>
+</ul>
+<h2 id="ejemplo-de-una-fabrica-para-un-agregado">Ejemplo de una Fabrica para un Agregado</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PedidoFactory</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> Pedido <span style="color:#a6e22e">crear</span><span style="color:#f92672">(</span>Cliente cliente<span style="color:#f92672">,</span> List<span style="color:#f92672">&lt;</span>LineaPedido<span style="color:#f92672">&gt;</span> lineas<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// validaciones y logica de negocio
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>lineas<span style="color:#f92672">.</span><span style="color:#a6e22e">isEmpty</span><span style="color:#f92672">()){</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> IllegalArgumentException<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;El pedido debe tener al menos una liena&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> Pedido<span style="color:#f92672">(</span>cliente<span style="color:#f92672">,</span> lineas<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h2 id="fabricas-vs-constructores">Fabricas vs Constructores</h2>
+<ul>
+<li>Constructor:
+<ul>
+<li>Adecuado para la creacion de objetos simples que no requieren validaciones complejas</li>
+<li>Se usa cuando la logica de creacion es trivial y no viola las reglas del dominio</li>
+</ul>
+</li>
+<li>Fabrica:
+<ul>
+<li>Util para la creacion de objetos o agregados</li>
+<li>Ideal cuando hay logica de negocio o validaciones involucradas</li>
+</ul>
+</li>
+</ul>
+<h2 id="que-es-un-servicio-de-dominio">¿Que es un Servicio de Dominio?</h2>
+<ul>
+<li>Un Servicio de Dominio es un patron que encapsula logica de negocio que no pertenece a una entidad o un objeto de valor</li>
+<li>Responde a preguntas del tipo &ldquo;¿Donde coloco esta logica que no encaja naturalmente en ninguna entidad o valor?&rdquo;</li>
+<li>Representa operaciones que son parte del dominio que no tienen estado propio</li>
+</ul>
+<h2 id="caracteristicas-de-un-servicio-de-dominio">Caracteristicas de un Servicio de Dominio</h2>
+<ul>
+<li>Sin estado: No guarda informacion persistente, solo ejecuta operaciones sobre otros objetos del dominio</li>
+<li>Foco en el negocio: Representa acciones del dominio que involucran reglas de negocio</li>
+<li>Logica compleja: Encapsula comportamientos que no pertenecen a una unica entidad o agragado</li>
+</ul>
+<h2 id="cuando-usar-un-servicio-de-dominio">¿Cuando usar un Servicio de Dominio?</h2>
+<ul>
+<li>Usar un servicio de dominio cuando:
+<ul>
+<li>La logica no puede ser naturalmente asignada a una entidad o un objeto de valor</li>
+<li>La operacion afecta a multiples entidades o agregados</li>
+<li>Quieres mantener el modelo de dominio limpio y cohesivo</li>
+</ul>
+</li>
+</ul>
+<h2 id="ejemplos-de-servicios-de-dominio">Ejemplos de Servicios de Dominio</h2>
+<ul>
+<li>Calculo de Impuestos:
+<ul>
+<li>La logica de calculo de impuestos puede involucrar multiples entidades (pedido, clientes, etc), pero no pertenece a una entidad especifica</li>
+<li>Encapsular este logica en un servicio mejora la cohesion</li>
+</ul>
+</li>
+<li>Transferencia de Dinero:
+<ul>
+<li>La operacion de transferencia de dinero puede involucrar multiples cuentas (agregados) y necesita reglas de validacion y consistencia</li>
+</ul>
+</li>
+</ul>
+<h2 id="tipode-de-servicios-en-ddd">Tipode de Servicios en DDD</h2>
+<ul>
+<li>En DDD, generalmente encontramos tres tipos de servicios
+<ul>
+<li>Application Services (Servicios de Aplicacion)</li>
+<li>Domain Services (Servicios de Dominio)</li>
+<li>Infraestructure Services (Servicios de Infraestructura)</li>
+</ul>
+</li>
+</ul>
+<h2 id="application-services-servicios-de-aplicacion">Application Services (Servicios de Aplicacion)</h2>
+<ul>
+<li>Los Application Services son responsables de orquestar la logica de negocio, actuando como una capa entre la interfaz del usuario (o las APIs) y el dominio</li>
+<li>No contienen logica de negocio; su principal tarea es coordinar las operaciones del dominio, a menudo interactuando con repositorios, entidades, y otros servicios de infraestructura</li>
+<li>Responsabilidades:
+<ul>
+<li>Orquestar los casos de uso de la aplicacion</li>
+<li>Interactuar con Respositorios y Domain Services</li>
+<li>Delegar las reglas de negocio al dominio</li>
+<li>Coordinar transacciones y flujos de trabajo</li>
+</ul>
+</li>
+</ul>
+<h2 id="ejemplo-de-un-application-service">Ejemplo de un Application Service</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">OrderApplicationService</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> OrderRepository orderRepository<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> PaymentService paymentService<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">OrderApplicationService</span> <span style="color:#f92672">(</span>OrderRepository orderRepository<span style="color:#f92672">,</span> PaymentService paymentService<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">oderRepository</span> <span style="color:#f92672">=</span> orderRepository<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">paymentService</span> <span style="color:#f92672">=</span> paymentService<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">confirmOrder</span><span style="color:#f92672">(</span>UUID orderId<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Cargar el agregado (Order) desde el repositorio
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        Order order <span style="color:#f92672">=</span> orderRepository<span style="color:#f92672">.</span><span style="color:#a6e22e">findById</span><span style="color:#f92672">(</span>orderId<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Validar y confirmar el pedido
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        order<span style="color:#f92672">.</span><span style="color:#a6e22e">confirmOrder</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Procesar el pago usando un servicio externo
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        paymentService<span style="color:#f92672">.</span><span style="color:#a6e22e">processPayment</span><span style="color:#f92672">(</span>order<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Guardar el agregado
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        orderRepository<span style="color:#f92672">.</span><span style="color:#a6e22e">save</span><span style="color:#f92672">(</span>order<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h2 id="domain-services-servicios-de-dominio">Domain Services (Servicios de Dominio)</h2>
+<ul>
+<li>Los Domain Services encapsulan logica de negocio que no pertenece naturalmente a una entidad o a un objeto de valor</li>
+<li>Cuando una operacion involucra multiples entidades o conceptos que no pueden estar claramente asociados a una unica regla, se utiliza un servicio de dominio</li>
+<li>Un Domain Service contiene reglas de negocio que no tienen un &ldquo;hogar&rdquo; natural en una entidad especifica</li>
+<li>Responsabilidades:
+<ul>
+<li>Implementar logica de negocio que involucra varias entidades</li>
+<li>Asegura que las operaciones que no pertenecen claramente a una entidad esten encapsuladas correctamente</li>
+</ul>
+</li>
+</ul>
+<h2 id="ejemplo-de-un-domain-service">Ejemplo de un Domain Service</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> ShippingService <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">double</span> <span style="color:#a6e22e">calculateShippingCost</span><span style="color:#f92672">(</span>Order order<span style="color:#f92672">,</span> Address deliveryAddress<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">double</span> baseCost <span style="color:#f92672">=</span> <span style="color:#ae81ff">5.0</span> <span style="color:#75715e">// Costo base
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">double</span> distanceFactor <span style="color:#f92672">=</span> deliveryAddress<span style="color:#f92672">.</span><span style="color:#a6e22e">distanceFromWarehouse</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Calculo simplificado
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">return</span> baseCost <span style="color:#f92672">+</span> distanceFactor <span style="color:#f92672">*</span> order<span style="color:#f92672">.</span><span style="color:#a6e22e">getTotalWeight</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h2 id="infraestructure-services-servicios-de-infraestructura">Infraestructure Services (Servicios de Infraestructura)</h2>
+<ul>
+<li>Los Infrastructure Services se encargan de las operaciones relacionadas con la infraestructura, como la persistencia, la integracion con sistemas externos, y otras tareas que no pertenecen al dominio del negocio en si.</li>
+<li>Estos servicios son usados tanto por los Application Services como por las entidades del dominio, pero su logica no forma parte del core del dominio</li>
+<li>Responsabilidades:
+<ul>
+<li>Manejar la interaccion con sistemas externos</li>
+<li>Proporcionar servicios que no estan directamente relacionados con la logica de negocio</li>
+<li>Acceso a base de datos, colas de mensajes, APIs externas, etc</li>
+</ul>
+</li>
+</ul>
+<h2 id="ejemplo-de-un-infrastructure-service">Ejemplo de un Infrastructure Service</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PaymentService</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">processPayment</span><span style="color:#f92672">(</span>Order order<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Logica para procesar el pago con uns sistema externo
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Procesando pago para el pedido: &#34;</span> <span style="color:#f92672">+</span> order<span style="color:#f92672">.</span><span style="color:#a6e22e">getOrderId</span><span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>        Map<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> Object<span style="color:#f92672">&gt;</span> chargeParams <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashMap<span style="color:#f92672">&lt;&gt;();</span>
+</span></span><span style="display:flex;"><span>        chargeParams<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;amount&#34;</span><span style="color:#f92672">,</span> chargeRequest<span style="color:#f92672">.</span><span style="color:#a6e22e">getAmount</span><span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>        chargeParams<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;currency&#34;</span><span style="color:#f92672">,</span> chargeRequest<span style="color:#f92672">.</span><span style="color:#a6e22e">getCurrency</span><span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>        chargeParams<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;description&#34;</span><span style="color:#f92672">,</span> chargeRequest<span style="color:#f92672">.</span><span style="color:#a6e22e">getDescription</span><span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>        chargeParams<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;source&#34;</span><span style="color:#f92672">,</span> chargeRequest<span style="color:#f92672">.</span><span style="color:#a6e22e">getStripeToken</span><span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> Change<span style="color:#f92672">.</span><span style="color:#a6e22e">create</span><span style="color:#f92672">(</span>chargeParams<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h2 id="buenas-practicas-para-servicios-de-dominio">Buenas Practicas para Servicios de Dominio</h2>
+<ul>
+<li>Mantenerlos sin estado; No deben almacenar informacion entre llamadasm asegurando que sea reutilizables y predecibles</li>
+<li>Centrarse en una unica responsabilidad: Cada servicio debe tener una unica responsabilidad en el dominio, siguiendo el perincipio de responsabilidad unica (SRP)</li>
+<li>Usar el lenguaje ubicuo: Nombre y metodos que reflejen claramente la logica del negocio en el lenguaje comun a los expertos del dominio</li>
+</ul>
+<h2 id="que-es-un-modulo-en-ddd">¿Que es un Modulo en DDD?</h2>
+<ul>
+<li>Un modulo es una agrupacion logica de conceptos del dominio que estan relacionados entre si</li>
+<li>Se utiliza para organizar el modelo de dominio y mejorar la comprension, mantenibilidad y escalabilidad del sistema</li>
+<li>Un modulo debe ser cohesivo, con responsabilidades claras y bien definidas</li>
+</ul>
+<h2 id="por-que-usar-modulos">¿Por que usar Modulos?</h2>
+<ul>
+<li>Claridad y Organizacion: Ayudan a organizar grandes modelos de dominio en partes manejables</li>
+<li>Encapsulacion: Los modelos agrupan elementos relacionados y ocultan detalles innecesarios a otras partes del sistema</li>
+<li>Mantenibilidad: Facilitan la evolucion del sistema, permitiendo que los modulos cambien de manera independiente</li>
+</ul>
+<h2 id="diseño-de-modulos">Diseño de Modulos</h2>
+<ul>
+<li>Cohesion: Todos los elementos dentro de un modulo deben estar estrechamente relacionados con el dominio que el modulo representa</li>
+<li>Bajo Acoplamiento: Los modulos deben interactuar entre si a traves de interfaces bien definidas minimizando las dependencias</li>
+<li>Lenguaje Ubicuo: Cada modulo debe seguir el lenguaje ubicuo del contexto delimitado al que pertenece</li>
+</ul>
+<h2 id="modularidad-en-el-modelo-del-dominio">Modularidad en el Modelo del Dominio</h2>
+<ul>
+<li>Los modulos en DDD se utilizan para organizar las entidades, objetos de valor, agregados, repositorios y servicios de dominio en agrupaciones logicas</li>
+<li>Permiten que los desarrolladores se enfoquen en partes especificas del dominio sin verse abrumados por la complejidad global del sistema</li>
+</ul>
+<h2 id="modulos-en-un-sistema-de-e-commerce">Modulos en un Sistema de e-commerce</h2>
+<ul>
+<li>Modulo Pedidos:
+<ul>
+<li>Contiene entidades como Pedido, Linea de Pedido, y servicios relacionados con la gestion de pedidos</li>
+</ul>
+</li>
+<li>Modulo Inventario:
+<ul>
+<li>Agrupa la logica relacionada con la gestion del inventario, como las entidades Producto, Almacen, y servicios del inventario</li>
+</ul>
+</li>
+<li>Modulo Pagos:
+<ul>
+<li>Maneja todo relacionado con el procesamiento de pagos, como Pago, Metodo de Pago, y servicios de validacion de transacciones</li>
+</ul>
+</li>
+</ul>
+<h2 id="buenas-practicas-de-modularidad">Buenas practicas de Modularidad</h2>
+<ul>
+<li>Agrupar por Dominio de Negocio: Organiza los modulos segun los conceptos de negocio, no por aspecto tecnicos</li>
+<li>Evitar Dependencias Ciclicas: Los modulos no deben depender unos de otros en un ciclo. Mantener las dependencias claras y dirigidas</li>
+<li>Interfaces Claras: Define contratos claros entre los modulos para que interactuen sin necesidad de conocer detaller internos</li>
+</ul>
+<h2 id="relacion-entre-modulos-y-contextos-delimitados">Relacion entre Modulos y Contextos Delimitados</h2>
+<ul>
+<li>Los Bounded Contexts pueden contener varios modulos agrupando conceptos mas especificos dentro del contexto general del dominio</li>
+<li>Cada modulo dentro de un contexto debe:
+<ul>
+<li>Respetar los limites del contexto delimitado</li>
+<li>Seguir el lenguaje ubicuo definido por el contexto</li>
+</ul>
+</li>
+<li>El uso correcto de modulos dentro de contextos facilita la escala del sistema y reduce la complejidad global</li>
+</ul>
+<h2 id="modularidad-y-escalabilidad">Modularidad y Escalabilidad</h2>
+<ul>
+<li>La modularidad permite
+<ul>
+<li>Evolucion Independiente: Los modulos pueden evolucionar sin afectar a otras partes del sistema</li>
+<li>Pruebas Unitarias: Facilita las pruebas y validacion de cada parte de manera independiente</li>
+<li>Distribucion: En arquitecturas distribuidas, los modulos bien definidos pueden convertirse facilmente en microservicios</li>
+</ul>
+</li>
+</ul>
+<h1 id="modulo-6">Modulo 6</h1>
+<h1 id="modulo-7">Modulo 7</h1>
+<h2 id="motivacion">Motivacion</h2>
+<ul>
+<li>Desafio en software empresarial de larga duracion: Evolución constante debido a cambios en los Requisitos</li>
+<li>Importancia de la arquitectura y el diseño: Facilita la compresion del sistema y su modificacion</li>
+<li>Brecha entre diseño arquitectonico y codigo: La Implementación dispersa de conceptos arquitectonicos puede llevar a un aumento de la complejidad y errores</li>
+</ul>
+<h2 id="solucion-propuesta">Solucion Propuesta</h2>
+<ul>
+<li><em>jMolecules:</em> Un enfoque que permite a los desarrolladores expresar explicitamente patrones arquitectonicos en el codigo a traves de anotaciones e interfaces en Java</li>
+<li>Beneficios:
+<ul>
+<li>Comprensibilidad: El codigo refleja mejor los conceptos arquitectonicos</li>
+<li>Documentacion precisa: Generada automaticamente desde el codigo</li>
+<li>Verificacion de reglas: Asegura conformidad con los conceptos de diseño</li>
+<li>Reduccion de codigo boilerplate: Automatiza detalles tecnicos (p. ej., mapeo de persistencia)</li>
+</ul>
+</li>
+</ul>
+<h2 id="conceptos-arquitectonicos">Conceptos Arquitectonicos</h2>
+<ul>
+<li>Bloques de construccion de DDD:
+<ul>
+<li>Agregados</li>
+<li>Entidades</li>
+<li>Repositorios</li>
+</ul>
+</li>
+<li>Estilos arquitectonicos soportados:
+<ul>
+<li>Arquitectura en capas</li>
+<li>Arquitectura onion</li>
+<li>CQRS (Common Query Responsability Segregation)</li>
+<li>Hexagonal</li>
+</ul>
+</li>
+<li>Anotaciones y tipos en jMolecules: Conectar codigo y arquitectura</li>
+</ul>
+<h2 id="arquitectura-limpia-y-jmolecules">Arquitectura Limpia y jMolecules</h2>
+<ul>
+<li>jMolecules se alinea con Clean Architecture y DDD, entre otras&hellip;</li>
+<li>Facilita la separacion clara de capas y responsabilidades</li>
+<li>Ofrece componentes clave: Agregados, Entidades, Value Objects, Repositorios</li>
+</ul>
+<h2 id="implementación-de-un-pedido-order">Implementación de un Pedido (Order)</h2>
+<ul>
+<li>Desventaja tradicional: Codigo lleno de detalles tecnicos (JPA, JSON, etc)</li>
+<li>Ventaja jMolecules: Elimina el codiog tecnico, dejando solo la logica de dominio</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@AggregateRoot</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Order</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Entity</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LineItem</span> <span style="color:#f92672">{</span> <span style="color:#f92672">...</span> <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@AggregateRoot</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Customer</span> <span style="color:#f92672">{</span> <span style="color:#f92672">...</span> <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h2 id="herramientas-de-verificacion">Herramientas de Verificacion</h2>
+<ul>
+<li>ArchUnit y jQAssistant:
+<ul>
+<li>Verifican que la implementacion respeten las reglas arquitectonicas del modelo</li>
+<li>Evitan errores en la proyeccion del diseño en el codigo</li>
+</ul>
+</li>
+</ul>
+<h2 id="documentación-automatica">Documentación Automatica</h2>
+<ul>
+<li>Generacion de diagramas UML y Canvas del Modulo:
+<ul>
+<li>Basados en metadatos arquitectonicos presentes en el codigo</li>
+<li>Correctos por definicion, ya que se derivan directamente del codigo</li>
+</ul>
+</li>
+</ul>
+<h2 id="reduccion-de-biolerplate">Reduccion de Biolerplate</h2>
+<ul>
+<li>Implementación tradicional:
+<ul>
+<li>Anotaciones JPA y otras dependencias tecnicas</li>
+</ul>
+</li>
+<li>Con jMolecules:
+<ul>
+<li>El codigo es mas limpio y directo manteniendo la semantica arquitectonica explicita</li>
+</ul>
+</li>
+</ul>
+<h2 id="objetivos">Objetivos</h2>
+<ul>
+<li>Separar claramente las capas de dominio, aplicacion e infraestructura</li>
+<li>Evitar la sobreingenieria: mantener el codigo simple y legible</li>
+<li>Revisar regularmente la correspondencia entre el diseño del dominio y el codigo</li>
+</ul>
+<h2 id="jqassistant">jQAssistant</h2>
+<ul>
+<li>Your Software. Your Structures. Your Rules
+<ul>
+<li>scan</li>
+<li>document</li>
+<li>validate</li>
+</ul>
+</li>
+<li>jQAssistant es una herramienta para el analisis y verificacion de arquitecturas de software</li>
+<li>Permite escanear artefactos de software, definir reglas arquitectonicas y generar reportes sobre violaciones</li>
+<li>Utiliza la base de datos de grafos Neo4j para modelar y consultar la estructura del software</li>
+</ul>
+<h2 id="caracteristicas">Caracteristicas</h2>
+<ul>
+<li>Ecaneo de artefactos: Clases Java, XML, estructuras de base de datos</li>
+<li>Uso de reglas personalizables en Cypher para validar dependencias y arquitecturas</li>
+<li>Informes automaticos de violaciones arquitectonicas</li>
+<li>Integracion con herramientas como Maven</li>
+<li>Basado en Neo4j: Aprovecha el modelado grafico para consultas complejas</li>
+</ul>
+<h2 id="reglas">Reglas</h2>
+<ul>
+<li>Las reglas se expresan en el lenguaje Cypher de Neo4j, y permiten:
+<ul>
+<li>Definir conceptos arquitectonicos (modeulos, capas, controladores, etc)</li>
+<li>Validar restricciones y dependencias entre clases y modulos</li>
+<li>Generar reportes automaticos en cada proceso de construccion</li>
+</ul>
+</li>
+</ul>
+<h2 id="beneficios">Beneficios</h2>
+<ul>
+<li>Mantienen la integridad arquitectonica del software</li>
+<li>Soporta refactorizacion hacia arquitecturas limpias o hexagonales</li>
+<li>Ficilita la deteccion de violaciones arquitectonicas en etapas tempranas</li>
+<li>Se integra facilmente con el flujo de desarrollo continuo</li>
+</ul>
+<h1 id="modulo-8">Modulo 8</h1>
+<h2 id="estilos-arquitecturales">Estilos arquitecturales</h2>
+<ul>
+<li>Arquitectura en Capas (Layered Architecture) -  Decada de 1970</li>
+<li>Arquitectura de Pizarra (Blackboard Architecture) - Decada de 1980</li>
+<li>Arquitectura Monolitica - Decada de 1980 - 1990</li>
+<li>Arquitectura Microkernel - Principios de 2000</li>
+<li>Arquitectura Orientada a Eventos (Event-Driven Architecture) - 2000 en adelante</li>
+<li>Arquitectura Hexagonal (Ports and Adapters) - Años 2005 - 2010</li>
+<li>Arquitectura de Cebolla (Onion Architecture) por Jeffrey Palermo en 2008</li>
+<li>Arquitectura de Microservicios - Decada de 2010</li>
+<li>Arquitectura Limpia (Clean Architecture) - 2010 en adelante</li>
+</ul>
+<h2 id="estilos-arquitecturales-1">Estilos arquitecturales</h2>
+<ul>
+<li>Arquitectura Monolitica</li>
+<li>Arquitectura Orientada a Eventos (Event-Driven Architecture)</li>
+<li>Arquitectura Hexagonal (Ports and Adapters)</li>
+<li>Arquitectura de Cebolla (Onion Architecture)</li>
+<li>Arquitectura de Microservicios</li>
+<li>Arquitectura Limpia</li>
+</ul>
+<h2 id="arquitectura-de-cebolla">Arquitectura de Cebolla</h2>
+<ul>
+<li>La <em>Onion Architecture</em> (Arquitectura de Cebolla) fue introducida por Jeffrey Palermo en 2008</li>
+<li>Esta estrechamente relacionada con la Arquitectura Hexagonal y la Arquitectura Limpia</li>
+<li>Su proposito es estructurar aplicaciones de forma que la logica de negocio este protegida de los detalles de infraestructura y de implementacion, creando una separacion clara entre capas</li>
+</ul>
+<h2 id="comparacion-con-otros-estilos">Comparacion con otros estilos</h2>
+<ul>
+<li>Onion Architecture, Hexagonal Architecture y Clean Architecture comparten principios fundamentales:
+<ul>
+<li>La logica de negocion (Domain) esta en el centro</li>
+<li>Las dependencias siempre fluyen hacia el nucleo de la aplicacion</li>
+<li>Los detalles de infraestructura, como bases de datos, interfaces de usuario o frameworks, estan en capas externas</li>
+</ul>
+</li>
+</ul>
+<h2 id="onion--hexagonal">Onion &lt;&gt; Hexagonal</h2>
+<ul>
+<li>Onion Architecture es muy similar en conpeto a la Arquitectura Hexagonal.</li>
+<li>Aunque su enfoque visual y algunas particularidades en cuanto a terminos y capas pueden diferir</li>
+<li>Mientras que la Hexagonal hablaa de &ldquo;puertos y adaptadores&rdquo;, la Onion simplemente organiza las capas en circulos concetricos, con el dominio en el centro</li>
+</ul>
 </section>
 
   
@@ -1157,6 +2329,12 @@ Por ejemplo:
   
   
   <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="https://julitiux.github.io/posts/copilot/"
+      ><span class="mr-1.5">←</span><span>Copilot</span></a
+    >
     
     
     <a
