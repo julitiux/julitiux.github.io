@@ -158,7 +158,7 @@ No puede tener una reasignacion Debe pertenecer a la clase Tiene que ser public 
 Constante Una constante es un valor que no va a cambiar durante la ejecucion del programa. Para tener un constante en Java:
 No puede tener una reasignacion Debe pertenecer a la clase Tiene que ser public Tiene que ser static La variable debe ser final Enum Un Enum es una clase especial que nos va a permitir tener valores fijos y limitados que van a ser tratados como constantes."><meta itemprop="datePublished" content="2025-09-16T22:21:32-06:00" />
 <meta itemprop="dateModified" content="2025-09-16T22:21:32-06:00" />
-<meta itemprop="wordCount" content="100">
+<meta itemprop="wordCount" content="760">
 <meta itemprop="keywords" content="" />
   
   <meta name="twitter:card" content="summary"/>
@@ -318,7 +318,47 @@ No puede tener una reasignacion Debe pertenecer a la clase Tiene que ser public 
 </ul>
 <h2 id="enum">Enum</h2>
 <p>Un Enum es una clase especial que nos va a permitir tener valores fijos y limitados que van a ser tratados como constantes.</p>
-</section>
+<h2 id="cuando-usar-el-scope-singleton">Cuando usar el Scope Singleton</h2>
+<p>En Spring, <em>Singleton</em> es el scope por defecto. Cuando el estado del objeto o la informacion del usuario no se esta guardando en la instancia, solo se usara pura logica de negocio; por ejemplo los servicios, daos, repositorios, donde el estado de datos se guarda en base de datos. Spring recomienda utilizar el scope <em>Singleton</em> en el 90% de los escenarios, de otra forma si se guarde el estado en la instancia y es unico se usara <em>Prototype</em>. Quiere decir que Spring crea una sola instancia del bean dentro del contenedor de IoC (Inversion of Control)</p>
+<h2 id="cuando-usar-el-scope-prototype">Cuando usar el Scope Prototype</h2>
+<p>Se utiliza cuando el estado de nuestro objeto no se puede compartir en un ambiente multihilo, tiene que se unico en todo el aplicativo. Un servicio que genera codigo OTP, passwords unicos para cada usuario.</p>
+<blockquote>
+<p>Un OTP (One-Time Password) es una contraseña de un solo uso que se genera para validar la identidad de un usuario en un sistema</p>
+</blockquote>
+<h2 id="cual-es-la-diferencia-entre-un-_error_-y-una-_exception_">Cual es la diferencia entre un <em>Error</em> y una <em>Exception</em></h2>
+<p>Una exception representa un situacion anormal que sucede en timepo de ejecucion por ejemplo un error de SQL que puede ser un SQLException, un error de null que puede ser NullPointerException, un FileNotFoundException; pero te puedes recuperar de estas situaciones anormales con un try/catch.
+El Error representa una situacion grave que ocurre en la maquina virtual de la que no nos podemos recuperar, no es conveniente capturarla en un try/catch ya que representa situaciones graves como falta de memoria que es un ArrowMemoryError o un StackOverflowError que sucede cuando tenemos llamadas recursivas.</p>
+<h2 id="cual-es-la-diferencia-entre-un-_bean_-y-un-_component_">Cual es la diferencia entre un <em>Bean</em> y un <em>Component</em></h2>
+<p>Ambos van a crear objetos y los van a guardar en el contenedor de Spring para ser utilizados cuando sean requeridos pero la forma de registrarlos es distinta.</p>
+<ul>
+<li>Para la anotacion <em>Bean</em> siempre se tienen que crear con metodos, donde el tipo de retorno va a ser el tipo de la instancia que se va a crear.</li>
+<li>Los <em>Beans</em> tienen que estar en una clase de <em>Configuration</em>; por ejemplo usando las anotaciones <em>@SpringBootApplication</em> o <em>@Configuration</em></li>
+<li>Los <em>Beans</em> se usan para librerias externas, para clases que no tenemos explicitamente en el proyecto; WebMvcConfigurer, es una clase de SpringFramework, no es una clase nuestra.
+Los componentes se utilizan para nuestas clases y la forma de registrarlo es que Spring va a escanear, crear y guardar el objeto en el contenedor de Spring, pero se utiliza para mayormente clases nuestas</li>
+</ul>
+<h2 id="que-es-un-dto">Que es un DTO</h2>
+<p>Un DTO es un Data Transfer Object que te va ayudar a transportar informacion a lo largo de las placas de la aplicacion, estas capas son el controlador, la capa de servico y la persistencia.</p>
+<h2 id="que-es-un-pojo">Que es un Pojo</h2>
+<p>Es una clase plana que no tiene logica de negocio.</p>
+<h2 id="spring-vs-spring-boot">Spring vs Spring Boot</h2>
+<p>La diferencia principal entre Spring y SpringBoot es que Spring es el dramework base, toda configuracion es de forma manual y requiere mucho trabajo de configuracion; por otro lado SpringBoot es un todo listo para utilizarse, tiene configuraciones automaticas, un servidor embebido, desarrollas mas rapido y es menos codigo.</p>
+<h2 id="que-es-un-controllador">Que es un controllador</h2>
+<p>Es una clase que va a interceptar y aceptar peticiones del lado del cliente, un controlador habla HTTP; acepta la peticion, la procesa y la manda del lado del servicio, el servicio la regresa al controlador y el controlador la regresa en formato JSON, XML, HTML, texto incluso imagen.</p>
+<h2 id="como-declarar-un-singleton">Como declarar un Singleton</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SingletonClass</span> <span style="color:#f92672">{</span>                       <span style="color:#75715e">// 1.- Declarar la clase que queremos hacer Singleton
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> SingletonClass singleton<span style="color:#f92672">;</span>        <span style="color:#75715e">// 2.- Declarar una variable del mismo tipo que la clase, private y static
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">SingletonClass</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>                      <span style="color:#75715e">// 3.- Declarar un contructor private
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">}</span>                                               <span style="color:#75715e">//     Tareas y procesos en el contructor
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> SingletonClass <span style="color:#a6e22e">getInstance</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>    <span style="color:#75715e">// 4.- Declarar un metodo para devolver la instancia
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>singleton <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>                     <span style="color:#75715e">// 5.- Si el objeto no existe vamos a crearlo
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            singleton <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SingletonClass<span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div></section>
 
   
   
