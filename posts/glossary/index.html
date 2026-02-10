@@ -158,7 +158,7 @@ No puede tener una reasignacion Debe pertenecer a la clase Tiene que ser public 
 Constante Una constante es un valor que no va a cambiar durante la ejecucion del programa. Para tener un constante en Java:
 No puede tener una reasignacion Debe pertenecer a la clase Tiene que ser public Tiene que ser static La variable debe ser final Enum Un Enum es una clase especial que nos va a permitir tener valores fijos y limitados que van a ser tratados como constantes."><meta itemprop="datePublished" content="2025-09-16T22:21:32-06:00" />
 <meta itemprop="dateModified" content="2025-09-16T22:21:32-06:00" />
-<meta itemprop="wordCount" content="760">
+<meta itemprop="wordCount" content="1431">
 <meta itemprop="keywords" content="" />
   
   <meta name="twitter:card" content="summary"/>
@@ -345,20 +345,119 @@ Los componentes se utilizan para nuestas clases y la forma de registrarlo es que
 <h2 id="que-es-un-controllador">Que es un controllador</h2>
 <p>Es una clase que va a interceptar y aceptar peticiones del lado del cliente, un controlador habla HTTP; acepta la peticion, la procesa y la manda del lado del servicio, el servicio la regresa al controlador y el controlador la regresa en formato JSON, XML, HTML, texto incluso imagen.</p>
 <h2 id="como-declarar-un-singleton">Como declarar un Singleton</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SingletonClass</span> <span style="color:#f92672">{</span>                       <span style="color:#75715e">// 1.- Declarar la clase que queremos hacer Singleton
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SingletonClient</span> <span style="color:#f92672">{</span>                       <span style="color:#75715e">// 1.- Declarar la clase que queremos hacer Singleton
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> SingletonClass singleton<span style="color:#f92672">;</span>        <span style="color:#75715e">// 2.- Declarar una variable del mismo tipo que la clase, private y static
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> SingletonClient singleton<span style="color:#f92672">;</span>        <span style="color:#75715e">// 2.- Declarar una variable del mismo tipo que la clase, private y static
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">SingletonClass</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>                      <span style="color:#75715e">// 3.- Declarar un contructor private
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">}</span>                                               <span style="color:#75715e">//     Tareas y procesos en el contructor
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">SingletonClient</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>                      <span style="color:#75715e">// 3.- Declarar un contructor private
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">}</span>                                                <span style="color:#75715e">//     Tareas y procesos en el contructor
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> SingletonClass <span style="color:#a6e22e">getInstance</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>    <span style="color:#75715e">// 4.- Declarar un metodo para devolver la instancia
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>singleton <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>                     <span style="color:#75715e">// 5.- Si el objeto no existe vamos a crearlo
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            singleton <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SingletonClass<span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> SingletonClient <span style="color:#a6e22e">getInstance</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>    <span style="color:#75715e">// 4.- Declarar un metodo para devolver la instancia
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>singleton <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>                      <span style="color:#75715e">// 5.- Si el objeto no existe vamos a crearlo
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            singleton <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SingletonClient<span style="color:#f92672">();</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> singleton<span style="color:#f92672">;</span>                            <span style="color:#75715e">// 6.- Si el objeto ya existe, vamos a regresarlo
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h2 id="cual-es-la-capa-mas-importante-de-tu-aplicativo">Cual es la capa mas importante de tu aplicativo</h2>
+<p>La capa mas importante es la capa del Service; por que en el Service estan las validaciones, las reglas de negocio, la interaccion con otras capas, la interacion con la persistencia y con repositorios que es donde se van a guardar todos los datos, la informacion en base de datos. El Service procesa toda esta informacion, la devuelve al controlador y el controlador se la devuelve al cliente. El cliente puede ser una aplicacion movil, una plataforma web, inclusive postman.</p>
+<h2 id="que-es-un-record">Que es un Record</h2>
+<p>Un Record es la forma concisa e inmutable de crear clases Java que solamente van almacenar informacion, no puede ser modificada. Nos ahorrara los Getters, Setters, HashCode e Equals</p>
+<h2 id="solid">SOLID</h2>
+<h3 id="s---single-responsability-principle">S - Single Responsability Principle</h3>
+<p>Cada clase debe tener una sola responsabilidad</p>
+<p>Mal:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserService</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">saveUser</span><span style="color:#f92672">()</span> <span style="color:#f92672">{}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">sendMail</span><span style="color:#f92672">()</span> <span style="color:#f92672">{}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>Bien:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserService</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">saveUser</span><span style="color:#f92672">()</span> <span style="color:#f92672">{}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">EmailService</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">sendMail</span><span style="color:#f92672">()</span> <span style="color:#f92672">{}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h3 id="o---abieto-cerrado">O - Abieto-Cerrado</h3>
+<p>Una clase debe estar abierta a la extension, pero cerrada a la modificacion.</p>
+<p>Mal</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>type<span style="color:#f92672">.</span><span style="color:#a6e22e">equals</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;CARD&#34;</span><span style="color:#f92672">))</span> <span style="color:#f92672">{}</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>type<span style="color:#f92672">.</span><span style="color:#a6e22e">equals</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;PAYPAL&#34;</span><span style="color:#f92672">))</span> <span style="color:#f92672">{}</span>
+</span></span></code></pre></div><p>Bien</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Payment</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">pay</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CardPayment</span> <span style="color:#66d9ef">implements</span> Payment <span style="color:#f92672">{}</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PaypalPayment</span> <span style="color:#66d9ef">implements</span> Payment <span style="color:#f92672">{}</span>
+</span></span></code></pre></div><h3 id="l---sustitucion-de-liskov">L - Sustitucion de Liskov</h3>
+<p>Los objetos de una subclase deben poder reemplazar a los objetos de su superclase sin alterar el programa.</p>
+<p>Mal</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Bird</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">fly</span><span style="color:#f92672">()</span> <span style="color:#f92672">{}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Penguin</span> <span style="color:#66d9ef">extends</span> Bird <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">fly</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> Exception<span style="color:#f92672">();</span> <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>Bien</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Bird</span> <span style="color:#f92672">{}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">FlyingBird</span> <span style="color:#66d9ef">extends</span> Bird <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">fly</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h3 id="i---segregacion-de-interfaces">I - Segregacion de interfaces</h3>
+<p>Evita las interfaces grandes, pues pueden forzar la implementacion de metodos innecesarios</p>
+<p>Mal:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Worker</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">work</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">eat</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>Bien:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Workable</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">work</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Eatable</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">eat</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h3 id="d---inversion-de-dependencias">D - Inversion de dependencias</h3>
+<p>Los modulos de alto nivel no deben depender de los de bajo nivel sino que ambos deben depender de abstracciones</p>
+<p>Mal</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">OrderService</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> MySQLDatabase db <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> MySQLDatabase<span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>Bien</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">OrderService</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> Database db<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    OrderService<span style="color:#f92672">(</span>Database db<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">db</span> <span style="color:#f92672">=</span> db<span style="color:#f92672">;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span></code></pre></div></section>
+</span></span></code></pre></div><h2 id="encapsulamiento">Encapsulamiento</h2>
+<p>El encapsulamiento protege los datos de una clase y permite controlar como se accede y modifican. En Java se logra usando modificadores de acceso como <em>private</em>, <em>public</em> y protected.
+De esta forma se evita modificaciones incorrectas, por ejemplo, que desde otra clase se pueda modificar el id de un usuario. Otras clases pueden acceder al dato si es necesario, pero no deberian poder modificarlo.
+El encapsulamiento hace que el codigo sea mas seguro y mantenible</p>
+<h2 id="herencia">Herencia</h2>
+<p>La herencia permite que una clase herede atributos y metodos de otra.</p>
+<ul>
+<li>La clase que hereda se llama clase hija o subclase</li>
+<li>La clase de la cual se hereda se llama clase padre o superclase
+Este enfoque favorece la reutilizacion de codigo y permite establecer relaciones jerarquicas entre las clases.</li>
+</ul>
+<h2 id="polimorfismo">Polimorfismo</h2>
+<p>El polimorfismo permite que un mismo metodo tenga distintos comportamientos segun el objeto que lo ejecute. Es decir, una misma accion puede realizarse de diferentes formaa.
+Ejemplo: una persona hispanohablante saluda diciendo &ldquo;hola&rdquo; mientras que otra de lengua inglesa saluda diciendo &ldquo;Hello&rdquo;.
+En programacion esto se logra mediante la sobreescritura de metodos (@Override) la clase padre o la interface defina un metodo y la clase hila lo implementan segun su propio comportamiento.
+Esto permite un codigo mas flexible y facilita la extension del sistema sin modificar el codigo existente.</p>
+<h2 id="abstraccion">Abstraccion</h2>
+<p>La abstraccion permite ocultar la implementacion interna y mostrar solo lo esencial del comportamiento de un objeto
+Se logra mediante clases <em>abstractas</em> e <em>interfaces</em>, que definen que metodos deben existsir, pero no como se implementan.
+De esta manera, las clases hijas pueden utilizar esos metodos sin conocer su funcionamiento interno, lo que reduce la complejidad del codigo
+Ademas, la logica comun se centraliza en la clase abstracta o en la interfaz, faiclitando el mantenimiento. Si se realiza una mejora o correccion, todas las clases hijas se benefician automaticamente, sin necesidad de modificarlas una por una.</p>
+</section>
 
   
   
@@ -367,6 +466,12 @@ Los componentes se utilizan para nuestas clases y la forma de registrarlo es que
   
   
   <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="https://julitiux.github.io/posts/hackerrank/"
+      ><span class="mr-1.5">←</span><span>Hackerrank</span></a
+    >
     
     
     <a
@@ -392,7 +497,7 @@ Los componentes se utilizan para nuestas clases y la forma de registrarlo es que
   class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
 >
   <div class="mr-auto">
-    &copy; 2025
+    &copy; 2026
     <a class="link" href="https://julitiux.github.io/">Blogs</a>
   </div>
   <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
