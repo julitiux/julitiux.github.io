@@ -158,7 +158,7 @@ No puede tener una reasignacion Debe pertenecer a la clase Tiene que ser public 
 Constante Una constante es un valor que no va a cambiar durante la ejecucion del programa. Para tener un constante en Java:
 No puede tener una reasignacion Debe pertenecer a la clase Tiene que ser public Tiene que ser static La variable debe ser final Enum Un Enum es una clase especial que nos va a permitir tener valores fijos y limitados que van a ser tratados como constantes."><meta itemprop="datePublished" content="2025-09-16T22:21:32-06:00" />
 <meta itemprop="dateModified" content="2025-09-16T22:21:32-06:00" />
-<meta itemprop="wordCount" content="1431">
+<meta itemprop="wordCount" content="1623">
 <meta itemprop="keywords" content="" />
   
   <meta name="twitter:card" content="summary"/>
@@ -457,6 +457,21 @@ Esto permite un codigo mas flexible y facilita la extension del sistema sin modi
 Se logra mediante clases <em>abstractas</em> e <em>interfaces</em>, que definen que metodos deben existsir, pero no como se implementan.
 De esta manera, las clases hijas pueden utilizar esos metodos sin conocer su funcionamiento interno, lo que reduce la complejidad del codigo
 Ademas, la logica comun se centraliza en la clase abstracta o en la interfaz, faiclitando el mantenimiento. Si se realiza una mejora o correccion, todas las clases hijas se benefician automaticamente, sin necesidad de modificarlas una por una.</p>
+<h2 id="kafka-cluster">Kafka Cluster</h2>
+<p>Within the context of Kafka, a cluster is a group of brokers/servers working together for three reasons:</p>
+<ul>
+<li>speed (low latency)</li>
+<li>durability</li>
+<li>scalability</li>
+</ul>
+<p>Several data streams can be processed by separate servers, witch decreases the latency of data delivery. Data is replicated across multiple servers, so if one fails, another server has the data backed up, ensuring stability - meaning data durability and availability. Kafka balances the load across multiple server to provide scalability.</p>
+<h2 id="kafka-brokers">Kafka Brokers</h2>
+<p>Kafka brokers are servers with special jobs to do: managing the load balancing, replication, and stream decoupling within the kafka cluster. How do they get these jobs done? Well, first of all, in order to start a kafka cluster, the developer authenticates to a boostrap server (or a few). These are the first servers in the cluster. Then, the brokers alse balance the load and handle replication, and those two features are key to kafka&rsquo;s speed, scalability, and stability. Kafka broker is an individual kafka server that store data and server client request Brokers within a cluster.</p>
+<h2 id="producer">Producer</h2>
+<ul>
+<li>An Apache Kafka Producer is a client application that publishes (writes) events to a kafka cluster.</li>
+</ul>
+<p>13:07</p>
 </section>
 
   

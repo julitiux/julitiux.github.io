@@ -152,7 +152,7 @@
   <meta itemprop="name" content="Aquitectura Moderna de Java">
 <meta itemprop="description" content="Modulo 1 Introduccion a la Arquitectura de Software Entender que es la arquitectura de software Conocer los principios fundamentales Diferenciar tipos comunes de arquitectura Ver como se aplican en proyectos modernos Documentación basada en vistas Vista Lógica; Muestra los componentes principales del sistema y sus relaciones. Vista de desarrollo: Detalla la organización del sistema desde el punto de vista del desarrollo, cómo están estructurados los módulos. Vista de procesos: Explica cómo interactúan los componentes en tiempo de ejecución."><meta itemprop="datePublished" content="2025-06-11T17:48:08-06:00" />
 <meta itemprop="dateModified" content="2025-06-11T17:48:08-06:00" />
-<meta itemprop="wordCount" content="12877">
+<meta itemprop="wordCount" content="16599">
 <meta itemprop="keywords" content="" />
   
   <meta name="twitter:card" content="summary"/>
@@ -2319,6 +2319,397 @@ Por ejemplo:
 <li>Onion Architecture es muy similar en conpeto a la Arquitectura Hexagonal.</li>
 <li>Aunque su enfoque visual y algunas particularidades en cuanto a terminos y capas pueden diferir</li>
 <li>Mientras que la Hexagonal hablaa de &ldquo;puertos y adaptadores&rdquo;, la Onion simplemente organiza las capas en circulos concetricos, con el dominio en el centro</li>
+</ul>
+<h2 id="caracteristicas-de-arquitectura-de-cebolla">Caracteristicas de Arquitectura de Cebolla</h2>
+<ul>
+<li>Se basan en capas concentricas, como el dominio (entidades y logica de negocio) en el centro.</li>
+<li>El flujo de dependencias es hacia adentro, es decir, las capas externas dependen de las internas, pero no al reves.</li>
+<li>Las interfaces y los casos de uso se colocan en capas intermedias, mientras que las capas externas manejan los detalles de la infraestructura como bases de datos, frameworks, y APIs externas.</li>
+</ul>
+<h2 id="enfoque-visual">Enfoque visual</h2>
+<ul>
+<li>Las capas estan organizadas como anillos concentricos alrededor de la logica central.</li>
+<li>La analogia con una cebolla ayuda a visualizar como la loogica de negocio esta &ldquo;protegida&rdquo; por las capas externas.</li>
+</ul>
+<h2 id="capa-dominio-central">Capa Dominio Central</h2>
+<ul>
+<li>En el centro esta el dominio (el &ldquo;core&rdquo; del sistema).</li>
+<li>Que incluye las entidades y reglas de negocio.</li>
+<li>Es la parte mas importante del sistema y no debe depender de nada externo, como bases de datos o interfaces de usuario.</li>
+</ul>
+<h2 id="capa-dominio-central-1">Capa Dominio Central</h2>
+<ul>
+<li><em>Entidades</em>: Representan los objetos fundamentales con identidad y comportamiento.</li>
+<li><em>Agregados</em>: Agrupaciones de entidades con reglas de consistencia.</li>
+<li><em>Servicios de dominio</em>: Logica de negocio que no encaja dentro de una entidad o agregado.</li>
+</ul>
+<h2 id="capa-de-aplicacion">Capa de aplicacion</h2>
+<ul>
+<li>Rodeando al dominio, esta capa contiene la logica de la aplicacion (casos de uso).</li>
+<li>Se encarga de coordinar la interacciones entre el dominio y las capas externas, como la interfaz de usuario o el acceso a datos.</li>
+<li>No se implementa logica de negocio, sino logica para orquestar los flujos de trabajo.
+<ul>
+<li><em>Servicios de aplicacion</em>: Implementan casos de uso especificos y coordinan el flujo entre el dominio y las infraestructuras externas.</li>
+</ul>
+</li>
+</ul>
+<h2 id="capa-de-infraestructura">Capa de infraestructura</h2>
+<ul>
+<li>Esta capa contiene detalles tecnicos como la persistencia de datos (bases de datos), integracion con servicios externos (APIs, microservicios), envio de correos electronicos, etc.</li>
+<li>La infraestructura debe ser facilmente reemplazable sin afectar el nucleo del dominio ni la logica de la aplicacion.
+<ul>
+<li><em>Adaptadores</em>: Pueden ser entradas (que inyectan informacion al sistema) o salidas (como el acceso a base de datos o mensajeria).</li>
+</ul>
+</li>
+</ul>
+<h2 id="interfaz-de-usuario">Interfaz de usuario</h2>
+<ul>
+<li>Es la capa mas extensa y contiene la logica relacionada con la interaccion del usuario, como controladores HTTP, vistas y menajo de entrada/salida.
+<ul>
+<li>WebAPIs</li>
+<li>gRPC</li>
+<li>CLI (Command Line Interface)</li>
+</ul>
+</li>
+</ul>
+<h2 id="ventajas">Ventajas</h2>
+<ul>
+<li>Independencia del dominio: La arquitectura de cebolla promueve que el dominio no dependa de detalles externos (infraestructura o interfaces de usuario), lo que permite una evolucion mas simple de la logica del negocio sin impacto en otras areas.</li>
+<li>Testabilidad: Al desacoplar el dominio de otros componentes, es mas facil realizar pruebas unitarias, ya que el dominio puede ser testeado de manera independiente.</li>
+<li>Mantenibilidad: La separacion de responsabilidades y el bajo acoplamiento facilitan el mantenimiento y la evolucion del sistema.</li>
+</ul>
+<h2 id="comparacion-con-otros-patrones">Comparacion con otros patrones</h2>
+<ul>
+<li><em>Arquitectura limpia</em>: La arquitectura de cebolla y la aquitectura limpia son muy similares. Ambas se centran en mantener el dominio contral independiente de los detalles externos, aunque la arquitectura limpia a veces incluye una capa adicional de &ldquo;entidades&rdquo; puras, fuera del dominio de la aplicacion.</li>
+<li><em>Arquitectura hexagonal</em>: Tambien conocida como la arquitectura de puertos y adaptadores, es un concepto similar en cuanto al desacoplamento de dependencias externas. La diferencia principal es que la arquitectura hexagonal se enfoca mas explicitamente en la comunicacion a traves de puertos (interfaces) con adaptadores para conectarse a las tecnologías externas.</li>
+</ul>
+<h1 id="modulo-9">Modulo 9</h1>
+<h2 id="arquitectura-limpia">Arquitectura Limpia</h2>
+<ul>
+<li>Estilo propuesto por Robert C. Martin (&ldquo;Uncle Bob&rdquo;)</li>
+<li>Tiene como objetivo crear sistemas que sean independientes de frameworks, faciles de probar, independientes de la UI y altamente mantenibles.</li>
+<li>La idea principal es separar las preocupaciones del sistema en capas de manera que los detalles externos (como frameworks, bases de datos, UI) esten desacoplados del nucle de la aplicacion, lo que permite que el codigo sea mas modular, flexible y resistente al cambio.</li>
+</ul>
+<h2 id="principios-clave-de-la-clean-architecture">Principios clave de la Clean Architecture</h2>
+<ul>
+<li><em>Independencia de frameworks</em>: El sistema no debe depender de frameworks. Estos son herramientas, no la base de la arquitectura.</li>
+<li><em>Testibilidad</em>: Al separar las responsabilidades del sistema, cada parte del codigo debe ser facilmente testeable de manera independiente.</li>
+<li><em>Independencia de la UI</em>: Los detalles de la interfaz de usuario deben estar desacoplados de las reglas de negocio, lo que permite cambiar la interfaz sin afectar la logica de la aplicacion.</li>
+<li><em>Independencia de la base de datos</em>: El sistema no debe depender de ningun tipo especifico de base de datos o de acceso a los datos.</li>
+<li><em>Independencia de los agentes externo</em>: Cualquier sistema externo, como APIs o base de datos, debe estar en la capa mas externa del sistema.</li>
+</ul>
+<h2 id="componentes-principales-de-la-clean-architecture">Componentes principales de la Clean Architecture</h2>
+<ul>
+<li><em>Entidades</em>: Representan las reglas de negocio de mas alto nivel. Son las mas estables y no dependen de nada mas.</li>
+<li><em>Casos de uso (Use Cases)</em>: Contiene la logica de la aplicacion. Describen las interacciones especificas entre las entidades y definen como se deben ejecutar las reglas de negocio en funcion de los requisitos.</li>
+<li><em>Interfaces de Entrada/Salida</em>: Proveen la conexion entre las capas internas y externas. En Clean Architecture, a menudo se utilizan adaptadores y puertos par que las capas externas interactuen con las capas internas sin acoplamiento directo.</li>
+<li><em>Capa externa (Frameworks y Drivers)</em>: Aqui es donde se encuentran los detalles tecnicos, como los controladores web, las bases de datos, y cualquier otro servicio externo. Estas partes deben ser lo mas facilmente reemplazables posibles.</li>
+</ul>
+<h2 id="organizacion-en-capas-circulo-de-la-clean-architecture">Organizacion en capas (&ldquo;Circulo de la Clean Architecture&rdquo;)</h2>
+<ul>
+<li><em>Capa de Entidades (Core Entities)</em>: Las reglas de negocio fundamentales</li>
+<li><em>Capa de Casos de Uso (Use Cases)</em>: Define el comportamiento especifico de la aplicacion.</li>
+<li><em>Capa de Interfaces</em>: Provee adaptadores para las capas externas (controladores, servicios externos).</li>
+<li><em>Capa de Infraestructura</em>: Contiene los detalles de implementacion, como frameworks y base de datos.</li>
+</ul>
+<h2 id="principios-solid-y-clean-architecture">Principios SOLID y Clean Architecture</h2>
+<ul>
+<li>Clean Architecture sigue de cerca los principios SOLID, promoviendo una arquitectura que es altamente mantenible y flexible</li>
+<li>Clean Architecture busca crear un sistema que sea modular y faicl de mantener, donde los detalles tecnicos puedan ser reemplazados o cambiados sin impactar en el nucleo del sistema</li>
+<li>Es especialmente util para proyectos a largo plazo, donde se espera que los requisitos cambien con el tiempo.</li>
+</ul>
+<h2 id="independencia-de-frameworks">Independencia de Frameworks</h2>
+<ul>
+<li>Este principio sostiene que ningun Framework externo debe dictar la estructura del sistema.</li>
+<li>Los frameworks suelen ser herramientas poderosas que proporcionan caracteristicas como inyeccion de dependencias, controladores HTTP, ORM (Object-Relational Mapping), etc., pero no deberian ser la base de la arquitectura.
+<ul>
+<li><em>Problema que resuelve</em>: Si la arquitectura depende de un framework, es dificil cambiarlo en el futuro. Ademas, el codigo se vuelve dependiente de las caracteristicas especificas del framework, lo que lo hace menos flexible.</li>
+<li><em>Aplicacion practica</em>: Utilizar el framework solo como una herramienta en la capa mas externa del sistema. Esto se logra con el uso de interfaces y adaptadores que aislen las dependencias del framework de la logica de negocio. Por ejemplo, en lugar de utilizar directamente un ORM en el codigo de negocio, se puede usar un repositorio o una abstraccion que permita cambiar la implementacion de acceso a datos en el futuro sin afectar el resto del sistema,</li>
+</ul>
+</li>
+</ul>
+<h2 id="testibilidad">Testibilidad</h2>
+<ul>
+<li>Uno de los objetivos principales de Clean Architecture es que el codigo sea facil de probar.</li>
+<li>Esto se logra a traves de la separacion de responsabilidades y el desacoplamiento de las diferentes capas del sistema.
+<ul>
+<li><em>Problema que resuleve</em>: Un sistema que depende directamente de tecnologias externas (base de datos, APIs, frameworks) es dificil de probar. Las pruebas tienden a ser mas complejas y lentas, ya que necesitan interactuar con estas dependencias.</li>
+<li><em>Aplicacion practica</em>: Al desacoplar el codigo de la logica de negocio de los detalles tecnicos, se pueden hacer pruebas unitarias con facilidad. Por ejemplo, al probar casos de uso o entidades, las dependencias externas pueden ser reemplazadas por objetos simulados (mocks), permitiendo probar la logica sin necesidad de una base de datos o API real.</li>
+</ul>
+</li>
+</ul>
+<h2 id="independencia-de-la-interfaz-de-usuario-ui">Independencia de la interfaz de Usuario (UI)</h2>
+<ul>
+<li>La UI es un detalle tecnico que no debe influir en las reglas de negocio o la logica del sistema. El sistema debe funcionar independientemente de como se presente la informacion al usuario.
+<ul>
+<li><em>Problema que resuleve</em>: Las interfaces de usuario suelen cambiar mas frecuentemente que la logica de negocio, y si estan acopladas, cualquier cambio en la UI puede obligar a modificar la logica interna del sistema.</li>
+<li><em>Aplicacion practica</em>: Clean Architecture coloca la UI en una de las capas mas externas, de modo que las capas de negocio no dependan de ella. Asi, puedes cambiar de un sistema web a una aplicacion movil sin necesidad de modificar el nucleo del sistema. Los controladores de UI simplemente actuan como &ldquo;orquestadores&rdquo; que traducen las interacciones del usuario a llamados a casos de uso, sin contener logica de negocio.</li>
+</ul>
+</li>
+</ul>
+<h2 id="independencia-de-la-base-de-datos">Independencia de la Base de Datos</h2>
+<ul>
+<li>El acceso a la base de datos es un detalle de implementacion, no debe influir en la logica central de la aplicacion. La base de datos es solo un mecanismo para almacenar informacion y no debe afectar las reglas de negocio o los casos de uso.
+<ul>
+<li><em>Problema que resuelve</em>: Si el sistema esta fuertemente acoplado a una base de datos especifica (por ejemplo, SQL vs NoSQL), puede ser muy dificil o costoso cambiar a otra tecnologia de base de datos en el futuro. Ademas, dificulta la reutilizacion de la logica de negocio en otros contextos.</li>
+<li><em>Aplicacion practica</em>: Los repositorios y adapatadores para acceso a datos deben ser implementaciones externas, desacopladas del nucleo de la aplicacion. Se utilizan interfaces para abstraer la forma en que se accede o manipulan los datos permitiendo cambiar la base de datos sin impactar las reglas de negocio.</li>
+</ul>
+</li>
+</ul>
+<h2 id="independencia-de-agentes-externos">Independencia de Agentes Externos</h2>
+<ul>
+<li>Cualquier agente externo, como servicios de terceros (APIs, servicios en la nube, etc.), debe estar en una capa externa y no afectar las reglas de negocio ni los casos de uso.
+<ul>
+<li><em>Problema que resuelve</em>: Si la logica de negocio depende directamente de un servicio externo, cualquier cambio en el servicio externo puede romper la funcionalidad de la aplicacion. Ademas, es dificil probar la logica sin conectarse al servicio real.</li>
+<li><em>Aplicacion practica</em>: Se puede utilizar un patron como el de &ldquo;puertos y adaptadores&rdquo; (tambien conocido como arquitectura hexagonal) para interactuar con agentes externos. La aplicacion deberia definir puertos (interfaces) que representen las interacciones necesarias con estos servicios, y los adaptadores implementan estos puertos para interactuar con el servicio real o con una implementacion simulada en los test.</li>
+</ul>
+</li>
+</ul>
+<h2 id="otras-consideraciones-clave">Otras consideraciones clave</h2>
+<ol>
+<li>
+<p>Reversion de las Dependencias (Dependency Rule)</p>
+<ul>
+<li>Las dependencias solo pueden ir de capas exteriores a capas interiores. Las capas internas nunca deberian conocer detalles sobre las capas externas. Esto significa que los detalles de implementacion, como frameworks, bases de datos o sistemas de entrega, dependen del nucleo de la aplicacion, no al reves.</li>
+</ul>
+</li>
+<li>
+<p>Capas Circulares</p>
+<ul>
+<li>La Clean Architecture se suele visualizar en capas concentricas, donde cada circulo representa un nivel de abstraccion o responsabilidad.</li>
+<li>Entidades: El ciruclo mas interno, contiene las reglas de negocio generales.</li>
+<li>Casos de uso: Representa las reglas especificas de la aplicacion.</li>
+<li>Interfaces: Se ocupan de la presentacion de datos y la interaccion con el mundo externo.</li>
+<li>Infraestructura: El circulo mas externo que contiene frameworks, bases de datos, APIs, etc.</li>
+</ul>
+</li>
+</ol>
+<h2 id="capas-en-clean-architecture">Capas en Clean Architecture</h2>
+<ul>
+<li>Cada capa tiene responsabilidades claras y esta diseñada para estar lo mas desacoplada posible de las otras capas.</li>
+<li>Esto promueve una estructura modular y facilita el mantenimiento y la escalabilidad del Software</li>
+</ul>
+<h2 id="entidades-entities">Entidades (Entities)</h2>
+<ul>
+<li>Las entidades representan el nucleo del dominio de negocio de la aplicacion. Son objetos que contienen las reglas mas fundamentales del negocio, las cuales son universales y aplican en cualquier contexto. Estas entidades no dependen de nada externo, ni de frameworksm bases de datos, UI, o cuaquier detalle de implementacion.</li>
+<li>Funcion:
+<ul>
+<li>Reglas de negocio de alto nivel: Las entidades encapsulan las invariantes del negocio. Por ejemplo, una entidad &ldquo;Usuario&rdquo; en una aplicacion de gestion de usuarios puede tener reglas como: &ldquo;la edad minima del usuario debe ser 18 años&rdquo;</li>
+<li>Independencia: Las entidades deben poder existir sin depender de la infraestructura o la tecnologia. Son completamente independientes.</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">User</span><span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> String name<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> String email<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> age<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">User</span><span style="color:#f92672">(</span>String name<span style="color:#f92672">,</span> String email<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> age<span style="color:#f92672">){</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>age <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">18</span><span style="color:#f92672">){</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> IllegalArgumentException<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Age must be 18 or older&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">email</span> <span style="color:#f92672">=</span> email<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">age</span> <span style="color:#f92672">=</span> age<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h2 id="casos-de-uso-use-cases">Casos de Uso (Use Cases)</h2>
+<ul>
+<li>Representan la logica de la aplicacion y describen como las entidades interactuan entre si para cumplir con los requisitos de la aplicacion. Un caso de uso es una accion que la aplicacion puede realizar, como &ldquo;crear un usuario&rdquo;, &ldquo;procesar una orden&rdquo;, o &ldquo;validar un pago&rdquo;.</li>
+<li>Funcion:
+<ul>
+<li>Reglas de negocio especificas de la aplicacion: Los casos de uso coordinan las interacciones entre las entidades para implementa r funcionalidades de la aplicacion.</li>
+<li>Orquestacion: Actuan como &ldquo;orquestadores&rdquo; de las entidadesm coordinando las acciones sin que las entidades se conozcan entre si. Esto promuebe la separacion de responsabilidades.</li>
+<li>Ciclo de vida del caso de uso: Un caso de uso puede involucrar acciones como validar, interactuar con un repositorio para guardar o recuperar entidades, y manejar excepciones.</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CreateUserUseCase</span><span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> UserRepository userRepository<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> EmailService emailService<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">CreateUserUseCase</span><span style="color:#f92672">(</span>UserRepository userRepository<span style="color:#f92672">,</span> EmailService emailService<span style="color:#f92672">){</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">userRepository</span> <span style="color:#f92672">=</span> userRepository<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">emailService</span> <span style="color:#f92672">=</span> emailService<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">execute</span><span style="color:#f92672">(</span>User user<span style="color:#f92672">){</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>userRepository<span style="color:#f92672">.</span><span style="color:#a6e22e">existsByEmail</span><span style="color:#f92672">(</span>user<span style="color:#f92672">.</span><span style="color:#a6e22e">getEmail</span><span style="color:#f92672">())){</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> IllegalArgumentException<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Email already exists&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        userRepository<span style="color:#f92672">.</span><span style="color:#a6e22e">save</span><span style="color:#f92672">(</span>user<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        emailService<span style="color:#f92672">.</span><span style="color:#a6e22e">sendWelcomeEmail</span><span style="color:#f92672">(</span>user<span style="color:#f92672">.</span><span style="color:#a6e22e">getEmail</span><span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h2 id="interfaces-de-entrarasalida-controllers-presenters-gatewys">Interfaces de Entrara/Salida (Controllers, Presenters, Gatewys)</h2>
+<ul>
+<li>PErmiten que las capas internas con el mundo externo (interfaz de usuario, bases de datosm servicios externos, etc.). Las interfaces de entrada/salida se utilizan para desacoplar la logica de negocio de la infraestructura.</li>
+<li>Funcion:
+<ul>
+<li><em>Interfaces de Entrada (Controllers)</em>: Estas son las clases que actuan como controladores de entrada a la aplicacion. Los controlladores reciben las solicitudes externas (de la UI o de la API REST, por ejemplo) y las traducen a comandos que lso casos de uso puedan procesar.</li>
+<li><em>Interfaces de Salida (Gateways)</em>: Representan los puertos para interactuar con recursos externos como bases de datos, servicios web etc. Los repositorios son un tipo de interfaz de salida.</li>
+</ul>
+</li>
+</ul>
+<h2 id="capa-externa-frameworks-y-drivers">Capa Externa (Frameworks y Drivers)</h2>
+<ul>
+<li>La capa externa es donde viven todos los detalles tecnicos de la aplicacion, como los frameworks web, bases de datos, sistemas de mensajeria, o servicios externos. Esta capa es la mas desacoplada posible de la logica de negocio, para que los detalles tecnicos puedan ser cambiados sin afectar el nucleo de la aplicacion.</li>
+<li>Funcion
+<ul>
+<li><em>Implementacion de interfaces</em>: Los adaptadores que implementan las interfaces de los repositorios, servicios de email, controlladores, etc., estan aqui. Por ejemplo, si usas Spring para controlar el acceso a datos o HTTP, esa implementacion estara en esta capa.</li>
+<li><em>Cambio facil de tecnologias</em>: Esta capa puede cambiar facilmente sin afectar el nucleo del sistema. Puedes cambiar de una base de datos SQL a NoSQL, o de un sistema de correo electronico a otro, sin modificar la logica de negocio.</li>
+</ul>
+</li>
+</ul>
+<h2 id="ejemplo-general-de-flujo">Ejemplo General de Flujo</h2>
+<ul>
+<li>Un controlador de API recibe una solicitud HTTP y la convierte en un objeto de dominio.</li>
+<li>El caso de uso es invocado por el controlador y ejecuta la logica de negocio, interactuando con entidades y repositorios.</li>
+<li>El caso de uso llama a un repositorio (un adaptador de salida) para guardar o recuperar datos.</li>
+<li>El repositorio esta implementado en la capa de infraestructura (usando una tecnologia como JPA, JDBC, etc.).</li>
+<li>El caso de uso puede invocar otros adaptadores, como un servicio de correo o un servicio externo.</li>
+</ul>
+<h1 id="modulo-10">Modulo 10</h1>
+<h2 id="arquitectura-hexagonal">Arquitectura Hexagonal</h2>
+<ul>
+<li>Tambien conocida como Arquitectura de Puertos y Adaptadores, e sun patron de diseño propuesto por Alistair Cockburn en 2005.</li>
+<li>Su principal objetivo es hacer que las aplicaciones sean mas independientes de los detalles externos, como frameworks, bases de datos, servicios externos o interfaces de usuario, facilitando su mantenimiento y prueba.</li>
+<li>La idea central es que la logica de negocio de una aplicacion este completamente desacoplada de su infraestructura.</li>
+</ul>
+<h2 id="principios-clave-de-la-arquitectura-hexagonal">Principios clave de la arquitectura hexagonal</h2>
+<ul>
+<li>Independencia de la logica del negocio</li>
+<li>Puertos</li>
+<li>Adaptadores
+<ul>
+<li>Entrada</li>
+<li>Salida</li>
+</ul>
+</li>
+<li>Aislamiento</li>
+</ul>
+<h2 id="concepto">Concepto</h2>
+<ul>
+<li>El termino &ldquo;arquitectura hexagonal&rdquo; proviene de la representacion visual que propuso Alistair Cockburn.</li>
+<li>Para ilustrar como una aplicacion interactua con sus dependencias externas mediante puertos y adaptadores.</li>
+<li>En lugar de pensar en una arquitectura basada en capas (tradicionalmente apiladas en niveles como representacion, logica del negocio, y acceso a datos), visualices la aplicacion como un nucleo central rodeado de interfaces (puertos), conectadas a los adaptadores que manejan las interacciones externas.</li>
+</ul>
+<h2 id="razon-detras-del-nombre-hexagonal">Razon detras del nombre &ldquo;hexagonal&rdquo;</h2>
+<ul>
+<li>El nombre &ldquo;hexagonal&rdquo; surge porque Cockburn eligio una forma hexagonal como una metafora visual para representar el nucleo de la aplicacion, donde cada uno de los seis lados del hexagono es un punto de interaccion o &ldquo;puerto&rdquo;. En un esquema tipico de arquitectura hexagonal:
+<ul>
+<li>El nucleo de esta aplicacion (logica de negocio) esta en el centro del hexagono.</li>
+<li>Los puertos esta representados como puntos de entrada y salida en los lados del hexagono. Cada puerto es una interfaz que define una interaccion con el mundo exterior.</li>
+<li>Los adaptadores se conectan a los puertos para manejar detalles tecnicos (base de datos, sistemas externos, interfaces de usuario, etc.). Los adaptadores externos &ldquo;se enchufan&rdquo; a los puertos, proporcionando las implementaciones de esos puntos de interaccion.</li>
+</ul>
+</li>
+</ul>
+<h2 id="independencia-de-la-logica-del-negocio">Independencia de la logica del negocio</h2>
+<ul>
+<li>La parte mas importante de la aplicacion es su nucleo o dominio o logica de negocio.</li>
+<li>Debe estar aislada de cualquier tecnologia o servicio externo (como bases de datos o interfaces de usuario).</li>
+</ul>
+<h2 id="puertos">Puertos</h2>
+<ul>
+<li>Interfaces que definen como los componentes externos interactuan con la aplicacion</li>
+<li>Pueden ser entradas (para recivir comandos o datos) o salidas (para enviar respuestas o consultar datos).</li>
+<li>Por ejemplo, en una aplicacion de comercio electronico, un puerto de entrada podria ser un servicio que gestiona ordenes, y un puerto de salida podria ser un repositorio de almacenamiento de datos.</li>
+</ul>
+<h2 id="adaptadores">Adaptadores</h2>
+<ul>
+<li>Los adaptadores implementan los puertos y conectan la aplicacion con el mundo exterior. Hay dos tipos de adaptadores:
+<ul>
+<li><em>Adpatadores de entrada</em>: Conectan la logica de negocio con los mecanismos de entrada, como API REST, una interfaz de usuario, o un sistema de mensajeria</li>
+<li><em>Adpatadores de salida</em>: Conectan la logica de negocio con servicios externos, como una base de datos, sistemas de terceros o un repositorio de datos.</li>
+</ul>
+</li>
+</ul>
+<h2 id="aislamiento">Aislamiento</h2>
+<ul>
+<li>El nucleo de la aplicacion no deberia tener conocimiento directo de como interactua con el exterior</li>
+<li>Todos los detalles externos estan aislados detrasn de los adaptadores</li>
+<li>Esto permite cambiar detalles tecnicos (como un framework web o la base de datos) sun modificar el nucleo de la aplicacion.</li>
+</ul>
+<h2 id="beneficios-de-la-arquitectura-hexagonal">Beneficios de la arquitectura hexagonal</h2>
+<ul>
+<li><em>Alta testabilidad</em>: Como los adaptadores estan desacoplados del nucleo de negocio, es mas facil escribir pruebas unitarias para la logica de negocio sin depender de servicios externos.</li>
+<li><em>Flexibilidad</em>: Puedes cambiar adaptadores externos sin afectar el nucleo de la aplicacion (por ejemplo, cambiar una base de datos o el metodo de acceso a datos).</li>
+<li><em>Escalabilidad</em>; Facilita la adopcion de nuevos canales de comunicacion, como agregar una nueva interfaz de usuario o conectarse a nuevos servicios externos sin modificar la logica principal.</li>
+<li><em>Independencia tecnologica</em>: La logica de negocio se puede desarrollar sin depender de un framework o tecnologia especifica, lo que tambien facilita la migracion a nuevos entornos.</li>
+</ul>
+<h2 id="ejemplo-en-el-contexto-de-una-aplicacion-java-moderna">Ejemplo en el contexto de una aplicacion Java moderna.</h2>
+<ul>
+<li>En un proyecto que ise arquitectura hexagonal en java, podrias tener:
+<ul>
+<li><em>Puerto de entrada</em>: Una interface OrderService que define operaciones relacionadas con ordenes</li>
+<li><em>Adaptador de entrada</em>: Un controlador REST que implementa este puerto para interactuar con clientes a traves de HTTP</li>
+<li><em>Puesto de salida</em>: Una interface OrderRepository que define como interacturar con la base de datos</li>
+<li><em>Adaptador de salida</em>: Una implementacion de OrderRepository que usa JPA para realizar consultas a una base de datos relacional.</li>
+</ul>
+</li>
+<li>Esto hace que el nucleo de la aplicacion no dependa ni del framework web (como Spring) ni de la base de datos, facilitando los cambios o las pruebas unitarias.</li>
+</ul>
+<h2 id="componentes-de-la-arquitectura-hexagonal">Componentes de la Arquitectura Hexagonal</h2>
+<ul>
+<li>El Nucleo de la Aplicacion
+<ul>
+<li>(Dominios del Negocio)</li>
+</ul>
+</li>
+<li>Puertos
+<ul>
+<li>(Interfaces)</li>
+</ul>
+</li>
+<li>Adaptadores
+<ul>
+<li>(Implementaciones)</li>
+</ul>
+</li>
+</ul>
+<h2 id="el-nucleo-de-la-aplicacion-dominios-de-negocio">El Nucleo de la Aplicacion (Dominios de Negocio)</h2>
+<ul>
+<li>Corazon de la arquitectura, donde reside la logica de negocio y reglas del dominio. Esta complementando desacoplado de las tecnologías externas. Aqui es donde se utiliza el modelo del dominio, que puede estar estructurado usando patrones como Domain-Droven Design (DDD).
+<ul>
+<li><em>Entidads</em>: Representa los objetos de dominio, aquellos que tienen identidad y que persisten a lo largo del tiempo. Ejemplo: User, Order, Product.</li>
+<li><em>Agregado</em>: Conjuntos de entidades que son tratadas como una unidad en la logica de negocio, asegurando la consistencia. Ejemplo: Un Order puede tener una lista de OrderItem.</li>
+<li><em>Servicios de Dominio</em>: Son las operaciones complejas que no pertenecen a una unica entidad o valor. Se utilizan para implementar logica de negocio que afecta multiples entidades o agregados.</li>
+</ul>
+</li>
+<li>El nucleo de la aplicacion contiene interfaces que definen como otras capas interactuan con el. Estas interfaces se denominan Puertos.</li>
+</ul>
+<h2 id="puertos-interfaces">Puertos (Interfaces)</h2>
+<ul>
+<li>Los puertos representan las interfaces del nucleo de la aplicacion para la entrada y salida de datos. Se dividen en dos tipos:
+<ul>
+<li><em>Puertos de entrada</em>: Permiten a los clientes (adaptadores de entrada) interactura con la aplicacion, como APIs, UI, CLi, etc. Son como &ldquo;puntos de entrada&rdquo; para interactuar con la logica de negocio.</li>
+<li><em>Puertos de salida</em>: Representan las dependencias externas que el nucleo de negocio necesita, como bases de datos, servicios de mensajeria, o APIs externas.</li>
+</ul>
+</li>
+<li>Ejemplos:
+<ul>
+<li>Un puerto de entrada puede ser una interfaz OrderService que define los metodos para crear, actualizar o eliminar ordenes.</li>
+<li>Un puerto de salida puede ser un repositorio como OrderRepository que define metodos para almacenar o recuperar ordenes desde la base de datos.</li>
+</ul>
+</li>
+</ul>
+<h2 id="adaptadores-implementaciones">Adaptadores (Implementaciones)</h2>
+<ul>
+<li>Los adaptadores son la implementacion concreta de los puertos, que conectan la aplicacion con el mundo exterior. Se dividen en dos tipos:
+<ul>
+<li><em>Adaptadores de entrara</em>: Implementan los puertos de entrada. Son responsables de tomar las solicitudes desde la interfaz del usuario, controladores REST, interfaces graficas o cualquier otro mecanismo externo, y convertirlas en operaciones que el nucleo puede manejar. Ejemplo: un controlador REST que recibe una soliciud HTTP y delega la logica a un servicio de dominio.</li>
+<li><em>Adaptadores de salida</em>: Implementan los puertos de salida y permiten que la aplicacion interactue con sistemas externos. Estos dadaptadores pueden incluir repositorios de bases de datos, servicios de mensajeria, o conexiones a APIs externas.</li>
+</ul>
+</li>
+</ul>
+<h2 id="organizacion-en-capas">Organizacion en Capas</h2>
+<ul>
+<li>La arquitectura hexagonal normalmente se organiza en capas, separando cada responsabilidad de manera clara:
+<ul>
+<li><em>Capa de Aplicacion</em>: Contiene la logica de negocio y las reglas del dominio. Aqui estan las entidades, agregados y servicios de dominio. Esta cape define los puertos, que son interfaces hacia el exterios.</li>
+<li><em>Capa de Infraestructura</em>: Contiene adaptadores de entrada y salida que interactuan con frameworks, bases de datos y servicios externos. Esta capa implementa los puertos definidos por el nucleo de negocio. Ejemplo: controladores HTTP, repositorios JPA o conexiones a base de datos externas.</li>
+</ul>
+</li>
 </ul>
 </section>
 
