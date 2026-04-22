@@ -152,7 +152,7 @@
   <meta itemprop="name" content="Aquitectura Moderna de Java">
 <meta itemprop="description" content="Modulo 1 Introduccion a la Arquitectura de Software Entender que es la arquitectura de software Conocer los principios fundamentales Diferenciar tipos comunes de arquitectura Ver como se aplican en proyectos modernos Documentación basada en vistas Vista Lógica; Muestra los componentes principales del sistema y sus relaciones. Vista de desarrollo: Detalla la organización del sistema desde el punto de vista del desarrollo, cómo están estructurados los módulos. Vista de procesos: Explica cómo interactúan los componentes en tiempo de ejecución."><meta itemprop="datePublished" content="2025-06-11T17:48:08-06:00" />
 <meta itemprop="dateModified" content="2025-06-11T17:48:08-06:00" />
-<meta itemprop="wordCount" content="16599">
+<meta itemprop="wordCount" content="17503">
 <meta itemprop="keywords" content="" />
   
   <meta name="twitter:card" content="summary"/>
@@ -2711,7 +2711,94 @@ Por ejemplo:
 </ul>
 </li>
 </ul>
-</section>
+<h2 id="ejemplo-practico-pedidos-en-una-tienda-en-linea">Ejemplo Practico: Pedidos en una Tienda en Linea.</h2>
+<ul>
+<li>
+<p>Capa de Aplicacion (Nucleo):</p>
+<ul>
+<li>Order: Entidad que representa una orden en el sistema</li>
+<li>OrderService: Interfaz (puerto de entrada) que define operaciones como createOrder, cancelOrder, etc</li>
+<li>OrderRepository: Interfaz (puerto de salida)que define como se almacenan o recuperan las ordenes.</li>
+</ul>
+</li>
+<li>
+<p>Adaptadores de Entrada:</p>
+<ul>
+<li>OrderController: Un controlador REST que expone aun API HTTP para interactuar con las ordenes. Implementa el puerti de entrada OrderService.</li>
+<li>OrderEventListener: Un consumidor de eventos de mensajeria (por ejemplo, un adaptador que escucha eventos de Kafka o RabbitMQ)</li>
+</ul>
+</li>
+<li>
+<p>Adaptadores de Salida</p>
+<ul>
+<li>jpaOrderRepository: Implementacion concreta del OrderRepository, que utiliza JPA para interactuar con una base de datos</li>
+<li>NotificationServiceAdapter: Implementacion de un servicio externo de notificaciones que envia correos o SMS cuando se crea una orden</li>
+</ul>
+</li>
+</ul>
+<h2 id="beneficios-de-esta-estructura">Beneficios de esta Estructura</h2>
+<ul>
+<li><em>Aislamiento de dependencias</em>: Cambiar el sistema de almacenamiento (de una base de datos relacional a NoSQL, por ejemplo) no afecta el nucleo de la aplicacion, ya que solo necesitas cambiar el adaptador de salida, manteniendo la interfaz de repositorio intacta.</li>
+<li><em>Pruebas unitarias faciles</em>: Como el nucleo de la aplicacion esta desacoplado de la infraestructura externa, puedes probar la logica de negocio utilizando mocks o stubs para los adaptadores</li>
+<li><em>Facilidad de expansion</em>: Si en el futuro necesitas arreglar una nueva forma de interaccion (como API GraphQL o un interfaz CLI), puedes agregar nuevos adaptadores de entrada sin modificar la logica de negocio existente.</li>
+<li><em>Reutilizacion de logica de negocio</em>: Los mismos puertos de entrada pueden ser implementados por multiples adaptadores de entrada (REST, UI, mensajeria) permitiendo que multiples clientes intractuen con el mismo nucleo de la aplicacion.</li>
+</ul>
+<h2 id="relacion-con-otros-patrones">Relacion con otros Patrones</h2>
+<ul>
+<li><em>Arquitectura en Capas</em>: La arquitectura hexagonal es una evolucion de la arquitectura en capas, pero con el proposito de eliminar las dependencias hacia tecnologias especificas en cada capa. En vez de tener una &ldquo;capa de presentacion&rdquo;, &ldquo;capa de negocio&rdquo; y &ldquo;capa de detos&rdquo; estrictamente alineadas, el foco aqui esta en puertos y adaptadores que se comunican con el nucleo de la aplicacion de manera flexible</li>
+<li><em>Domain- Driven Design (DDD)</em>: La arquitectura hexagonal complementa muy bien a DDD, ya que facilita la separacion del modelo de dominio de las preocupaciones tecnologicas, Los servicios de dominio, entidades y agregados definidos en DDD encajan de forma natural en el nucleo de la arquitectura hexagonal.</li>
+</ul>
+<h2 id="retos-potenciales">Retos Potenciales</h2>
+<ul>
+<li><em>Complejidad inicial</em>: Para proyectos pequeños, la arquitectura hexagonal puede ser una sobrecarga innecesaria, Aunque es muy util para sistemas complejos, la separacion en puertos y adaptadores puede añadir complejidad en la fase inicial de desarrollo</li>
+<li><em>Curva de aprendizaje</em>: Implementar correctamente la arquitectura hexagonal requiere que el equipo este bien entrenado en el concepto de puerto y adaptadores, y como manejar dependencias inversas.</li>
+</ul>
+<h2 id="comparacion-con-otras-arquitecturas">Comparacion con otras arquitecturas</h2>
+<ul>
+<li><em>Arquitectura en Capas</em>: La arquitectura en capas suele tener una dependencia mas directa entre las capas, mientras que en la arquitectura hexagonal, las dependencias estan invertidas mediante interfaces (puertos)</li>
+<li><em>Arquitectura de Microservicios</em>: Aunque la arquitectura hexagonal es aplicable tanto en aplicaciones monoliticas como en microservicios, encaja muy bien en este ultimo escenario, ya que fomenta la independencia de los componentes (puertos y adaptadores son ideales para microservicios que pueden intercambiar implementaciones de adaptadores sin afectar a la logica del negocio)</li>
+</ul>
+<h2 id="introduccion-a-puertos">Introduccion a Puertos</h2>
+<ul>
+<li>Los Puertos en la arquitectura hexagonal son intefaces que definen los puntos de interaccion entre el nucleo de la aplicacion (la logica de negocio) y el mundo exterior (como bases de datos, interfaces de usuario , servicios externos, etc.).</li>
+<li>Son un componente crucial para garantizar el desacoplamiento entre la logica de negocio y las tecnologias externas, ya que permiten que el nucleo de la aplicacion se mantenga completamente independiente de los detalles de implementacion especificos.</li>
+</ul>
+<h2 id="que-son-los-puertos">¿Que son los Puertos?</h2>
+<ul>
+<li>Los puertos son interfaces que actuan como &ldquo;cotratos&rdquo; que definen como los componentes externos deben interactuar con la logica de negocio de la aplicacion. En la arquitectura hexagonal, los puertos permiten:
+<ul>
+<li>Recibir comandos o solicitudes desde el exterior (por ejemplo, desde una API o interfaz grafica)</li>
+<li>Enviar datos o invocar servicios externos (por ejemplo, interactuar con una base de datos o llamar a otro servicio)</li>
+</ul>
+</li>
+<li>Lospuertos se dividen en dos grandes categorias:
+<ul>
+<li>Puertos de Entrada (Input Ports)</li>
+<li>Puestos de Salida (Output Ports)</li>
+</ul>
+</li>
+</ul>
+<h2 id="puertos-de-entrada-input-ports">Puertos de Entrada (Input Ports)</h2>
+<ul>
+<li>Los puertos de entrada son interfaces que permiten a los clientes externos (interfaces de usuario, APIs REST, eventos de mensajeria, etc.) interactuar con la logica de negocio. Definen las acciones o casos de uso que la aplicacion ofrece.</li>
+<li>Caracteristicas de los Puertos de Entrada:
+<ul>
+<li><em>Representan casos de uso o acciones de negocio</em>: Cada puerto de entrada define una operacion o conjunto de operaciones que forman parte de la logica de negocio. Esto puede incluir operaciones como &ldquo;crear un pedido&rdquo;, &ldquo;procesar un pago&rdquo;, o &ldquo;actualizar un perfil de usuario&rdquo;</li>
+<li><em>Totalmente desacoplados de las tecnologias</em>: Los puertos de entrada no deben depender de detalles tecnologicos como HTTP, bases de datos o detalles de frameworks. Son simples contratos que definen el comportamiento esperado.</li>
+<li><em>Interfaz clara</em>: Los puertos de entrada deben estar diseñados con interfaces bien definidas que encapsulen los casos de uso, de manera que los adaptadores de entrada (que implementan la interfaz) puedan conectarse sin afectar al nucleo de la aplicacion.</li>
+</ul>
+</li>
+</ul>
+<h2 id="ejemplo-de-puerto-de-entrada">Ejemplo de Puerto de Entrada</h2>
+<ul>
+<li>En una aplicacion de comercio electronico se permite a los usuarios hacer pedidos</li>
+<li>Un puertos de entrada seria un interfaz que define las operaciones que se pueden realizar sobre los perdidos, como createOrder(), cancelOrder(), etc.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">OrderService</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">createOrder</span><span style="color:#f92672">(</span>CreateOrderCommand command<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">cancelOrder</span><span style="color:#f92672">(</span>OrderId orderId<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div></section>
 
   
   
