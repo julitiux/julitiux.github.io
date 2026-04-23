@@ -158,7 +158,7 @@ No puede tener una reasignacion Debe pertenecer a la clase Tiene que ser public 
 Constante Una constante es un valor que no va a cambiar durante la ejecucion del programa. Para tener un constante en Java:
 No puede tener una reasignacion Debe pertenecer a la clase Tiene que ser public Tiene que ser static La variable debe ser final Enum Un Enum es una clase especial que nos va a permitir tener valores fijos y limitados que van a ser tratados como constantes."><meta itemprop="datePublished" content="2025-09-16T22:21:32-06:00" />
 <meta itemprop="dateModified" content="2025-09-16T22:21:32-06:00" />
-<meta itemprop="wordCount" content="1623">
+<meta itemprop="wordCount" content="1802">
 <meta itemprop="keywords" content="" />
   
   <meta name="twitter:card" content="summary"/>
@@ -471,7 +471,18 @@ Ademas, la logica comun se centraliza en la clase abstracta o en la interfaz, fa
 <ul>
 <li>An Apache Kafka Producer is a client application that publishes (writes) events to a kafka cluster.</li>
 </ul>
-<p>13:07</p>
+<h2 id="consumer">Consumer</h2>
+<ul>
+<li>An Apache Kafka Consumer is a client application that subscribes to (reads and processes) events.</li>
+</ul>
+<h2 id="kafka-topic">Kafka Topic</h2>
+<p>A kafka topic is a logical channel or feed category to which records (messages) are published by producers and from which records are consumed by consumers. Topics serve as a way to organize and categorize the stream of messages within the Kafka messaging system.</p>
+<h2 id="partitions">Partitions</h2>
+<p>In Apache Kafka, a partition is a basic unit of parallelism and scalability. It is a way of horizontally dividing a topic into multiple independently managed units. Each partition is a strictly ordered, immutable sequence of records, and it plays a crucial role in the distribution, parallel processing, and fault tolerance of data within a Kafka cluster.</p>
+<h2 id="offset">Offset</h2>
+<p>Offset is a sequence of ids given to messages as they arrive at a partition. Once the offset is assigned, it will never be changed. The first message gets an offset zero (0). The next message receives an offset one (1), and so on&hellip;</p>
+<h2 id="consumer-groups">Consumer Groups</h2>
+<p>A consumer Groups contains one or more consumers working together to process messages.</p>
 </section>
 
   
