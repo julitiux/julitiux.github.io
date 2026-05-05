@@ -152,7 +152,7 @@
   <meta itemprop="name" content="Aquitectura Moderna de Java">
 <meta itemprop="description" content="Modulo 1 Introduccion a la Arquitectura de Software Entender que es la arquitectura de software Conocer los principios fundamentales Diferenciar tipos comunes de arquitectura Ver como se aplican en proyectos modernos Documentación basada en vistas Vista Lógica; Muestra los componentes principales del sistema y sus relaciones. Vista de desarrollo: Detalla la organización del sistema desde el punto de vista del desarrollo, cómo están estructurados los módulos. Vista de procesos: Explica cómo interactúan los componentes en tiempo de ejecución."><meta itemprop="datePublished" content="2025-06-11T17:48:08-06:00" />
 <meta itemprop="dateModified" content="2025-06-11T17:48:08-06:00" />
-<meta itemprop="wordCount" content="17503">
+<meta itemprop="wordCount" content="17987">
 <meta itemprop="keywords" content="" />
   
   <meta name="twitter:card" content="summary"/>
@@ -2798,7 +2798,46 @@ Por ejemplo:
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">createOrder</span><span style="color:#f92672">(</span>CreateOrderCommand command<span style="color:#f92672">);</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">cancelOrder</span><span style="color:#f92672">(</span>OrderId orderId<span style="color:#f92672">);</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span></code></pre></div></section>
+</span></span></code></pre></div><h2 id="ejemplo-1">Ejemplo</h2>
+<ul>
+<li>OrderService es un puerto de entrada que define los casos de uso de la aplicacion relacionados con los pedidos.</li>
+<li>El metodo createOrder acepta un comando CreateOrderCommand que contiene todos los datos necesarios para crear un pedido.</li>
+<li>El metodo cancelOrder recibe un identificador de pedido (OrderId) para cancelar un pedido existente.</li>
+<li>Esto puerto de entrada no tiene conocimiento de como se invocara (a traves de una API REST, una UI grafica, un sistema de eventos, etc.). Simplemente define lo que el nucleo de la aplicacion es capaz de hacer.</li>
+</ul>
+<h2 id="beneficios-de-los-puertos-de-entrada">Beneficios de los Puertos de Entrada</h2>
+<ul>
+<li><em>Desacoplamiento</em>: Los puertos de entrada permiten desacoplar la logica de negocio de los detalles tecnologicos o de infraestructura, facilitando la capacidad de cambiar adaptadores sin modificar la logica central</li>
+<li><em>Claridad</em>: Los puertos de entrada definen claramente los casos de uso de la aplicacion, ayudando a los desarrolladores a entender las operaciones clave que la aplicacion afrece.</li>
+<li><em>Facilidad para las pruebas</em>: Dato que los puertos de entrada estan desacoplados de los detalles tecnologicos, es facil escribbir pruebas unitarias para estos casos de uso sin depender de frameworks o bases de datos.</li>
+</ul>
+<h2 id="puertos-de-salida-output-ports">Puertos de Salida (Output Ports)</h2>
+<ul>
+<li>Los puertos de salida son interfaces que definen como el nucleo de la aplicacion interactua con los servicios o sistemas externos.</li>
+<li>Esto incluye cualquier dependencia que la logica de negocio pueda tener, como bases de datos, sistemas de mensajeria, servicios de pago, API de terceros, etc.</li>
+</ul>
+<h2 id="caracteristicas-de-los-puertos-de-salidas">Caracteristicas de los Puertos de Salidas</h2>
+<ul>
+<li><em>Describen dependencias externas</em>: Los puertos de salida definen los metodos que el nucleo de la aplicacion necesita para interactuar con el mundo exterior, como &ldquo;almacenar un pedido en la base de datos&rdquo;, &ldquo;enviar un correo de confirmacion&rdquo;, o &ldquo;consultar la disponibilidad de inventario&rdquo;.</li>
+<li><em>Permiten cambiar tecnologias facilmente</em>: Como los puertos de salida son interfaces, la implementacion concreta (el adaptador de salida) puede cambiar sin afectar el nucleo. Esto significa que puedes cambiar de una base de datos relacional NoSQLm o de un servicio de mensajeria a otro, sin tocar la logica de negocio.</li>
+<li><em>Estan completamente desacoplados de la implementacion concreta</em>: Al igual que los puertos de entrada, los puertos de salida no tiene ninguna dependencia de frameworks o tecnologias especificas.</li>
+</ul>
+<h2 id="ejemplo-de-puerto-de-salida">Ejemplo de Puerto de Salida</h2>
+<ul>
+<li>Un puerto de salida podria ser un repositorio para almacenar los pedidos</li>
+<li>Este puerto de salida seria simplemente una interfaz que define las operaciones que el nucleo necesita realizar sobre los pedidos, sin especificar como o donde se almacenaran.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">OrderRepository</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">save</span><span style="color:#f92672">(</span>Order order<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    Optional <span style="color:#f92672">&lt;</span>Order<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">findById</span><span style="color:#f92672">(</span>OrderId id<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h2 id="ejemplo-2">Ejemplo</h2>
+<ul>
+<li><em>OrderRepository</em> es un puerto de salida que define las operaciones de alamacenamiento necesarias para el agregado <em>Order</em>.</li>
+<li><em>save()</em> guarda una instancia de <em>Order</em>, y <em>findById()</em> busca un pedido por su identificador.</li>
+<li>Esta interfaz no tiene conocimiento de si la implementacion sera a traves de una base de datos relacional (como MySQL), una base de datos NoSQL (como MongoDB) o incluso almacenamiento en memoria para pruebas.</li>
+</ul>
+</section>
 
   
   
