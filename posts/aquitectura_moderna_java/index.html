@@ -152,7 +152,7 @@
   <meta itemprop="name" content="Aquitectura Moderna de Java">
 <meta itemprop="description" content="Modulo 1 Introduccion a la Arquitectura de Software Entender que es la arquitectura de software Conocer los principios fundamentales Diferenciar tipos comunes de arquitectura Ver como se aplican en proyectos modernos Documentación basada en vistas Vista Lógica; Muestra los componentes principales del sistema y sus relaciones. Vista de desarrollo: Detalla la organización del sistema desde el punto de vista del desarrollo, cómo están estructurados los módulos. Vista de procesos: Explica cómo interactúan los componentes en tiempo de ejecución."><meta itemprop="datePublished" content="2025-06-11T17:48:08-06:00" />
 <meta itemprop="dateModified" content="2025-06-11T17:48:08-06:00" />
-<meta itemprop="wordCount" content="17987">
+<meta itemprop="wordCount" content="18732">
 <meta itemprop="keywords" content="" />
   
   <meta name="twitter:card" content="summary"/>
@@ -2836,6 +2836,96 @@ Por ejemplo:
 <li><em>OrderRepository</em> es un puerto de salida que define las operaciones de alamacenamiento necesarias para el agregado <em>Order</em>.</li>
 <li><em>save()</em> guarda una instancia de <em>Order</em>, y <em>findById()</em> busca un pedido por su identificador.</li>
 <li>Esta interfaz no tiene conocimiento de si la implementacion sera a traves de una base de datos relacional (como MySQL), una base de datos NoSQL (como MongoDB) o incluso almacenamiento en memoria para pruebas.</li>
+</ul>
+<h2 id="beneficios-de-los-puertos-de-salida">Beneficios de los Puertos de Salida</h2>
+<ul>
+<li><em>Flexibilidad</em>: Al definir interfaces para interactuar con el exterior, los puertos de salida permiten que cambies facilmente las tecnologias o frameworks subyacentes sin modificar el nucleo de la aplicacion</li>
+<li><em>Aislamiento de las tecnologias externas</em>: El nucleo de la aplicacion no tien que preocuparse por como se implementan los detalles externos, lo que facilita su testibilidad y mantenimiento.</li>
+<li><em>Pruebas unitarias y mocks</em>: Al definir dependencias a traves de interfaces, es facil sustituir las implementaciones reales por mocks en las pruebas, lo que mejora la capacidad de probar la logica de negocio de manera aislada.</li>
+</ul>
+<h2 id="relacion-entre-puertos-y-adaptadores">Relacion entre Puertos y Adaptadores</h2>
+<ul>
+<li>Los puertos, tanto de entrada como de salida, son simplemente interfaces.</li>
+<li>Los adaptadores son la implementaciones concretas de estas interfaces, encargadas de traducir las solicitudes del mundo exterior en algo que el nucleo de la aplicacion pueda procesar, o de converir las solicitudes del nucleo en llamdas a sistemas externos.</li>
+</ul>
+<h2 id="adaptadores-de-entrada">Adaptadores de Entrada</h2>
+<ul>
+<li>Implementan los puertos de entrada y se encargan de traducir las solicitudes de los clientes externos a una forma que la aplicacion entienda.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@RestController</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">OrderController</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> OrderService orderService<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">OrderController</span><span style="color:#f92672">(</span>OrderService orderService<span style="color:#f92672">){</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">orderService</span> <span style="color:#f92672">=</span> orderService<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@PostMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/orders&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> ResponseEntity<span style="color:#f92672">&lt;</span>Void<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">createOrder</span><span style="color:#f92672">(</span><span style="color:#a6e22e">@RequestBody</span> CreateOrderRequest request<span style="color:#f92672">){</span>
+</span></span><span style="display:flex;"><span>        CreateOrderCommand command <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> CreateOrderCommand<span style="color:#f92672">(</span>request<span style="color:#f92672">.</span><span style="color:#a6e22e">getItems</span><span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>        orderService<span style="color:#f92672">.</span><span style="color:#a6e22e">createOrder</span><span style="color:#f92672">(</span>command<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> ResponseEntity<span style="color:#f92672">.</span><span style="color:#a6e22e">status</span><span style="color:#f92672">(</span>HttpStatus<span style="color:#f92672">.</span><span style="color:#a6e22e">CREATED</span><span style="color:#f92672">).</span><span style="color:#a6e22e">build</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h2 id="adaptadores-de-salida">Adaptadores de Salida</h2>
+<ul>
+<li>Implementan los puertos de salida y se encargan de traducir las solicitudes del nucleo a llamadas a sistemas externos como bases de datos o servicios externos.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Repository</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">JpaOrderRepository</span> <span style="color:#66d9ef">implements</span> OrderRepository<span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@PersistenceContext</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> EntityManager entityManager<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">save</span><span style="color:#f92672">(</span>Order order<span style="color:#f92672">){</span>
+</span></span><span style="display:flex;"><span>        entityManager<span style="color:#f92672">.</span><span style="color:#a6e22e">persist</span><span style="color:#f92672">(</span>order<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> Optional<span style="color:#f92672">&lt;</span>Order<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">findById</span><span style="color:#f92672">(</span>OrderId id<span style="color:#f92672">){</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">ofNullable</span><span style="color:#f92672">(</span>EntityManager<span style="color:#f92672">.</span><span style="color:#a6e22e">find</span><span style="color:#f92672">(</span>Order<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">,</span> id<span style="color:#f92672">));</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h2 id="ventajas-del-uso-de-puertos">Ventajas del uso de Puertos</h2>
+<ul>
+<li><em>Desacoplamiento de tecnologias</em>; Como el nucleo de la aplicacion solo depende de interfaces (puertos), puedes cambiar las tecnologias (como bases de datos, servicios de mensajeria o frameworks web) sin tocar la logica central de la aplicacion.</li>
+<li><em>Flexibilidad y extensibilidad</em>: Puede agregar nuevos adaptadores (como un nuevo tipo de interfaz de usuario o un nuevo sistema de persistencia) sin modificar el nucleo de aplicacion. Solo necesitas crear una nueva implementacion del puerto correspondiente.</li>
+<li><em>Mejora la testabilidad</em>: Al usar interfaces, es facil usar mocks en las pruebas, permitiendo que la logica de negocio sea probada en aislamiento sin preocuparse por las dependencias externas.</li>
+<li><em>Claridad y organizacion</em>: Los puertos clarifican cuales son las responsabilidades de la aplicacion y como interactua con el exterior, lo que facilita el mantenimiento y la evolucion del sistema.</li>
+</ul>
+<h2 id="patrones-adicionales">Patrones adicionales</h2>
+<ul>
+<li>CQRS (Command Query Responsability Segregation)</li>
+<li>Event Sourcing</li>
+<li>Patron Repositorio</li>
+<li>Publicacion de Eventos de Dominio</li>
+<li>Inyeccion de Dependencias (DI).</li>
+</ul>
+<h2 id="limpia--hexagonal">Limpia &lt;&gt; Hexagonal</h2>
+<ul>
+<li>La arquitectura hexagonal y la arquitectura limpia son patrones de diseño de software que comparten principios similares, como el desacoplamiento y la separacion de responsabilidades.</li>
+<li>Se diferencian en algunos detalles y en la manera en que organizan los componentes. Ambos enfoques buscan crear aplicaciones mantenibes, testeables y flexibles, pero tienen enfoques ligeramente distintos en su implementacion.</li>
+</ul>
+<h2 id="origen-y-proposito-arquitectura-hexagonal">Origen y Proposito Arquitectura Hexagonal</h2>
+<ul>
+<li><em>Propuesta por</em>: Alistair Cockburn</li>
+<li><em>Proposito</em>: Fue diseñada para desacoplar la logica de negocio de las dependencias externas, como bases de datos, servicios externos, y frameworks. El objetivo es que la logica de negocio sea independiente de las tecnologias con las que interactua.</li>
+<li><em>Metafora</em>: Visualiza la aplicacion como un nucleo rodeado de &ldquo;puertos&rdquo; que representan interfaces hacia el mundo exterior, con &ldquo;adaptadores&rdquo; que conectan esos puertos a tecnologias externas.</li>
+</ul>
+<h2 id="origen-y-proposito-arquitectura-limpia">Origen y Proposito Arquitectura Limpia</h2>
+<ul>
+<li><em>Propuesta por</em>: Robert C. Martin (Uncle Bob).</li>
+<li><em>Proposito</em>: La arquitectura limpia es un modelo para organizar sistemas de manera que los cambios sean faciles y la logica de negocio este completamente aislada de cualquier tecnologica externa. Esta diseñada para que las aplicaciones puedan ser modificadas sin tener que cambiar su nucleo de negocio.</li>
+<li><em>Metafora</em>: Visualiza la aplicacion en capas concentricas, donde el nucleo interno es la logica de negocio pura, y las capas externas son dependientes de las internas. El flujo de dependencias debe ir hacia el centro (dependencias invertidas).</li>
+</ul>
+<h2 id="estructura-general-arquitectura-hexagonal">Estructura General Arquitectura Hexagonal</h2>
+<ul>
+<li>El nucleo de la aplicacion esta compuesto por la logica de negocio y las reglas del dominio</li>
+<li>Los puertos (interfaces) se colocan entre el nucleo y los adaptadores. Los puertos pueden ser de entrada (para recibir solicitudes) o de salida (para interactuar con sistemas externos).</li>
+<li>Los adaptadores implementan los puertos y se encargan de manejar los detalles tecnicos (como la persistencia de datos, el envio de notificaciones, etc.).</li>
+<li>No tiene una organizacion estricta en capas, sino que organiza en torno al concepto de entradas y salidas a traves de los puertos.</li>
 </ul>
 </section>
 
