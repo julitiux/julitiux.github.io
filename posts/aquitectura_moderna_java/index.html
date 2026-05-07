@@ -152,7 +152,7 @@
   <meta itemprop="name" content="Aquitectura Moderna de Java">
 <meta itemprop="description" content="Modulo 1 Introduccion a la Arquitectura de Software Entender que es la arquitectura de software Conocer los principios fundamentales Diferenciar tipos comunes de arquitectura Ver como se aplican en proyectos modernos Documentación basada en vistas Vista Lógica; Muestra los componentes principales del sistema y sus relaciones. Vista de desarrollo: Detalla la organización del sistema desde el punto de vista del desarrollo, cómo están estructurados los módulos. Vista de procesos: Explica cómo interactúan los componentes en tiempo de ejecución."><meta itemprop="datePublished" content="2025-06-11T17:48:08-06:00" />
 <meta itemprop="dateModified" content="2025-06-11T17:48:08-06:00" />
-<meta itemprop="wordCount" content="18732">
+<meta itemprop="wordCount" content="19578">
 <meta itemprop="keywords" content="" />
   
   <meta name="twitter:card" content="summary"/>
@@ -2926,6 +2926,73 @@ Por ejemplo:
 <li>Los puertos (interfaces) se colocan entre el nucleo y los adaptadores. Los puertos pueden ser de entrada (para recibir solicitudes) o de salida (para interactuar con sistemas externos).</li>
 <li>Los adaptadores implementan los puertos y se encargan de manejar los detalles tecnicos (como la persistencia de datos, el envio de notificaciones, etc.).</li>
 <li>No tiene una organizacion estricta en capas, sino que organiza en torno al concepto de entradas y salidas a traves de los puertos.</li>
+</ul>
+<h2 id="estructura-general-arquitectura-limpia">Estructura General Arquitectura Limpia</h2>
+<ul>
+<li>Capas Concentricas:
+<ul>
+<li>Capa del dominio: Es el nucleo mas interno, que contiene las entidades del dominio y las reglas de negocio.</li>
+<li>Capa de casos de uso: Maneja los flujos especificos de la aplicacion (como crear un pedido, procesar un pago). Esta capa utiliza la capa de dominio, pero no tiene dependencias hacia afuera.</li>
+<li>Capa de interfaz (o adaptadores): Contiene las interfaces que exponen los casos de uso hacia el mundo exterior (controladores HTTP, interfaces graficas, etc.).</li>
+<li>Capa de infraestructura: Se encarga de los datalles tecnicos (como bases de datos, frameworks o servicios externos).</li>
+</ul>
+</li>
+<li>El principio clave es la inversion de dependencias: las capas externas dependen de las capas internas, pero no al reves. Por ejemplo, la capa de dominio no dependiente de la infraestructura ni de la tecnologia utilizada.</li>
+</ul>
+<h2 id="similaridades">Similaridades</h2>
+<ul>
+<li><em>Desacoplamiento de la logica de negocio</em>: Ambas tienen como objetivo mantener la logica de negocio desacoplada de la infraestructura y los detalles tecnicos. Esto permite que la logica de negocio no dependa de frameworks, bases de datos o interfaces externas.</li>
+<li><em>Foco en la testabilidad</em>: Ambas arquitecturas promueven que el nucleo de la aplicacion sea facilmente testeable, ya que esta desacoplado de las dependencias externas. Esto facilita las pruebas unitarias de la logica de negocio, sin necesidad de integrar servicios externos como bases de datos o APIs.</li>
+<li><em>Inversion de dependencias</em>: Ambos enfoques utilizan el principio de inversion de dependencias (Dependency Inversion Principle, DIP) para asegurar que las dependencias apunten hacia el nucleo de la aplicacion, no hacia las capas externas, Esto garantiza que las capas internas no dependan de deatalles de infraestructura.</li>
+<li><em>Uso de interfaces</em>: Tanto la arquitectura hexagonal como la limpia utilizan interfaces para definir como la logica de negocio interactua con el mundo exterior, permitiendo que los detalles de implementacion (base de datos, APIs externas, etc) puedan cambiar sin afectar la logica interna.</li>
+</ul>
+<h2 id="diferencias-organizacion-y-enfoque">Diferencias Organizacion y Enfoque</h2>
+<ul>
+<li>Arquitectura Hexagonal:
+<ul>
+<li>Esta mas centrada en el concepto de puertos y adaptadores. Los puertos son las interfaces que definen como se interactua con la aplicacion (tanto para recibir entradas como para emitir salidas).</li>
+<li>Los adaptadores son implementaciones de esos puertos, conectando la logica de negocio con sistemas externos (bases de datos, servicios web, etc.).</li>
+<li>Enfoque modular: No tiene una estructura estricta de capas, y su organizacion es mas flexible. Se enfoca en como se conectan los adaptadores a los puertos, lo que permite tener multiples puntos de interaccion con la aplicacion.</li>
+</ul>
+</li>
+<li>Arquitectura Limpia:
+<ul>
+<li>Tiene una organizacion en capas concentricas, con una clara separacion entre la logica de negocio (casos de uso y dominio) y la infraestructura. El flujo de dependencias siempre apunta hacia adentro, desde las capas externas hacia las internas.</li>
+<li>Sigue una organizacion mas estricta basada en capas, cada una con responsabilidades claramente definidas.</li>
+<li>Enfoque jerarquico: Esta mas estructurada jerarquicamente y se basa en un enfoque de capas concentricas, lo que puede proporcionar una estructura mas clara en algunos casos.</li>
+</ul>
+</li>
+</ul>
+<h2 id="diferencias-flexibilidad-en-los-puntos-de-entrada">Diferencias Flexibilidad en los puntos de entrada</h2>
+<ul>
+<li>Arquitectura Hexagonal:
+<ul>
+<li>Mas flexible en cuanto a los puntos de intraccion. Puedes tener multiples puertos de entrada y puertos de salida, y puedes agregar nuevos adaptadores sin afectar la estructura del nucleo.</li>
+<li>Esta flexibilidad es particularmente util cuando se necesita interactuar con la aplicacion a traves de diferentes mecanismos (por ejemplo, API REST, eventos de mensajeria, interfaces graficas, etc.).</li>
+</ul>
+</li>
+<li>Arquitectura Limpia:
+<ul>
+<li>La arauitectura limpia sigue un enfoque mas ordenado y jerarquico, donde los puntos de entrada estan mas controlados por las capas de casos de uso y adaptadores.</li>
+<li>Aunque tambien se puede tener flexibilidad en los puntos de interaccion, esta mas orientada hacia un enfoque de casos de uso definidos que se exponen a traves de interfaces especificas.</li>
+</ul>
+</li>
+</ul>
+<h2 id="diferencias-enfoque-visual-y-metaforico">Diferencias Enfoque Visual y Metaforico</h2>
+<ul>
+<li>Arquitectura Hexagonal: Se basa en la metafora del hexagono, que representa la idea de multiples puntos de entrada y salida (puertos), conectados por adaptadores. El nucleo no depende de como se recibe o envia la informacion.</li>
+<li>Arquitectura Limpia: Visualiza la aplicacion como capas concentricas, donde el nucleo interno es la logica de negocio pura, y las capas externas son detalles tecnicos que dependen de las capas internas.</li>
+</ul>
+<h2 id="cuando-usar-arquitectura-hexagonal">¿Cuando usar Arquitectura Hexagonal?</h2>
+<ul>
+<li>Es mas adecuada cuando tu aplicacion requiere multiples formas de interaccion con el mundo externo. Por ejemplo, si tu aplicacion puede ser invocada desde APIs REST, interfaces de usuario graficas, colas de mensajeria. etc., la arquitectura hexagonal te proporciona una forma clara de conectar esos puntos de entrada a traves de puertos y adaptadores.</li>
+<li>Si buscas flexibilidad para conectar y desconectar adaptadores (como bases de datos, servicios externos o APIs), la arquitectura hexagonal facilita ese proceso mediante la separacion clara de las interfaces y las implementaciones.</li>
+</ul>
+<h2 id="cuando-usar-arquitectura-limpia">¿Cuando usar Arquitectura Limpia?</h2>
+<ul>
+<li>Si prefiere una estructura mas rigida y definida con capas claras que separan la logica de negocio de los detalles de infraestructura, la arquitectura limpia puede ser mas adecuada.</li>
+<li>Es ideal para proyectos que buscan una organizacion jerarquica y que necesiten estructurarse con una separacion estricta entre los deferentes niveles (dominio, casos de uso, infraestructura).</li>
+<li>Tambien es util cuando se trata de aplicaciones mas grandes que requieren una estructura clara y predecible.</li>
 </ul>
 </section>
 
