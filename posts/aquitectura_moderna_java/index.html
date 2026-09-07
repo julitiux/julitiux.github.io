@@ -152,7 +152,7 @@
   <meta itemprop="name" content="Aquitectura Moderna de Java">
 <meta itemprop="description" content="Modulo 1 Introduccion a la Arquitectura de Software Entender que es la arquitectura de software Conocer los principios fundamentales Diferenciar tipos comunes de arquitectura Ver como se aplican en proyectos modernos Documentación basada en vistas Vista Lógica; Muestra los componentes principales del sistema y sus relaciones. Vista de desarrollo: Detalla la organización del sistema desde el punto de vista del desarrollo, cómo están estructurados los módulos. Vista de procesos: Explica cómo interactúan los componentes en tiempo de ejecución."><meta itemprop="datePublished" content="2025-06-11T17:48:08-06:00" />
 <meta itemprop="dateModified" content="2025-06-11T17:48:08-06:00" />
-<meta itemprop="wordCount" content="20786">
+<meta itemprop="wordCount" content="21912">
 <meta itemprop="keywords" content="" />
   
   <meta name="twitter:card" content="summary"/>
@@ -3076,6 +3076,108 @@ Por ejemplo:
 <li><em>Utiliza Mensajeria Asincrona cuando sea posible</em>: PAra evitar la alta dependencia entre microservicios, considera usar un enfoque basado en eventos o mensajeria asincrona.</li>
 <li><em>Evita Monolitos dentro de Microservicios</em>: Aunque tengas un microservicio, si no aplicas principios como la arquitectura hexagonal, puedes terminar con un &ldquo;monolito dentro de un microservicio&rdquo;. Manten cada microservicio modular y desacoplado</li>
 <li><em>Limita las Responsabilidades</em>: Los microservicios deben ser pequeños y tener una unica responsabilidad. Su un microservicios comienza a crecer demasiado, probablemente es hora de dividirlo.</li>
+</ul>
+<h1 id="modulo-11">Modulo 11</h1>
+<h2 id="puertos-de-salida-en-la-arquitectura-hexagonal">Puertos de Salida en la Arquitectura Hexagonal</h2>
+<ul>
+<li>Los puertos de salida son fundamentales para mantener el nucleo de la aplicacion desacoplado de los detalles de implementacion</li>
+<li>El dominio solo interactua con interfaces (puertos) y los adaptadores en las infraestructura implementan esas interfaces para conectar con servicios especificos.</li>
+<li>Esto asegura que puedas cambiar facilmente de implementacion o proveedor sin afectar la logica de negocio.</li>
+</ul>
+<h2 id="tipos-de-puertos-de-salida">Tipos de Puertos de Salida</h2>
+<ul>
+<li><em>Persistencia</em>: Interactuar con bases de datos o almacenamiento persistente</li>
+<li><em>Servicios externos</em>: Conectar con APIs de terceros, como servicios de pago o geolocalizacion.</li>
+<li><em>Notificaciones</em>: Enviar notificaciones por email, SMS, push notifications, etc.</li>
+<li><em>Mensajeria/Colas de eventos</em>: Publicar eventos a sistemas de colas o buses de eventos.</li>
+<li><em>Integracion con otros sistemas</em>: Integrarse con otros sistemas internos o externos (ERP, CRM, etc.) Gateways es otra forma de decirles.</li>
+<li><em>Almacenamiento de archivos</em>: Guardar y recuperar archivos en servicios de almacenamiento.</li>
+<li><em>Cache</em>: Interactuar con sistema de cache como Redis.</li>
+</ul>
+<h2 id="puertos-de-salida-para-persistencia">Puertos de salida para persistencia</h2>
+<ul>
+<li>Estos puertos permiten que el sistema interactue con bases de datos o cualquier sistema de almacenamiento persistente. El puerto de salida define como se guardan, recuperan, actualizan o eliminan los datos sin especificar como se implementan estas operaciones (pueden ser bases de datos relacionales, NoSQL, archivos, etc.).</li>
+<li><em>Ejemplo</em>: Un puerto de salida para persistir pedidos en una base de datos.</li>
+<li><em>Implementacion</em>: Adaptador JPA, JDBC, MongoDB, etc.</li>
+</ul>
+<h2 id="puertos-de-salida-para-servicos-externos-gateways">Puertos de salida para servicos externos-Gateways</h2>
+<ul>
+<li>Este tipo de puerto define como el sistema interactua con APIs o servicios externos. Los servicios externos pueden ser APIs de terceros (por ejemplo, pasarelas de pago, servicios de geolocalizacion, servicios de clima, etc.). La interfaz del puerto define las operaciones necesarias, pero no sabe ni le importa como se implementan estas operaciones.</li>
+<li><em>Ejemplo</em>: Un puerto de salida para interactuar con una pasarela de pago.</li>
+<li><em>Implementacion</em>: Adaptador que usa Stripe, Paypal, etc.</li>
+</ul>
+<h2 id="puertos-de-salida-para-notificaciones">Puertos de salida para notificaciones</h2>
+<ul>
+<li>Estos puertos permiten que el sistema envie notificaciones o mensajes a servicios de mensajeria, como emails, SMS o notificaciones push. Pueden utilizar servicios de terceros o infraestructura interna para enviar los mensajes.</li>
+<li><em>Ejemplo</em>: Un puerto de salida para enviar notificaciones.</li>
+<li><em>Implementacion</em>: Adaptador que usa servicios como Twilio, SendGrid, Firebase Cloud Messaging, etc.</li>
+</ul>
+<h2 id="puertos-de-salida-para-colas-de-mensajeria-y-eventos-publishers">Puertos de salida para colas de mensajeria y eventos-Publishers</h2>
+<ul>
+<li>En los sistemas orientados a eventos, es comun que el sistema necesite publicar eventos o mensajes a un sistema de colas o un bus de eventos (por ejemplo, Kafka, RabbitMQ, AWS SQS). Estos puertos de salida permiten que el sistema interactue con esas colas o buses de mensajes.</li>
+<li><em>Ejemplos</em>: Un puerto de salida para publicar eventos de pedido.</li>
+<li><em>Implementacion</em>: Adaptador para Kafka, RabbitMQ, etc.</li>
+</ul>
+<h2 id="puertos-de-salida-para-integracion-con-otros-sistemas">Puertos de salida para integracion con otros sistemas</h2>
+<ul>
+<li>Estos puertos de salida permiten que el sistema interactue con otros sistemas internos o externos a traves de integraciones (por ejemplo, ERP, CRM, microservicios dentro de la organizacion). La interfaz define como se imtercambian datos entre sistemas.</li>
+<li><em>Ejemplo</em>: Un puertos de salida para enviar informacion de inventario a un sistema ERP.</li>
+<li><em>Implementacion</em>: Adaptador que se comunica con otro sistema ERP a traves de REST, SOAP, o cualquier otro protocolo.</li>
+</ul>
+<h2 id="puertos-de-salida-para-almacenamiento-de-archivos">Puertos de salida para almacenamiento de archivos</h2>
+<ul>
+<li>Estos puertos permiten que el sistema guarde o recupere archivos en un sistema de almacenamiento (como AWS S3, Google Cloud Storage, o un sistema de archivos local). Pueden definir operaciones como guardar, eliminar o recuperar archivos.</li>
+<li><em>Ejemplo</em>: Un puerto de salida para almacenar archivos en un servicio externo.</li>
+<li><em>Implementacion</em>: Adaptador que usa Amazon S3, Google Cloud Storage, un servidor FTP, etc.</li>
+</ul>
+<h2 id="puertos-de-salida-para-almacenamiento-de-archivos-1">Puertos de salida para almacenamiento de archivos</h2>
+<ul>
+<li>Estos puertos permiten que el sistema guarde o recupere archivos en sistema de almacenamiento (como AWS S3, Google Cloud Storage, o un sistema de archivos local). Puede definir operaciones como guardar, eliminar o recuperar archivos.</li>
+<li><em>Ejemplo</em>: Un puerto de salida para almacenar archivos en un servicio externo.</li>
+<li><em>Implementacion</em>: Adaptador que usa Amazon S3, Google Cloud Storage, un servidor FTP, etc.</li>
+</ul>
+<h2 id="puertos-de-salida-caching">Puertos de salida caching</h2>
+<ul>
+<li>Este tipo de puerto permite que el sistema interactue con sistemas de cache externos, como Redis o Memcached, para guardar y recuperar datos temporalmente.</li>
+<li><em>Ejemplo</em>: Un puerto de salida para alamacenar datos en un sistema de cache</li>
+<li><em>Implementacion</em>: Adaptador para Redis, Memcached, etc.</li>
+</ul>
+<h2 id="puertos-de-entrada-en-la-arquitectura-hexagonal">Puertos de Entrada en la Arquitectura Hexagonal</h2>
+<ul>
+<li>Los puertos de entrada son interfaces que permiten que los actores externos (como usuarios, sistemas externos o interfaces de usuario) interactuen con el nucleo de la aplicacion (la logica de negocio)</li>
+<li>Los puertos de entrada se centran en definir como las solicitudes externas llegan al sistema, separando la logica de presentacion o el control de la logica de negocio.</li>
+<li>Los adaptadores de entrada son implementaciones especificas que traducen esas interacciones (ya sea por HTTP, eventos o CLI) y las delegan a la logica de negocio del sistema. Esto asegura que el nucleo de la aplicacion este desacoplado de la manera en que se recibe la entrada, facilitando el cambio de interfaces sin alterar la logica de negocio.</li>
+</ul>
+<h2 id="tipos-de-puertos-de-entrada">Tipos de puertos de entrada</h2>
+<ul>
+<li><em>Interfaces de usuario (UI)</em>: Permiten que los usuarios interactuen con la logica de negocio (generalmente a traves de APIs REST, controladores web, etc)</li>
+<li><em>Interfaces de sistemas externos</em>: Permiten que otros sistemas o servicios externos interactuen con la logica de negocio (a traves de APIs, webhooks, etc.)</li>
+<li><em>Tareas en segundo plano o batch</em>: Permiten ejecutar trabajos en segundo plano o tareas programadas, como procesamientos batch o con jobs</li>
+<li><em>Eventos de mensajeria</em>: Permiten que la aplicacion reciba y procese eventos desde un bus de eventos o un siste,a de colas (como Kafka o RabbitMQ)</li>
+<li><em>Comando CLI</em>: Permiten que la aplicacion sea controlada mediante la liena de comandos para ejecutar procesos o comandos especificos</li>
+</ul>
+<h2 id="puertos-de-entrada-para-interfaces-de-usuario-ui">Puertos de entrada para interfaces de usuario (UI)</h2>
+<ul>
+<li>Estos puertos permiten que los usuarios finales interactuen con la aplicacion a traves de interfacea de usuario, como aplicaciones web, moviles o de escritorio. La interfaz de usuario se comunica con la logica de negocio mediante estos puertos</li>
+<li><em>Ejemplo</em>: Servicios que manejan solicitudes HTTP desde un frontend</li>
+<li><em>Implementacion</em>: Los adaptadores serian controladores REST, controladores de vista (MVC) o controladores para aplicaciones moviles</li>
+<li><em>Adaptadores</em>:
+<ul>
+<li><em>REST API</em>: Controladores que exponen las operaciones del sistema a traves del HTTP (con frameworks como Spring)</li>
+<li><em>Websockets o gRPC</em>: Tambien pueden utilizarse en lugar de REST para intracciones en tiempo real o comunicaciones eficientes</li>
+</ul>
+</li>
+</ul>
+<h2 id="puertos-de-entrada-para-interfaces-de-sistemas-externos">Puertos de entrada para interfaces de sistemas externos</h2>
+<ul>
+<li>Estos puertos permiten que otros sistemas o aplicaciones (no usuarios finales) interactuen con el sistema. Los casos comunes son cuando tua plicacion debe ser consumida por servicios externos o integrar con otros sistemas.</li>
+<li><em>Ejemplo</em>: Servicios que manejan interacciones con otros sistemas, como APIs expuestas para integraciones con terceros</li>
+<li><em>Implementacion</em>: Los adaptadores aqui serian APIs expuestas especificamente para otros sistemas, como servios REST, SOAP, gRPC, o Webhooks</li>
+<li><em>Adaptadores</em>:
+<ul>
+<li>APIs REST/gRPC/SOAP: Estas APIs son utilizadas por sistemas externos para interactuar con tu sistema</li>
+</ul>
+</li>
 </ul>
 </section>
 
