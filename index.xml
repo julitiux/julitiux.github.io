@@ -6,7 +6,16 @@
     <description>Recent content on Blogs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 28 Aug 2026 22:15:15 -0600</lastBuildDate><atom:link href="https://julitiux.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 14 Nov 2026 17:50:24 -0600</lastBuildDate><atom:link href="https://julitiux.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Shortcuts</title>
+      <link>https://julitiux.github.io/posts/shortcuts/</link>
+      <pubDate>Sat, 14 Nov 2026 17:50:24 -0600</pubDate>
+      
+      <guid>https://julitiux.github.io/posts/shortcuts/</guid>
+      <description>Shortcuts Setup core keymaps newest oldest description jk &amp;lt;ESC&amp;gt; Exit insert mode with jk &amp;lt;leader&amp;gt;nh :noh1&amp;lt;CR&amp;gt; Clear search highlights &amp;lt;leader&amp;gt;+ &amp;lt;C-a&amp;gt; Increment number &amp;lt;leader&amp;gt;- &amp;lt;C-x&amp;gt; Decrement number &amp;lt;leader&amp;gt;sv &amp;lt;C-w&amp;gt;v Split window vertically &amp;lt;leader&amp;gt;sh &amp;lt;C-w&amp;gt;s Split window horizontally &amp;lt;leader&amp;gt;se &amp;lt;C-w&amp;gt;= Make splits equal size &amp;lt;leader&amp;gt;sx &amp;lt;cmd&amp;gt;close&amp;lt;CR&amp;gt; Close current split &amp;lt;leader&amp;gt;to &amp;lt;cmd&amp;gt;tabnew&amp;lt;CR&amp;gt; Open new tab &amp;lt;leader&amp;gt;tx &amp;lt;cmd&amp;gt;tabclose&amp;lt;CR&amp;gt; Open current tab &amp;lt;leader&amp;gt;tn &amp;lt;cmd&amp;gt;tabn&amp;lt;CR&amp;gt; Open nex tab &amp;lt;leader&amp;gt;tp &amp;lt;cmd&amp;gt;tabp&amp;lt;CR&amp;gt; Open previous tab &amp;lt;leader&amp;gt;tf &amp;lt;cmd&amp;gt;tabnew %&amp;lt;CR&amp;gt; Open current buffer in new tab Setup nvim-tree file explorer newest oldest description &amp;lt;leader&amp;gt;ee &amp;lt;cmd&amp;gt;NvimTreeToggle&amp;lt;CR&amp;gt; Toggle file explorer &amp;lt;leader&amp;gt;ef &amp;lt;cmd&amp;gt;NvimTreeFindFileToggle&amp;lt;CR&amp;gt; Toggle file explorer on current file &amp;lt;leader&amp;gt;ec &amp;lt;cmd&amp;gt;NvimTreeCollapse&amp;lt;CR&amp;gt; Collapse file explorer &amp;lt;leader&amp;gt;er &amp;lt;cmd&amp;gt;NvimTreeRefresh&amp;lt;CR&amp;gt; Refresh file exlorer Setup telescope fuzzy finder newest oldest description &amp;lt;leader&amp;gt;ff &amp;lt;cmd&amp;gt;Telescope find_files&amp;lt;CR&amp;gt; Fuzzy find files in cwd &amp;lt;leader&amp;gt;fr &amp;lt;cmd&amp;gt;Telescope oldfiles&amp;lt;CR&amp;gt; Fuzzy find recent files &amp;lt;leader&amp;gt;fs &amp;lt;cmd&amp;gt;Telescope live_grep&amp;lt;CR&amp;gt; Find string in cwd &amp;lt;leader&amp;gt;fc &amp;lt;cmd&amp;gt;Telescope grep_string&amp;lt;CR&amp;gt; Find string under cursor in cwd </description>
+    </item>
+    
     <item>
       <title>Cruising Along With Java</title>
       <link>https://julitiux.github.io/posts/book_cruising_along_with_java/</link>

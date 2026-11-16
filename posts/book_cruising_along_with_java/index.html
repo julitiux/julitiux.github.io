@@ -152,7 +152,7 @@
   <meta itemprop="name" content="Cruising Along With Java">
 <meta itemprop="description" content="Chapter 1 - The Evolution of Java Recent Changes to Java 8 Functional programming capabilities 9 Modularization 10 Local variable inference 11 Local variable syntax for lambda parameters 14 switch expression 15 Text blocks 16 Pattern matching for instance Records 17 Sealed classes 21 Pattern matching for switch Record patterns 22 Unnamed Variables and Patterns 24 Stream Gatherers Chapter 2 - Using Type Inference Generics and Type Witness typeinference/vsca/GenericsTypeInference.java List&lt;String&gt; justOne = Collections."><meta itemprop="datePublished" content="2026-08-28T22:15:15-06:00" />
 <meta itemprop="dateModified" content="2026-08-28T22:15:15-06:00" />
-<meta itemprop="wordCount" content="1847">
+<meta itemprop="wordCount" content="2121">
 <meta itemprop="keywords" content="" />
   
   <meta name="twitter:card" content="summary"/>
@@ -790,6 +790,43 @@ Let&rsquo;s recap what we&rsquo;ve done. You may write a compact constructor or 
 </span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
 </span></span></code></pre></div><h2 id="local-records-as-tuples">(local) Records as Tuples.</h2>
 <p>A tuple is an immutable data structure of a finite ordered squence of elements.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> Stocks <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> ticker<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">200</span> <span style="color:#f92672">+</span> ticker<span style="color:#f92672">.</span><span style="color:#a6e22e">chars</span><span style="color:#f92672">().</span><span style="color:#a6e22e">sum</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    var tickers <span style="color:#f92672">=</span> List<span style="color:#f92672">.</span><span style="color:#a6e22e">of</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;GOOG&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;MSFT&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;AMZN&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;ORCL&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;INTC&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    printlPricesOver500<span style="color:#f92672">(</span>tickers<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#a6e22e">printlPricesOver500</span><span style="color:#f92672">(</span>List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> tickers<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  tickers<span style="color:#f92672">.</span><span style="color:#a6e22e">stream</span><span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">.</span><span style="color:#a6e22e">map</span><span style="color:#f92672">(</span>ticker <span style="color:#f92672">-&gt;</span> simulatePrice<span style="color:#f92672">(</span>ticker<span style="color:#f92672">))</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">.</span><span style="color:#a6e22e">filter</span><span style="color:#f92672">(</span>price <span style="color:#f92672">-&gt;</span> price <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">500</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">.</span><span style="color:#a6e22e">forEach</span><span style="color:#f92672">(</span>System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">::</span>println<span style="color:#f92672">);</span>
+</span></span></code></pre></div><p>The overridden toString() method will be invoked automatically when forEach calls the println() method to print the instances.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">printPricesOver500</span><span style="color:#f92672">(</span>List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> tickers<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  record <span style="color:#a6e22e">Stock</span><span style="color:#f92672">(</span>String ticker<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> price<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">toString</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> String<span style="color:#f92672">.</span><span style="color:#a6e22e">format</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Ticker: %s Price: $%d&#34;</span><span style="color:#f92672">,</span> ticker<span style="color:#f92672">,</span> price<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  ticker<span style="color:#f92672">.</span><span style="color:#a6e22e">stream</span><span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">.</span><span style="color:#a6e22e">map</span><span style="color:#f92672">(</span>ticker <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">new</span> Stock<span style="color:#f92672">(</span>ticker<span style="color:#f92672">,</span> simulatePrice<span style="color:#f92672">(</span>ticker<span style="color:#f92672">)))</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">.</span><span style="color:#a6e22e">filter</span><span style="color:#f92672">(</span>stock <span style="color:#f92672">-&gt;</span> stock<span style="color:#f92672">.</span><span style="color:#a6e22e">price</span><span style="color:#f92672">()</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">500</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">.</span><span style="color:#a6e22e">forEach</span><span style="color:#f92672">(</span>System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">::</span>println<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h1 id="designing-with-sealed-classes-and-interfaces">Designing with Sealed Classes and Interfaces</h1>
+<p>To facilitate such requirements Java has evolved to include sealed classes and sealed interfaces. An interface or a class marked as sealed clearly specifies what can be implemented or extended from it. This provided a way to close the hierarchy with only the desired memebers. Any attempt to extend the hierarchy further will result in a compilation error.</p>
+<h2 id="need-for-a-closed-hierarchy">Need for a Closed Hierarchy</h2>
+<p>Like seaed classes, enums also provide the capability to create a closed hierarchy. &ldquo;Should we choose an enum or sealed classes?&rdquo; is a reasonable question.</p>
+<p>Prefer enum if you&rsquo;re designing a closed set og fixed predetermined constants, like the JDK&rsquo;s DayOfWeek enum. The values that are part of an enum share the same properties and methods.</p>
+<p>To close the hierarchy of classes that aren&rsquo;t part of a fixed set of constants use sealed. Unlike enums, sealed classes that are part of a closed hierarchy may have different methods and properties. You also have the flexibility to extend the hierarchy to multitple levels.</p>
 </section>
 
   
@@ -799,6 +836,12 @@ Let&rsquo;s recap what we&rsquo;ve done. You may write a compact constructor or 
   
   
   <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="https://julitiux.github.io/posts/shortcuts/"
+      ><span class="mr-1.5">←</span><span>Shortcuts</span></a
+    >
     
     
     <a

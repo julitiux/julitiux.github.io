@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #fbfbfb"
+  lang="en-us"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Shortcuts - Blogs</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  <meta name="description" content="Shortcuts Setup core keymaps newest oldest description jk &lt;ESC&gt; Exit insert mode with jk &lt;leader&gt;nh :noh1&lt;CR&gt; Clear search highlights &lt;leader&gt;&#43; &lt;C-a&gt; Increment number &lt;leader&gt;- &lt;C-x&gt; Decrement number &lt;leader&gt;sv &lt;C-w&gt;v Split window vertically &lt;leader&gt;sh &lt;C-w&gt;s Split window horizontally &lt;leader&gt;se &lt;C-w&gt;= Make splits equal size &lt;leader&gt;sx &lt;cmd&gt;close&lt;CR&gt; Close current split &lt;leader&gt;to &lt;cmd&gt;tabnew&lt;CR&gt; Open new tab &lt;leader&gt;tx &lt;cmd&gt;tabclose&lt;CR&gt; Open current tab &lt;leader&gt;tn &lt;cmd&gt;tabn&lt;CR&gt; Open nex tab &lt;leader&gt;tp &lt;cmd&gt;tabp&lt;CR&gt; Open previous tab &lt;leader&gt;tf &lt;cmd&gt;tabnew %&lt;CR&gt; Open current buffer in new tab Setup nvim-tree file explorer newest oldest description &lt;leader&gt;ee &lt;cmd&gt;NvimTreeToggle&lt;CR&gt; Toggle file explorer &lt;leader&gt;ef &lt;cmd&gt;NvimTreeFindFileToggle&lt;CR&gt; Toggle file explorer on current file &lt;leader&gt;ec &lt;cmd&gt;NvimTreeCollapse&lt;CR&gt; Collapse file explorer &lt;leader&gt;er &lt;cmd&gt;NvimTreeRefresh&lt;CR&gt; Refresh file exlorer Setup telescope fuzzy finder newest oldest description &lt;leader&gt;ff &lt;cmd&gt;Telescope find_files&lt;CR&gt; Fuzzy find files in cwd &lt;leader&gt;fr &lt;cmd&gt;Telescope oldfiles&lt;CR&gt; Fuzzy find recent files &lt;leader&gt;fs &lt;cmd&gt;Telescope live_grep&lt;CR&gt; Find string in cwd &lt;leader&gt;fc &lt;cmd&gt;Telescope grep_string&lt;CR&gt; Find string under cursor in cwd " />
+  <meta name="author" content="Julitiux" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="https://julitiux.github.io/main.min.css" />
+
+  
+
+  
+     
+  <link rel="preload" as="image" href="https://julitiux.github.io/theme.svg" />
+
+  
+  
+  
+  <link rel="preload" as="image" href="https://cdn.v2ex.com/gravatar/6fd8df4abe41f17fd8e2dd7d97b5cc8c?s=160&amp;d=identicon" />
+  
+  
+
+  
+  <link rel="preload" as="image" href="https://julitiux.github.io/twitter.svg" />
+  
+  <link rel="preload" as="image" href="https://julitiux.github.io/github.svg" />
+  
+  <link rel="preload" as="image" href="https://julitiux.github.io/instagram.svg" />
+  
+  
+
+  
+  
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css"
+  integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI"
+  crossorigin="anonymous"
+/>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js"
+  integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t"
+  crossorigin="anonymous"
+></script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js"
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"
+></script>
+
+  
+  
+  
+
+  
+  <link rel="icon" href="https://julitiux.github.io/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://julitiux.github.io/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.107.0">
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:title" content="Shortcuts" />
+<meta property="og:description" content="Shortcuts Setup core keymaps newest oldest description jk &lt;ESC&gt; Exit insert mode with jk &lt;leader&gt;nh :noh1&lt;CR&gt; Clear search highlights &lt;leader&gt;&#43; &lt;C-a&gt; Increment number &lt;leader&gt;- &lt;C-x&gt; Decrement number &lt;leader&gt;sv &lt;C-w&gt;v Split window vertically &lt;leader&gt;sh &lt;C-w&gt;s Split window horizontally &lt;leader&gt;se &lt;C-w&gt;= Make splits equal size &lt;leader&gt;sx &lt;cmd&gt;close&lt;CR&gt; Close current split &lt;leader&gt;to &lt;cmd&gt;tabnew&lt;CR&gt; Open new tab &lt;leader&gt;tx &lt;cmd&gt;tabclose&lt;CR&gt; Open current tab &lt;leader&gt;tn &lt;cmd&gt;tabn&lt;CR&gt; Open nex tab &lt;leader&gt;tp &lt;cmd&gt;tabp&lt;CR&gt; Open previous tab &lt;leader&gt;tf &lt;cmd&gt;tabnew %&lt;CR&gt; Open current buffer in new tab Setup nvim-tree file explorer newest oldest description &lt;leader&gt;ee &lt;cmd&gt;NvimTreeToggle&lt;CR&gt; Toggle file explorer &lt;leader&gt;ef &lt;cmd&gt;NvimTreeFindFileToggle&lt;CR&gt; Toggle file explorer on current file &lt;leader&gt;ec &lt;cmd&gt;NvimTreeCollapse&lt;CR&gt; Collapse file explorer &lt;leader&gt;er &lt;cmd&gt;NvimTreeRefresh&lt;CR&gt; Refresh file exlorer Setup telescope fuzzy finder newest oldest description &lt;leader&gt;ff &lt;cmd&gt;Telescope find_files&lt;CR&gt; Fuzzy find files in cwd &lt;leader&gt;fr &lt;cmd&gt;Telescope oldfiles&lt;CR&gt; Fuzzy find recent files &lt;leader&gt;fs &lt;cmd&gt;Telescope live_grep&lt;CR&gt; Find string in cwd &lt;leader&gt;fc &lt;cmd&gt;Telescope grep_string&lt;CR&gt; Find string under cursor in cwd " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://julitiux.github.io/posts/shortcuts/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2026-11-14T17:50:24-06:00" />
+<meta property="article:modified_time" content="2026-11-14T17:50:24-06:00" />
+
+
+  
+  <meta itemprop="name" content="Shortcuts">
+<meta itemprop="description" content="Shortcuts Setup core keymaps newest oldest description jk &lt;ESC&gt; Exit insert mode with jk &lt;leader&gt;nh :noh1&lt;CR&gt; Clear search highlights &lt;leader&gt;&#43; &lt;C-a&gt; Increment number &lt;leader&gt;- &lt;C-x&gt; Decrement number &lt;leader&gt;sv &lt;C-w&gt;v Split window vertically &lt;leader&gt;sh &lt;C-w&gt;s Split window horizontally &lt;leader&gt;se &lt;C-w&gt;= Make splits equal size &lt;leader&gt;sx &lt;cmd&gt;close&lt;CR&gt; Close current split &lt;leader&gt;to &lt;cmd&gt;tabnew&lt;CR&gt; Open new tab &lt;leader&gt;tx &lt;cmd&gt;tabclose&lt;CR&gt; Open current tab &lt;leader&gt;tn &lt;cmd&gt;tabn&lt;CR&gt; Open nex tab &lt;leader&gt;tp &lt;cmd&gt;tabp&lt;CR&gt; Open previous tab &lt;leader&gt;tf &lt;cmd&gt;tabnew %&lt;CR&gt; Open current buffer in new tab Setup nvim-tree file explorer newest oldest description &lt;leader&gt;ee &lt;cmd&gt;NvimTreeToggle&lt;CR&gt; Toggle file explorer &lt;leader&gt;ef &lt;cmd&gt;NvimTreeFindFileToggle&lt;CR&gt; Toggle file explorer on current file &lt;leader&gt;ec &lt;cmd&gt;NvimTreeCollapse&lt;CR&gt; Collapse file explorer &lt;leader&gt;er &lt;cmd&gt;NvimTreeRefresh&lt;CR&gt; Refresh file exlorer Setup telescope fuzzy finder newest oldest description &lt;leader&gt;ff &lt;cmd&gt;Telescope find_files&lt;CR&gt; Fuzzy find files in cwd &lt;leader&gt;fr &lt;cmd&gt;Telescope oldfiles&lt;CR&gt; Fuzzy find recent files &lt;leader&gt;fs &lt;cmd&gt;Telescope live_grep&lt;CR&gt; Find string in cwd &lt;leader&gt;fc &lt;cmd&gt;Telescope grep_string&lt;CR&gt; Find string under cursor in cwd "><meta itemprop="datePublished" content="2026-11-14T17:50:24-06:00" />
+<meta itemprop="dateModified" content="2026-11-14T17:50:24-06:00" />
+<meta itemprop="wordCount" content="145">
+<meta itemprop="keywords" content="" />
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Shortcuts"/>
+<meta name="twitter:description" content="Shortcuts Setup core keymaps newest oldest description jk &lt;ESC&gt; Exit insert mode with jk &lt;leader&gt;nh :noh1&lt;CR&gt; Clear search highlights &lt;leader&gt;&#43; &lt;C-a&gt; Increment number &lt;leader&gt;- &lt;C-x&gt; Decrement number &lt;leader&gt;sv &lt;C-w&gt;v Split window vertically &lt;leader&gt;sh &lt;C-w&gt;s Split window horizontally &lt;leader&gt;se &lt;C-w&gt;= Make splits equal size &lt;leader&gt;sx &lt;cmd&gt;close&lt;CR&gt; Close current split &lt;leader&gt;to &lt;cmd&gt;tabnew&lt;CR&gt; Open new tab &lt;leader&gt;tx &lt;cmd&gt;tabclose&lt;CR&gt; Open current tab &lt;leader&gt;tn &lt;cmd&gt;tabn&lt;CR&gt; Open nex tab &lt;leader&gt;tp &lt;cmd&gt;tabp&lt;CR&gt; Open previous tab &lt;leader&gt;tf &lt;cmd&gt;tabnew %&lt;CR&gt; Open current buffer in new tab Setup nvim-tree file explorer newest oldest description &lt;leader&gt;ee &lt;cmd&gt;NvimTreeToggle&lt;CR&gt; Toggle file explorer &lt;leader&gt;ef &lt;cmd&gt;NvimTreeFindFileToggle&lt;CR&gt; Toggle file explorer on current file &lt;leader&gt;ec &lt;cmd&gt;NvimTreeCollapse&lt;CR&gt; Collapse file explorer &lt;leader&gt;er &lt;cmd&gt;NvimTreeRefresh&lt;CR&gt; Refresh file exlorer Setup telescope fuzzy finder newest oldest description &lt;leader&gt;ff &lt;cmd&gt;Telescope find_files&lt;CR&gt; Fuzzy find files in cwd &lt;leader&gt;fr &lt;cmd&gt;Telescope oldfiles&lt;CR&gt; Fuzzy find recent files &lt;leader&gt;fs &lt;cmd&gt;Telescope live_grep&lt;CR&gt; Find string in cwd &lt;leader&gt;fc &lt;cmd&gt;Telescope grep_string&lt;CR&gt; Find string under cursor in cwd "/>
+
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-3xl px-8 lg:justify-center">
+  <div class="relative z-50 mr-auto flex items-center">
+    <a
+      class="-translate-x-[1px] -translate-y-[1px] text-2xl font-semibold"
+      href="https://julitiux.github.io/"
+      >Blogs</a
+    >
+    <div
+      class="btn-dark text-[0] ml-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 -mr-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#fbfbfb'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+
+    
+    <nav
+      class="mt-12 flex justify-center space-x-10 dark:invert lg:ml-12 lg:mt-0 lg:items-center lg:space-x-6"
+    >
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./twitter.svg)"
+        href="https://twitter.com/julitiux"
+        target="_blank"
+        rel="me"
+      >
+        twitter
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href="https://github.com/julitiux"
+        target="_blank"
+        rel="me"
+      >
+        github
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./instagram.svg)"
+        href="https://instagram.com/julitiux"
+        target="_blank"
+        rel="me"
+      >
+        instagram
+      </a>
+      
+    </nav>
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    <h1 class="!my-0 pb-2.5">Shortcuts</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Nov 14, 2026</time>
+      
+      
+      
+      
+    </div>
+    
+  </header>
+
+  <section><h1 id="shortcuts">Shortcuts</h1>
+<h2 id="setup-core-keymaps">Setup core keymaps</h2>
+<table>
+<thead>
+<tr>
+<th>newest</th>
+<th>oldest</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>jk</td>
+<td>&lt;ESC&gt;</td>
+<td>Exit insert mode with jk</td>
+</tr>
+<tr>
+<td>&lt;leader&gt;nh</td>
+<td>:noh1&lt;CR&gt;</td>
+<td>Clear search highlights</td>
+</tr>
+<tr>
+<td>&lt;leader&gt;+</td>
+<td>&lt;C-a&gt;</td>
+<td>Increment number</td>
+</tr>
+<tr>
+<td>&lt;leader&gt;-</td>
+<td>&lt;C-x&gt;</td>
+<td>Decrement number</td>
+</tr>
+<tr>
+<td>&lt;leader&gt;sv</td>
+<td>&lt;C-w&gt;v</td>
+<td>Split window vertically</td>
+</tr>
+<tr>
+<td>&lt;leader&gt;sh</td>
+<td>&lt;C-w&gt;s</td>
+<td>Split window horizontally</td>
+</tr>
+<tr>
+<td>&lt;leader&gt;se</td>
+<td>&lt;C-w&gt;=</td>
+<td>Make splits equal size</td>
+</tr>
+<tr>
+<td>&lt;leader&gt;sx</td>
+<td>&lt;cmd&gt;close&lt;CR&gt;</td>
+<td>Close current split</td>
+</tr>
+<tr>
+<td>&lt;leader&gt;to</td>
+<td>&lt;cmd&gt;tabnew&lt;CR&gt;</td>
+<td>Open new tab</td>
+</tr>
+<tr>
+<td>&lt;leader&gt;tx</td>
+<td>&lt;cmd&gt;tabclose&lt;CR&gt;</td>
+<td>Open current tab</td>
+</tr>
+<tr>
+<td>&lt;leader&gt;tn</td>
+<td>&lt;cmd&gt;tabn&lt;CR&gt;</td>
+<td>Open nex tab</td>
+</tr>
+<tr>
+<td>&lt;leader&gt;tp</td>
+<td>&lt;cmd&gt;tabp&lt;CR&gt;</td>
+<td>Open previous tab</td>
+</tr>
+<tr>
+<td>&lt;leader&gt;tf</td>
+<td>&lt;cmd&gt;tabnew %&lt;CR&gt;</td>
+<td>Open current buffer in new tab</td>
+</tr>
+</tbody>
+</table>
+<h2 id="setup-nvim-tree-file-explorer">Setup nvim-tree file explorer</h2>
+<table>
+<thead>
+<tr>
+<th>newest</th>
+<th>oldest</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;leader&gt;ee</td>
+<td>&lt;cmd&gt;NvimTreeToggle&lt;CR&gt;</td>
+<td>Toggle file explorer</td>
+</tr>
+<tr>
+<td>&lt;leader&gt;ef</td>
+<td>&lt;cmd&gt;NvimTreeFindFileToggle&lt;CR&gt;</td>
+<td>Toggle file explorer on current file</td>
+</tr>
+<tr>
+<td>&lt;leader&gt;ec</td>
+<td>&lt;cmd&gt;NvimTreeCollapse&lt;CR&gt;</td>
+<td>Collapse file explorer</td>
+</tr>
+<tr>
+<td>&lt;leader&gt;er</td>
+<td>&lt;cmd&gt;NvimTreeRefresh&lt;CR&gt;</td>
+<td>Refresh file exlorer</td>
+</tr>
+</tbody>
+</table>
+<h2 id="setup-telescope-fuzzy-finder">Setup telescope fuzzy finder</h2>
+<table>
+<thead>
+<tr>
+<th>newest</th>
+<th>oldest</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;leader&gt;ff</td>
+<td>&lt;cmd&gt;Telescope find_files&lt;CR&gt;</td>
+<td>Fuzzy find files in cwd</td>
+</tr>
+<tr>
+<td>&lt;leader&gt;fr</td>
+<td>&lt;cmd&gt;Telescope oldfiles&lt;CR&gt;</td>
+<td>Fuzzy find recent files</td>
+</tr>
+<tr>
+<td>&lt;leader&gt;fs</td>
+<td>&lt;cmd&gt;Telescope live_grep&lt;CR&gt;</td>
+<td>Find string in cwd</td>
+</tr>
+<tr>
+<td>&lt;leader&gt;fc</td>
+<td>&lt;cmd&gt;Telescope grep_string&lt;CR&gt;</td>
+<td>Find string under cursor in cwd</td>
+</tr>
+</tbody>
+</table>
+</section>
+
+  
+  
+
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="https://julitiux.github.io/posts/book_cruising_along_with_java/"
+      ><span>Cruising Along With Java</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+
+  
+  
+
+  
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+  <div class="mr-auto">
+    &copy; 2026
+    <a class="link" href="https://julitiux.github.io/">Blogs</a>
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >Powered by Hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >✎ Paper</a
+  >
+</footer>
+
+  </body>
+</html>
