@@ -152,7 +152,7 @@
   <meta itemprop="name" content="Shortcuts">
 <meta itemprop="description" content="Shortcuts Setup core keymaps newest oldest description jk &lt;ESC&gt; Exit insert mode with jk &lt;leader&gt;nh :noh1&lt;CR&gt; Clear search highlights &lt;leader&gt;&#43; &lt;C-a&gt; Increment number &lt;leader&gt;- &lt;C-x&gt; Decrement number &lt;leader&gt;sv &lt;C-w&gt;v Split window vertically &lt;leader&gt;sh &lt;C-w&gt;s Split window horizontally &lt;leader&gt;se &lt;C-w&gt;= Make splits equal size &lt;leader&gt;sx &lt;cmd&gt;close&lt;CR&gt; Close current split &lt;leader&gt;to &lt;cmd&gt;tabnew&lt;CR&gt; Open new tab &lt;leader&gt;tx &lt;cmd&gt;tabclose&lt;CR&gt; Open current tab &lt;leader&gt;tn &lt;cmd&gt;tabn&lt;CR&gt; Open nex tab &lt;leader&gt;tp &lt;cmd&gt;tabp&lt;CR&gt; Open previous tab &lt;leader&gt;tf &lt;cmd&gt;tabnew %&lt;CR&gt; Open current buffer in new tab Setup nvim-tree file explorer newest oldest description &lt;leader&gt;ee &lt;cmd&gt;NvimTreeToggle&lt;CR&gt; Toggle file explorer &lt;leader&gt;ef &lt;cmd&gt;NvimTreeFindFileToggle&lt;CR&gt; Toggle file explorer on current file &lt;leader&gt;ec &lt;cmd&gt;NvimTreeCollapse&lt;CR&gt; Collapse file explorer &lt;leader&gt;er &lt;cmd&gt;NvimTreeRefresh&lt;CR&gt; Refresh file exlorer Setup telescope fuzzy finder newest oldest description &lt;leader&gt;ff &lt;cmd&gt;Telescope find_files&lt;CR&gt; Fuzzy find files in cwd &lt;leader&gt;fr &lt;cmd&gt;Telescope oldfiles&lt;CR&gt; Fuzzy find recent files &lt;leader&gt;fs &lt;cmd&gt;Telescope live_grep&lt;CR&gt; Find string in cwd &lt;leader&gt;fc &lt;cmd&gt;Telescope grep_string&lt;CR&gt; Find string under cursor in cwd &lt;leader&gt;ft &lt;cmd&gt;TodoTelescope&lt;CR&gt; Find todos Setup automated session manager newest oldest description &lt;leader&gt;wr &lt;cmd&gt;SessionRestore&lt;CR&gt; Restore session for cwd &lt;leader&gt;ws &lt;cmd&gt;SessionSave&lt;CR&gt; Save session for auto session root dir Setup vim-maximizer newest oldest description &lt;leader&gt;sm &lt;cmd&gt;MaximizerToggle&lt;CR&gt; Maximize/minimize a split Setup commenting plugin shortcut description &lt;C-space&gt; Start to mark the text :InspectTree Start highlight &lt;leader&gt;gcc Comment a line &lt;leader&gt;gcG Comment all document &lt;leader&gt;gc_number Commnet number of lines Setup substitution plugin shortcut description NORMAL - s Substitute with motion NORMAL - ss Substitute line NORMAL - S Substitute to end of line VISUAL - s Substitute in visual mode LSP Shortcuts Code Navigation shorcut description gR Show LSP references gD Go to declaration gd Go to definition gi Show LSP implementations gt Show LSP type definitions K Show documentation for the symbol under the cursor Code Actions &amp; Refactoring shortcuts description &lt;leader&gt;ca Show available code actions &lt;leader&gt;rn Smart rename symbol Diagnostics shortcuts description &lt;leader&gt;D Show buffer diagnostics &lt;leader&gt;d Show line diagnostics [d Go to previous diagnostics ]d Go to next diagnostics LSP Management shortcuts description &lt;leader&gt;rs Restart LSP server Setup trouble."><meta itemprop="datePublished" content="2026-11-14T17:50:24-06:00" />
 <meta itemprop="dateModified" content="2026-11-14T17:50:24-06:00" />
-<meta itemprop="wordCount" content="444">
+<meta itemprop="wordCount" content="571">
 <meta itemprop="keywords" content="" />
   
   <meta name="twitter:card" content="summary"/>
@@ -799,6 +799,137 @@
 <tr>
 <td>ih</td>
 <td>Select current hunk (Visual and Operator-pending modes)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="setup-lazygit-integration">Setup lazygit integration</h2>
+<table>
+<thead>
+<tr>
+<th>shortcuts</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;leader&gt;lg</td>
+<td>Open lazy git</td>
+</tr>
+</tbody>
+</table>
+<h2 id="keyboard-shortcuts-skhd">Keyboard shortcuts SKHD</h2>
+<h3 id="changing-focus-shortcuts">Changing Focus Shortcuts</h3>
+<table>
+<thead>
+<tr>
+<th>shortcut</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>alt - j</td>
+<td>focus south</td>
+</tr>
+<tr>
+<td>alt - k</td>
+<td>focus north</td>
+</tr>
+<tr>
+<td>alt - h</td>
+<td>focus west</td>
+</tr>
+<tr>
+<td>alt - l</td>
+<td>focus east</td>
+</tr>
+</tbody>
+</table>
+<h3 id="change-focus-between-displays">Change focus between displays</h3>
+<table>
+<thead>
+<tr>
+<th>shortcut</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>alt - s</td>
+<td>focus west</td>
+</tr>
+<tr>
+<td>alt - g</td>
+<td>focus east</td>
+</tr>
+</tbody>
+</table>
+<h3 id="shortcuts-for-modifying-the-layout">Shortcuts for modifying the layout</h3>
+<table>
+<thead>
+<tr>
+<th>shortcut</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>shift + alt - r</td>
+<td>rotate</td>
+</tr>
+<tr>
+<td>shift + att - y</td>
+<td>mirror y-axis</td>
+</tr>
+<tr>
+<td>shift + att - x</td>
+<td>mirror x-axis</td>
+</tr>
+<tr>
+<td>shift + att - t</td>
+<td>toggle float</td>
+</tr>
+</tbody>
+</table>
+<h3 id="modifying-window-size-shortcuts">Modifying Window size shortcuts</h3>
+<table>
+<thead>
+<tr>
+<th>shortcut</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>shift + alt - m</td>
+<td>zoom-fullscreen</td>
+</tr>
+<tr>
+<td>shift + alt - e</td>
+<td>balance</td>
+</tr>
+</tbody>
+</table>
+<h3 id="stopstartrestart-yabai">Stop/Start/Restart Yabai</h3>
+<table>
+<thead>
+<tr>
+<th>shortcut</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ctrl + alt - q</td>
+<td>stop-service</td>
+</tr>
+<tr>
+<td>ctrl + alt - s</td>
+<td>start-service</td>
+</tr>
+<tr>
+<td>ctrl + alt - r</td>
+<td>restart-service</td>
 </tr>
 </tbody>
 </table>
